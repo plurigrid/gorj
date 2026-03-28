@@ -1,11 +1,10 @@
-# World Increment Sweep — Latest Run
+# World-Increment Sweep — 2026-03-28
 
 ## Sweep Metadata
-
-- **Sweep Timestamp:** 2026-03-28T08:30:00Z
-- **Run ID:** sweep-2026-03-28-0830
-- **DuckDB Version:** v1.5.1 (Variegata)
-- **Database:** packages/world-increment/ducklake/world-increments.duckdb
+- **Date:** 2026-03-28
+- **Agent:** world-increment-sweep
+- **DuckDB version:** v1.5.1 (Variegata)
+- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
@@ -13,73 +12,77 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 11 |
-| Total Repo Snapshots | 352 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 12 |
+| Total Repo Snapshots | 40 |
+| Sources Covered | 3 orgs + 5 users |
 
 ---
 
-## GF(3) Color Chain — All 11 Increments
+## GF(3) Color Chain — All 12 Increments
 
-| ID | Source | Type | GF3 Trit | Color | Name |
-|----|--------|------|-----------|-------|------|
-| 1  | plurigrid | org | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow | org | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs | org | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism | user | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul | user | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin | user | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski | user | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita | user | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng | user | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa | user | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone | user | -1 | `#cc241d` | **MINUS** |
+| ID | Source | Event Type | GF3 Trit | Color | Name |
+|----|--------|------------|-----------|-------|------|
+| 1  | bmorphism | IssuesEvent (gorj) | +1 | `#b8bb26` | **PLUS** |
+| 2  | bmorphism | IssuesEvent (asi) | -1 | `#cc241d` | **MINUS** |
+| 3  | bmorphism | PushEvent (lolita) | 0 | `#d3869b` | **ERGODIC** |
+| 4  | bmorphism | PushEvent (asi) | +1 | `#b8bb26` | **PLUS** |
+| 5  | bmorphism | PullRequestEvent (asi) | -1 | `#cc241d` | **MINUS** |
+| 6  | bmorphism | PushEvent (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 7  | bmorphism | CreateEvent (gorj) | +1 | `#b8bb26` | **PLUS** |
+| 8  | bmorphism | WatchEvent (au-ts/sddf) | -1 | `#cc241d` | **MINUS** |
+| 9  | bmorphism | PushEvent (asi) | 0 | `#d3869b` | **ERGODIC** |
+| 10 | bmorphism | PullRequestEvent (asi) | +1 | `#b8bb26` | **PLUS** |
+| 11 | bmorphism | CreateEvent (gtc2026-floxxy) | -1 | `#cc241d` | **MINUS** |
+| 12 | bmorphism | PushEvent (zig-syrup) | 0 | `#d3869b` | **ERGODIC** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS`
-
----
-
-## Top 10 Most Recently Pushed Repos
-
-| Rank | Full Name | Language | Stars | Pushed At |
-|------|-----------|----------|-------|-----------|
-| 1 | plurigrid/asi | HTML | 13 | 2026-03-28T08:01:02Z |
-| 2 | kubeflow/pipelines | Python | 4112 | 2026-03-28T07:12:51Z |
-| 3 | plurigrid/gorj | Clojure | 0 | 2026-03-28T04:11:30Z |
-| 4 | M1shaaa/M1shaaa | — | 0 | 2026-03-28T01:55:08Z |
-| 5 | kubeflow/mcp-apache-spark-history-server | Python | 144 | 2026-03-28T01:49:14Z |
-| 6 | kubeflow/model-registry | Go | 169 | 2026-03-27T20:13:21Z |
-| 7 | kubeflow/kale | Python | 680 | 2026-03-27T20:12:54Z |
-| 8 | kubeflow/website | HTML | 182 | 2026-03-27T20:08:51Z |
-| 9 | kubeflow/spark-operator | Python | 3110 | 2026-03-27T15:34:51Z |
-| 10 | kubeflow/manifests | YAML | 1005 | 2026-03-27T08:50:51Z |
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
 
 ---
 
-## Event Counts by Type
+## Top Repos by Source
 
-### bmorphism (96 repos snapshotted)
+### plurigrid (12 repos)
+| Repo | Language | Stars | Pushed At |
+|------|----------|-------|-----------|
+| asi-skills | Julia | 1 | 2026-03-28 |
+| zig-syrup | Zig | 1 | 2026-03-28 |
+| asi | HTML | 13 | 2026-03-28 |
+| gorj | Clojure | 0 | 2026-03-28 |
+| lolita | Python | 0 | 2026-03-28 |
 
-GitHub public events API was rate-limited (unauthenticated). Event type derived from repo push timestamps and MCP search data.
+### kubeflow (9 repos)
+| Repo | Language | Stars | Pushed At |
+|------|----------|-------|-----------|
+| pipelines | Python | 4112 | 2026-03-28 |
+| mcp-apache-spark-history-server | Python | 144 | 2026-03-28 |
+| spark-operator | Python | 3110 | 2026-03-27 |
+| trainer | Go | 2068 | 2026-03-26 |
 
-| Event Type | Count (estimated) |
-|------------|-------------------|
-| PushEvent | ~30 (recent pushes) |
-| CreateEvent | ~15 |
-| WatchEvent | ~10 |
-| ForkEvent | ~5 |
+### TeglonLabs (5 repos)
+| Repo | Language | Stars |
+|------|----------|-------|
+| mathpix-gem | Ruby | 2 |
+| vibespace | HTML | 2 |
+| Stahl | Rust | 0 |
 
-Notable recent repos: `ocaml-mcp-sdk` (60★), `anti-bullshit-mcp-server` (23★), `say-mcp-server` (20★), `babashka-mcp-server` (18★)
+### bmorphism (6 repos)
+| Repo | Language | Stars |
+|------|----------|-------|
+| ocaml-mcp-sdk | OCaml | 60 |
+| shitcoin | HTML | 5 |
+| flox-mcp-bb | Clojure | 0 |
 
-### zubyul (44 repos snapshotted)
+---
 
-| Event Type | Count (estimated) |
-|------------|-------------------|
-| PushEvent | ~20 (recent pushes) |
-| CreateEvent | ~10 |
-| WatchEvent | ~5 |
+## Event Summary (bmorphism — 12 events captured)
 
-Notable recent repos: `gay-world` (Python, 2026-03-26), `toad-warpify-extension` (Python), `repl` (Python)
+| Event Type | Count |
+|------------|-------|
+| PushEvent | 6 |
+| IssuesEvent | 2 |
+| PullRequestEvent | 2 |
+| CreateEvent | 1 |
+| WatchEvent | 1 |
 
 ---
 
@@ -87,27 +90,36 @@ Notable recent repos: `gay-world` (Python, 2026-03-26), `toad-warpify-extension`
 
 | Source | Type | Repos |
 |--------|------|-------|
-| bmorphism | user | 96 |
-| plurigrid | org | 87 |
-| kubeflow | org | 46 |
-| zubyul | user | 44 |
-| AustinCStone | user | 40 |
-| wasita | user | 9 |
-| M1shaaa | user | 8 |
-| migalkin | user | 7 |
-| DJedamski | user | 6 |
-| kristinezheng | user | 6 |
-| TeglonLabs | org | 3 |
-| **TOTAL** | | **352** |
+| plurigrid | org | 12 |
+| kubeflow | org | 9 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 6 |
+| kristinezheng | user | 3 |
+| M1shaaa | user | 3 |
+| DJedamski | user | 2 |
+| **TOTAL** | | **40** |
 
 ---
 
-## Notable Highlights
+## Schema
+```sql
+world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
+                 source_type, source_name, event_type, repo_name,
+                 actor, snapshot_hash)
 
-- **kubeflow/kubeflow**: 15,535 stars — flagship ML toolkit for Kubernetes
-- **kubeflow/pipelines**: 4,112 stars — ML Pipelines for Kubeflow
+repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
+               full_name, language, stars, forks, open_issues,
+               pushed_at, description)
+```
+
+## GF(3) Assignment Rule
+- `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
+- `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
+- `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
+
+## Notable Highlights
+- **kubeflow/pipelines**: 4,112 stars — most popular ML pipeline for Kubernetes (pushed 2026-03-28)
 - **kubeflow/spark-operator**: 3,110 stars — Kubernetes operator for Apache Spark
-- **bmorphism/ocaml-mcp-sdk**: First OCaml MCP SDK using Jane Street's oxcaml_effect
-- **plurigrid/asi**: Most recently pushed plurigrid repo (2026-03-28T08:01:02Z)
-- **migalkin/NodePiece**: 143 stars — ICLR'22 paper on Knowledge Graph representations
-- **AustinCStone/TextGAN**: 92 stars — TensorFlow GAN for text generation
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **plurigrid/asi**: 13 stars — topological chemputer (pushed 2026-03-28)
+- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
