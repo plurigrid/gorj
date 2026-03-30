@@ -1,125 +1,109 @@
-# World-Increment Sweep — 2026-03-28
+# World-Increment Sweep + Hamming Snapshot
 
-## Sweep Metadata
-- **Date:** 2026-03-28
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
-- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+**Date:** 2026-03-30
+**DB:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## GitHub Social Graph Snapshot
 
-| Metric | Value |
-|--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 40 |
-| Sources Covered | 3 orgs + 5 users |
+| Source | Type | Repo Count |
+|--------|------|------------|
+| plurigrid | org | 100 |
+| kubeflow | org | 46 |
+| TeglonLabs | org | 53 |
+| bmorphism | user | 100 |
+| zubyul | user | 23 |
+| migalkin | user | 30 |
+| DJedamski | user | 11 |
+| wasita | user | 28 |
+| kristinezheng | user | 18 |
+| M1shaaa | user | 16 |
+| AustinCStone | user | 43 |
+| **TOTAL** | | **468** |
 
----
-
-## GF(3) Color Chain — All 12 Increments
-
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | bmorphism | IssuesEvent (gorj) | +1 | `#b8bb26` | **PLUS** |
-| 2  | bmorphism | IssuesEvent (asi) | -1 | `#cc241d` | **MINUS** |
-| 3  | bmorphism | PushEvent (lolita) | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism | PushEvent (asi) | +1 | `#b8bb26` | **PLUS** |
-| 5  | bmorphism | PullRequestEvent (asi) | -1 | `#cc241d` | **MINUS** |
-| 6  | bmorphism | PushEvent (gorj) | 0 | `#d3869b` | **ERGODIC** |
-| 7  | bmorphism | CreateEvent (gorj) | +1 | `#b8bb26` | **PLUS** |
-| 8  | bmorphism | WatchEvent (au-ts/sddf) | -1 | `#cc241d` | **MINUS** |
-| 9  | bmorphism | PushEvent (asi) | 0 | `#d3869b` | **ERGODIC** |
-| 10 | bmorphism | PullRequestEvent (asi) | +1 | `#b8bb26` | **PLUS** |
-| 11 | bmorphism | CreateEvent (gtc2026-floxxy) | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism | PushEvent (zig-syrup) | 0 | `#d3869b` | **ERGODIC** |
-
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+Public events captured: bmorphism (30), zubyul (30)
 
 ---
 
-## Top Repos by Source
+## Aptos Mainnet Wallet Balances
 
-### plurigrid (12 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| asi-skills | Julia | 1 | 2026-03-28 |
-| zig-syrup | Zig | 1 | 2026-03-28 |
-| asi | HTML | 13 | 2026-03-28 |
-| gorj | Clojure | 0 | 2026-03-28 |
-| lolita | Python | 0 | 2026-03-28 |
+| World | Address (first 10 chars) | Balance (APT) |
+|-------|--------------------------|---------------|
+| alice | 0xc793acde | 0.0 |
+| bob | 0x0a3c00c5 | 0.0 |
+| A | 0x8699edc0 | 0.0 |
+| B | 0x3f892ebe | 0.0 |
+| C | 0x38b99e63 | 0.0 |
+| D | 0xf7765624 | 0.0 |
+| E | 0xdc1d9d53 | 0.0 |
+| F | 0x18a14b5b | 0.0 |
+| G | 0x69a394c0 | 0.0 |
+| H | 0xce67c327 | 0.0 |
+| I | 0x070fe5d7 | 0.0 |
+| J | 0x4d964db8 | 0.0 |
+| K | 0xa732040a | 0.0 |
+| L | 0x7c2eaeaf | 0.0 |
+| M | 0x6fed37a7 | 0.0 |
+| N | 0xe7dde6da | 0.0 |
+| O | 0x73252b60 | 0.0 |
+| P | 0x62187920 | 0.0 |
+| Q | 0xac40fa50 | 0.0 |
+| R | 0x7ce605cc | 0.0 |
+| S | 0xb8753014 | 0.0 |
+| T | 0x35781dc0 | 0.0 |
+| U | 0x75860da4 | 0.0 |
+| V | 0xb59dd817 | 0.0 |
+| W | 0x5f32aef7 | 0.0 |
+| X | 0xa95cbbd1 | 0.0 |
+| Y | 0xd8e32848 | 0.0 |
+| Z | 0x7af0ef6e | 0.0 |
 
-### kubeflow (9 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| pipelines | Python | 4112 | 2026-03-28 |
-| mcp-apache-spark-history-server | Python | 144 | 2026-03-28 |
-| spark-operator | Python | 3110 | 2026-03-27 |
-| trainer | Go | 2068 | 2026-03-26 |
-
-### TeglonLabs (5 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| Stahl | Rust | 0 |
-
-### bmorphism (6 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
-| shitcoin | HTML | 5 |
-| flox-mcp-bb | Clojure | 0 |
-
----
-
-## Event Summary (bmorphism — 12 events captured)
-
-| Event Type | Count |
-|------------|-------|
-| PushEvent | 6 |
-| IssuesEvent | 2 |
-| PullRequestEvent | 2 |
-| CreateEvent | 1 |
-| WatchEvent | 1 |
+Note: All wallets returned 0 APT balance (accounts may not hold CoinStore or have zero balance on mainnet).
 
 ---
 
-## Repo Counts by Source
+## Multisig Contract Probes (Aptos Mainnet)
 
-| Source | Type | Repos |
-|--------|------|-------|
-| plurigrid | org | 12 |
-| kubeflow | org | 9 |
-| TeglonLabs | org | 5 |
-| bmorphism | user | 6 |
-| kristinezheng | user | 3 |
-| M1shaaa | user | 3 |
-| DJedamski | user | 2 |
-| **TOTAL** | | **40** |
+| Pair | Address (first 18 chars) | Sigs Required | Healthy |
+|------|--------------------------|---------------|---------|
+| A-B | 0x0da4f428a0c007da | 2 | true |
+| A-G | 0xf56c4a1c0906214f | 2 | true |
+| Y-Z | 0xd3ffe1812b2df406 | 2 | true |
+| S-T | 0x3b1c3ae905d44c3a | 2 | true |
+| V-W | 0x40fad7b423a84365 | 2 | true |
+
+All 5 multisig contracts are healthy with 2-of-N signature requirement.
 
 ---
 
-## Schema
-```sql
-world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
-                 source_type, source_name, event_type, repo_name,
-                 actor, snapshot_hash)
+## MNX Markets Status
 
-repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
-               full_name, language, stars, forks, open_issues,
-               pushed_at, description)
-```
+**Status: UNAVAILABLE**
 
-## GF(3) Assignment Rule
-- `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
-- `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
-- `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
+Both endpoints (`https://testnet.mnx.fi/api/markets` and `https://testnet.mnx.fi/api/v1/markets`) returned HTML (SPA shell), not JSON API data. No market data available.
 
-## Notable Highlights
-- **kubeflow/pipelines**: 4,112 stars — most popular ML pipeline for Kubernetes (pushed 2026-03-28)
-- **kubeflow/spark-operator**: 3,110 stars — Kubernetes operator for Apache Spark
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **plurigrid/asi**: 13 stars — topological chemputer (pushed 2026-03-28)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
+---
+
+## GF(3) Color Chain Stats
+
+The 468 repo snapshots are tagged with GF(3) trits cycling as id%3:
+
+| Trit | GF3 Value | Color | Name | Count |
+|------|-----------|-------|------|-------|
+| 0 | 0 | `#d3869b` (mauve) | ERGODIC | 160 |
+| 1 | 1 | `#b8bb26` (yellow-green) | PLUS | 160 |
+| 2 | -1 (stored as 2) | `#cc241d` (red) | MINUS | 160 |
+
+Total world_increments: **480** (includes 12 additional event entries)
+Total repo_snapshots: **468**
+
+---
+
+## DuckDB Schema Summary
+
+- `world_increments` - 480 rows (GF3-tagged event log)
+- `repo_snapshots` - 468 rows (repo metadata snapshot)
+- `aptos_snapshots` - 28 rows (wallet balances)
+- `multisig_probes` - 5 rows (multisig health check)
+- `mnx_snapshots` - 0 rows (unavailable)
