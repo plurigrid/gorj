@@ -18,10 +18,10 @@
 | 4 | bmorphism | user | 20 | +1 PLUS | #b8bb26 |
 | 5 | zubyul | user | 20 | -1 MINUS | #cc241d |
 | 6 | migalkin | social | 19 | 0 ERGODIC | #d3869b |
-| 7 | DJedamski | social | 2 | +1 PLUS | #b8bb26 |
-| 8 | wasita | social | 1 | -1 MINUS | #cc241d |
-| 9 | kristinezheng | social | 1 | 0 ERGODIC | #d3869b |
-| 10 | M1shaaa | social | 1 | +1 PLUS | #b8bb26 |
+| 7 | DJedamski | social | 6 | +1 PLUS | #b8bb26 |
+| 8 | wasita | social | 9 | -1 MINUS | #cc241d |
+| 9 | kristinezheng | social | 6 | 0 ERGODIC | #d3869b |
+| 10 | M1shaaa | social | 8 | +1 PLUS | #b8bb26 |
 | 11 | AustinCStone | social | 20 | -1 MINUS | #cc241d |
 
 **Total:** 11 sources, 130 repos captured
@@ -117,7 +117,7 @@ All 5 multisig contracts healthy — 2-of-N threshold configured.
 | Table | Rows |
 |-------|------|
 | world_increments | 11 |
-| repo_snapshots | 154 |
+| repo_snapshots | 178 |
 | aptos_snapshots | 28 |
 | multisig_probes | 5 |
 | mnx_snapshots | 0 (SPA, no API) |
