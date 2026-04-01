@@ -12,7 +12,7 @@
 
 | # | Source | Type | Repos | GF3 Trit | Color |
 |---|--------|------|-------|----------|-------|
-| 1 | plurigrid | org | 26 | +1 PLUS | #b8bb26 |
+| 1 | plurigrid | org | 50 | +1 PLUS | #b8bb26 |
 | 2 | kubeflow | org | 17 | -1 MINUS | #cc241d |
 | 3 | TeglonLabs | org | 3 | 0 ERGODIC | #d3869b |
 | 4 | bmorphism | user | 20 | +1 PLUS | #b8bb26 |
@@ -117,7 +117,7 @@ All 5 multisig contracts healthy — 2-of-N threshold configured.
 | Table | Rows |
 |-------|------|
 | world_increments | 11 |
-| repo_snapshots | 130 |
+| repo_snapshots | 154 |
 | aptos_snapshots | 28 |
 | multisig_probes | 5 |
 | mnx_snapshots | 0 (SPA, no API) |
