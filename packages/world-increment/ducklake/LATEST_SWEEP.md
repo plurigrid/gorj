@@ -1,125 +1,140 @@
-# World-Increment Sweep — 2026-03-28
+# World-Increment Sweep + Hamming Swarm Snapshot
 
-## Sweep Metadata
-- **Date:** 2026-03-28
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
-- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+**Date:** 2026-04-08  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`  
+**GF(3) color chain:** id%3==0 → trit=0 ERGODIC #d3869b | id%3==1 → trit=1 PLUS #b8bb26 | id%3==2 → trit=-1 MINUS #cc241d
 
 ---
 
-## Summary Counts
+## JOB 1: GitHub Social Graph Sweep
 
-| Metric | Value |
-|--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 40 |
-| Sources Covered | 3 orgs + 5 users |
-
----
-
-## GF(3) Color Chain — All 12 Increments
-
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | bmorphism | IssuesEvent (gorj) | +1 | `#b8bb26` | **PLUS** |
-| 2  | bmorphism | IssuesEvent (asi) | -1 | `#cc241d` | **MINUS** |
-| 3  | bmorphism | PushEvent (lolita) | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism | PushEvent (asi) | +1 | `#b8bb26` | **PLUS** |
-| 5  | bmorphism | PullRequestEvent (asi) | -1 | `#cc241d` | **MINUS** |
-| 6  | bmorphism | PushEvent (gorj) | 0 | `#d3869b` | **ERGODIC** |
-| 7  | bmorphism | CreateEvent (gorj) | +1 | `#b8bb26` | **PLUS** |
-| 8  | bmorphism | WatchEvent (au-ts/sddf) | -1 | `#cc241d` | **MINUS** |
-| 9  | bmorphism | PushEvent (asi) | 0 | `#d3869b` | **ERGODIC** |
-| 10 | bmorphism | PullRequestEvent (asi) | +1 | `#b8bb26` | **PLUS** |
-| 11 | bmorphism | CreateEvent (gtc2026-floxxy) | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism | PushEvent (zig-syrup) | 0 | `#d3869b` | **ERGODIC** |
-
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
-
----
-
-## Top Repos by Source
-
-### plurigrid (12 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| asi-skills | Julia | 1 | 2026-03-28 |
-| zig-syrup | Zig | 1 | 2026-03-28 |
-| asi | HTML | 13 | 2026-03-28 |
-| gorj | Clojure | 0 | 2026-03-28 |
-| lolita | Python | 0 | 2026-03-28 |
-
-### kubeflow (9 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| pipelines | Python | 4112 | 2026-03-28 |
-| mcp-apache-spark-history-server | Python | 144 | 2026-03-28 |
-| spark-operator | Python | 3110 | 2026-03-27 |
-| trainer | Go | 2068 | 2026-03-26 |
-
-### TeglonLabs (5 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| Stahl | Rust | 0 |
-
-### bmorphism (6 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
-| shitcoin | HTML | 5 |
-| flox-mcp-bb | Clojure | 0 |
-
----
-
-## Event Summary (bmorphism — 12 events captured)
-
-| Event Type | Count |
-|------------|-------|
-| PushEvent | 6 |
-| IssuesEvent | 2 |
-| PullRequestEvent | 2 |
-| CreateEvent | 1 |
-| WatchEvent | 1 |
-
----
-
-## Repo Counts by Source
+### Sources Queried
 
 | Source | Type | Repos |
 |--------|------|-------|
-| plurigrid | org | 12 |
-| kubeflow | org | 9 |
-| TeglonLabs | org | 5 |
-| bmorphism | user | 6 |
-| kristinezheng | user | 3 |
-| M1shaaa | user | 3 |
-| DJedamski | user | 2 |
-| **TOTAL** | | **40** |
+| plurigrid | org | 100 |
+| bmorphism | user | 100 |
+| TeglonLabs | org | 53 |
+| AustinCStone | user (zubyul social) | 43 |
+| wasita | user (zubyul social) | 29 |
+| migalkin | user (zubyul social) | 30 |
+| zubyul | user | 23 |
+| kristinezheng | user (zubyul social) | 18 |
+| M1shaaa | user (zubyul social) | 16 |
+| DJedamski | user (zubyul social) | 11 |
+| kubeflow | org | 46 |
+
+> **Note:** kubeflow, TeglonLabs, wasita, AustinCStone were rate-limited on first pass; recovered on retry.  
+> **Unique repos:** 469 across all sources.
+
+### Top Repos by Stars
+
+| Org/User | Repo | Stars |
+|----------|------|-------|
+| kubeflow | kubeflow | 15,557 |
+| kubeflow | pipelines | 4,118 |
+| kubeflow | spark-operator | 3,111 |
+| kubeflow | trainer | 2,075 |
+| kubeflow | katib | 1,674 |
+
+### Language Distribution (unique repos)
+
+| Language | Repos |
+|----------|-------|
+| Python | 76 |
+| HTML | 19 |
+| Go | 16 |
+| JavaScript | 15 |
+| TypeScript | 14 |
+| Rust | 13 |
+| Jupyter Notebook | 13 |
+| Clojure | 7 |
+
+### Public Events (bmorphism, zubyul)
+No recent public events returned by GitHub API at time of sweep.
 
 ---
 
-## Schema
-```sql
-world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
-                 source_type, source_name, event_type, repo_name,
-                 actor, snapshot_hash)
+## JOB 2: Hamming Swarm Snapshot
 
-repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
-               full_name, language, stars, forks, open_issues,
-               pushed_at, description)
+### Aptos Wallet Balances (mainnet)
+
+Queried via `0x1::coin::balance` view function. All 28 addresses resolved.
+
+| World | APT Balance |
+|-------|-------------|
+| bob | 12.657007 |
+| F | 1.960516 |
+| L | 1.927269 |
+| J | 1.895093 |
+| alice | 0.436434 |
+| O | 0.210136 |
+| K | 0.161961 |
+| P | 0.140136 |
+| M | 0.112285 |
+| N | 0.106121 |
+| Q | 0.103240 |
+| S | 0.091788 |
+| R | 0.090217 |
+| T | 0.073713 |
+| U | 0.055773 |
+| A | 0.051767 |
+| V | 0.047833 |
+| Y | 0.044449 |
+| X | 0.042577 |
+| W | 0.040705 |
+| B | 0.036256 |
+| Z | 0.023268 |
+| E | 0.012561 |
+| D | 0.011629 |
+| C | 0.010185 |
+| G | 0.000681 |
+| H | 0.000681 |
+| I | 0.000681 |
+
+**Total APT across swarm:** ~20.60 APT  
+> Note: Legacy `0x1::coin::CoinStore` resource not present; balance retrieved via `0x1::coin::balance` view function.
+
+### Multisig Contract Probes
+
+All 5 multisig contracts healthy — **2 signatures required** each.
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|--------------|---------|
+| A-B | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 | 2 | true |
+| A-G | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 | 2 | true |
+| Y-Z | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 | 2 | true |
+| S-T | 0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883 | 2 | true |
+| V-W | 0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d | 2 | true |
+
+### MNX Markets (testnet.mnx.fi)
+
+API path `/api/markets` → 404; market data extracted from rendered SPA.
+
+| Ticker | Name | Category | Price | 24h Change |
+|--------|------|----------|-------|-----------|
+| NVDA | NVIDIA | equity | $183.49 | +3.74% |
+| MSFT | Microsoft | equity | $381.68 | +2.73% |
+| AAPL | Apple | equity | $258.69 | +0.31% |
+| TSM | Taiwan Semiconductor | equity | $360.26 | +5.36% |
+| GOLD | Gold Spot | commodity | $4,803.87 | +3.33% |
+| OAI26 | OpenAI 2026 Valuation | valuation | $530B | +0.57% |
+| ANT26 | Anthropic 2026 Valuation | valuation | $418B | -0.71% |
+
+Volume ~$290-296M across all markets.
+
+---
+
+## DuckDB Schema Summary
+
+```
+world_increments  298 rows  — GF(3) colored sweep events
+repo_snapshots    877 rows  — GitHub repo metadata (469 unique repos)
+aptos_snapshots    28 rows  — Hamming swarm APT balances
+multisig_probes     5 rows  — Multisig contract health
+mnx_snapshots       7 rows  — MNX market prices
 ```
 
-## GF(3) Assignment Rule
-- `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
-- `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
-- `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
+---
 
-## Notable Highlights
-- **kubeflow/pipelines**: 4,112 stars — most popular ML pipeline for Kubernetes (pushed 2026-03-28)
-- **kubeflow/spark-operator**: 3,110 stars — Kubernetes operator for Apache Spark
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **plurigrid/asi**: 13 stars — topological chemputer (pushed 2026-03-28)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
+*Generated by world-increment-sweep + hamming-swarm-snapshot agent · 2026-04-08*
