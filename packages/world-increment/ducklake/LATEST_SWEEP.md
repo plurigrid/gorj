@@ -1,125 +1,133 @@
-# World-Increment Sweep — 2026-03-28
+# World Increment Sweep + Hamming Swarm Snapshot
 
-## Sweep Metadata
-- **Date:** 2026-03-28
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
-- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+**Timestamp:** 2026-04-09  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## JOB 1: GitHub Social Graph Sweep
 
-| Metric | Value |
-|--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 40 |
-| Sources Covered | 3 orgs + 5 users |
+### Sources Queried
 
----
+| Source | Type | Status |
+|--------|------|--------|
+| plurigrid | org | ✓ 50+ repos |
+| TeglonLabs | org | ✓ 50+ repos |
+| kubeflow | org | ✗ rate-limited (unauthenticated) |
+| bmorphism | user | ✓ 50+ repos |
+| zubyul | user | ✓ 23 repos |
+| migalkin | social graph | ✗ rate-limited |
+| DJedamski | social graph | ✓ 10 repos |
+| wasita | social graph | ✗ rate-limited |
+| kristinezheng | social graph | ✓ 10 repos |
+| M1shaaa | social graph | ✗ rate-limited |
+| AustinCStone | social graph | ✓ 10 repos |
 
-## GF(3) Color Chain — All 12 Increments
+### This-Run Snapshot (44 repos, GF(3) colored)
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | bmorphism | IssuesEvent (gorj) | +1 | `#b8bb26` | **PLUS** |
-| 2  | bmorphism | IssuesEvent (asi) | -1 | `#cc241d` | **MINUS** |
-| 3  | bmorphism | PushEvent (lolita) | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism | PushEvent (asi) | +1 | `#b8bb26` | **PLUS** |
-| 5  | bmorphism | PullRequestEvent (asi) | -1 | `#cc241d` | **MINUS** |
-| 6  | bmorphism | PushEvent (gorj) | 0 | `#d3869b` | **ERGODIC** |
-| 7  | bmorphism | CreateEvent (gorj) | +1 | `#b8bb26` | **PLUS** |
-| 8  | bmorphism | WatchEvent (au-ts/sddf) | -1 | `#cc241d` | **MINUS** |
-| 9  | bmorphism | PushEvent (asi) | 0 | `#d3869b` | **ERGODIC** |
-| 10 | bmorphism | PullRequestEvent (asi) | +1 | `#b8bb26` | **PLUS** |
-| 11 | bmorphism | CreateEvent (gtc2026-floxxy) | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism | PushEvent (zig-syrup) | 0 | `#d3869b` | **ERGODIC** |
+| GF(3) Trit | Color | Name | Count |
+|-----------|-------|------|-------|
+| trit=1 | `#b8bb26` | PLUS | 15 |
+| trit=-1 | `#cc241d` | MINUS | 15 |
+| trit=0 | `#d3869b` | ERGODIC | 14 |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+### Notable Repos (by push recency)
 
----
-
-## Top Repos by Source
-
-### plurigrid (12 repos)
-| Repo | Language | Stars | Pushed At |
+| Repo | Language | Stars | Last Push |
 |------|----------|-------|-----------|
-| asi-skills | Julia | 1 | 2026-03-28 |
-| zig-syrup | Zig | 1 | 2026-03-28 |
-| asi | HTML | 13 | 2026-03-28 |
-| gorj | Clojure | 0 | 2026-03-28 |
-| lolita | Python | 0 | 2026-03-28 |
+| plurigrid/gorj | Clojure | 0★ | 2026-04-09 |
+| plurigrid/asi | HTML | 16★ | 2026-04-08 |
+| bmorphism/shitcoin | Python | 5★ | 2026-04-08 |
+| bmorphism/boxxy | Move | 0★ | 2026-04-07 |
+| bmorphism/ocaml-mcp-sdk | OCaml | 60★ | 2026-03-16 |
+| zubyul/GeoACSets.jl | Emacs Lisp | 0★ | 2026-03-28 |
+| TeglonLabs/Stahl | Rust | 0★ | 2026-01-16 |
+| plurigrid/nanoclj-zig | Zig | 0★ | 2026-04-08 |
+| bmorphism/anti-bullshit-mcp-server | JavaScript | 23★ | 2026-01-16 |
 
-### kubeflow (9 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| pipelines | Python | 4112 | 2026-03-28 |
-| mcp-apache-spark-history-server | Python | 144 | 2026-03-28 |
-| spark-operator | Python | 3110 | 2026-03-27 |
-| trainer | Go | 2068 | 2026-03-26 |
-
-### TeglonLabs (5 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| Stahl | Rust | 0 |
-
-### bmorphism (6 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
-| shitcoin | HTML | 5 |
-| flox-mcp-bb | Clojure | 0 |
+### Cumulative DB State
+- `world_increments`: 547+ rows (all sweeps)
+- `repo_snapshots`: 653+ rows (all sweeps)
 
 ---
 
-## Event Summary (bmorphism — 12 events captured)
+## JOB 2: Hamming Swarm Snapshot
 
-| Event Type | Count |
-|------------|-------|
-| PushEvent | 6 |
-| IssuesEvent | 2 |
-| PullRequestEvent | 2 |
-| CreateEvent | 1 |
-| WatchEvent | 1 |
+### Aptos Wallet Balances (via `0x1::coin::balance` view)
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| bob | 0x0a3c…12d5d | **12.65700700** |
+| F | 0x18a1…cf71 | 1.96051600 |
+| L | 0x7c2e…eba9 | 1.92726900 |
+| J | 0x4d96…f54 | 1.89509300 |
+| alice | 0xc793…cc7b | 0.43643352 |
+| O | 0x7325…89d | 0.21013600 |
+| K | 0xa732…dc4 | 0.16196100 |
+| P | 0x6218…948 | 0.14013600 |
+| M | 0x6fed…f2e9 | 0.11228500 |
+| N | 0xe7dd…b2c | 0.10612100 |
+| Q | 0xac40…89a9 | 0.10324000 |
+| S | 0xb875…386 | 0.09178800 |
+| R | 0x7ce6…6e10 | 0.09021700 |
+| T | 0x3578…588 | 0.07371300 |
+| U | 0x7586…956 | 0.05577300 |
+| A | 0x8699…9d7a | 0.05176700 |
+| V | 0xb59d…f2c3 | 0.04783299 |
+| Y | 0xd8e3…44c4 | 0.04444900 |
+| X | 0xa95c…047d | 0.04257700 |
+| W | 0x5f32…7b0 | 0.04070500 |
+| B | 0x3f89…cb13 | 0.03625600 |
+| Z | 0x7af0…97c | 0.02326800 |
+| E | 0xdc1d…d36 | 0.01256100 |
+| D | 0xf776…dd1 | 0.01162900 |
+| C | 0x38b9…35e | 0.01018500 |
+| G | 0x69a3…f32 | 0.00068100 |
+| H | 0xce67…00f | 0.00068100 |
+| I | 0x070f…fc9 | 0.00068100 |
+
+**Total swarm APT: 20.34496151 APT**  
+**Method:** `POST /v1/view` → `0x1::coin::balance<0x1::aptos_coin::AptosCoin>`  
+(legacy `CoinStore` resource not used; accounts active via fungible asset model)
+
+### Multisig Contract Probes (5/5 healthy)
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4…003 | 2-of-N | ✓ |
+| A-G | 0xf56c…096 | 2-of-N | ✓ |
+| Y-Z | 0xd3ff…883 | 2-of-N | ✓ |
+| S-T | 0x3b1c…883 | 2-of-N | ✓ |
+| V-W | 0x40fa…b6d | 2-of-N | ✓ |
+
+All 5 multisig accounts require 2 signatures. All healthy.
+
+### MNX Markets (testnet.mnx.fi — "The AI Exchange")
+
+| Ticker | Name | Category | Price | 24h Change |
+|--------|------|----------|-------|------------|
+| AAPL | Apple | Stocks | $258.35 | -0.14% |
+| NVDA | NVIDIA | Stocks | $181.19 | -1.19% |
+| MSFT | Microsoft | Stocks | $374.24 | -1.96% |
+| SPX | S&P 500 Index | Financial | $6,775 | +2.45% |
+| OAI26 | OpenAI 2026 Valuation | Valuations | $527B | +0.19% |
+| ANT26 | Anthropic 2026 Valuation | Valuations | $420B | +0.48% |
+| GOLD | Gold Spot | Commodities | $4,700 | -2.17% |
+| CPI26 | U.S. CPI Dec 2026 | Financial | 3% | — |
 
 ---
 
-## Repo Counts by Source
+## DuckDB Tables Updated
 
-| Source | Type | Repos |
-|--------|------|-------|
-| plurigrid | org | 12 |
-| kubeflow | org | 9 |
-| TeglonLabs | org | 5 |
-| bmorphism | user | 6 |
-| kristinezheng | user | 3 |
-| M1shaaa | user | 3 |
-| DJedamski | user | 2 |
-| **TOTAL** | | **40** |
+| Table | New Rows This Run |
+|-------|-------------------|
+| world_increments | 44 |
+| repo_snapshots | 44 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 8 |
 
 ---
 
-## Schema
-```sql
-world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
-                 source_type, source_name, event_type, repo_name,
-                 actor, snapshot_hash)
-
-repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
-               full_name, language, stars, forks, open_issues,
-               pushed_at, description)
-```
-
-## GF(3) Assignment Rule
-- `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
-- `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
-- `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
-
-## Notable Highlights
-- **kubeflow/pipelines**: 4,112 stars — most popular ML pipeline for Kubernetes (pushed 2026-03-28)
-- **kubeflow/spark-operator**: 3,110 stars — Kubernetes operator for Apache Spark
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **plurigrid/asi**: 13 stars — topological chemputer (pushed 2026-03-28)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
+*Generated by world-increment-sweep + hamming-swarm-snapshot agent*  
+*GF(3) color chain: ERGODIC=#d3869b (trit=0) · PLUS=#b8bb26 (trit=1) · MINUS=#cc241d (trit=-1)*
