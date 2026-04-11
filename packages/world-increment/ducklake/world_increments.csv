@@ -1,0 +1,23 @@
+id,timestamp,gf3_trit,gf3_color,gf3_name,source_type,source_name,event_type,repo_name,actor,snapshot_hash
+1,2026-04-10 23:10:18.80467,1,"#b8bb26",PLUS,org,plurigrid,repo_snapshot,"","",""
+2,2026-04-10 23:10:18.806254,-1,"#cc241d",MINUS,org,kubeflow,repo_snapshot,"","",""
+3,2026-04-10 23:10:18.807931,0,"#d3869b",ERGODIC,org,TeglonLabs,repo_snapshot,"","",""
+4,2026-04-10 23:10:18.809406,1,"#b8bb26",PLUS,user,bmorphism,repo_snapshot,"","",""
+5,2026-04-10 23:10:18.810915,-1,"#cc241d",MINUS,user,zubyul,repo_snapshot,"","",""
+6,2026-04-10 23:10:18.812214,0,"#d3869b",ERGODIC,user,migalkin,repo_snapshot,"","",""
+7,2026-04-10 23:10:18.813512,1,"#b8bb26",PLUS,user,DJedamski,repo_snapshot,"","",""
+8,2026-04-10 23:10:18.814676,-1,"#cc241d",MINUS,user,wasita,repo_snapshot,"","",""
+9,2026-04-10 23:10:18.815885,0,"#d3869b",ERGODIC,user,kristinezheng,repo_snapshot,"","",""
+10,2026-04-10 23:10:18.817255,1,"#b8bb26",PLUS,user,M1shaaa,repo_snapshot,"","",""
+11,2026-04-10 23:10:18.818657,-1,"#cc241d",MINUS,user,AustinCStone,repo_snapshot,"","",""
+1,2026-04-11 21:34:04.15689,1,PLUS,"#b8bb26",github_org_user,plurigrid,repo_snapshot,ALL,system,9341fa37e9ddeb7cbf679b848f6e770c
+2,2026-04-11 21:34:04.170399,2,MINUS,"#cc241d",github_org_user,kubeflow,repo_snapshot,ALL,system,c75a351cbd2a8744594e23e3fa5a7508
+3,2026-04-11 21:34:04.17354,0,ERGODIC,"#d3869b",github_org_user,TeglonLabs,repo_snapshot,ALL,system,a56223944b30bbf6107d6b48e696af54
+4,2026-04-11 21:34:04.176996,1,PLUS,"#b8bb26",github_org_user,bmorphism,repo_snapshot,ALL,system,6e8cf2dffe0da8669247dd657451319f
+5,2026-04-11 21:34:04.178653,2,MINUS,"#cc241d",github_org_user,zubyul,repo_snapshot,ALL,system,6373ad36f2495966a753219f32073e3b
+6,2026-04-11 21:34:04.182603,0,ERGODIC,"#d3869b",github_org_user,migalkin,repo_snapshot,ALL,system,7e7bc4f73e237de0917a7f1d5726bd57
+7,2026-04-11 21:34:04.186181,1,PLUS,"#b8bb26",github_org_user,wasita,repo_snapshot,ALL,system,69120badb07e8f6ffd57b02ccd73f792
+8,2026-04-11 21:34:04.188684,2,MINUS,"#cc241d",github_org_user,kristinezheng,repo_snapshot,ALL,system,81299fa0b63ea0778084e62666bcc330
+9,2026-04-11 21:34:04.191116,0,ERGODIC,"#d3869b",github_org_user,M1shaaa,repo_snapshot,ALL,system,8a8caf2f1b9cdcbe7125285b38c0be44
+10,2026-04-11 21:34:04.193446,1,PLUS,"#b8bb26",github_org_user,DJedamski,repo_snapshot,ALL,system,ae59c5927dabe02b328680dfff67c8c6
+11,2026-04-11 21:34:04.196114,2,MINUS,"#cc241d",github_org_user,AustinCStone,repo_snapshot,ALL,system,32390d47ce8f89ca6bd14baa3ec96197

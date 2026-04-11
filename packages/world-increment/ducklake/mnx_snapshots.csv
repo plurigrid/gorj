@@ -1,0 +1,6 @@
+timestamp,ticker,name,category,price,change_pct
+2026-04-11 21:34:05.089774,OAI26,OpenAI 2026 Valuation,Valuations,527000000000.0,0.19
+2026-04-11 21:34:05.091642,ANT26,Anthropic 2026 Valuation,Valuations,421000000000.0,-0.47
+2026-04-11 21:34:05.093335,USO,Oil Fund,Commodities,124.91,0.43
+2026-04-11 21:34:05.094692,GOLD,Gold Spot,Commodities,4700.0,0.01
+2026-04-11 21:34:05.096003,TSLA,Tesla,Stocks,351.74,0.98

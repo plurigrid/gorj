@@ -1,0 +1,828 @@
+id,timestamp,increment_id,org_or_user,repo_name,full_name,language,stars,forks,open_issues,pushed_at,description
+1,2026-04-10 23:10:18.819903,1,plurigrid,gorj,plurigrid/gorj,Clojure,0,0,133,2026-04-10T22:30:32Z,forj + Rama topology nREPL routing + GF(3) gay trit coloring for compositional open game REPL orchestration
+2,2026-04-10 23:10:18.821041,1,plurigrid,horse,plurigrid/horse,TeX,1,1,7,2026-04-10T21:52:15Z,""
+3,2026-04-10 23:10:18.822595,1,plurigrid,web-browser,plurigrid/web-browser,Rust,0,0,0,2026-04-10T02:54:47Z,web-browser — from prepostweb lineage (monaduck1069)
+4,2026-04-10 23:10:18.82405,1,plurigrid,asi,plurigrid/asi,HTML,16,5,3,2026-04-10T02:37:44Z,everything is topological chemputer!
+5,2026-04-10 23:10:18.825462,1,plurigrid,graywall,plurigrid/graywall,Go,0,0,0,2026-04-10T02:34:41Z,"Container-free, deny-by-default sandbox for AI coding agents. Kernel-enforced filesystem, network, and syscall isolation for Linux and macOS"
+6,2026-04-10 23:10:18.827225,1,plurigrid,asi-skills,plurigrid/asi-skills,Julia,3,0,1,2026-04-09T19:53:56Z,69 skills with Galois Hole Type accessibility (Seven Sketches §1.4.1)
+7,2026-04-10 23:10:18.828993,1,plurigrid,nanoclj-zig,plurigrid/nanoclj-zig,Zig,0,0,20,2026-04-09T19:53:30Z,"NaN-boxed Clojure interpreter in Zig 0.15 — interaction nets, fuel-bounded eval, GF(3) trit conservation"
+8,2026-04-10 23:10:18.83063,1,plurigrid,zig-syrup,plurigrid/zig-syrup,Zig,2,2,2,2026-04-09T11:21:29Z,High-performance Zig implementation of OCapN Syrup with CapTP optimizations
+9,2026-04-10 23:10:18.832441,1,plurigrid,vivarium,plurigrid/vivarium,Clojure,1,0,0,2026-04-08T08:38:37Z,""
+10,2026-04-10 23:10:18.83427,1,plurigrid,flowglad-rs,plurigrid/flowglad-rs,Rust,0,0,0,2026-04-08T07:56:15Z,""
+11,2026-04-10 23:10:18.836212,1,plurigrid,tree-sitter-nanoclj-zig,plurigrid/tree-sitter-nanoclj-zig,C,0,0,0,2026-04-04T07:48:21Z,Tree-sitter grammar for nanoclj-zig
+12,2026-04-10 23:10:18.838471,1,plurigrid,bci-blue-share,plurigrid/bci-blue-share,HTML,0,0,0,2026-03-30T00:58:52Z,BCI signal infrastructure — bci.blue / bci.red / bci.horse
+13,2026-04-10 23:10:18.840701,1,plurigrid,gatomic,plurigrid/gatomic,Clojure,0,0,0,2026-03-30T00:54:48Z,Deterministic color identity store with sonification — Gay + Datomic + Atomic
+14,2026-04-10 23:10:18.84249,1,plurigrid,causal,plurigrid/causal,Emacs Lisp,0,0,1,2026-03-28T11:30:03Z,Causal: keyboard-driven Transient menus for Emacs with causal interaction tracking. Fork of kickingvegas/casual.
+15,2026-04-10 23:10:18.844116,1,plurigrid,lolita,plurigrid/lolita,Python,0,0,0,2026-03-28T04:18:30Z,"Official implementation of ""Lost in Latent Space: An Empirical Study of Latent Diffusion Models for Physics Emulation"""
+16,2026-04-10 23:10:18.845798,1,plurigrid,nblm-flashcards,plurigrid/nblm-flashcards,Hy,0,0,0,2026-03-26T08:23:01Z,NotebookLM Enterprise flashcard pipeline — Hy + Babashka + Emacs drill
+17,2026-04-10 23:10:18.847624,1,plurigrid,spi-race,plurigrid/spi-race,Swift,0,0,0,2026-03-19T13:49:45Z,"Splitmix Parallel Integrity — deterministic color generation at hardware bandwidth across CPU, GPU, and every language"
+18,2026-04-10 23:10:18.849678,1,plurigrid,birb,plurigrid/birb,"",0,0,0,2026-03-19T11:32:49Z,:bird: cheep cheep shriek caw!
+19,2026-04-10 23:10:18.851293,1,plurigrid,topos,plurigrid/topos,Python,0,0,0,2026-03-16T00:41:33Z,integration of plurigrid/wolframite data into local-to-global multiscale dihypergraph worlding kit
+20,2026-04-10 23:10:18.853101,1,plurigrid,awesome-neural-geometry,plurigrid/awesome-neural-geometry,"",0,0,0,2026-03-11T01:01:59Z,"A curated collection of resources and research related to the geometry of representations in the brain, deep networks, and beyond"
+21,2026-04-10 23:10:18.854849,1,plurigrid,CatColab,plurigrid/CatColab,"",0,0,0,2026-02-25T18:13:34Z,"A collaborative environment for formal, interoperable, conceptual modeling"
+22,2026-04-10 23:10:18.856604,1,plurigrid,lmao,plurigrid/lmao,Rust,0,0,0,2026-02-20T00:00:05Z,""
+23,2026-04-10 23:10:18.858263,1,plurigrid,gemini-agent,plurigrid/gemini-agent,Python,0,0,0,2026-02-19T06:39:16Z,""
+24,2026-04-10 23:10:18.859932,1,plurigrid,graded-optic,plurigrid/graded-optic,Haskell,0,0,0,2026-02-08T16:10:16Z,Semiring-graded bidirectional processes — optics where each channel carries an independent semiring grade
+25,2026-04-10 23:10:18.861481,1,plurigrid,json-canvas,plurigrid/json-canvas,"",0,0,0,2026-02-06T06:50:57Z,JSON Canvas: Real-time interaction data capture via W3C JSON-LD 1.1
+26,2026-04-10 23:10:18.862873,1,plurigrid,u-crane,plurigrid/u-crane,"",0,0,0,2026-02-04T16:36:16Z,"A new extraction system from Rocq to functional-style, memory-safe, thread-safe, readable, valid, performant, and modern C++."
+27,2026-04-10 23:10:18.864442,1,plurigrid,shepherd,plurigrid/shepherd,Scheme,0,0,0,2026-01-23T07:47:28Z,Spritely Shepherd - Service manager (mirror from Codeberg)
+28,2026-04-10 23:10:18.865887,1,plurigrid,goblinshare,plurigrid/goblinshare,Scheme,0,0,0,2026-01-23T07:47:12Z,P2P filesharing demo for Goblins (mirror from Codeberg)
+29,2026-04-10 23:10:18.867643,1,plurigrid,magenc,plurigrid/magenc,Scheme,0,0,0,2026-01-23T07:47:11Z,Magenc Magnet URIs - Secure Object Permanence for the Web (mirror from Codeberg)
+30,2026-04-10 23:10:18.8705,1,plurigrid,hoot,plurigrid/hoot,Scheme,0,0,0,2026-01-23T07:47:10Z,Spritely Hoot - Scheme to WebAssembly compiler (mirror from Codeberg)
+31,2026-04-10 23:10:18.872995,1,plurigrid,leprechauns,plurigrid/leprechauns,Racket,0,0,0,2026-01-23T07:46:46Z,Spritely Goblins + Gay.jl semantic colors (green-rooted) - Distributed object capability programming
+32,2026-04-10 23:10:18.874987,1,plurigrid,spritely-semantic-colors,plurigrid/spritely-semantic-colors,"",0,0,0,2026-01-23T07:38:32Z,Deterministic color mappings for Spritely/Goblins objects using Gay.jl GF(3) semantics
+33,2026-04-10 23:10:18.876594,1,plurigrid,clopen-hypergraphs,plurigrid/clopen-hypergraphs,"",0,0,0,2026-01-19T14:37:00Z, a datastructure for scalable combinatorial syntax 
+34,2026-04-10 23:10:18.878254,1,plurigrid,aaif-landscape,plurigrid/aaif-landscape,"",0,0,0,2026-01-15T19:22:45Z,AAIF landscape
+35,2026-04-10 23:10:18.880111,1,plurigrid,ladyworm,plurigrid/ladyworm,C++,1,0,0,2026-01-14T07:49:58Z,proof-of-neural-operator
+36,2026-04-10 23:10:18.881883,1,plurigrid,ArkhaiPufferEnv,plurigrid/ArkhaiPufferEnv,"",0,0,0,2026-01-12T22:27:05Z,""
+37,2026-04-10 23:10:18.883608,1,plurigrid,gay-tofu,plurigrid/gay-tofu,HTML,0,0,0,2026-01-08T15:14:34Z,Low-discrepancy color sequences for visual TOFU authentication
+38,2026-04-10 23:10:18.885345,1,plurigrid,lazygay,plurigrid/lazygay,Go,0,0,0,2026-01-08T14:19:25Z,lazygit fork with Gay.jl deterministic commit coloring
+39,2026-04-10 23:10:18.887224,1,plurigrid,gay-terminal,plurigrid/gay-terminal,Rust,0,0,0,2026-01-08T14:19:24Z,Terminal ANSI coloring with Gay.jl low-discrepancy sequences
+40,2026-04-10 23:10:18.889398,1,plurigrid,gay-go,plurigrid/gay-go,Go,0,0,0,2026-01-08T14:19:23Z,Go implementation of Gay.jl deterministic coloring
+41,2026-04-10 23:10:18.891079,1,plurigrid,gay-rs,plurigrid/gay-rs,Rust,0,0,0,2026-01-08T14:19:22Z,Rust crate for Gay.jl deterministic coloring with GF(3) trits
+42,2026-04-10 23:10:18.892663,1,plurigrid,lazybjj,plurigrid/lazybjj,Rust,0,0,0,2026-01-08T14:19:19Z,TUI for jj with Gay.jl GF(3) coloring - Brazilian Jiu-jitsu for version control
+43,2026-04-10 23:10:18.894523,1,plurigrid,notsoswift-evolution,plurigrid/notsoswift-evolution,"",0,0,0,2026-01-07T17:03:53Z,"derrrrr readar,"
+44,2026-04-10 23:10:18.896096,1,plurigrid,agent-o-rama,plurigrid/agent-o-rama,Clojure,0,0,0,2026-01-02T01:09:22Z,""
+45,2026-04-10 23:10:18.89763,1,plurigrid,properon,plurigrid/properon,"",0,0,0,2025-12-27T00:00:06Z,Biologically Inspired Architectures for EpiAgentic Control and PROPs [ see ncatlab ]
+46,2026-04-10 23:10:18.899267,1,plurigrid,froggo,plurigrid/froggo,Python,1,0,0,2025-12-24T00:02:52Z,a toad is a toad is a toad 🐸
+47,2026-04-10 23:10:18.900843,1,plurigrid,windIO,plurigrid/windIO,"",0,0,0,2025-12-16T03:35:49Z,windIO is a data format for inputs and outputs to wind energy system computational models.
+48,2026-04-10 23:10:18.902455,1,plurigrid,digital_wra_data_standard,plurigrid/digital_wra_data_standard,"",0,0,0,2025-12-04T21:51:41Z,IEA Task 43: pre-construction energy estimate data standard repository
+49,2026-04-10 23:10:18.90404,1,plurigrid,Reference-FMUs,plurigrid/Reference-FMUs,"",0,0,0,2025-12-04T14:04:51Z,"Functional Mock-up Units for development, testing and debugging"
+50,2026-04-10 23:10:18.905569,1,plurigrid,catwalk,plurigrid/catwalk,"",1,0,0,2025-12-02T08:26:46Z,🐈 A collection of LLM inference providers and models 
+51,2026-04-10 23:10:18.907336,1,plurigrid,U-Void-Synthesizer,plurigrid/U-Void-Synthesizer,"",0,0,0,2025-11-28T15:53:43Z,Machine Girl
+52,2026-04-10 23:10:18.909024,1,plurigrid,acp.el,plurigrid/acp.el,"",0,0,0,2025-11-27T16:49:58Z,An ACP (Agent Client Protocol) implementation in Emacs lisp as per https://agentclientprotocol.com
+53,2026-04-10 23:10:18.910914,1,plurigrid,UnwiringDiagrams.jl,plurigrid/UnwiringDiagrams.jl,"",1,0,1,2025-11-01T07:21:37Z,Wiring diagrams for Worlding and Unworlding Uexkuell Umweltung
+54,2026-04-10 23:10:18.912754,1,plurigrid,skillz,plurigrid/skillz,"",0,0,0,2025-10-18T16:39:46Z,Public repository for Skills
+55,2026-04-10 23:10:18.914466,1,plurigrid,MolotovRibbentropKrylovKit.jl,plurigrid/MolotovRibbentropKrylovKit.jl,"",0,0,0,2025-10-10T22:51:38Z,the pre-post-quantum realm
+56,2026-04-10 23:10:18.916172,1,plurigrid,sprintathon,plurigrid/sprintathon,"",1,0,0,2025-10-10T12:43:49Z,"A Xenomodern Universal multi-language runner and a _ REPL written in Rust. Now, with aspirations of formal verification and SF schizo-autist max maxxing flare."
+57,2026-04-10 23:10:18.917895,1,plurigrid,quizx,plurigrid/quizx,"",1,0,0,2025-10-01T14:16:29Z,A quick ZX calculus library written in Rust
+58,2026-04-10 23:10:18.919636,1,plurigrid,aptos-wallet-ruby,plurigrid/aptos-wallet-ruby,Ruby,1,0,0,2025-09-30T22:47:22Z,""
+59,2026-04-10 23:10:18.921197,1,plurigrid,saopaulo,plurigrid/saopaulo,Rust,1,0,0,2025-09-29T09:34:36Z,Quacktastic GPU terminal emulator for the feathered developer flock
+60,2026-04-10 23:10:18.9232,1,plurigrid,duck-kanban,plurigrid/duck-kanban,Rust,1,0,0,2025-09-26T20:18:38Z,Duck intelligence kanban system with kundalini computational pattern recognition
+61,2026-04-10 23:10:18.925224,1,plurigrid,wasi-testsuite,plurigrid/wasi-testsuite,"",1,0,0,2025-09-26T06:51:52Z,WASI / STASI Confidential Testsuite
+62,2026-04-10 23:10:18.926878,1,plurigrid,ifl2025-liquidhaskell,plurigrid/ifl2025-liquidhaskell,TeX,0,0,0,2025-09-24T02:32:57Z,Refinement-Types Driven Development: A study @ IFL 2025
+63,2026-04-10 23:10:18.928799,1,plurigrid,duckCloud,plurigrid/duckCloud,"",0,0,0,2025-09-24T00:13:43Z,"duckCloud is an open source Plurigrid project that enables teams to build, manage, and scale polyglot apps across any cloud, K8s, or edge."
+64,2026-04-10 23:10:18.93033,1,plurigrid,srfi-69,plurigrid/srfi-69,"",0,0,0,2025-09-19T09:02:48Z,*Based* hash tables
+65,2026-04-10 23:10:18.932063,1,plurigrid,llms-txt-hub,plurigrid/llms-txt-hub,"",0,0,0,2025-09-18T17:16:40Z,🤖 The largest directory for AI-ready documentation and tools implementing the proposed llms.txt standard
+66,2026-04-10 23:10:18.933727,1,plurigrid,madonna,plurigrid/madonna,Clojure,0,0,0,2025-09-12T03:03:57Z,"A Clojure library for building real-time voice-enabled AI pipelines. voice-fn handles the orchestration of speech recognition, audio processing, and AI service integration with the elegance of functio"
+67,2026-04-10 23:10:18.935171,1,plurigrid,agi-tools,plurigrid/agi-tools,"",0,0,0,2025-08-20T10:17:03Z,tools that help AI development assistants do Clojure
+68,2026-04-10 23:10:18.936611,1,plurigrid,CGT4NN,plurigrid/CGT4NN,"",0,0,0,2025-08-17T13:51:31Z,Compositional Game Theory for Neural Networks
+69,2026-04-10 23:10:18.938321,1,plurigrid,inverso,plurigrid/inverso,"",0,0,0,2025-08-15T09:20:58Z,Lean documentation authoring tool
+70,2026-04-10 23:10:18.940226,1,plurigrid,tree-sitter-wit,plurigrid/tree-sitter-wit,"",0,0,0,2025-08-13T15:55:34Z,Tree Sitter grammar for Web Assembly Interface Types
+71,2026-04-10 23:10:18.941884,1,plurigrid,UncutGem,plurigrid/UncutGem,"",0,0,0,2025-08-09T21:39:02Z,A prototype Full Stack fully Open Source NV Center Diamond Magnetometer
+72,2026-04-10 23:10:18.943496,1,plurigrid,gay,plurigrid/gay,C++,0,0,0,2025-07-30T10:39:57Z,jank with colored operads as parentheses!
+73,2026-04-10 23:10:18.944852,1,plurigrid,Goedel-Prover-V2,plurigrid/Goedel-Prover-V2,"",0,0,0,2025-07-15T17:38:51Z,""
+74,2026-04-10 23:10:18.946347,1,plurigrid,tree-sitter-julia,plurigrid/tree-sitter-julia,"",0,0,0,2025-06-29T18:29:56Z,Julia grammar for tree-sitter
+75,2026-04-10 23:10:18.947834,1,plurigrid,immobile-mcp,plurigrid/immobile-mcp,"",0,0,0,2025-06-27T09:23:59Z,"Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real Devices)"
+76,2026-04-10 23:10:18.949371,1,plurigrid,flox-vscode,plurigrid/flox-vscode,"",0,0,0,2025-06-24T15:31:25Z,Flox VSCode Extension
+77,2026-04-10 23:10:18.951101,1,plurigrid,ies,plurigrid/ies,"",0,0,0,2025-06-22T15:43:50Z,"_ a trifurcation in the path, the whole"
+78,2026-04-10 23:10:18.95262,1,plurigrid,infinity-cosmos,plurigrid/infinity-cosmos,"",0,0,0,2025-06-22T14:30:02Z,A blueprint for a formalization of infinity-cosmos theory in Lean.
+79,2026-04-10 23:10:18.95412,1,plurigrid,oxcaml-playground,plurigrid/oxcaml-playground,"",0,0,0,2025-06-12T20:42:00Z,OxCaml playground (for use with Codespaces)
+80,2026-04-10 23:10:18.956421,1,plurigrid,lean-abc-true-almost-always,plurigrid/lean-abc-true-almost-always,"",0,0,0,2025-06-12T14:16:12Z,""
+81,2026-04-10 23:10:18.958123,1,plurigrid,oxcaml-lsp,plurigrid/oxcaml-lsp,"",0,0,0,2025-06-12T14:06:51Z,OxCaml Language Server Protocol implementation
+82,2026-04-10 23:10:18.960334,1,plurigrid,paper-worlds,plurigrid/paper-worlds,"",0,0,0,2025-06-11T18:31:04Z,High accuracy RAG for answering questions from scientific documents with citations
+83,2026-04-10 23:10:18.962096,1,plurigrid,underestimates,plurigrid/underestimates,Python,0,0,0,2025-06-10T23:01:49Z,code that illustrates the halting problem by attacking code to automatically prove or verify estimates in analysis
+84,2026-04-10 23:10:18.96414,1,plurigrid,oni,plurigrid/oni,Python,0,0,0,2025-06-10T12:27:43Z,Learn online intrinsic rewards from LLM feedback
+85,2026-04-10 23:10:18.96595,1,plurigrid,oterm,plurigrid/oterm,Python,0,0,0,2025-06-09T11:55:16Z,a text-based terminal client for Ollama
+86,2026-04-10 23:10:18.96761,1,plurigrid,formal-conjectures,plurigrid/formal-conjectures,"",0,0,0,2025-06-06T10:56:27Z,A collection of formalized statements of conjectures in Lean.
+87,2026-04-10 23:10:18.969031,1,plurigrid,pepepedia,plurigrid/pepepedia,"",0,0,0,2025-06-03T00:58:43Z,a kind frog 🐸
+88,2026-04-10 23:10:18.970439,1,plurigrid,hevm-games,plurigrid/hevm-games,"",0,0,0,2025-06-02T13:05:20Z,""
+89,2026-04-10 23:10:18.971707,1,plurigrid,ontology,plurigrid/ontology,JavaScript,7,9,16,2025-05-27T18:18:34Z,autopoietic ergodicity and embodied gradualism
+90,2026-04-10 23:10:18.973036,1,plurigrid,panda,plurigrid/panda,"",0,0,0,2025-05-21T23:11:38Z,Patched Attention for Nonlinear Dynamics
+91,2026-04-10 23:10:18.974332,1,plurigrid,dysts,plurigrid/dysts,"",0,0,0,2025-05-20T22:50:07Z,Hundreds of strange attractors
+92,2026-04-10 23:10:18.975602,1,plurigrid,arbor,plurigrid/arbor,"",0,0,0,2025-05-10T17:47:46Z,""
+93,2026-04-10 23:10:18.976761,1,plurigrid,kuzu-mcp-server,plurigrid/kuzu-mcp-server,"",0,0,0,2025-05-08T19:54:23Z,A Model Context Protocol server that provides access to Kuzu databases
+94,2026-04-10 23:10:18.978458,1,plurigrid,gpui-component,plurigrid/gpui-component,"",0,0,0,2025-05-08T04:01:17Z,UI components for building fantastic desktop application by using GPUI.
+95,2026-04-10 23:10:18.980005,1,plurigrid,IsUMap,plurigrid/IsUMap,"",0,0,0,2025-05-01T17:04:01Z,"IsUMap is a tool for manifold learning, dimension reduction and data visualization"
+96,2026-04-10 23:10:18.981414,1,plurigrid,DeepSeek-Prover-V2,plurigrid/DeepSeek-Prover-V2,"",0,0,0,2025-04-30T14:31:23Z,""
+97,2026-04-10 23:10:18.982755,1,plurigrid,clrs,plurigrid/clrs,"",0,0,0,2025-04-30T06:39:54Z,""
+98,2026-04-10 23:10:18.984466,1,plurigrid,RxInferClient.py,plurigrid/RxInferClient.py,"",0,0,0,2025-04-10T17:05:33Z,Python client for RxInferServer.jl
+99,2026-04-10 23:10:18.98592,1,plurigrid,mcp-golang,plurigrid/mcp-golang,"",0,0,0,2025-04-09T12:58:24Z,Write Model Context Protocol servers in few lines of go code. Docs at https://mcpgolang.com
+100,2026-04-10 23:10:18.987453,1,plurigrid,ember,plurigrid/ember,"",0,0,0,2025-04-08T19:37:31Z,""
+101,2026-04-10 23:10:18.988908,2,kubeflow,pipelines,kubeflow/pipelines,Python,4119,1984,469,2026-04-10T23:07:19Z,Machine Learning Pipelines for Kubeflow
+102,2026-04-10 23:10:18.990264,2,kubeflow,model-registry,kubeflow/model-registry,Go,172,179,42,2026-04-10T22:07:31Z,"Model Registry provides a single pane of glass for ML model developers to index and manage models, versions, and ML artifacts metadata. It fills a gap between model experimentation and production acti"
+103,2026-04-10 23:10:18.991584,2,kubeflow,arena,kubeflow/arena,Go,808,190,67,2026-04-10T18:21:33Z,A CLI for Kubeflow. 
+104,2026-04-10 23:10:18.992998,2,kubeflow,spark-operator,kubeflow/spark-operator,Python,3111,1483,85,2026-04-10T18:21:12Z,Kubernetes operator for managing the lifecycle of Apache Spark applications on Kubernetes. 
+105,2026-04-10 23:10:18.99412,2,kubeflow,pipelines-components,kubeflow/pipelines-components,Python,11,33,28,2026-04-10T17:55:11Z,Kubeflow Pipelines
+106,2026-04-10 23:10:18.995325,2,kubeflow,sdk,kubeflow/sdk,Python,101,171,112,2026-04-10T16:34:20Z,Universal Python SDK to run AI workloads on Kubernetes
+107,2026-04-10 23:10:18.996644,2,kubeflow,notebooks,kubeflow/notebooks,"",70,98,185,2026-04-10T14:09:19Z,"Kubeflow Notebooks runs interactive development environments for AI, ML, and Data workloads on Kubernetes."
+108,2026-04-10 23:10:18.998043,2,kubeflow,trainer,kubeflow/trainer,Go,2080,944,145,2026-04-10T13:35:59Z,Distributed AI Model Training and LLM Fine-Tuning on Kubernetes
+109,2026-04-10 23:10:18.999545,2,kubeflow,kale,kubeflow/kale,Python,682,156,58,2026-04-10T12:39:21Z,Kubeflow’s superfood for Data Scientists
+110,2026-04-10 23:10:19.001108,2,kubeflow,internal-acls,kubeflow/internal-acls,Go,18,383,2,2026-04-10T07:31:19Z,Repository used to main group ACLs used by Kubeflow developers
+111,2026-04-10 23:10:19.002555,2,kubeflow,dashboard,kubeflow/dashboard,TypeScript,17,53,90,2026-04-09T13:37:37Z,Kubeflow Central Dashboard is the web interface for Kubeflow
+112,2026-04-10 23:10:19.00395,2,kubeflow,manifests,kubeflow/manifests,YAML,1010,1069,29,2026-04-09T12:31:19Z,Kubeflow AI Reference Platform Deployment Manifests
+113,2026-04-10 23:10:19.005328,2,kubeflow,mcp-apache-spark-history-server,kubeflow/mcp-apache-spark-history-server,Python,150,50,28,2026-04-08T23:34:35Z,MCP Server for Apache Spark History Server. The bridge between Agentic AI and Apache Spark.
+114,2026-04-10 23:10:19.006851,2,kubeflow,mpi-operator,kubeflow/mpi-operator,Go,522,236,103,2026-04-08T22:05:08Z,"Kubernetes Operator for MPI-based applications (distributed training, HPC, etc.)"
+115,2026-04-10 23:10:19.008252,2,kubeflow,mcp-server,kubeflow/mcp-server,"",2,3,4,2026-04-08T16:18:12Z,MCP Server for AI-Assisted Development with Kubeflow Tools
+116,2026-04-10 23:10:19.00978,2,kubeflow,community,kubeflow/community,Jsonnet,194,255,12,2026-04-08T14:50:20Z,Information about the Kubeflow community including proposals and governance information.
+117,2026-04-10 23:10:19.011103,2,kubeflow,website,kubeflow/website,HTML,184,916,42,2026-04-08T05:10:14Z,Kubeflow Website
+118,2026-04-10 23:10:19.012458,2,kubeflow,blog,kubeflow/blog,Jupyter Notebook,32,61,25,2026-04-07T16:26:42Z,Kubeflow blog  based on fastpages
+119,2026-04-10 23:10:19.013697,2,kubeflow,katib,kubeflow/katib,Python,1676,521,118,2026-04-02T07:08:12Z,Automated Machine Learning on Kubernetes
+120,2026-04-10 23:10:19.015218,2,kubeflow,docs-agent,kubeflow/docs-agent,Python,33,99,158,2026-03-07T13:26:58Z,Kubeflow Documentation AI Agent to power the Kubeflow Website
+121,2026-04-10 23:10:19.016735,2,kubeflow,kubeflow,kubeflow/kubeflow,"",15565,2626,0,2026-01-05T13:47:10Z,Machine Learning Toolkit for Kubernetes
+122,2026-04-10 23:10:19.018187,2,kubeflow,examples,kubeflow/examples,Jsonnet,1458,755,111,2025-04-14T01:54:52Z,A repository to host extended examples and tutorials
+123,2026-04-10 23:10:19.019688,2,kubeflow,testing,kubeflow/testing,Python,61,86,33,2025-02-14T18:33:13Z,Test infrastructure and tooling for Kubeflow.
+124,2026-04-10 23:10:19.021157,2,kubeflow,kfp-tekton,kubeflow/kfp-tekton,TypeScript,182,123,79,2024-11-19T12:23:51Z,Kubeflow Pipelines on Tekton
+125,2026-04-10 23:10:19.022778,2,kubeflow,kfserving-lts,kubeflow/kfserving-lts,Jsonnet,12,19,51,2024-08-02T16:25:44Z,""
+126,2026-04-10 23:10:19.024167,2,kubeflow,kubebench,kubeflow/kubebench,Jsonnet,79,35,68,2024-06-17T19:22:04Z,Repository for benchmarking
+127,2026-04-10 23:10:19.025636,2,kubeflow,fate-operator,kubeflow/fate-operator,Go,51,15,6,2024-02-22T19:44:08Z,Fate operator
+128,2026-04-10 23:10:19.027193,2,kubeflow,kfctl,kubeflow/kfctl,Go,182,134,94,2023-08-15T20:19:22Z,kfctl is a CLI for deploying and managing Kubeflow
+129,2026-04-10 23:10:19.028511,2,kubeflow,kfp-tekton-backend,kubeflow/kfp-tekton-backend,TypeScript,8,6,46,2023-08-14T22:05:04Z,Experimental project plugging Tekton yaml behind KFP API and UI engine
+130,2026-04-10 23:10:19.029765,2,kubeflow,common,kubeflow/common,Go,53,70,40,2023-05-28T13:16:00Z,Common APIs and libraries shared by other Kubeflow operator repositories.
+131,2026-04-10 23:10:19.031208,2,kubeflow,.allstar,kubeflow/.allstar,"",2,0,0,2022-12-06T23:07:59Z,""
+132,2026-04-10 23:10:19.032486,2,kubeflow,fairing,kubeflow/fairing,Jsonnet,337,143,134,2022-04-11T05:28:47Z,"Python SDK for building, training, and deploying ML models"
+133,2026-04-10 23:10:19.033813,2,kubeflow,xgboost-operator,kubeflow/xgboost-operator,Python,77,53,22,2021-12-01T18:00:10Z,Incubating project for xgboost operator
+134,2026-04-10 23:10:19.035054,2,kubeflow,mxnet-operator,kubeflow/mxnet-operator,Go,52,33,9,2021-12-01T17:47:19Z,A Kubernetes operator for mxnet jobs
+135,2026-04-10 23:10:19.036477,2,kubeflow,pytorch-operator,kubeflow/pytorch-operator,Jsonnet,309,143,63,2021-12-01T17:44:48Z,PyTorch on Kubernetes
+136,2026-04-10 23:10:19.038051,2,kubeflow,frontend,kubeflow/frontend,JavaScript,8,18,12,2021-12-01T17:41:37Z,Repository for kubeflow frontend
+137,2026-04-10 23:10:19.039502,2,kubeflow,metadata,kubeflow/metadata,TypeScript,123,64,38,2021-12-01T17:35:27Z,Repository for assets related to Metadata.
+138,2026-04-10 23:10:19.040886,2,kubeflow,caffe2-operator,kubeflow/caffe2-operator,Go,16,12,2,2021-12-01T01:58:06Z,Experimental repository for a caffe2 operator
+139,2026-04-10 23:10:19.042316,2,kubeflow,code-intelligence,kubeflow/code-intelligence,Jupyter Notebook,56,20,64,2021-12-01T01:52:58Z,"ML-Powered Developer Tools, using Kubeflow"
+140,2026-04-10 23:10:19.043799,2,kubeflow,example-seldon,kubeflow/example-seldon,Jupyter Notebook,172,56,9,2021-12-01T01:49:58Z,Example for end-to-end machine learning on Kubernetes using Kubeflow and Seldon Core
+141,2026-04-10 23:10:19.045294,2,kubeflow,batch-predict,kubeflow/batch-predict,Python,17,7,9,2021-12-01T01:47:51Z,Repository for batch predict
+142,2026-04-10 23:10:19.0469,2,kubeflow,reporting,kubeflow/reporting,Jsonnet,2,5,1,2021-12-01T01:42:32Z,Repository for collecting and analyzing metrics about Kubeflow usage.
+143,2026-04-10 23:10:19.048718,2,kubeflow,chainer-operator,kubeflow/chainer-operator,Jsonnet,17,15,7,2021-11-14T13:03:57Z,Repository for chainer operator
+144,2026-04-10 23:10:19.050267,2,kubeflow,crd-validation,kubeflow/crd-validation,Go,11,7,5,2021-01-25T15:02:53Z,Validation Generation for Kubeflow CRD on Kubernetes
+145,2026-04-10 23:10:19.051787,2,kubeflow,community-infra,kubeflow/community-infra,Go,3,9,4,2021-01-25T14:49:49Z,Declarative configurations for KF community infrastructure
+146,2026-04-10 23:10:19.053214,2,kubeflow,.github,kubeflow/.github,"",2,1,0,2020-05-12T00:22:56Z,Org wide templates
+147,2026-04-10 23:10:19.054662,2,kubeflow,marketing-materials,kubeflow/marketing-materials,"",4,4,4,2019-07-19T13:57:15Z,""
+148,2026-04-10 23:10:19.056077,3,TeglonLabs,Stahl,TeglonLabs/Stahl,Rust,0,0,1,2026-01-16T01:42:16Z,An embedded scheme interpreter in xenoironic Rost. because warum nicht?
+149,2026-04-10 23:10:19.057474,3,TeglonLabs,mathpix-gem,TeglonLabs/mathpix-gem,Ruby,2,0,11,2026-01-01T12:13:13Z,"Transform mathematical images to LaTeX, chemistry structures to SMILES, and documents to markdown with security-first design. The geodesic path to mathematical OCR in Ruby."
+150,2026-04-10 23:10:19.058907,3,TeglonLabs,duck-ui,TeglonLabs/duck-ui,"",0,0,0,2025-10-19T12:45:07Z,"Duck-UI is a web-based interface for interacting with DuckDB, a high-performance analytical database system. It features a SQL editor, data import/export, data explorer, query history, theme toggle, a"
+151,2026-04-10 23:10:19.060455,3,TeglonLabs,acp.el,TeglonLabs/acp.el,"",1,0,0,2025-09-28T13:58:40Z,An ACP (Agent Client Protocol) implementation in Emacs lisp as per https://agentclientprotocol.com
+152,2026-04-10 23:10:19.062433,3,TeglonLabs,coin-flip-mcp,TeglonLabs/coin-flip-mcp,JavaScript,0,2,1,2025-09-21T08:57:27Z,MCP server for flipping coins with varying degrees of randomness from random.org
+153,2026-04-10 23:10:19.064341,3,TeglonLabs,agent-client-protocol,TeglonLabs/agent-client-protocol,"",0,0,0,2025-09-18T10:23:10Z, A protocol for connecting any editor to any agent
+154,2026-04-10 23:10:19.066023,3,TeglonLabs,bison,TeglonLabs/bison,"",0,0,0,2025-09-17T21:30:06Z,bisimulation bistability from reversible software and conservative Logik
+155,2026-04-10 23:10:19.067657,3,TeglonLabs,MCP-Universe,TeglonLabs/MCP-Universe,"",0,0,0,2025-09-05T08:02:48Z,"MCP-Universe is a comprehensive framework designed for developing, testing, and benchmarking AI agents"
+156,2026-04-10 23:10:19.069428,3,TeglonLabs,asi-tools,TeglonLabs/asi-tools,"",0,0,0,2025-08-20T10:17:03Z,tools that help AI development assistants do Clojure
+157,2026-04-10 23:10:19.070932,3,TeglonLabs,deepwiki-mcp,TeglonLabs/deepwiki-mcp,"",0,0,0,2025-07-22T06:30:04Z,📖 MCP server for fetch deepwiki.com and get latest knowledge in Cursor and other Code Editors
+158,2026-04-10 23:10:19.072881,3,TeglonLabs,mcp-server-tree-sitter,TeglonLabs/mcp-server-tree-sitter,Python,0,0,0,2025-07-16T21:00:43Z,MCP Server for Tree-sitter
+159,2026-04-10 23:10:19.074812,3,TeglonLabs,hf-mcp-server,TeglonLabs/hf-mcp-server,TypeScript,0,0,0,2025-07-16T20:57:03Z,""
+160,2026-04-10 23:10:19.07664,3,TeglonLabs,GhidrAssistMCP,TeglonLabs/GhidrAssistMCP,"",0,0,0,2025-07-10T13:23:29Z,An MCP extension for Ghidra
+161,2026-04-10 23:10:19.078621,3,TeglonLabs,vibespace,TeglonLabs/vibespace,HTML,2,0,3,2025-06-24T15:22:51Z,"Go implementation of a MCP experience for vibes and worlds with NATS streaming, binary data, and balanced ternary support"
+162,2026-04-10 23:10:19.080257,3,TeglonLabs,codex,TeglonLabs/codex,"",0,0,0,2025-06-01T15:27:13Z,Lightweight coding agent that runs in your terminal
+163,2026-04-10 23:10:19.081889,3,TeglonLabs,aidermacs,TeglonLabs/aidermacs,"",0,0,0,2025-05-23T04:13:01Z,AI Pair Programming in Emacs with Aider
+164,2026-04-10 23:10:19.083494,3,TeglonLabs,monad-mcp-server,TeglonLabs/monad-mcp-server,"",0,0,0,2025-05-14T11:36:14Z,Monad MCP Server
+165,2026-04-10 23:10:19.085207,3,TeglonLabs,mcp-golang,TeglonLabs/mcp-golang,"",0,0,0,2025-05-07T12:45:49Z,Write Model Context Protocol servers in few lines of go code. Docs at https://mcpgolang.com
+166,2026-04-10 23:10:19.086871,3,TeglonLabs,mcp-terminal,TeglonLabs/mcp-terminal,"",1,0,0,2025-04-30T00:48:16Z,A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers.
+167,2026-04-10 23:10:19.088824,3,TeglonLabs,narya,TeglonLabs/narya,"",0,0,0,2025-04-24T08:42:24Z,A proof assistant for higher-dimensional type theory
+168,2026-04-10 23:10:19.090862,3,TeglonLabs,aarm-risc0,TeglonLabs/aarm-risc0,"",0,0,0,2025-04-23T12:49:32Z,Anoma Abstract Resource Machine Implementation using RISC Zero zkVM
+169,2026-04-10 23:10:19.092611,3,TeglonLabs,autofoom,TeglonLabs/autofoom,Python,0,0,0,2025-04-20T11:50:00Z,a darker enlightenment 🦆
+170,2026-04-10 23:10:19.094415,3,TeglonLabs,autoloom,TeglonLabs/autoloom,"",0,0,0,2025-04-19T09:54:58Z,""
+171,2026-04-10 23:10:19.095903,3,TeglonLabs,PutnamBench,TeglonLabs/PutnamBench,"",0,0,0,2025-04-16T21:36:25Z,"An evaluation benchmark for undergraduate competition math in Lean4, Isabelle, Coq, and natural language. "
+172,2026-04-10 23:10:19.09778,3,TeglonLabs,DataDecide,TeglonLabs/DataDecide,"",0,0,0,2025-04-16T20:29:35Z,""
+173,2026-04-10 23:10:19.099446,3,TeglonLabs,radare2-mcp,TeglonLabs/radare2-mcp,"",0,0,0,2025-04-09T15:15:25Z,MCP stdio server for radare2
+174,2026-04-10 23:10:19.101246,3,TeglonLabs,flymcp,TeglonLabs/flymcp,"",0,0,0,2025-04-08T14:50:16Z,MCP server for Fly.io CLI integration with Claude Desktop
+175,2026-04-10 23:10:19.102806,3,TeglonLabs,epic-world,TeglonLabs/epic-world,"",0,0,0,2025-04-04T19:45:17Z,a post-web stack for crafty Intelligence Superagencies 📻
+176,2026-04-10 23:10:19.10463,3,TeglonLabs,simplexmq-mcp,TeglonLabs/simplexmq-mcp,"",0,0,0,2025-03-26T17:26:29Z,⚙️ SimpleXMQ - A reference implementation of the SimpleX Messaging Protocol for simplex queues over public networks.
+177,2026-04-10 23:10:19.106093,3,TeglonLabs,vibe-uri,TeglonLabs/vibe-uri,"",0,0,0,2025-03-25T23:26:36Z,"HTTP, FTP, GOPHER, IPFS and other responses generated using pseudo-operational semantics of the protocols implemented"
+178,2026-04-10 23:10:19.107886,3,TeglonLabs,rost,TeglonLabs/rost,Rust,0,0,0,2025-03-25T21:49:44Z,Rust programming in German.
+179,2026-04-10 23:10:19.109252,3,TeglonLabs,kuzu-mcp-server,TeglonLabs/kuzu-mcp-server,"",0,1,0,2025-03-24T19:22:31Z,A Model Context Protocol server that provides access to Kuzu databases
+180,2026-04-10 23:10:19.111004,3,TeglonLabs,mythic_mcp,TeglonLabs/mythic_mcp,"",0,0,0,2025-03-20T22:20:01Z,A simple POC to expose Mythic as a MCP server
+181,2026-04-10 23:10:19.112723,3,TeglonLabs,argp,TeglonLabs/argp,"",0,0,0,2025-03-20T08:59:02Z,GNU command line argument parser
+182,2026-04-10 23:10:19.114325,3,TeglonLabs,codemcp,TeglonLabs/codemcp,"",0,0,0,2025-03-19T18:44:57Z,Coding assistant MCP for Claude Desktop
+183,2026-04-10 23:10:19.115946,3,TeglonLabs,topgrade,TeglonLabs/topgrade,"",0,0,0,2025-03-19T01:24:10Z,Upgrade all the things
+184,2026-04-10 23:10:19.117549,3,TeglonLabs,flox-vscode,TeglonLabs/flox-vscode,"",0,0,0,2025-03-18T15:53:44Z,Flox VSCode Extension
+185,2026-04-10 23:10:19.11895,3,TeglonLabs,speclj,TeglonLabs/speclj,"",0,0,0,2025-03-17T18:25:51Z,"pronounced ""speckle"": a TDD/BDD framework for Clojure."
+186,2026-04-10 23:10:19.120311,3,TeglonLabs,mitmproxy2swagger,TeglonLabs/mitmproxy2swagger,"",0,0,0,2025-03-17T17:55:57Z,Automagically reverse-engineer REST APIs via capturing traffic
+187,2026-04-10 23:10:19.121823,3,TeglonLabs,chroma,TeglonLabs/chroma,"",0,0,0,2025-03-17T16:35:03Z,A general purpose syntax highlighter in pure Go 
+188,2026-04-10 23:10:19.123228,3,TeglonLabs,topOS,TeglonLabs/topOS,JavaScript,0,0,0,2025-03-16T16:04:13Z,WebGPU-capable MCP worlding environment worm:// diagram:// world:// vibe:// _://
+189,2026-04-10 23:10:19.124577,3,TeglonLabs,polygon-mcp,TeglonLabs/polygon-mcp,"",0,0,0,2025-03-14T18:03:04Z,""
+190,2026-04-10 23:10:19.126001,3,TeglonLabs,mcpx-eval,TeglonLabs/mcpx-eval,Python,0,0,0,2025-03-14T15:05:58Z,An open-ended eval framework for mcp.run tools
+191,2026-04-10 23:10:19.127707,3,TeglonLabs,joker,TeglonLabs/joker,"",0,0,0,2025-03-14T12:07:04Z,"Small Clojure interpreter, linter and formatter."
+192,2026-04-10 23:10:19.129274,3,TeglonLabs,base-mcp,TeglonLabs/base-mcp,"",0,0,0,2025-03-13T20:17:26Z,""
+193,2026-04-10 23:10:19.130951,3,TeglonLabs,dWebMCP,TeglonLabs/dWebMCP,"",0,0,0,2025-03-08T02:10:38Z,""
+194,2026-04-10 23:10:19.132574,3,TeglonLabs,clopenvsx,TeglonLabs/clopenvsx,"",0,0,0,2025-03-04T09:48:25Z,An open-source registry for VS Code extensions
+195,2026-04-10 23:10:19.134006,3,TeglonLabs,quiver,TeglonLabs/quiver,"",0,0,0,2025-02-21T02:59:39Z,A modern commutative diagram editor for the web.
+196,2026-04-10 23:10:19.135345,3,TeglonLabs,nondual-governance-confidential,TeglonLabs/nondual-governance-confidential,"",0,0,0,2025-02-11T08:23:53Z,context distilled
+197,2026-04-10 23:10:19.136766,3,TeglonLabs,rcon-mcp,TeglonLabs/rcon-mcp,"",0,0,0,2025-02-05T20:53:47Z,Model Context Protocol for Minecraft Server Management
+198,2026-04-10 23:10:19.138266,3,TeglonLabs,lsd-mcp,TeglonLabs/lsd-mcp,"",0,0,0,2025-02-04T06:00:54Z,LSD Model Context Protocol
+199,2026-04-10 23:10:19.139849,3,TeglonLabs,topoi,TeglonLabs/topoi,Python,0,0,1,2025-01-24T04:49:26Z,""
+200,2026-04-10 23:10:19.141449,3,TeglonLabs,DuckTrack,TeglonLabs/DuckTrack,"",0,0,0,2023-11-26T00:07:55Z,Multimodal computer agent data collection program
+201,2026-04-10 23:10:19.143261,4,bmorphism,boxxy,bmorphism/boxxy,Move,0,1,0,2026-04-09T12:27:25Z,""
+202,2026-04-10 23:10:19.144857,4,bmorphism,postweb,bmorphism/postweb,Go,0,0,0,2026-04-09T10:51:57Z,postweb — evolved from prepostweb
+203,2026-04-10 23:10:19.146502,4,bmorphism,shitcoin,bmorphism/shitcoin,Python,5,0,0,2026-04-08T08:07:08Z,gets denom for cw20 assets for permissionless degeneracy in IBC
+204,2026-04-10 23:10:19.148189,4,bmorphism,magic-world-org,bmorphism/magic-world-org,Python,0,0,0,2026-04-05T07:03:50Z,Magic World Org (Local MLX) - renamed from magic-todo-org
+205,2026-04-10 23:10:19.150021,4,bmorphism,magic-todo-org,bmorphism/magic-todo-org,Python,0,0,0,2026-04-05T06:43:52Z,""
+206,2026-04-10 23:10:19.151767,4,bmorphism,zig-syrup-1,bmorphism/zig-syrup-1,"",0,0,0,2026-03-28T21:42:51Z,High-performance Zig implementation of OCapN Syrup with CapTP optimizations
+207,2026-04-10 23:10:19.153581,4,bmorphism,zig-syrup,bmorphism/zig-syrup,Zig,0,0,0,2026-03-28T21:42:32Z,"Embeddable OCapN Syrup encoder/decoder in Zig — 550 LOC, 22 tests, 112-variety test fixture"
+208,2026-04-10 23:10:19.155279,4,bmorphism,gtc2026-floxxy,bmorphism/gtc2026-floxxy,"",0,0,0,2026-03-23T05:05:55Z,Flox @ GTC 2026
+209,2026-04-10 23:10:19.156883,4,bmorphism,ocaml-mcp-sdk,bmorphism/ocaml-mcp-sdk,OCaml,60,2,0,2026-03-16T05:24:25Z,OCaml SDK for Model Context Protocol using Jane Street''s oxcaml_effect library
+210,2026-04-10 23:10:19.158525,4,bmorphism,sexp_conversion_therapy,bmorphism/sexp_conversion_therapy,"",0,0,0,2026-03-16T02:56:13Z,Generation of S-expression conversion functions from type definitions
+211,2026-04-10 23:10:19.160123,4,bmorphism,eg-walker-reference,bmorphism/eg-walker-reference,TypeScript,0,0,0,2026-03-13T12:21:12Z,"Simple reimplementation of the diamond types sequence CRDT in simple, pure, unoptimized typescript."
+212,2026-04-10 23:10:19.161949,4,bmorphism,lux,bmorphism/lux,"",0,0,0,2026-02-21T12:05:07Z,The Lux Programming Language
+213,2026-04-10 23:10:19.163501,4,bmorphism,agent-o-shiva,bmorphism/agent-o-shiva,"",0,0,9,2026-02-21T07:26:16Z,"End-to-end LLM agent platform for Java and Clojure for building, tracing, testing, and monitoring agents with integrated storage and one-click deployment. Inspired by LangGraph/LangSmith."
+214,2026-04-10 23:10:19.16502,4,bmorphism,flox-mcp-bb,bmorphism/flox-mcp-bb,Clojure,0,0,0,2026-02-12T02:45:43Z,"Open-source MCP server for Flox — Babashka/Clojure, single file, 20 tools"
+215,2026-04-10 23:10:19.166639,4,bmorphism,tapes,bmorphism/tapes,"",0,0,0,2026-02-04T02:23:37Z,VHS tapes for terminal recordings
+216,2026-04-10 23:10:19.168281,4,bmorphism,duck-rio-heateq,bmorphism/duck-rio-heateq,Rust,0,0,0,2026-02-02T23:33:32Z,""
+217,2026-04-10 23:10:19.170021,4,bmorphism,forever21,bmorphism/forever21,"",0,0,0,2026-02-01T09:00:56Z,"Main development repository for GAP - Groups, Algorithms, Programming, a System for Computational Discrete Algebra"
+218,2026-04-10 23:10:19.171976,4,bmorphism,aella,bmorphism/aella,Rascal,1,0,0,2026-02-01T02:44:30Z,""
+219,2026-04-10 23:10:19.173808,4,bmorphism,tree-sitter-hy,bmorphism/tree-sitter-hy,C,0,0,0,2026-01-31T23:31:23Z,"Tree-sitter grammar for Hy, a Lisp-ification of Python."
+220,2026-04-10 23:10:19.175349,4,bmorphism,uncouthbert,bmorphism/uncouthbert,"",0,0,0,2026-01-30T12:20:41Z,State-space model inference with JAX
+221,2026-04-10 23:10:19.17692,4,bmorphism,Comfy-Pilot,bmorphism/Comfy-Pilot,"",0,0,0,2026-01-29T04:12:35Z,MCP server + embedded terminal that lets Claude Code see and edit your ComfyUI workflows
+222,2026-04-10 23:10:19.178688,4,bmorphism,emularity,bmorphism/emularity,"",0,0,0,2026-01-27T07:54:46Z,easily embed emulators
+223,2026-04-10 23:10:19.180544,4,bmorphism,hymlx,bmorphism/hymlx,Python,1,0,0,2026-01-22T12:20:32Z,""
+224,2026-04-10 23:10:19.182214,4,bmorphism,GeoACSets.jl,bmorphism/GeoACSets.jl,Julia,0,1,1,2026-01-19T13:57:13Z,"Categorical data structures (ACSets) with geospatial capabilities - morphisms for structural navigation, geometry for filtering"
+225,2026-04-10 23:10:19.183965,4,bmorphism,anti-bullshit-mcp-server,bmorphism/anti-bullshit-mcp-server,JavaScript,23,7,1,2026-01-16T08:54:58Z,"MCP server for analyzing claims, validating sources, and detecting manipulation using multiple epistemological frameworks"
+226,2026-04-10 23:10:19.185692,4,bmorphism,vibespace-mcp-go-ternary,bmorphism/vibespace-mcp-go-ternary,HTML,0,1,3,2026-01-11T12:50:40Z,"Go implementation of a MCP experience for vibes and worlds with NATS streaming, binary data, and balanced ternary support"
+227,2026-04-10 23:10:19.187672,4,bmorphism,grue,bmorphism/grue,"",0,0,0,2026-01-03T17:08:53Z,Gay Rue
+228,2026-04-10 23:10:19.189431,4,bmorphism,claude-zig-skill,bmorphism/claude-zig-skill,Python,0,0,0,2025-12-30T20:18:51Z,Zig skill for Claude Code
+229,2026-04-10 23:10:19.191144,4,bmorphism,open-location-code-zig,bmorphism/open-location-code-zig,Zig,3,0,0,2025-12-30T19:33:45Z,Open Location Code (Plus Codes) for Zig - First-ever Zig implementation of Google''s geocoding system
+230,2026-04-10 23:10:19.193035,4,bmorphism,asi,bmorphism/asi,"",0,0,0,2025-12-27T19:08:08Z,everything is topological chemputer!
+231,2026-04-10 23:10:19.195074,4,bmorphism,ComradeBase.jl,bmorphism/ComradeBase.jl,"",0,0,0,2025-12-22T22:44:07Z,Defines the minimal interface for Comrade so people can add their own models 
+232,2026-04-10 23:10:19.196992,4,bmorphism,WhiteHole,bmorphism/WhiteHole,C,0,1,4,2025-12-19T22:14:24Z,"WhiteHole is a modern macOS + tripos audio loopback driver that allows applications to pass audio to other entities with at most a hex color #000000 latency"
+233,2026-04-10 23:10:19.199033,4,bmorphism,bafishka,bmorphism/bafishka,Clojure,1,0,0,2025-12-19T09:38:00Z,🐟 Rust-native Fish shell-friendly file operations with Steel-backed SCI Clojure evaluation (seed: 1069)
+234,2026-04-10 23:10:19.200704,4,bmorphism,ewig,bmorphism/ewig,"",0,0,0,2025-12-18T18:22:05Z,The eternal text editor — Didactic Ersatz Emacs to show immutable data-structures and the single-atom architecture
+235,2026-04-10 23:10:19.202457,4,bmorphism,gay-color-learnable,bmorphism/gay-color-learnable,"",0,0,0,2025-12-15T18:41:02Z,"Learnable color embeddings connecting Graphistry, Ghidra, Charm via Gay.jl SPI - gh cli integration"
+236,2026-04-10 23:10:19.204061,4,bmorphism,gay-hy,bmorphism/gay-hy,Hy,0,0,0,2025-12-15T15:32:58Z,Hylang MLX color bandwidth protocol - 2B+ colors/sec with SPI guarantees
+237,2026-04-10 23:10:19.205653,4,bmorphism,DistantREPL.jl,bmorphism/DistantREPL.jl,"",0,0,0,2025-12-15T09:41:47Z,Connect a REPL to a remote Julia process
+238,2026-04-10 23:10:19.207175,4,bmorphism,moduleur,bmorphism/moduleur,"",0,0,0,2025-12-14T12:42:19Z,Fully analog DIY-friendly modular synth
+239,2026-04-10 23:10:19.208769,4,bmorphism,GayMonteCarloMeasurements.jl,bmorphism/GayMonteCarloMeasurements.jl,"",0,0,0,2025-12-13T07:32:41Z,Propagation of distributions by Monte-Carlo sampling: Real number types with uncertainty represented by samples.
+240,2026-04-10 23:10:19.210606,4,bmorphism,multiverse-color-game,bmorphism/multiverse-color-game,Julia,0,0,0,2025-12-12T05:28:11Z,2+1D Holographic Color Matching Game for VisionPro — Hamkins multiverse + Dave White finance + Gay.jl chromatic identity
+241,2026-04-10 23:10:19.212389,4,bmorphism,signal-mcp,bmorphism/signal-mcp,Rust,0,0,0,2025-12-11T07:20:08Z,O(n)→O(1) chromatic mode collapse via Galois connection - Gay.jl SPI for loom concurrency
+242,2026-04-10 23:10:19.214022,4,bmorphism,magne,bmorphism/magne,TypeScript,1,0,0,2025-12-10T22:09:48Z,"like a ruler, magne! geddit? 📏"
+243,2026-04-10 23:10:19.215567,4,bmorphism,panoptiquack,bmorphism/panoptiquack,"",0,0,0,2025-12-10T08:22:51Z,Browser Fingerprinting Test - Deconstruct Your Digital Shadow
+244,2026-04-10 23:10:19.216897,4,bmorphism,xf.jl,bmorphism/xf.jl,Julia,0,0,0,2025-12-05T22:12:17Z,Xenofeminist color synthesis — deterministic wide-gamut colors via SplittableRandoms.jl
+245,2026-04-10 23:10:19.218245,4,bmorphism,paperdebuggery,bmorphism/paperdebuggery,"",0,0,0,2025-12-05T14:56:49Z,Paper Debugger is the best overleaf companion
+246,2026-04-10 23:10:19.219714,4,bmorphism,SFD,bmorphism/SFD,"",0,0,0,2025-12-05T04:08:00Z,Semantics Lead the Way: Harmonizing Semantic and Texture Modeling with Asynchronous Latent Diffusion
+247,2026-04-10 23:10:19.221129,4,bmorphism,3d-pose-tracker,bmorphism/3d-pose-tracker,"",0,0,0,2025-11-29T22:43:48Z,Real-time 3D pose tracking with MediaPipe BlazePose - tracks left arm joints with dual visualization and Parquet data export
+248,2026-04-10 23:10:19.222402,4,bmorphism,Comrade.jl,bmorphism/Comrade.jl,"",0,0,0,2025-11-24T03:17:58Z,""
+249,2026-04-10 23:10:19.223661,4,bmorphism,based,bmorphism/based,"",0,0,0,2025-11-23T11:06:56Z,"Literature references for “Designing Data-Intensive Applications, 2nd edition”"
+250,2026-04-10 23:10:19.225004,4,bmorphism,muchas-radio,bmorphism/muchas-radio,"",0,0,0,2025-11-23T10:13:57Z,Gracias muchas
+251,2026-04-10 23:10:19.226689,4,bmorphism,shoggowatch,bmorphism/shoggowatch,"",0,0,0,2025-11-22T04:59:27Z,"an almost complex* geometric XUI to match, watch and interrupt vibe sessions NOTE: THIS IS SLOPPY SLOP, expect nothing -- a schizo-autist fork of tmuxwatch to add support for GNU screen, Emacs / ewig "
+252,2026-04-10 23:10:19.228237,4,bmorphism,CategoricalTowers,bmorphism/CategoricalTowers,"",0,0,0,2025-11-21T23:59:44Z,Towers of category constructors
+253,2026-04-10 23:10:19.229993,4,bmorphism,TIDE,bmorphism/TIDE,"",0,0,0,2025-11-17T03:00:11Z,Native Multimodal Models are World Learners
+254,2026-04-10 23:10:19.231569,4,bmorphism,lean-succinct,bmorphism/lean-succinct,"",0,0,0,2025-11-14T22:26:15Z,""
+255,2026-04-10 23:10:19.233207,4,bmorphism,cc-trace,bmorphism/cc-trace,"",0,0,0,2025-11-08T13:43:48Z,"Claude Code CLI skill: Interactive assistant for intercepting, debugging, analyzing and reviewing Claude Code API requests using mitmproxy"
+256,2026-04-10 23:10:19.234595,4,bmorphism,alphaevolve_repository_of_problems,bmorphism/alphaevolve_repository_of_problems,"",0,0,0,2025-11-06T16:10:42Z,""
+257,2026-04-10 23:10:19.236143,4,bmorphism,HGM,bmorphism/HGM,"",0,0,0,2025-11-06T11:32:50Z,🧬 The Huxley-Gödel Machine
+258,2026-04-10 23:10:19.237447,4,bmorphism,awesome-jax,bmorphism/awesome-jax,"",0,0,0,2025-11-05T08:31:08Z,Curated list of JAX Resources and Packages
+259,2026-04-10 23:10:19.239432,4,bmorphism,superturing-foams,bmorphism/superturing-foams,"",0,0,0,2025-10-13T01:57:59Z,"started at the recursive meatpile at the Pit of the Ruliad, now we here! 🥩🐝🐝🐝"
+260,2026-04-10 23:10:19.241001,4,bmorphism,flowgay-rs,bmorphism/flowgay-rs,"",0,0,0,2025-10-12T03:36:02Z,Official Unofficial Flowglad rust sdk Gay extensions for self-perpetuity of many-to-more successor and predecessor gay systems a glitching hadamard gate away
+261,2026-04-10 23:10:19.242794,4,bmorphism,alien,bmorphism/alien,C++,1,0,0,2025-10-07T10:14:31Z,ALIEN is a CUDA-powered artificial life simulation program.
+262,2026-04-10 23:10:19.244275,4,bmorphism,codex-action,bmorphism/codex-action,"",1,0,0,2025-10-06T23:54:16Z,""
+263,2026-04-10 23:10:19.245961,4,bmorphism,monero-rental-hash-war,bmorphism/monero-rental-hash-war,Haskell,1,0,0,2025-10-05T23:08:54Z,Compositional OpenGame analysis of Monero rental hash war with live network integration
+264,2026-04-10 23:10:19.247666,4,bmorphism,schoenfinkel,bmorphism/schoenfinkel,Python,1,0,0,2025-10-04T23:31:11Z,Post-quantum categorical gravity framework - gravitational timekeeping through combinatory logic and information circuits
+265,2026-04-10 23:10:19.24934,4,bmorphism,gay-spec,bmorphism/gay-spec,"",1,0,0,2025-10-02T02:01:56Z,""
+266,2026-04-10 23:10:19.250807,4,bmorphism,wedding.registry,bmorphism/wedding.registry,Go,1,0,0,2025-10-01T08:50:04Z,"A community driven wedding registry service for Model Context Protocol (MCP) servers to enable mergers of DAOs and their successors by breaking grammars of governance, especially if they are French."
+267,2026-04-10 23:10:19.252289,4,bmorphism,claude-agent-sdk-python,bmorphism/claude-agent-sdk-python,"",1,0,0,2025-09-30T19:59:16Z,""
+268,2026-04-10 23:10:19.2537,4,bmorphism,wagmi-clocks,bmorphism/wagmi-clocks,"",1,0,0,2025-09-26T23:10:58Z,Clocks API for WAGMI
+269,2026-04-10 23:10:19.255124,4,bmorphism,MCPEval,bmorphism/MCPEval,"",1,0,0,2025-09-26T21:57:28Z,MCP-based Agent Deep Evaluation System
+270,2026-04-10 23:10:19.256469,4,bmorphism,bafishka-clean,bmorphism/bafishka-clean,Rust,1,0,0,2025-09-25T19:22:10Z,Clean monadic Steel-SCI integration with category theory
+271,2026-04-10 23:10:19.257713,4,bmorphism,simulflow,bmorphism/simulflow,"",1,0,0,2025-09-24T09:22:31Z,"A Clojure library for building real-time voice-enabled AI Agents. Simulflow handles the orchestration of speech recognition, audio processing, and AI service integration with the elegance of functiona"
+272,2026-04-10 23:10:19.259146,4,bmorphism,bytecodealliance-zulip-archive,bmorphism/bytecodealliance-zulip-archive,"",1,0,0,2025-09-24T06:06:29Z,A static html archive of Bytecode Alliance Zulip
+273,2026-04-10 23:10:19.260628,4,bmorphism,vibe-kamfban,bmorphism/vibe-kamfban,"",1,0,0,2025-09-22T22:37:56Z,"our struggle, not our thing"
+274,2026-04-10 23:10:19.262344,4,bmorphism,c2pa-rs,bmorphism/c2pa-rs,Rust,0,0,0,2025-09-20T00:08:58Z,Rust SDK for the core C2PA (Coalition for Content Provenance and Authenticity) specification
+275,2026-04-10 23:10:19.264102,4,bmorphism,gemini_icpc2025,bmorphism/gemini_icpc2025,"",1,0,0,2025-09-17T11:09:46Z,Gemini 2025 ICPC World Finals Code Submissions
+276,2026-04-10 23:10:19.265606,4,bmorphism,SGP-RL,bmorphism/SGP-RL,"",1,0,0,2025-09-14T12:04:27Z,Symbolic Graphics Programming with Large Language Models
+277,2026-04-10 23:10:19.26709,4,bmorphism,strongpnt,bmorphism/strongpnt,"",1,0,0,2025-09-11T06:14:22Z,""
+278,2026-04-10 23:10:19.268645,4,bmorphism,babashka-static-build,bmorphism/babashka-static-build,Dockerfile,1,0,0,2025-09-05T02:26:32Z,Static musl babashka build for ARM64 Termux
+279,2026-04-10 23:10:19.270048,4,bmorphism,whale,bmorphism/whale,MATLAB,2,0,0,2025-09-04T06:55:21Z,omniglot + sperm whale codas = metawhaling
+280,2026-04-10 23:10:19.271583,4,bmorphism,Newclid,bmorphism/Newclid,"",1,0,0,2025-08-30T17:18:10Z,Automatic solver for plane geometry problems.
+281,2026-04-10 23:10:19.273243,4,bmorphism,infinity-topos,bmorphism/infinity-topos,Python,1,0,0,2025-08-29T05:39:49Z,""
+282,2026-04-10 23:10:19.274783,4,bmorphism,elevenlabs-mcp-enhanced,bmorphism/elevenlabs-mcp-enhanced,Python,1,0,0,2025-08-29T04:41:58Z,Enhanced ElevenLabs MCP server with universal API key support and V3 features
+283,2026-04-10 23:10:19.276283,4,bmorphism,zeldar,bmorphism/zeldar,Python,1,0,1,2025-08-26T15:16:21Z,Burning Man Art Robot
+284,2026-04-10 23:10:19.277793,4,bmorphism,jank-imgui,bmorphism/jank-imgui,"",1,0,0,2025-08-13T18:15:12Z,""
+285,2026-04-10 23:10:19.279392,4,bmorphism,labubu-mcp,bmorphism/labubu-mcp,"",1,0,0,2025-08-09T21:19:34Z,"MCP server for interfacing with Godot game engine. Provides tools for launching the editor, running projects, and capturing debug output."
+286,2026-04-10 23:10:19.280917,4,bmorphism,ebpftracer,bmorphism/ebpftracer,"",1,0,0,2025-08-02T09:31:34Z,A simple and handcrafted strace-like eBPF-based syscall tracer
+287,2026-04-10 23:10:19.28229,4,bmorphism,mini-swe-agent,bmorphism/mini-swe-agent,"",1,0,0,2025-07-31T18:38:27Z,"The 100 line AI agent that solves GitHub issues or helps you in your command line. Radically simple, no crazy configs, no giant monorepo—but scores 65% on SWE-bench verified!"
+288,2026-04-10 23:10:19.283721,4,bmorphism,openai-imo-2025-proofs,bmorphism/openai-imo-2025-proofs,"",0,0,0,2025-07-18T13:11:49Z,""
+289,2026-04-10 23:10:19.28519,4,bmorphism,par-lang,bmorphism/par-lang,"",0,0,0,2025-07-15T12:06:29Z,Par (⅋) is an experimental concurrent programming language. It''s an attempt to bring the expressive power of linear logic into practice.
+290,2026-04-10 23:10:19.286429,4,bmorphism,stellogen-quantum-operads,bmorphism/stellogen-quantum-operads,"",1,0,0,2025-07-15T04:49:41Z,Quantum Operads and ZX-Calculus Implementation in Stellogen: Categorical Quantum Mechanics with Condensed Sets Alignment
+291,2026-04-10 23:10:19.287882,4,bmorphism,mcpvals,bmorphism/mcpvals,"",1,0,0,2025-07-13T18:22:40Z,An MCP Evaluation Library
+292,2026-04-10 23:10:19.289281,4,bmorphism,apple-container-framework,bmorphism/apple-container-framework,Clojure,0,0,0,2025-07-13T12:12:10Z,Apple Container Framework - High-performance Babashka library for VM snapshots and container orchestration on Apple Silicon
+293,2026-04-10 23:10:19.290607,4,bmorphism,ezkl-ethglobal2025,bmorphism/ezkl-ethglobal2025,Python,1,0,0,2025-07-07T01:16:01Z,""
+294,2026-04-10 23:10:19.292043,4,bmorphism,zk-haiku-nanogpt,bmorphism/zk-haiku-nanogpt,Solidity,1,0,0,2025-07-06T03:08:24Z,🌟 ZK-Haiku-NanoGPT: Agentic Proof-Chaining Framework - Production-ready infrastructure for verifiable multi-agent AI collaboration using zero-knowledge proofs
+295,2026-04-10 23:10:19.293494,4,bmorphism,wolframite,bmorphism/wolframite,"",0,0,0,2025-07-04T07:49:27Z,An interface between Clojure and Wolfram Language (the language of Mathematica)
+296,2026-04-10 23:10:19.294912,4,bmorphism,binsec,bmorphism/binsec,"",1,0,0,2025-07-02T16:32:44Z,BINSEC binary-level open-source platform
+297,2026-04-10 23:10:19.296218,4,bmorphism,rama-event-processor,bmorphism/rama-event-processor,Java,1,0,0,2025-07-02T07:01:44Z,A repository for processing events with Rama
+298,2026-04-10 23:10:19.297731,4,bmorphism,decontainerization,bmorphism/decontainerization,"",1,0,0,2025-07-02T00:58:40Z,JailDAO: a DAO for operating malware lab jails -- we the detonators
+299,2026-04-10 23:10:19.299119,4,bmorphism,cheerp-compiler,bmorphism/cheerp-compiler,"",1,0,0,2025-06-30T07:49:42Z,C++ to JavaScript/WebAssembly compiler
+300,2026-04-10 23:10:19.300636,4,bmorphism,julia-templeos-metacircular-evaluator,bmorphism/julia-templeos-metacircular-evaluator,"",1,0,0,2025-06-28T00:05:05Z,clever nonsense
+301,2026-04-10 23:10:19.302074,5,zubyul,big-bad-plurigrid-quiz,zubyul/big-bad-plurigrid-quiz,Emacs Lisp,0,0,0,2026-04-09T18:51:31Z,27 flashcards from bmorphism/plurigrid/zubyul/monaduck1069 recent activity + Emacs drill
+302,2026-04-10 23:10:19.303602,5,zubyul,GeoACSets.jl,zubyul/GeoACSets.jl,Emacs Lisp,0,0,0,2026-03-28T12:29:49Z,"Categorical data structures (ACSets) with geospatial capabilities - morphisms for structural navigation, geometry for filtering"
+303,2026-04-10 23:10:19.304896,5,zubyul,Gay.jl,zubyul/Gay.jl,Julia,0,0,0,2026-03-28T11:30:01Z,Wide-gamut color sampling with splittable determinism (Pigeons.jl SPI pattern) + LispSyntax
+304,2026-04-10 23:10:19.306374,5,zubyul,kinesis-kb360pro,zubyul/kinesis-kb360pro,Python,0,0,0,2026-03-26T10:29:40Z,"Claude Code skill for Kinesis Advantage360 Pro keyboard: hardware schematics, KMonad string diagrams, Gay.jl GF(3) color analysis"
+305,2026-04-10 23:10:19.307857,5,zubyul,gay-world,zubyul/gay-world,Python,1,1,0,2026-03-26T04:03:39Z,"Goblin world builder: each goblin is a world. MLX task decomposition → composable persistent worlds, not todos."
+306,2026-04-10 23:10:19.309775,5,zubyul,asi,zubyul/asi,Python,0,0,0,2026-03-18T05:17:18Z,everything is topological chemputer!
+307,2026-04-10 23:10:19.311314,5,zubyul,boxxy,zubyul/boxxy,Go,0,0,0,2026-03-16T03:26:07Z,""
+308,2026-04-10 23:10:19.31287,5,zubyul,from-possible-worlds,zubyul/from-possible-worlds,TeX,0,0,0,2026-03-16T03:14:55Z,""
+309,2026-04-10 23:10:19.314311,5,zubyul,tilelang-kernels,zubyul/tilelang-kernels,Python,0,0,0,2026-03-16T02:31:13Z,"TileLang GPU kernels for SplitMix64 color generation, GF(3) trit classification, Sinkhorn OT, and flash attention. Targeting NVIDIA GB10 Blackwell (CUDA 13.0, compute 12.1)."
+310,2026-04-10 23:10:19.315714,5,zubyul,WhiteHole,zubyul/WhiteHole,"",0,0,0,2026-02-25T06:23:21Z,"WhiteHole is a modern macOS + tripos audio loopback driver that allows applications to pass audio to other entities with at most a hex color #000000 latency"
+311,2026-04-10 23:10:19.31733,5,zubyul,zig-syrup,zubyul/zig-syrup,"",0,0,0,2026-02-10T07:38:17Z,High-performance Zig implementation of OCapN Syrup with CapTP optimizations
+312,2026-04-10 23:10:19.319172,5,zubyul,zubyul.github.io,zubyul/zubyul.github.io,CSS,1,0,0,2026-01-27T03:24:34Z,""
+313,2026-04-10 23:10:19.320914,5,zubyul,toad,zubyul/toad,"",0,0,0,2026-01-16T17:55:26Z,A unified interface for AI in your terminal.
+314,2026-04-10 23:10:19.322411,5,zubyul,agent-o-rama,zubyul/agent-o-rama,"",0,0,0,2025-12-25T09:51:09Z,"End-to-end LLM agent platform for Java and Clojure for building, tracing, testing, and monitoring agents with integrated storage and one-click deployment. Inspired by LangGraph/LangSmith."
+315,2026-04-10 23:10:19.323685,5,zubyul,hue-world,zubyul/hue-world,JavaScript,0,0,0,2025-12-12T08:32:59Z,Terminal Vibe Snipe puzzle game with ANSI true color
+316,2026-04-10 23:10:19.325123,5,zubyul,multiplayer-emacs,zubyul/multiplayer-emacs,HTML,0,0,0,2025-12-12T08:07:38Z,Multiplayer world: Emacs split-pane Vibe Snipe with Gay SPI goblin swarm
+317,2026-04-10 23:10:19.326648,5,zubyul,EyeGestures,zubyul/EyeGestures,Python,1,0,0,2025-07-30T04:21:49Z,gaze tracking software
+318,2026-04-10 23:10:19.328143,5,zubyul,jonikas_for_weronika.-annotated-code,zubyul/jonikas_for_weronika.-annotated-code,Jupyter Notebook,1,0,0,2023-08-17T02:46:42Z,""
+319,2026-04-10 23:10:19.329533,5,zubyul,jonikas_lab_data_analysis_misc,zubyul/jonikas_lab_data_analysis_misc,Jupyter Notebook,2,0,0,2023-08-16T20:24:40Z,various scripts used to process large genetic sequence data
+320,2026-04-10 23:10:19.331122,5,zubyul,WGCNA,zubyul/WGCNA,HTML,2,0,0,2023-07-05T18:02:30Z,weighted gene correlation network analysis project
+321,2026-04-10 23:10:19.332512,5,zubyul,Nikolova_lab_data_analysis,zubyul/Nikolova_lab_data_analysis,R,2,0,0,2023-06-16T13:56:58Z,undergraduate thesis - using Human Connectome Project data to study the relationship of cortical thickness to transcription factors for depression
+322,2026-04-10 23:10:19.334109,5,zubyul,lastfm_analysis_copy,zubyul/lastfm_analysis_copy,Jupyter Notebook,1,0,0,2023-06-15T22:20:35Z,lastfm data analysis
+323,2026-04-10 23:10:19.335777,5,zubyul,pyprobml_PSYCOS454,zubyul/pyprobml_PSYCOS454,"",1,0,0,2023-05-26T22:55:04Z,"Python code for ""Probabilistic Machine learning"" book by Kevin Murphy "
+324,2026-04-10 23:10:19.337532,5,zubyul,website,zubyul/website,"",1,0,0,2017-10-13T16:37:14Z,""
+325,2026-04-10 23:10:19.339255,6,migalkin,kgcourse2021,migalkin/kgcourse2021,HTML,25,9,0,2025-08-04T03:01:46Z,Материалы к курсу по Knowledge Graphs
+326,2026-04-10 23:10:19.340822,6,migalkin,migalkin.github.io,migalkin/migalkin.github.io,JavaScript,0,0,0,2025-01-22T04:53:51Z,"Github Pages template for academic personal websites, forked from mmistakes/minimal-mistakes"
+327,2026-04-10 23:10:19.342685,6,migalkin,EquiTriton,migalkin/EquiTriton,Python,0,0,0,2024-08-01T18:18:55Z,"EquiTriton is a project that seeks to implement high-performance kernels for commonly used building blocks in equivariant neural networks, enabling compute efficient training and inference."
+328,2026-04-10 23:10:19.344501,6,migalkin,mlx-graphs,migalkin/mlx-graphs,Python,0,0,0,2024-03-19T18:13:18Z,Graph Neural Network library made for Apple Silicon
+329,2026-04-10 23:10:19.346008,6,migalkin,NBFNet_mlx,migalkin/NBFNet_mlx,Python,10,1,1,2024-03-02T00:15:23Z,Neural Bellman-Ford networks implemented in MLX for Apple Silicon
+330,2026-04-10 23:10:19.347753,6,migalkin,StarE,migalkin/StarE,Python,88,16,1,2023-12-01T20:12:24Z,EMNLP 2020: Message Passing for Hyper-Relational Knowledge Graphs
+331,2026-04-10 23:10:19.349105,6,migalkin,torchdrug,migalkin/torchdrug,Python,0,0,0,2023-07-15T21:30:04Z,A powerful and flexible machine learning platform for drug discovery
+332,2026-04-10 23:10:19.350487,6,migalkin,rambo,migalkin/rambo,Rust,3,0,1,2023-02-08T14:27:03Z,""
+333,2026-04-10 23:10:19.352205,6,migalkin,ciss2_project,migalkin/ciss2_project,Jupyter Notebook,0,0,6,2022-12-08T05:50:27Z,""
+334,2026-04-10 23:10:19.353793,6,migalkin,RWL,migalkin/RWL,Python,7,1,0,2022-12-01T15:58:59Z,Weisfeiler and Leman Go Relational (LOG 2022)
+335,2026-04-10 23:10:19.355764,6,migalkin,pytorch_geometric,migalkin/pytorch_geometric,"",0,0,0,2022-05-20T20:25:46Z,Graph Neural Network Library for PyTorch
+336,2026-04-10 23:10:19.357305,6,migalkin,iclr-blog-track.github.io,migalkin/iclr-blog-track.github.io,"",0,0,0,2022-04-12T18:08:44Z,""
+337,2026-04-10 23:10:19.358961,6,migalkin,NodePiece,migalkin/NodePiece,Python,143,21,0,2022-02-02T03:34:04Z,Compositional and Parameter-Efficient Representations for Large Knowledge Graphs (ICLR''22)
+338,2026-04-10 23:10:19.360665,6,migalkin,SAN,migalkin/SAN,Python,0,0,0,2021-11-04T21:28:53Z,""
+339,2026-04-10 23:10:19.362279,6,migalkin,SQuAD-es-mt,migalkin/SQuAD-es-mt,"",0,1,0,2020-07-14T17:13:08Z,Spanish version of SQuAD 1.1 and 2.0 obtained via machine translation
+340,2026-04-10 23:10:19.364204,6,migalkin,knowledge-net,migalkin/knowledge-net,Python,0,0,0,2019-12-26T14:46:35Z,KnowledgeNet: A Benchmark Dataset for Knowledge Base Population
+341,2026-04-10 23:10:19.365688,6,migalkin,SDA-Publications,migalkin/SDA-Publications,TeX,0,0,0,2019-09-19T22:41:20Z,""
+342,2026-04-10 23:10:19.367298,6,migalkin,netquery_rdf,migalkin/netquery_rdf,Python,0,0,0,2019-06-01T12:49:16Z,NIPS 2018 paper fork for RDF
+343,2026-04-10 23:10:19.368959,6,migalkin,w3id.org,migalkin/w3id.org,HTML,0,0,0,2018-10-03T10:26:06Z,Website source code for w3id.org
+344,2026-04-10 23:10:19.37055,6,migalkin,edbt-experiments,migalkin/edbt-experiments,"",0,0,0,2017-11-23T15:27:49Z,""
+345,2026-04-10 23:10:19.372549,6,migalkin,SMJoin-experiments,migalkin/SMJoin-experiments,R,1,0,0,2017-06-06T12:20:23Z,ISWC 2017 SMJoin results
+346,2026-04-10 23:10:19.374175,6,migalkin,ekgs_clustering,migalkin/ekgs_clustering,Python,0,0,0,2016-08-28T16:28:02Z,""
+347,2026-04-10 23:10:19.37587,6,migalkin,r_energyConsumption,migalkin/r_energyConsumption,R,0,0,0,2016-05-12T21:00:16Z,""
+348,2026-04-10 23:10:19.377496,6,migalkin,ontologies,migalkin/ontologies,Web Ontology Language,0,0,0,2015-12-06T13:49:53Z,""
+349,2026-04-10 23:10:19.379583,6,migalkin,Tables_Provider,migalkin/Tables_Provider,Java,0,0,0,2015-03-20T00:17:35Z,""
+350,2026-04-10 23:10:19.381556,6,migalkin,ProgrammingAssignment2,migalkin/ProgrammingAssignment2,R,0,0,0,2015-03-15T18:38:57Z,Repository for Programming Assignment 2 for R Programming on Coursera
+351,2026-04-10 23:10:19.3833,6,migalkin,datasciencecoursera,migalkin/datasciencecoursera,"",0,0,0,2015-02-13T00:04:31Z,The repo for the Coursera Data Science course
+352,2026-04-10 23:10:19.385201,6,migalkin,Visualization,migalkin/Visualization,"",0,0,0,2014-10-28T13:46:28Z,""
+353,2026-04-10 23:10:19.387187,6,migalkin,InformationWorkbenchTestSrc,migalkin/InformationWorkbenchTestSrc,Java,0,0,0,2013-06-22T15:46:54Z,""
+354,2026-04-10 23:10:19.388985,6,migalkin,LinkedData,migalkin/LinkedData,"",0,0,0,2013-05-20T07:43:46Z,Information Workbench + Linked Open Data
+355,2026-04-10 23:10:19.390599,7,DJedamski,kaggle_ncaa18,DJedamski/kaggle_ncaa18,Jupyter Notebook,0,0,0,2018-03-07T12:36:09Z,Code for NCAA March Madness competition (2018)
+356,2026-04-10 23:10:19.392532,7,DJedamski,awesome-ruby,DJedamski/awesome-ruby,"",2,0,0,2018-01-02T13:17:54Z,":gem: A collection of awesome Ruby libraries, tools, frameworks and software"
+357,2026-04-10 23:10:19.394253,7,DJedamski,reading-list,DJedamski/reading-list,"",0,0,0,2017-12-22T17:22:53Z,""
+358,2026-04-10 23:10:19.395852,7,DJedamski,introduction_to_ml_with_python,DJedamski/introduction_to_ml_with_python,Jupyter Notebook,0,0,0,2017-01-13T15:53:14Z,"Notebooks and code for the book ""Introduction to Machine Learning with Python"""
+359,2026-04-10 23:10:19.397549,7,DJedamski,Project_Euler,DJedamski/Project_Euler,"",0,0,0,2015-10-14T02:10:45Z,""
+360,2026-04-10 23:10:19.399133,7,DJedamski,kaggle-titanic,DJedamski/kaggle-titanic,Python,2,1,0,2015-08-11T14:24:48Z,"A tutorial for Kaggle''s Titanic: Machine Learning from Disaster competition. Demonstartes basic data munging, analysis, and visualization techniques. Shows examples of supervised machine learning tec"
+361,2026-04-10 23:10:19.400964,7,DJedamski,EDA,DJedamski/EDA,R,0,0,0,2014-11-09T16:51:34Z,Coursera Project
+362,2026-04-10 23:10:19.402562,7,DJedamski,Kaggle,DJedamski/Kaggle,"",1,0,0,2014-11-03T02:22:01Z,""
+363,2026-04-10 23:10:19.404559,7,DJedamski,Getting-and-Cleaning-Data,DJedamski/Getting-and-Cleaning-Data,R,1,0,0,2014-10-26T20:53:14Z,Coursera Project
+364,2026-04-10 23:10:19.406506,7,DJedamski,School,DJedamski/School,R,1,1,0,2014-10-09T02:55:13Z,A couple small projects from grad school
+365,2026-04-10 23:10:19.408094,7,DJedamski,ProgrammingAssignment2,DJedamski/ProgrammingAssignment2,R,0,0,0,2014-09-18T02:56:13Z,Repository for Programming Assignment 2 for R Programming on Coursera
+366,2026-04-10 23:10:19.40956,8,wasita,wm-cv,wasita/wm-cv,Svelte,0,0,0,2026-04-08T22:54:06Z,Academic CV written as a single page web app (Svelte + Tailwind)
+367,2026-04-10 23:10:19.411047,8,wasita,dartmouth-thesis-typst-template,wasita/dartmouth-thesis-typst-template,"",0,0,0,2026-04-01T15:11:17Z,A Typst implementation of the Dartmouth thesis template
+368,2026-04-10 23:10:19.412709,8,wasita,wasita.github.io,wasita/wasita.github.io,Svelte,0,0,8,2026-03-24T00:39:35Z,personal website
+369,2026-04-10 23:10:19.414244,8,wasita,quartz,wasita/quartz,TypeScript,0,0,1,2026-03-09T00:46:55Z,"🌱 a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites"
+370,2026-04-10 23:10:19.416321,8,wasita,magic-garden,wasita/magic-garden,Python,1,1,1,2026-01-13T23:51:32Z,"a bot written for the magic garden discord activity game, for auto-purchasing seeds when user is afk"
+371,2026-04-10 23:10:19.417827,8,wasita,proj-template,wasita/proj-template,"",0,0,0,2026-01-09T20:55:42Z,""
+372,2026-04-10 23:10:19.419502,8,wasita,food-diary,wasita/food-diary,Svelte,0,0,0,2025-12-13T01:06:39Z,""
+373,2026-04-10 23:10:19.421165,8,wasita,send2kobo,wasita/send2kobo,TypeScript,0,0,0,2025-12-12T19:09:12Z,Website for sending books to your kobo e-reader
+374,2026-04-10 23:10:19.422673,8,wasita,cosmos_emotions,wasita/cosmos_emotions,Jupyter Notebook,0,0,0,2025-10-16T20:45:13Z,""
+375,2026-04-10 23:10:19.424137,8,wasita,empirica,wasita/empirica,"",0,0,0,2025-05-27T03:02:34Z,Open source project to tackle the problem of long development cycles required to produce software to conduct multi-participant and real-time human experiments online.
+376,2026-04-10 23:10:19.425653,8,wasita,d60-keeb,wasita/d60-keeb,"",0,0,0,2024-08-26T00:46:22Z,""
+377,2026-04-10 23:10:19.427399,8,wasita,wins-search,wasita/wins-search,CSS,1,0,0,2022-12-14T22:17:32Z,Women in Network Science (WiNS) member list website
+378,2026-04-10 23:10:19.429068,8,wasita,msdm,wasita/msdm,"",0,0,0,2022-08-30T01:11:45Z,Models of Sequential Decision-Making
+379,2026-04-10 23:10:19.430797,8,wasita,svelte-meteor,wasita/svelte-meteor,CSS,0,0,1,2022-05-31T19:35:59Z,""
+380,2026-04-10 23:10:19.432403,8,wasita,continuous-rater,wasita/continuous-rater,Svelte,0,0,0,2022-03-23T00:24:03Z,a standalone web app that interfaces with mturk and allows users to provide continuous ratings while watching videos
+381,2026-04-10 23:10:19.433902,8,wasita,learning-stats-backwards,wasita/learning-stats-backwards,HTML,0,0,0,2021-12-28T21:58:04Z,""
+382,2026-04-10 23:10:19.435552,8,wasita,honeycomb-demo,wasita/honeycomb-demo,JavaScript,0,0,0,2021-12-07T21:38:28Z,""
+383,2026-04-10 23:10:19.437144,8,wasita,dartbrains,wasita/dartbrains,Jupyter Notebook,1,0,0,2021-09-28T01:11:45Z,"This repository is a Python package with all of the functions and python libraries required for the Dartmouth fMRI Analysis Course taught by Prof Luke Chang, PhD."
+384,2026-04-10 23:10:19.43875,8,wasita,Cell-Assembly-Detection,wasita/Cell-Assembly-Detection,MATLAB,0,0,0,2021-08-07T21:25:51Z,Matlab Toolbox for Neuronal Assembly Detection
+385,2026-04-10 23:10:19.440816,8,wasita,course-content,wasita/course-content,Jupyter Notebook,0,0,0,2021-07-21T20:16:50Z,NMA Computational Neuroscience course
+386,2026-04-10 23:10:19.442784,8,wasita,into-the-tidyverse,wasita/into-the-tidyverse,"",0,0,0,2021-07-12T22:09:59Z,Materials for R/Tidyverse tutorials
+387,2026-04-10 23:10:19.444709,8,wasita,markdown-cv,wasita/markdown-cv,"",0,0,0,2021-05-07T13:46:31Z,a simple template to write your CV in a readable markdown file and use CSS to publish/print it.
+388,2026-04-10 23:10:19.446332,8,wasita,reinforcement-learning-an-introduction,wasita/reinforcement-learning-an-introduction,"",0,0,0,2021-03-31T03:29:16Z,Python Implementation of Reinforcement Learning: An Introduction
+389,2026-04-10 23:10:19.447723,8,wasita,mvpc,wasita/mvpc,HTML,0,0,0,2021-02-18T22:04:26Z,""
+390,2026-04-10 23:10:19.449286,8,wasita,preproc,wasita/preproc,"",0,0,0,2021-02-17T21:26:25Z,""
+391,2026-04-10 23:10:19.450996,8,wasita,neuro-task-starter,wasita/neuro-task-starter,JavaScript,0,0,0,2021-01-12T19:09:49Z,Starter repo for jspsych/react/electron neuro tasks
+392,2026-04-10 23:10:19.452497,8,wasita,event-marker,wasita/event-marker,"",0,0,0,2020-01-15T20:34:20Z,JS utilities for serial and parallel port event markers
+393,2026-04-10 23:10:19.454276,8,wasita,MIND2019_IM_RL_SR,wasita/MIND2019_IM_RL_SR,"",0,0,0,2019-11-26T12:37:31Z,Tutorials for MIND2019
+394,2026-04-10 23:10:19.45594,8,wasita,TheoryOfMindInferenceModels,wasita/TheoryOfMindInferenceModels,"",0,0,0,2019-11-22T22:26:42Z,""
+395,2026-04-10 23:10:19.45756,9,kristinezheng,kristinezheng.github.io,kristinezheng/kristinezheng.github.io,HTML,0,0,0,2026-04-09T17:09:42Z,""
+396,2026-04-10 23:10:19.459328,9,kristinezheng,pddlgym,kristinezheng/pddlgym,"",0,0,0,2025-07-22T14:50:02Z,Convert a PDDL domain into an OpenAI Gym environment.
+397,2026-04-10 23:10:19.46104,9,kristinezheng,hierarchical-teaching,kristinezheng/hierarchical-teaching,JavaScript,0,0,0,2025-04-11T22:33:21Z,"Code and data for ""A hierarchical Bayesian model of adaptive teaching"" (Cognitive Science, 2024)"
+398,2026-04-10 23:10:19.462532,9,kristinezheng,Portfolio,kristinezheng/Portfolio,"",0,0,0,2025-02-12T00:00:42Z,July 2021
+399,2026-04-10 23:10:19.464347,9,kristinezheng,lookit-jenga,kristinezheng/lookit-jenga,Jupyter Notebook,0,0,0,2024-05-16T18:29:01Z,Lookit study (https://lookit.readthedocs.io/en/develop/) for 9.85
+400,2026-04-10 23:10:19.466044,9,kristinezheng,gym-sokoban,kristinezheng/gym-sokoban,"",0,0,0,2023-11-08T10:22:29Z,Sokoban environment for OpenAI Gym 
+401,2026-04-10 23:10:19.467988,9,kristinezheng,lookit-docs,kristinezheng/lookit-docs,"",0,0,0,2023-10-26T23:19:15Z,"Documentation for Lookit project, including use of platform and lookit-api, ember-lookit-frameplayer, and exp-addons repos."
+402,2026-04-10 23:10:19.469606,9,kristinezheng,architecture-survey,kristinezheng/architecture-survey,JavaScript,0,0,0,2023-08-31T06:09:25Z,Online Psychophysics Experiments
+403,2026-04-10 23:10:19.471094,9,kristinezheng,lm-pcg,kristinezheng/lm-pcg,"",0,0,0,2023-05-20T15:18:30Z,""
+404,2026-04-10 23:10:19.472593,9,kristinezheng,wall_follower_sim,kristinezheng/wall_follower_sim,"",0,0,0,2023-02-22T21:25:16Z,Drive forwards while maintaining a constant distance to a wall on either the left or right on a simulated racecar. 
+405,2026-04-10 23:10:19.47464,9,kristinezheng,final_challenge_2022,kristinezheng/final_challenge_2022,"",0,0,0,2022-05-09T00:58:56Z,MIT RSS Final Challenge for Spring 2022!
+406,2026-04-10 23:10:19.476723,9,kristinezheng,auditory-illusion,kristinezheng/auditory-illusion,CSS,0,0,0,2022-03-11T19:22:33Z,9.35 spring 2022 auditory illusion 
+407,2026-04-10 23:10:19.47833,9,kristinezheng,shapenet_renderer,kristinezheng/shapenet_renderer,"",0,0,0,2021-11-30T10:14:18Z,"A clean, compact renderer for spherical images of shapenet objects in blender <2.8."
+408,2026-04-10 23:10:19.480384,9,kristinezheng,graph_example,kristinezheng/graph_example,Python,0,0,0,2021-10-08T07:29:51Z,""
+409,2026-04-10 23:10:19.482073,9,kristinezheng,Green-Machine,kristinezheng/Green-Machine,Python,0,0,0,2021-09-19T05:33:01Z,HackMIT 2021: Sustainability Track
+410,2026-04-10 23:10:19.48382,9,kristinezheng,two-pathway-learning,kristinezheng/two-pathway-learning,"",0,0,0,2020-10-05T14:37:31Z,""
+411,2026-04-10 23:10:19.485592,9,kristinezheng,Sokoban-Solver-AI,kristinezheng/Sokoban-Solver-AI,"",0,0,0,2017-02-11T21:31:47Z,"An AI player for the japanese game Sokoban, forked from gabrielarpino"
+412,2026-04-10 23:10:19.487115,9,kristinezheng,callgraph,kristinezheng/callgraph,"",0,0,0,2013-07-09T04:02:05Z,Creates XQuery call graphs for complexity analysis
+413,2026-04-10 23:10:19.488549,10,M1shaaa,M1shaaa,M1shaaa/M1shaaa,"",0,0,0,2026-04-10T13:02:40Z,Config files for my GitHub profile.
+414,2026-04-10 23:10:19.490317,10,M1shaaa,portfolio-inner-site,M1shaaa/portfolio-inner-site,TypeScript,0,0,0,2026-03-18T15:40:20Z,inner
+415,2026-04-10 23:10:19.491746,10,M1shaaa,M1shaaa.github.io,M1shaaa/M1shaaa.github.io,TypeScript,0,0,0,2025-12-16T21:51:02Z,outer
+416,2026-04-10 23:10:19.493143,10,M1shaaa,OWLET,M1shaaa/OWLET,Python,0,0,0,2025-06-30T20:28:33Z,""
+417,2026-04-10 23:10:19.49508,10,M1shaaa,WebGazer,M1shaaa/WebGazer,HTML,0,0,0,2025-05-12T20:00:15Z,WebGazer.js: Scalable Webcam EyeTracking Using User Interactions
+418,2026-04-10 23:10:19.497036,10,M1shaaa,lab-bookshelf-,M1shaaa/lab-bookshelf-,TypeScript,0,0,0,2024-12-31T05:11:14Z,""
+419,2026-04-10 23:10:19.498889,10,M1shaaa,piano-RNN,M1shaaa/piano-RNN,"",0,0,0,2024-12-10T18:47:39Z,""
+420,2026-04-10 23:10:19.500576,10,M1shaaa,rosie-s-study-3-lookit-project,M1shaaa/rosie-s-study-3-lookit-project,"",0,0,0,2024-11-04T22:15:35Z,""
+421,2026-04-10 23:10:19.50262,10,M1shaaa,Python-Lookit-Uploads,M1shaaa/Python-Lookit-Uploads,Python,0,0,0,2024-02-16T15:20:50Z,random projects
+422,2026-04-10 23:10:19.504285,10,M1shaaa,Classes,M1shaaa/Classes,"",0,0,0,2023-12-07T08:16:20Z,""
+423,2026-04-10 23:10:19.50589,10,M1shaaa,Yale-Work,M1shaaa/Yale-Work,HTML,0,0,0,2023-12-06T18:33:10Z,""
+424,2026-04-10 23:10:19.507627,10,M1shaaa,MNIST-Classifier,M1shaaa/MNIST-Classifier,"",0,0,0,2023-11-28T06:12:13Z,""
+425,2026-04-10 23:10:19.509385,10,M1shaaa,Misha-WebsiteOLD,M1shaaa/Misha-WebsiteOLD,HTML,0,0,0,2023-10-13T14:55:47Z,Code that''ll help you kickstart a personal website that showcases your work as a software developer.
+426,2026-04-10 23:10:19.511295,10,M1shaaa,M1shaaawebsiteOLD,M1shaaa/M1shaaawebsiteOLD,HTML,0,0,0,2023-07-30T17:16:08Z,Filez
+427,2026-04-10 23:10:19.513316,10,M1shaaa,MishaWebsiteOld,M1shaaa/MishaWebsiteOld,JavaScript,0,0,0,2023-07-12T16:28:43Z,My Personal Website
+428,2026-04-10 23:10:19.515175,10,M1shaaa,Lookit-Demo,M1shaaa/Lookit-Demo,"",0,0,0,2023-04-10T02:50:03Z,""
+429,2026-04-10 23:10:19.51694,11,AustinCStone,EpsteinSearch,AustinCStone/EpsteinSearch,Python,0,0,0,2026-02-11T01:10:54Z,""
+430,2026-04-10 23:10:19.518962,11,AustinCStone,bmforkupdate,AustinCStone/bmforkupdate,Python,0,0,0,2025-05-09T04:49:24Z,""
+431,2026-04-10 23:10:19.520543,11,AustinCStone,bmfork,AustinCStone/bmfork,Python,0,0,1,2025-05-09T04:17:17Z,""
+432,2026-04-10 23:10:19.522319,11,AustinCStone,bitmind-fork,AustinCStone/bitmind-fork,"",0,0,0,2025-01-09T06:16:51Z,forked on jan 8 2025
+433,2026-04-10 23:10:19.524098,11,AustinCStone,testLogin,AustinCStone/testLogin,Python,0,0,0,2023-02-13T20:52:23Z,""
+434,2026-04-10 23:10:19.52605,11,AustinCStone,austincstone.github.io,AustinCStone/austincstone.github.io,HTML,0,0,0,2021-10-23T22:48:46Z,""
+435,2026-04-10 23:10:19.527904,11,AustinCStone,test,AustinCStone/test,"",0,0,0,2021-09-21T21:15:51Z,""
+436,2026-04-10 23:10:19.529719,11,AustinCStone,stonks,AustinCStone/stonks,Python,0,0,0,2020-09-04T22:54:33Z,Playing around with some option calculations.
+437,2026-04-10 23:10:19.531274,11,AustinCStone,google-research,AustinCStone/google-research,"",0,0,0,2020-04-29T19:13:33Z,Google Research
+438,2026-04-10 23:10:19.532952,11,AustinCStone,Z-order-curve,AustinCStone/Z-order-curve,Python,0,0,0,2019-06-09T02:53:41Z,Demo implementation of things related to space filling z-order curve
+439,2026-04-10 23:10:19.534758,11,AustinCStone,LensBuilder,AustinCStone/LensBuilder,Python,0,0,0,2019-04-04T04:28:05Z,WIP optimize for the surface of a focusing lens by casting rays
+440,2026-04-10 23:10:19.536196,11,AustinCStone,TFBirds,AustinCStone/TFBirds,Python,0,0,0,2019-01-30T08:07:21Z,Bird flocking simulator in TensorFlow.
+441,2026-04-10 23:10:19.537697,11,AustinCStone,oxen,AustinCStone/oxen,Python,0,0,0,2019-01-30T08:02:46Z,Python-based job runner with a web-based frontend.
+442,2026-04-10 23:10:19.539397,11,AustinCStone,StructureFromMotion,AustinCStone/StructureFromMotion,Python,1,0,0,2018-06-10T18:56:16Z,Recover 3D geometry from videos with unknown camera calibration
+443,2026-04-10 23:10:19.541153,11,AustinCStone,OptimalControl,AustinCStone/OptimalControl,Python,0,0,0,2018-02-19T23:13:55Z,Practicing some concepts from control theory.
+444,2026-04-10 23:10:19.542802,11,AustinCStone,LearningCuda,AustinCStone/LearningCuda,C,0,0,0,2017-11-05T23:48:04Z,Me working through CUDA by example
+445,2026-04-10 23:10:19.54463,11,AustinCStone,torch7,AustinCStone/torch7,C,0,0,0,2017-06-01T22:36:17Z,http://torch.ch
+446,2026-04-10 23:10:19.546077,11,AustinCStone,TextGAN,AustinCStone/TextGAN,Python,92,30,5,2016-10-04T03:19:12Z,"A generative adversarial network for text generation, written in TensorFlow."
+447,2026-04-10 23:10:19.547529,11,AustinCStone,StereoVisionMRF,AustinCStone/StereoVisionMRF,Python,11,4,0,2016-01-10T08:34:29Z,Using a MRF with loopy belief propagation to infer depth from stereo images.
+448,2026-04-10 23:10:19.548993,11,AustinCStone,SpectralClustering,AustinCStone/SpectralClustering,Python,3,2,0,2015-11-09T03:27:15Z,Implementing spectral clustering as part of a homework assignment for graduate statistical modeling I
+449,2026-04-10 23:10:19.550567,11,AustinCStone,statsHw2,AustinCStone/statsHw2,Python,0,0,0,2015-09-28T15:56:31Z,Simple linear regression and model selection stuff I''m required to do...
+450,2026-04-10 23:10:19.552533,11,AustinCStone,StatsModelingHw1,AustinCStone/StatsModelingHw1,Python,0,0,0,2015-09-19T04:13:52Z,My first homework for statistical modeling
+451,2026-04-10 23:10:19.554341,11,AustinCStone,ConvNet,AustinCStone/ConvNet,Python,0,0,0,2015-09-08T00:43:12Z,"A ""deep"" convolutional neural network for classifying the MNIST database. Uses dropout and rmsprop. "
+452,2026-04-10 23:10:19.556076,11,AustinCStone,TheanoStuff,AustinCStone/TheanoStuff,Python,0,0,0,2015-09-04T02:14:00Z,Getting acquainted with Theano
+453,2026-04-10 23:10:19.55806,11,AustinCStone,bash_profile,AustinCStone/bash_profile,"",0,0,0,2015-08-26T17:59:50Z,bash profile that I use
+454,2026-04-10 23:10:19.559896,11,AustinCStone,Founderati-Server,AustinCStone/Founderati-Server,Python,0,1,0,2015-08-25T19:17:44Z,Server for Founderati
+455,2026-04-10 23:10:19.561647,11,AustinCStone,Founderati-client,AustinCStone/Founderati-client,JavaScript,0,1,0,2015-08-25T19:16:57Z,"AngelList or LinkedIn, are excellent tools, but these networks are so large that it returns to a game of “who you know” offline.  It is easy to get lost in the crowd.  Founders and investors alike nee"
+456,2026-04-10 23:10:19.56362,11,AustinCStone,logisticRegressionHaskell,AustinCStone/logisticRegressionHaskell,Haskell,1,0,0,2015-06-07T19:37:42Z,Logistic regression done in Haskell. Classifies digits of the MNIST handwritten digit database as 0 or 1. 
+457,2026-04-10 23:10:19.565699,11,AustinCStone,Genetic-Algorithm-Sorting-Network,AustinCStone/Genetic-Algorithm-Sorting-Network,Python,0,0,0,2015-05-12T19:30:48Z,""
+458,2026-04-10 23:10:19.567515,11,AustinCStone,RealTimeRayTracingFractalWorld,AustinCStone/RealTimeRayTracingFractalWorld,C++,0,0,0,2015-05-11T02:03:41Z,"Real time ray tracing of a fractal world consisting of mountains, water, clouds, and snow. "
+459,2026-04-10 23:10:19.569243,11,AustinCStone,gibbs_sampling,AustinCStone/gibbs_sampling,Python,0,0,0,2015-04-09T03:15:55Z,A proof of concept of the eventual convergence of gibbs sampling and ancestral rejection sampling. 
+460,2026-04-10 23:10:19.571423,11,AustinCStone,lexer,AustinCStone/lexer,C,0,0,0,2015-02-09T22:45:55Z,A lexer for prolog
+461,2026-04-10 23:10:19.573299,11,AustinCStone,HTTPCache,AustinCStone/HTTPCache,Java,0,0,0,2015-02-05T22:04:01Z,Takes URLs and caches responses from GET requests to these URLs. Returns responses from cache based on the header fields Max-age and Expires. 
+462,2026-04-10 23:10:19.574938,11,AustinCStone,DigitRecognition,AustinCStone/DigitRecognition,Matlab,0,0,0,2015-02-02T04:35:23Z,Classify handwritten digits 
+463,2026-04-10 23:10:19.576881,11,AustinCStone,stuffForAlec,AustinCStone/stuffForAlec,JavaScript,0,0,0,2015-01-05T01:34:22Z,aofihasfoihsafoiashfsoifhasfoisaf
+464,2026-04-10 23:10:19.578535,11,AustinCStone,FlaskBlog,AustinCStone/FlaskBlog,Python,0,0,0,2014-12-17T23:45:06Z,A simple blog written with Flask
+465,2026-04-10 23:10:19.580027,11,AustinCStone,PrologParserAndEvaluator,AustinCStone/PrologParserAndEvaluator,"",0,0,0,2014-11-07T02:24:27Z,A parser and evaluator written in prolog for a simple (but Turing complete) programming language.
+466,2026-04-10 23:10:19.581837,11,AustinCStone,QuantumSearchAlgorithmSimulation,AustinCStone/QuantumSearchAlgorithmSimulation,Java,0,0,0,2014-11-07T02:09:38Z,A simulation of Grover''s algorithm (http://en.wikipedia.org/wiki/Grover''s_algorithm) that searches a database (or function) or for a specific value in O(sqrt(N)) time.
+467,2026-04-10 23:10:19.583721,11,AustinCStone,SleepDetectionMoto360,AustinCStone/SleepDetectionMoto360,Java,0,0,0,2014-10-19T03:24:05Z,An application for the Moto 360 that uses heart rate and accelerometer data to detect when the wearer has entered R.E.M. sleep.
+468,2026-04-10 23:10:19.585231,11,AustinCStone,Connectomics,AustinCStone/Connectomics,TeX,0,0,0,2014-05-11T05:30:07Z,2013-2014 Kaggle Connectomics Challenge - Infer the neural connectome from fluorescence data and neuron positions. MCMC approach to sample from the posterior distribution of likely connectomes
+469,2026-04-10 23:10:19.586833,11,AustinCStone,Eigenface-Recognition,AustinCStone/Eigenface-Recognition,Matlab,0,0,0,2014-05-11T03:56:10Z,""
+470,2026-04-10 23:10:19.588404,11,AustinCStone,Royal-Road-With-Ditches-Genetic-Algorithm,AustinCStone/Royal-Road-With-Ditches-Genetic-Algorithm,Python,0,0,0,2014-05-11T02:27:57Z,"A modification of the ""Royal Road"" genetic algorithm. Implements negative epistasis of fitness positive mutations."
+471,2026-04-10 23:10:19.589871,11,AustinCStone,Netflix_Prize_Challenge,AustinCStone/Netflix_Prize_Challenge,M,0,0,0,2014-05-11T02:23:07Z,Predict''s people''s ratings of movies they haven''t seen based on existing movie ratings. 
+1,2026-04-11 21:34:04.197991,1,plurigrid,gorj,plurigrid/gorj,Clojure,0,0,150,2026-04-11T20:24:21,forj + Rama topology nREPL routing + GF(3) gay trit coloring for compositional open game REPL orchestration
+2,2026-04-11 21:34:04.206767,1,plurigrid,horse,plurigrid/horse,TeX,1,1,7,2026-04-11T07:07:06,""
+3,2026-04-11 21:34:04.209045,1,plurigrid,web-browser,plurigrid/web-browser,Rust,0,0,0,2026-04-10T02:54:47,web-browser — from prepostweb lineage (monaduck1069)
+4,2026-04-11 21:34:04.210685,1,plurigrid,nanoclj-zig,plurigrid/nanoclj-zig,Zig,0,0,20,2026-04-09T19:53:30,"NaN-boxed Clojure interpreter in Zig 0.15 — interaction nets, fuel-bounded eval, GF(3) trit conservation"
+5,2026-04-11 21:34:04.212368,1,plurigrid,zig-syrup,plurigrid/zig-syrup,Zig,2,2,2,2026-04-09T11:21:29,High-performance Zig implementation of OCapN Syrup with CapTP optimizations
+6,2026-04-11 21:34:04.213725,1,plurigrid,asi,plurigrid/asi,HTML,16,5,3,2026-04-10T02:37:44,everything is topological chemputer!
+7,2026-04-11 21:34:04.21548,1,plurigrid,vivarium,plurigrid/vivarium,Clojure,1,0,0,2026-04-08T08:38:37,""
+8,2026-04-11 21:34:04.216993,1,plurigrid,flowglad-rs,plurigrid/flowglad-rs,Rust,0,0,0,2026-04-08T07:56:15,""
+9,2026-04-11 21:34:04.21839,1,plurigrid,tree-sitter-nanoclj-zig,plurigrid/tree-sitter-nanoclj-zig,C,0,0,0,2026-04-04T07:48:21,Tree-sitter grammar for nanoclj-zig
+10,2026-04-11 21:34:04.219999,1,plurigrid,forester,plurigrid/forester,XSLT,0,0,0,2026-03-30T01:32:26,"CatColab mathematical documentation forest — double category theory, doctrines, models. For bci.horse"
+11,2026-04-11 21:34:04.221452,1,plurigrid,bci-blue-share,plurigrid/bci-blue-share,HTML,0,0,0,2026-03-30T00:58:52,BCI signal infrastructure — bci.blue / bci.red / bci.horse
+12,2026-04-11 21:34:04.223628,1,plurigrid,gatomic,plurigrid/gatomic,Clojure,0,0,0,2026-03-30T00:54:48,Deterministic color identity store with sonification — Gay + Datomic + Atomic
+13,2026-04-11 21:34:04.225757,1,plurigrid,blue,plurigrid/blue,TeX,0,0,0,2026-03-29T23:06:32,""
+14,2026-04-11 21:34:04.227661,1,plurigrid,red,plurigrid/red,"",0,0,0,2026-03-29T22:58:46,""
+15,2026-04-11 21:34:04.229765,1,plurigrid,asi-skills,plurigrid/asi-skills,Julia,3,0,1,2026-04-09T19:53:56,69 skills with Galois Hole Type accessibility (Seven Sketches §1.4.1)
+16,2026-04-11 21:34:04.232728,1,plurigrid,nblm-flashcards,plurigrid/nblm-flashcards,Hy,0,0,0,2026-03-26T08:23:01,NotebookLM Enterprise flashcard pipeline — Hy + Babashka + Emacs drill
+17,2026-04-11 21:34:04.23595,1,plurigrid,spi-race,plurigrid/spi-race,Swift,0,0,0,2026-03-19T13:49:45,"Splitmix Parallel Integrity — deterministic color generation at hardware bandwidth across CPU, GPU, and every language"
+18,2026-04-11 21:34:04.239022,1,plurigrid,gemini-agent,plurigrid/gemini-agent,Python,0,0,0,2026-02-19T06:39:16,""
+19,2026-04-11 21:34:04.241513,1,plurigrid,graded-optic,plurigrid/graded-optic,Haskell,0,0,0,2026-02-08T16:10:16,Semiring-graded bidirectional processes — optics where each channel carries an independent semiring grade
+20,2026-04-11 21:34:04.244838,1,plurigrid,json-canvas,plurigrid/json-canvas,"",0,0,0,2026-02-06T06:50:57,JSON Canvas: Real-time interaction data capture via W3C JSON-LD 1.1
+21,2026-04-11 21:34:04.247725,1,plurigrid,shepherd,plurigrid/shepherd,Scheme,0,0,0,2026-01-23T07:47:28,Spritely Shepherd - Service manager (mirror from Codeberg)
+22,2026-04-11 21:34:04.251521,1,plurigrid,goblinshare,plurigrid/goblinshare,Scheme,0,0,0,2026-01-23T07:47:12,P2P filesharing demo for Goblins (mirror from Codeberg)
+23,2026-04-11 21:34:04.254066,1,plurigrid,magenc,plurigrid/magenc,Scheme,0,0,0,2026-01-23T07:47:11,Magenc Magnet URIs - Secure Object Permanence for the Web (mirror from Codeberg)
+24,2026-04-11 21:34:04.256982,1,plurigrid,hoot,plurigrid/hoot,Scheme,0,0,0,2026-01-23T07:47:10,Spritely Hoot - Scheme to WebAssembly compiler (mirror from Codeberg)
+25,2026-04-11 21:34:04.259434,1,plurigrid,leprechauns,plurigrid/leprechauns,Racket,0,0,0,2026-01-23T07:46:46,Spritely Goblins + Gay.jl semantic colors (green-rooted) - Distributed object capability programming
+26,2026-04-11 21:34:04.261185,1,plurigrid,spritely-semantic-colors,plurigrid/spritely-semantic-colors,"",0,0,0,2026-01-23T07:38:32,Deterministic color mappings for Spritely/Goblins objects using Gay.jl GF(3) semantics
+27,2026-04-11 21:34:04.263455,1,plurigrid,gay-tofu,plurigrid/gay-tofu,HTML,0,0,0,2026-01-08T15:14:34,Low-discrepancy color sequences for visual TOFU authentication
+28,2026-04-11 21:34:04.266625,1,plurigrid,lazygay,plurigrid/lazygay,Go,0,0,0,2026-01-08T14:19:25,lazygit fork with Gay.jl deterministic commit coloring
+29,2026-04-11 21:34:04.268516,1,plurigrid,gay-terminal,plurigrid/gay-terminal,Rust,0,0,0,2026-01-08T14:19:24,Terminal ANSI coloring with Gay.jl low-discrepancy sequences
+30,2026-04-11 21:34:04.270649,1,plurigrid,gay-go,plurigrid/gay-go,Go,0,0,0,2026-01-08T14:19:23,Go implementation of Gay.jl deterministic coloring
+31,2026-04-11 21:34:04.273518,1,plurigrid,gay-rs,plurigrid/gay-rs,Rust,0,0,0,2026-01-08T14:19:22,Rust crate for Gay.jl deterministic coloring with GF(3) trits
+32,2026-04-11 21:34:04.276432,1,plurigrid,lazybjj,plurigrid/lazybjj,Rust,0,0,0,2026-01-08T14:19:19,TUI for jj with Gay.jl GF(3) coloring - Brazilian Jiu-jitsu for version control
+33,2026-04-11 21:34:04.279137,1,plurigrid,agent-o-rama,plurigrid/agent-o-rama,Clojure,0,0,0,2026-01-02T01:09:22,""
+34,2026-04-11 21:34:04.281909,1,plurigrid,aptos-wallet-ruby,plurigrid/aptos-wallet-ruby,Ruby,1,0,0,2025-09-30T22:47:22,""
+35,2026-04-11 21:34:04.28527,1,plurigrid,duck-kanban,plurigrid/duck-kanban,Rust,1,0,0,2025-09-26T20:18:38,Duck intelligence kanban system with kundalini computational pattern recognition
+36,2026-04-11 21:34:04.287974,1,plurigrid,shiteshiteshite,plurigrid/shiteshiteshite,"",0,0,0,2025-09-26T03:07:20,Duck intelligence kanban system with kundalini computational pattern recognition
+37,2026-04-11 21:34:04.291045,1,plurigrid,discohy,plurigrid/discohy,Hy,0,0,0,2025-09-10T02:01:31,""
+38,2026-04-11 21:34:04.29405,1,plurigrid,telemind,plurigrid/telemind,"",0,0,0,2025-06-12T05:54:59,""
+39,2026-04-11 21:34:04.296006,1,plurigrid,ontology,plurigrid/ontology,JavaScript,7,9,16,2025-05-27T18:18:34,autopoietic ergodicity and embodied gradualism
+40,2026-04-11 21:34:04.298177,1,plurigrid,Plurigraph,plurigrid/Plurigraph,JavaScript,2,5,4,2025-01-05T08:39:09,Plurigrid knowledge base for use with Obsidian.md
+41,2026-04-11 21:34:04.300964,1,plurigrid,signe,plurigrid/signe,Python,0,0,0,2024-08-15T20:52:03,Signal messages data traversal
+42,2026-04-11 21:34:04.304165,1,plurigrid,SwiftDuck,plurigrid/SwiftDuck,"",0,0,0,2024-08-08T18:19:06,""
+43,2026-04-11 21:34:04.306457,1,plurigrid,act,plurigrid/act,Python,3,1,4,2024-07-26T08:27:08,building blocks for cognitive category theory
+44,2026-04-11 21:34:04.308797,1,plurigrid,xenomorphic,plurigrid/xenomorphic,"",0,0,0,2024-04-09T03:24:55,""
+45,2026-04-11 21:34:04.31131,1,plurigrid,metamorphic,plurigrid/metamorphic,"",0,0,0,2024-04-09T03:22:41,""
+46,2026-04-11 21:34:04.313631,1,plurigrid,DiffusionVoiceDemo,plurigrid/DiffusionVoiceDemo,Clojure,0,0,0,2024-04-02T18:09:01,""
+47,2026-04-11 21:34:04.316228,1,plurigrid,website,plurigrid/website,Clojure,0,1,0,2024-03-30T04:37:51,""
+48,2026-04-11 21:34:04.319119,1,plurigrid,StochFlow,plurigrid/StochFlow,Python,4,1,0,2024-03-20T23:34:57,"a Python library that implements the stochastic interpolant models and algorithms described in the paper ""Stochastic Interpolants via Diffusive and Fl"
+49,2026-04-11 21:34:04.321815,1,plurigrid,intent,plurigrid/intent,"",0,0,0,2024-03-04T04:53:38,Simulations for `An Analysis of Intent Markets''.
+50,2026-04-11 21:34:04.324206,1,plurigrid,novella,plurigrid/novella,TypeScript,1,0,0,2024-01-27T08:12:55,""
+51,2026-04-11 21:34:04.326736,1,plurigrid,ACT.jl,plurigrid/ACT.jl,Julia,0,0,0,2024-01-21T00:02:25,applied categorical duck cybernetics 🦆
+52,2026-04-11 21:34:04.328995,1,plurigrid,ducklings,plurigrid/ducklings,TypeScript,0,0,15,2023-12-25T07:34:27,""
+53,2026-04-11 21:34:04.331698,1,plurigrid,paretae,plurigrid/paretae,TypeScript,0,0,14,2023-11-20T05:14:42,""
+54,2026-04-11 21:34:04.334134,1,plurigrid,experiments,plurigrid/experiments,"",0,0,0,2023-11-17T05:39:07,"Learning from 🧮🦆📥 ""An archive of experiments done to inform Penrose development."""
+55,2026-04-11 21:34:04.33661,1,plurigrid,fuckit,plurigrid/fuckit,Clojure,0,0,0,2023-11-14T21:26:14,""
+56,2026-04-11 21:34:04.339787,1,plurigrid,omega,plurigrid/omega,Clojure,0,0,0,2023-11-07T21:08:46,""
+57,2026-04-11 21:34:04.341934,1,plurigrid,org,plurigrid/org,Jupyter Notebook,2,0,1,2023-11-07T01:08:05,Dynamically Replicating Duck 🦆 Leveraging DIrected Hypergraphs for Directed Graph Analysis of Repo Commits Anomaly Detection paired with BERT Attentio
+58,2026-04-11 21:34:04.344122,1,plurigrid,CVAE-Flows,plurigrid/CVAE-Flows,"",0,0,0,2023-10-24T14:41:32,Leveraging dihypergraphs and latent spaces for conversation context extraction and flow modelling
+59,2026-04-11 21:34:04.346437,1,plurigrid,morph-prover-cli,plurigrid/morph-prover-cli,"",0,1,0,2023-10-18T03:49:03,Lean4 in
+60,2026-04-11 21:34:04.349041,1,plurigrid,uncharacter,plurigrid/uncharacter,TypeScript,0,0,0,2023-09-19T20:17:46,""
+61,2026-04-11 21:34:04.351896,1,plurigrid,chateau,plurigrid/chateau,TypeScript,0,0,0,2023-08-30T20:11:12,""
+62,2026-04-11 21:34:04.354761,1,plurigrid,gmgm,plurigrid/gmgm,"",0,0,1,2023-08-25T13:54:00,""
+63,2026-04-11 21:34:04.358163,1,plurigrid,tuttle,plurigrid/tuttle,TypeScript,0,0,0,2023-08-09T17:40:44,""
+64,2026-04-11 21:34:04.361105,1,plurigrid,mesoplay,plurigrid/mesoplay,"",0,0,0,2023-08-09T06:19:03,""
+65,2026-04-11 21:34:04.363639,1,plurigrid,am,plurigrid/am,Python,0,0,0,2023-08-05T12:46:33,""
+66,2026-04-11 21:34:04.366674,1,plurigrid,compose,plurigrid/compose,"",0,0,2,2023-07-24T06:18:48,""
+67,2026-04-11 21:34:04.369226,1,plurigrid,flussi,plurigrid/flussi,"",0,0,1,2023-07-15T06:40:11,""
+68,2026-04-11 21:34:04.371604,1,plurigrid,cf,plurigrid/cf,"",0,0,0,2023-07-11T08:11:29,""
+69,2026-04-11 21:34:04.373963,1,plurigrid,poepoe,plurigrid/poepoe,"",0,0,1,2023-07-09T22:20:50,""
+70,2026-04-11 21:34:04.376536,1,plurigrid,marketplace,plurigrid/marketplace,"",0,0,1,2023-07-09T05:52:30,""
+71,2026-04-11 21:34:04.379067,1,plurigrid,smoller,plurigrid/smoller,"",0,0,1,2023-07-06T07:38:04,""
+72,2026-04-11 21:34:04.381809,1,plurigrid,liquidity,plurigrid/liquidity,"",0,0,1,2023-07-06T02:07:28,""
+73,2026-04-11 21:34:04.384544,1,plurigrid,solid-rs,plurigrid/solid-rs,"",0,0,1,2023-07-05T21:58:05,""
+74,2026-04-11 21:34:04.385973,1,plurigrid,solid,plurigrid/solid,Python,0,0,0,2023-07-05T21:52:25,""
+75,2026-04-11 21:34:04.387548,1,plurigrid,ipegrafo,plurigrid/ipegrafo,Python,0,0,0,2023-07-03T07:29:40,""
+76,2026-04-11 21:34:04.390502,1,plurigrid,plurigrid-v4,plurigrid/plurigrid-v4,TypeScript,0,0,0,2023-07-03T06:31:59,""
+77,2026-04-11 21:34:04.393266,1,plurigrid,novella-v3,plurigrid/novella-v3,"",0,0,0,2023-07-03T06:29:40,""
+78,2026-04-11 21:34:04.395834,1,plurigrid,polyglottal,plurigrid/polyglottal,TypeScript,0,0,0,2023-07-03T06:23:45,""
+79,2026-04-11 21:34:04.398457,1,plurigrid,novella-v2,plurigrid/novella-v2,"",0,0,0,2023-07-03T06:22:38,""
+80,2026-04-11 21:34:04.400978,1,plurigrid,cocreation-ui,plurigrid/cocreation-ui,"",0,0,2,2023-07-03T04:45:53,""
+81,2026-04-11 21:34:04.403546,1,plurigrid,smol,plurigrid/smol,"",0,0,1,2023-07-02T08:45:32,""
+82,2026-04-11 21:34:04.406215,1,plurigrid,commons,plurigrid/commons,TypeScript,0,0,0,2023-06-27T05:46:24,""
+83,2026-04-11 21:34:04.40905,1,plurigrid,post-web,plurigrid/post-web,Svelte,0,0,0,2023-06-18T00:24:24,""
+84,2026-04-11 21:34:04.411948,1,plurigrid,microworlds,plurigrid/microworlds,Rust,3,5,3,2023-05-13T03:54:56,👽
+85,2026-04-11 21:34:04.414544,1,plurigrid,pills,plurigrid/pills,"",0,0,0,2023-05-02T10:03:03,metaphors for embodied gradualism
+86,2026-04-11 21:34:04.417366,1,plurigrid,plurigrid-rs,plurigrid/plurigrid-rs,Rust,0,0,0,2023-04-21T01:02:56,""
+87,2026-04-11 21:34:04.420069,1,plurigrid,plurigrid-game.github.io,plurigrid/plurigrid-game.github.io,HTML,0,0,1,2023-04-20T00:17:55,""
+88,2026-04-11 21:34:04.422684,1,plurigrid,synth,plurigrid/synth,Rust,0,0,0,2023-04-15T01:56:45,""
+89,2026-04-11 21:34:04.425348,1,plurigrid,birbs,plurigrid/birbs,C++,0,0,0,2023-04-15T01:56:32,Build native CosmWasm apps w/ Dart and Flutter! 💙🦚
+90,2026-04-11 21:34:04.42809,1,plurigrid,agent,plurigrid/agent,Python,5,1,6,2023-03-31T18:45:23,Framework for agency amplification. A conversational agent for every DAO! 🐈‍⬛
+91,2026-04-11 21:34:04.431189,1,plurigrid,vcg-auction,plurigrid/vcg-auction,Rust,7,2,1,2023-03-16T21:53:08,a simple contract that performs a VCG auction 
+92,2026-04-11 21:34:04.433308,1,plurigrid,bidder,plurigrid/bidder,Dart,0,0,1,2023-03-15T15:23:22,simple flutter app which allows bidding in a vcg auction
+93,2026-04-11 21:34:04.434835,1,plurigrid,plurigrid.github.io,plurigrid/plurigrid.github.io,HTML,1,2,2,2023-01-20T03:27:34,""
+94,2026-04-11 21:34:04.436386,1,plurigrid,VPP,plurigrid/VPP,Julia,0,1,0,2023-01-11T18:41:07,Hyperreal Power Plant 🏭⚡️ Power to the People! 🏴
+95,2026-04-11 21:34:04.437905,1,plurigrid,grid,plurigrid/grid,TypeScript,2,1,1,2023-01-02T11:55:55,"Plurigrid Testnet #0: Edith Clarke"
+96,2026-04-11 21:34:04.439444,1,plurigrid,commons-contracts,plurigrid/commons-contracts,Rust,0,0,0,2022-09-09T09:20:11,CosmWasm contracts to implement Commons Stack
+97,2026-04-11 21:34:04.440817,1,plurigrid,plurigrid.xyz,plurigrid/plurigrid.xyz,TypeScript,0,0,1,2022-08-31T05:26:14,""
+98,2026-04-11 21:34:04.442409,1,plurigrid,gridops,plurigrid/gridops,"",0,0,2,2022-07-16T03:02:28,monorepo: the μόνος for the monists in our midst ⊙
+99,2026-04-11 21:34:04.444017,1,kubeflow,manifests,kubeflow/manifests,YAML,1010,1069,28,2026-04-11T13:16:34,Kubeflow AI Reference Platform Deployment Manifests
+100,2026-04-11 21:34:04.445437,1,kubeflow,pipelines,kubeflow/pipelines,Python,4119,1984,464,2026-04-11T04:43:19,Machine Learning Pipelines for Kubeflow
+101,2026-04-11 21:34:04.447036,1,kubeflow,model-registry,kubeflow/model-registry,Go,172,179,42,2026-04-10T22:07:31,"Model Registry provides a single pane of glass for ML model developers to index and manage models, versions, and ML artifacts metadata. It fills a gap"
+102,2026-04-11 21:34:04.449115,1,kubeflow,sdk,kubeflow/sdk,Python,102,171,113,2026-04-10T16:34:20,Universal Python SDK to run AI workloads on Kubernetes
+103,2026-04-11 21:34:04.452253,1,kubeflow,trainer,kubeflow/trainer,Go,2080,944,145,2026-04-10T13:35:59,Distributed AI Model Training and LLM Fine-Tuning on Kubernetes
+104,2026-04-11 21:34:04.455038,1,kubeflow,kale,kubeflow/kale,Python,682,156,58,2026-04-10T12:39:21,Kubeflow’s superfood for Data Scientists
+105,2026-04-11 21:34:04.459235,1,kubeflow,internal-acls,kubeflow/internal-acls,Go,18,383,2,2026-04-10T07:31:19,Repository used to main group ACLs used by Kubeflow developers
+106,2026-04-11 21:34:04.461412,1,kubeflow,notebooks,kubeflow/notebooks,"",70,98,185,2026-04-10T14:09:19,"Kubeflow Notebooks runs interactive development environments for AI, ML, and Data workloads on Kubernetes."
+107,2026-04-11 21:34:04.463597,1,kubeflow,mcp-server,kubeflow/mcp-server,"",2,3,4,2026-04-08T16:18:12,MCP Server for AI-Assisted Development with Kubeflow Tools
+108,2026-04-11 21:34:04.465576,1,kubeflow,community,kubeflow/community,Jsonnet,194,255,12,2026-04-08T14:50:20,Information about the Kubeflow community including proposals and governance information.
+109,2026-04-11 21:34:04.467358,1,kubeflow,website,kubeflow/website,HTML,184,916,42,2026-04-08T05:10:14,Kubeflow Website
+110,2026-04-11 21:34:04.470572,1,kubeflow,dashboard,kubeflow/dashboard,TypeScript,17,53,91,2026-04-11T20:00:42,Kubeflow Central Dashboard is the web interface for Kubeflow
+111,2026-04-11 21:34:04.472672,1,kubeflow,pipelines-components,kubeflow/pipelines-components,Python,11,33,28,2026-04-10T17:55:11,Kubeflow Pipelines
+112,2026-04-11 21:34:04.47559,1,kubeflow,blog,kubeflow/blog,Jupyter Notebook,32,61,25,2026-04-07T16:26:42,Kubeflow blog  based on fastpages
+113,2026-04-11 21:34:04.477253,1,kubeflow,spark-operator,kubeflow/spark-operator,Python,3111,1483,82,2026-04-11T18:13:25,Kubernetes operator for managing the lifecycle of Apache Spark applications on Kubernetes. 
+114,2026-04-11 21:34:04.480276,1,kubeflow,katib,kubeflow/katib,Python,1676,521,118,2026-04-02T07:08:12,Automated Machine Learning on Kubernetes
+115,2026-04-11 21:34:04.483452,1,kubeflow,mcp-apache-spark-history-server,kubeflow/mcp-apache-spark-history-server,Python,150,50,28,2026-04-08T23:34:35,MCP Server for Apache Spark History Server. The bridge between Agentic AI and Apache Spark.
+116,2026-04-11 21:34:04.485207,1,kubeflow,mpi-operator,kubeflow/mpi-operator,Go,522,236,103,2026-04-08T22:05:08,"Kubernetes Operator for MPI-based applications (distributed training, HPC, etc.)"
+117,2026-04-11 21:34:04.486877,1,kubeflow,arena,kubeflow/arena,Go,808,190,67,2026-04-10T18:21:33,A CLI for Kubeflow. 
+118,2026-04-11 21:34:04.489805,1,kubeflow,docs-agent,kubeflow/docs-agent,Python,33,99,158,2026-03-07T13:26:58,Kubeflow Documentation AI Agent to power the Kubeflow Website
+119,2026-04-11 21:34:04.492113,1,kubeflow,kubeflow,kubeflow/kubeflow,"",15566,2628,0,2026-01-05T13:47:10,Machine Learning Toolkit for Kubernetes
+120,2026-04-11 21:34:04.494016,1,kubeflow,examples,kubeflow/examples,Jsonnet,1459,755,111,2025-04-14T01:54:52,A repository to host extended examples and tutorials
+121,2026-04-11 21:34:04.496209,1,kubeflow,testing,kubeflow/testing,Python,61,86,33,2025-02-14T18:33:13,Test infrastructure and tooling for Kubeflow.
+122,2026-04-11 21:34:04.497718,1,kubeflow,kfp-tekton,kubeflow/kfp-tekton,TypeScript,182,123,79,2024-11-19T12:23:51,Kubeflow Pipelines on Tekton
+123,2026-04-11 21:34:04.499221,1,kubeflow,kfserving-lts,kubeflow/kfserving-lts,Jsonnet,12,19,51,2024-08-02T16:25:44,""
+124,2026-04-11 21:34:04.500941,1,kubeflow,kubebench,kubeflow/kubebench,Jsonnet,79,35,68,2024-06-17T19:22:04,Repository for benchmarking
+125,2026-04-11 21:34:04.502457,1,kubeflow,fate-operator,kubeflow/fate-operator,Go,51,15,6,2024-02-22T19:44:08,Fate operator
+126,2026-04-11 21:34:04.504161,1,kubeflow,kfctl,kubeflow/kfctl,Go,182,134,94,2023-08-15T20:19:22,kfctl is a CLI for deploying and managing Kubeflow
+127,2026-04-11 21:34:04.505751,1,kubeflow,kfp-tekton-backend,kubeflow/kfp-tekton-backend,TypeScript,8,6,46,2023-08-14T22:05:04,Experimental project plugging Tekton yaml behind KFP API and UI engine
+128,2026-04-11 21:34:04.508022,1,kubeflow,common,kubeflow/common,Go,53,70,40,2023-05-28T13:16:00,Common APIs and libraries shared by other Kubeflow operator repositories.
+129,2026-04-11 21:34:04.509657,1,kubeflow,.allstar,kubeflow/.allstar,"",2,0,0,2022-12-06T23:07:59,""
+130,2026-04-11 21:34:04.511232,1,kubeflow,fairing,kubeflow/fairing,Jsonnet,337,143,134,2022-04-11T05:28:47,"Python SDK for building, training, and deploying ML models"
+131,2026-04-11 21:34:04.513105,1,kubeflow,xgboost-operator,kubeflow/xgboost-operator,Python,77,53,22,2021-12-01T18:00:10,Incubating project for xgboost operator
+132,2026-04-11 21:34:04.51493,1,kubeflow,mxnet-operator,kubeflow/mxnet-operator,Go,52,33,9,2021-12-01T17:47:19,A Kubernetes operator for mxnet jobs
+133,2026-04-11 21:34:04.516608,1,kubeflow,pytorch-operator,kubeflow/pytorch-operator,Jsonnet,309,143,63,2021-12-01T17:44:48,PyTorch on Kubernetes
+134,2026-04-11 21:34:04.518335,1,kubeflow,frontend,kubeflow/frontend,JavaScript,8,18,12,2021-12-01T17:41:37,Repository for kubeflow frontend
+135,2026-04-11 21:34:04.520102,1,kubeflow,metadata,kubeflow/metadata,TypeScript,123,64,38,2021-12-01T17:35:27,Repository for assets related to Metadata.
+136,2026-04-11 21:34:04.521897,1,kubeflow,caffe2-operator,kubeflow/caffe2-operator,Go,16,12,2,2021-12-01T01:58:06,Experimental repository for a caffe2 operator
+137,2026-04-11 21:34:04.523516,1,kubeflow,code-intelligence,kubeflow/code-intelligence,Jupyter Notebook,56,20,64,2021-12-01T01:52:58,"ML-Powered Developer Tools, using Kubeflow"
+138,2026-04-11 21:34:04.525305,1,kubeflow,example-seldon,kubeflow/example-seldon,Jupyter Notebook,172,56,9,2021-12-01T01:49:58,Example for end-to-end machine learning on Kubernetes using Kubeflow and Seldon Core
+139,2026-04-11 21:34:04.528462,1,kubeflow,batch-predict,kubeflow/batch-predict,Python,17,7,9,2021-12-01T01:47:51,Repository for batch predict
+140,2026-04-11 21:34:04.53063,1,kubeflow,reporting,kubeflow/reporting,Jsonnet,2,5,1,2021-12-01T01:42:32,Repository for collecting and analyzing metrics about Kubeflow usage.
+141,2026-04-11 21:34:04.534321,1,kubeflow,chainer-operator,kubeflow/chainer-operator,Jsonnet,17,15,7,2021-11-14T13:03:57,Repository for chainer operator
+142,2026-04-11 21:34:04.536005,1,kubeflow,crd-validation,kubeflow/crd-validation,Go,11,7,5,2021-01-25T15:02:53,Validation Generation for Kubeflow CRD on Kubernetes
+143,2026-04-11 21:34:04.537585,1,kubeflow,community-infra,kubeflow/community-infra,Go,3,9,4,2021-01-25T14:49:49,Declarative configurations for KF community infrastructure
+144,2026-04-11 21:34:04.539266,1,kubeflow,.github,kubeflow/.github,"",2,1,0,2020-05-12T00:22:56,Org wide templates
+145,2026-04-11 21:34:04.541354,1,kubeflow,marketing-materials,kubeflow/marketing-materials,"",4,4,4,2019-07-19T13:57:15,""
+146,2026-04-11 21:34:04.543299,1,bmorphism,boxxy,bmorphism/boxxy,Move,0,1,0,2026-04-09T12:27:25,""
+147,2026-04-11 21:34:04.545998,1,bmorphism,postweb,bmorphism/postweb,Go,0,0,0,2026-04-09T10:51:57,postweb — evolved from prepostweb
+148,2026-04-11 21:34:04.549022,1,bmorphism,shitcoin,bmorphism/shitcoin,Python,5,0,0,2026-04-08T08:07:08,gets denom for cw20 assets for permissionless degeneracy in IBC
+149,2026-04-11 21:34:04.551696,1,bmorphism,magic-world-org,bmorphism/magic-world-org,Python,0,0,0,2026-04-05T07:03:50,Magic World Org (Local MLX) - renamed from magic-todo-org
+150,2026-04-11 21:34:04.554461,1,bmorphism,zig-syrup,bmorphism/zig-syrup,Zig,0,0,0,2026-03-28T21:42:32,"Embeddable OCapN Syrup encoder/decoder in Zig — 550 LOC, 22 tests, 112-variety test fixture"
+151,2026-04-11 21:34:04.557064,1,bmorphism,ocaml-mcp-sdk,bmorphism/ocaml-mcp-sdk,OCaml,60,2,0,2026-03-16T05:24:25,OCaml SDK for Model Context Protocol using Jane Street''s oxcaml_effect library
+152,2026-04-11 21:34:04.559635,1,bmorphism,flox-mcp-bb,bmorphism/flox-mcp-bb,Clojure,0,0,0,2026-02-12T02:45:43,"Open-source MCP server for Flox — Babashka/Clojure, single file, 20 tools"
+153,2026-04-11 21:34:04.561662,1,bmorphism,vibesnipe-market,bmorphism/vibesnipe-market,Move,0,0,9,2026-02-05T10:23:25,""
+154,2026-04-11 21:34:04.563664,1,bmorphism,tapes,bmorphism/tapes,"",0,0,0,2026-02-04T02:23:37,VHS tapes for terminal recordings
+155,2026-04-11 21:34:04.566835,1,bmorphism,duck-rio-heateq,bmorphism/duck-rio-heateq,Rust,0,0,0,2026-02-02T23:33:32,""
+156,2026-04-11 21:34:04.570423,1,bmorphism,aella,bmorphism/aella,Rascal,1,0,0,2026-02-01T02:44:30,""
+157,2026-04-11 21:34:04.572586,1,bmorphism,hymlx,bmorphism/hymlx,Python,1,0,0,2026-01-22T12:20:32,""
+158,2026-04-11 21:34:04.575186,1,bmorphism,GeoACSets.jl,bmorphism/GeoACSets.jl,Julia,0,1,1,2026-01-19T13:57:13,"Categorical data structures (ACSets) with geospatial capabilities - morphisms for structural navigation, geometry for filtering"
+159,2026-04-11 21:34:04.578511,1,bmorphism,anti-bullshit-mcp-server,bmorphism/anti-bullshit-mcp-server,JavaScript,23,7,1,2026-01-16T08:54:58,"MCP server for analyzing claims, validating sources, and detecting manipulation using multiple epistemological frameworks"
+160,2026-04-11 21:34:04.581263,1,bmorphism,open-location-code-zig,bmorphism/open-location-code-zig,Zig,3,0,0,2025-12-30T19:33:45,Open Location Code (Plus Codes) for Zig - First-ever Zig implementation of Google''s geocoding system
+161,2026-04-11 21:34:04.584083,1,bmorphism,gay-color-learnable,bmorphism/gay-color-learnable,"",0,0,0,2025-12-15T18:41:02,"Learnable color embeddings connecting Graphistry, Ghidra, Charm via Gay.jl SPI - gh cli integration"
+162,2026-04-11 21:34:04.58635,1,bmorphism,gay-hy,bmorphism/gay-hy,Hy,0,0,0,2025-12-15T15:32:58,Hylang MLX color bandwidth protocol - 2B+ colors/sec with SPI guarantees
+163,2026-04-11 21:34:04.589119,1,bmorphism,multiverse-color-game,bmorphism/multiverse-color-game,Julia,0,0,0,2025-12-12T05:28:11,2+1D Holographic Color Matching Game for VisionPro — Hamkins multiverse + Dave White finance + Gay.jl chromatic identity
+164,2026-04-11 21:34:04.592353,1,bmorphism,signal-mcp,bmorphism/signal-mcp,Rust,0,0,0,2025-12-11T07:20:08,O(n)→O(1) chromatic mode collapse via Galois connection - Gay.jl SPI for loom concurrency
+165,2026-04-11 21:34:04.594825,1,bmorphism,xf.jl,bmorphism/xf.jl,Julia,0,0,0,2025-12-05T22:12:17,Xenofeminist color synthesis — deterministic wide-gamut colors via SplittableRandoms.jl
+166,2026-04-11 21:34:04.597573,1,bmorphism,bafishka,bmorphism/bafishka,Clojure,1,0,0,2025-12-19T09:38:00,🐟 Rust-native Fish shell-friendly file operations with Steel-backed SCI Clojure evaluation (seed: 1069)
+167,2026-04-11 21:34:04.599283,1,bmorphism,deberta-goemotions,bmorphism/deberta-goemotions,Python,0,0,0,2025-10-22T18:32:24,""
+168,2026-04-11 21:34:04.60208,1,bmorphism,monero-rental-hash-war,bmorphism/monero-rental-hash-war,Haskell,1,0,0,2025-10-05T23:08:54,Compositional OpenGame analysis of Monero rental hash war with live network integration
+169,2026-04-11 21:34:04.604214,1,bmorphism,schoenfinkel,bmorphism/schoenfinkel,Python,1,0,0,2025-10-04T23:31:11,Post-quantum categorical gravity framework - gravitational timekeeping through combinatory logic and information circuits
+170,2026-04-11 21:34:04.606361,1,bmorphism,gay-spec,bmorphism/gay-spec,"",1,0,0,2025-10-02T02:01:56,""
+171,2026-04-11 21:34:04.608234,1,bmorphism,bafishka-clean,bmorphism/bafishka-clean,Rust,1,0,0,2025-09-25T19:22:10,Clean monadic Steel-SCI integration with category theory
+172,2026-04-11 21:34:04.610198,1,bmorphism,duck-rs,bmorphism/duck-rs,Zig,0,0,0,2025-10-05T00:21:07,""
+173,2026-04-11 21:34:04.61183,1,bmorphism,babashka-static-build,bmorphism/babashka-static-build,Dockerfile,1,0,0,2025-09-05T02:26:32,Static musl babashka build for ARM64 Termux
+174,2026-04-11 21:34:04.613431,1,bmorphism,whale,bmorphism/whale,MATLAB,2,0,0,2025-09-04T06:55:21,omniglot + sperm whale codas = metawhaling
+175,2026-04-11 21:34:04.615215,1,bmorphism,infinity-topos,bmorphism/infinity-topos,Python,1,0,0,2025-08-29T05:39:49,""
+176,2026-04-11 21:34:04.616887,1,bmorphism,elevenlabs-mcp-enhanced,bmorphism/elevenlabs-mcp-enhanced,Python,1,0,0,2025-08-29T04:41:58,Enhanced ElevenLabs MCP server with universal API key support and V3 features
+177,2026-04-11 21:34:04.618489,1,bmorphism,zeldar,bmorphism/zeldar,Python,1,0,1,2025-08-26T15:16:21,Burning Man Art Robot
+178,2026-04-11 21:34:04.620023,1,bmorphism,stellogen-quantum-operads,bmorphism/stellogen-quantum-operads,"",1,0,0,2025-07-15T04:49:41,Quantum Operads and ZX-Calculus Implementation in Stellogen: Categorical Quantum Mechanics with Condensed Sets Alignment
+179,2026-04-11 21:34:04.621815,1,bmorphism,apple-container-framework,bmorphism/apple-container-framework,Clojure,0,0,0,2025-07-13T12:12:10,Apple Container Framework - High-performance Babashka library for VM snapshots and container orchestration on Apple Silicon
+180,2026-04-11 21:34:04.623423,1,bmorphism,ezkl-ethglobal2025,bmorphism/ezkl-ethglobal2025,Python,1,0,0,2025-07-07T01:16:01,""
+181,2026-04-11 21:34:04.625415,1,bmorphism,zk-haiku-nanogpt,bmorphism/zk-haiku-nanogpt,Solidity,1,0,0,2025-07-06T03:08:24,🌟 ZK-Haiku-NanoGPT: Agentic Proof-Chaining Framework - Production-ready infrastructure for verifiable multi-agent AI collaboration using zero-knowledg
+182,2026-04-11 21:34:04.62792,1,bmorphism,rama-event-processor,bmorphism/rama-event-processor,Java,1,0,0,2025-07-02T07:01:44,A repository for processing events with Rama
+183,2026-04-11 21:34:04.630403,1,bmorphism,vibespace-mcp-go-ternary,bmorphism/vibespace-mcp-go-ternary,HTML,0,1,3,2026-01-11T12:50:40,"Go implementation of a MCP experience for vibes and worlds with NATS streaming, binary data, and balanced ternary support"
+184,2026-04-11 21:34:04.632808,1,bmorphism,oxcaml-sci-canonical,bmorphism/oxcaml-sci-canonical,OCaml,1,0,0,2025-06-20T06:37:12,Canonical OxCaml-SCI implementation with actor-critic verification and deterministic concurrent semantics
+185,2026-04-11 21:34:04.635082,1,bmorphism,oxcaml-mcp,bmorphism/oxcaml-mcp,"",0,0,0,2025-06-20T04:04:34,OxCaml-MCP: High-performance Model Control Protocol server with categorical sonification and DID:* elicitation patterns
+186,2026-04-11 21:34:04.637604,1,bmorphism,oxcaml-sci,bmorphism/oxcaml-sci,"",0,0,0,2025-06-20T03:48:11,OxCaml-SCI: Performance-optimized Scientific Computing Interface with zero-allocation patterns and SIMD vectorization
+187,2026-04-11 21:34:04.640394,1,bmorphism,infinity-topos-impossibility,bmorphism/infinity-topos-impossibility,"",0,0,14,2025-05-29T01:55:28,Impossibility results for automated analysis verification
+188,2026-04-11 21:34:04.642764,1,bmorphism,graphistry-mcp,bmorphism/graphistry-mcp,Python,2,0,0,2025-05-06T17:34:24,"Graphistry MCP integration for graph visualization with LLM workflows, focusing on advanced graph insights and investigations"
+189,2026-04-11 21:34:04.645142,1,bmorphism,hypernym-mcp-server,bmorphism/hypernym-mcp-server,JavaScript,6,5,0,2025-04-02T21:21:08,""
+190,2026-04-11 21:34:04.647445,1,bmorphism,vibespace-mcp-go,bmorphism/vibespace-mcp-go,"",0,0,0,2025-03-19T20:30:02,"Go implementation of a MCP experience for vibes and worlds with NATS streaming, binary data, and balanced ternary support"
+191,2026-04-11 21:34:04.649898,1,bmorphism,krep-mcp-server,bmorphism/krep-mcp-server,JavaScript,1,1,1,2025-03-19T20:22:46,High-performance string search MCP server with automatic CPU core scaling
+192,2026-04-11 21:34:04.652409,1,bmorphism,minecraft-mcp-golf,bmorphism/minecraft-mcp-golf,"",0,0,0,2025-03-16T10:33:31,Minecraft server with MCP capabilities maximizing features in minimal steps
+193,2026-04-11 21:34:04.654805,1,bmorphism,worlds-code-explorer,bmorphism/worlds-code-explorer,"",0,0,0,2025-03-16T05:46:58,A repository to explore and organize code projects from different worlds
+194,2026-04-11 21:34:04.656954,1,bmorphism,voice-fn,bmorphism/voice-fn,"",0,0,0,2025-02-24T22:28:32,A Clojure framework for building real-time voice-enabled AI applications
+195,2026-04-11 21:34:04.659498,1,bmorphism,lumon-tui,bmorphism/lumon-tui,Python,1,0,0,2025-02-02T11:24:21,A terminal-based parallel worlds implementation inspired by Lumon Industries
+196,2026-04-11 21:34:04.661839,1,bmorphism,goose-diagrams,bmorphism/goose-diagrams,"",0,0,0,2025-01-31T08:46:44,ASCII art diagrams representing Goose AI architecture and flows
+197,2026-04-11 21:34:04.664379,1,bmorphism,MetaLab,bmorphism/MetaLab,"",0,0,0,2025-01-30T11:40:33,A space for learning and experimenting with cutting-edge technologies
+198,2026-04-11 21:34:04.666536,1,bmorphism,penrose-mcp,bmorphism/penrose-mcp,JavaScript,9,4,0,2025-01-20T21:44:55,Penrose server for the Infinity-Topos environment
+199,2026-04-11 21:34:04.669246,1,bmorphism,penrose-mcp-server,bmorphism/penrose-mcp-server,"",0,0,0,2025-01-20T20:24:07,MCP server for Penrose system integration
+200,2026-04-11 21:34:04.671695,1,bmorphism,test-repo-3141592,bmorphism/test-repo-3141592,"",0,0,1,2025-01-11T15:06:57,Test repository for tool exploration
+201,2026-04-11 21:34:04.674276,1,bmorphism,manifold-mcp-server,bmorphism/manifold-mcp-server,JavaScript,13,9,5,2025-01-11T10:36:58,MCP server for interacting with Manifold Markets prediction markets
+202,2026-04-11 21:34:04.67717,1,bmorphism,say-mcp-server,bmorphism/say-mcp-server,JavaScript,20,8,2,2025-01-07T03:15:18,MCP server for macOS text-to-speech functionality
+203,2026-04-11 21:34:04.680555,1,bmorphism,penumbra-mcp,bmorphism/penumbra-mcp,JavaScript,5,6,3,2025-01-07T01:15:23,MCP server for interacting with Penumbra blockchain - providing privacy-preserving tools for chain interaction
+204,2026-04-11 21:34:04.6839,1,bmorphism,nats-mcp-server,bmorphism/nats-mcp-server,"",7,3,2,2025-01-06T23:33:41,MCP server for NATS messaging system using NATS CLI - enabling AI agents to interact with NATS messaging
+205,2026-04-11 21:34:04.686545,1,bmorphism,marginalia-mcp-server,bmorphism/marginalia-mcp-server,JavaScript,8,6,0,2025-01-06T05:47:24,An MCP server implementation for managing marginalia and annotations
+206,2026-04-11 21:34:04.690109,1,bmorphism,babashka-mcp-server,bmorphism/babashka-mcp-server,JavaScript,18,6,3,2025-01-05T11:09:42,"A Model Context Protocol server for interacting with Babashka, a native Clojure interpreter for scripting"
+207,2026-04-11 21:34:04.692691,1,bmorphism,openbci-mcp-server,bmorphism/openbci-mcp-server,"",0,0,0,2025-01-05T07:00:10,MCP server for interfacing with OpenBCI hardware
+208,2026-04-11 21:34:04.695293,1,bmorphism,gists-mcp-server,bmorphism/gists-mcp-server,JavaScript,2,0,0,2025-01-03T03:50:54,An MCP server for interacting with GitHub Gists
+209,2026-04-11 21:34:04.69772,1,bmorphism,neural-category-diagrams,bmorphism/neural-category-diagrams,"",0,0,0,2025-01-02T05:47:22,A collection of diagrams exploring neural architectures through category theory
+210,2026-04-11 21:34:04.700265,1,bmorphism,slowtime-mcp-server,bmorphism/slowtime-mcp-server,TypeScript,3,5,6,2025-01-02T01:23:33,A Model Context Protocol server for secure time-based operations with timing attack protection and timelock encryption
+211,2026-04-11 21:34:04.702575,1,bmorphism,open-games-agda,bmorphism/open-games-agda,Agda,0,0,0,2024-12-22T11:16:29,"A formalization of open games in Agda, building on lenses and Markov categories"
+212,2026-04-11 21:34:04.704792,1,bmorphism,yoyo,bmorphism/yoyo,Just,0,0,0,2024-11-30T04:00:12,""
+213,2026-04-11 21:34:04.707375,1,bmorphism,uss-cogsexy,bmorphism/uss-cogsexy,"",0,0,0,2024-11-23T20:52:30,Cognitive Firewall: information reflow and non-linear countermeasures for the information war [USS Hornet Defense Hackathon ''24 🇺🇸🍓]
+214,2026-04-11 21:34:04.709537,1,bmorphism,vibes,bmorphism/vibes,Clojure,0,0,0,2024-11-13T15:56:28,Global Vibespace
+215,2026-04-11 21:34:04.711644,1,bmorphism,untime,bmorphism/untime,Swift,1,0,0,2024-09-06T23:39:08,""
+216,2026-04-11 21:34:04.714304,1,bmorphism,cf,bmorphism/cf,Handlebars,0,0,0,2024-08-07T01:14:25,collective futures
+217,2026-04-11 21:34:04.71701,1,bmorphism,collective,bmorphism/collective,"",0,0,0,2024-08-07T01:08:28,""
+218,2026-04-11 21:34:04.71937,1,bmorphism,pretopos,bmorphism/pretopos,TeX,0,0,0,2024-07-27T12:34:14,_
+219,2026-04-11 21:34:04.721902,1,bmorphism,c-house-town,bmorphism/c-house-town,TypeScript,1,0,0,2024-07-25T21:13:04,""
+220,2026-04-11 21:34:04.72436,1,bmorphism,galahack2024,bmorphism/galahack2024,TypeScript,2,0,0,2024-03-21T15:48:19,""
+221,2026-04-11 21:34:04.726723,1,bmorphism,crags,bmorphism/crags,Python,1,0,0,2024-01-14T04:21:45,RAGs. categorically.
+222,2026-04-11 21:34:04.729322,1,bmorphism,hacker-news-alert-chatgpt-slack,bmorphism/hacker-news-alert-chatgpt-slack,Rust,0,0,0,2023-08-31T09:56:37,Monitor the Hacker News post you''re interested in and let ChatGPT give you a summary of each Post.
+223,2026-04-11 21:34:04.731883,1,bmorphism,summarize-github-issues,bmorphism/summarize-github-issues,Rust,0,0,0,2023-08-31T09:44:28,"Comment the trigger phrase under a GitHub issue, ChatGPT will summarize the GitHub issue and send the result as a Slack message to you."
+224,2026-04-11 21:34:04.73426,1,bmorphism,slackduck,bmorphism/slackduck,Rust,0,0,0,2023-08-31T09:24:05,"A Slack bot with a ChatGPT(or GPT4, bring your own API key) backend."
+225,2026-04-11 21:34:04.736558,1,bmorphism,telega,bmorphism/telega,Rust,1,0,0,2023-08-23T17:20:29,absurd wasm32-wasi flow connecting any components supported as cdylib
+226,2026-04-11 21:34:04.739306,1,bmorphism,io,bmorphism/io,Handlebars,0,0,0,2023-08-20T07:15:36,""
+227,2026-04-11 21:34:04.741462,1,bmorphism,mesocunt2001,bmorphism/mesocunt2001,Rust,0,0,0,2023-08-19T07:49:43,A customized Telegram bot with a Claude (Bring your own API key) backend. You can configure the bot''s context and prompt in template settings.
+228,2026-04-11 21:34:04.744067,1,bmorphism,mesocunt,bmorphism/mesocunt,Rust,0,0,0,2023-08-18T10:13:33,"A customizable Discord bot with a ChatGPT (or GPT4, bring your own API key) backend. You can configure the bot’s context and prompt in the template se"
+229,2026-04-11 21:34:04.74674,1,bmorphism,meso,bmorphism/meso,Jupyter Notebook,1,1,0,2023-08-09T06:04:11,Scripts simulating the approximation of inverse transformations of probabilistic Markov Kernels for the inference of past states in observable data.
+230,2026-04-11 21:34:04.749637,1,bmorphism,monaduck69,bmorphism/monaduck69,Svelte,0,0,1,2023-07-19T12:43:12,SvelteKit template for CodeSandbox Projects
+231,2026-04-11 21:34:04.751911,1,bmorphism,banana,bmorphism/banana,Python,0,0,0,2023-02-23T15:12:07,""
+232,2026-04-11 21:34:04.755491,1,bmorphism,Plurigrid.jl,bmorphism/Plurigrid.jl,Julia,0,1,0,2023-01-04T14:53:02,""
+233,2026-04-11 21:34:04.757919,1,bmorphism,plurigrid-celo,bmorphism/plurigrid-celo,TypeScript,1,1,0,2022-12-09T10:07:25,Celo e-app for Albany Plurigrid
+234,2026-04-11 21:34:04.760471,1,bmorphism,risc0-cosmwasm-example,bmorphism/risc0-cosmwasm-example,Rust,23,2,1,2022-10-20T23:50:40,CosmWasm + zkVM RISC-V EFI template
+235,2026-04-11 21:34:04.762939,1,bmorphism,knxwledge,bmorphism/knxwledge,"",0,1,1,2022-10-02T02:23:31,""
+236,2026-04-11 21:34:04.766034,1,bmorphism,OTC-0,bmorphism/OTC-0,JavaScript,3,0,0,2022-06-07T22:18:08,""
+237,2026-04-11 21:34:04.768204,1,bmorphism,matrix5,bmorphism/matrix5,"",0,0,0,2022-05-25T06:01:57,glowing in public 👽
+238,2026-04-11 21:34:04.770051,1,bmorphism,pluridrop,bmorphism/pluridrop,TypeScript,2,0,0,2022-04-10T00:13:47,ETHPortland2022 hack
+239,2026-04-11 21:34:04.771577,1,bmorphism,kfsummit19,bmorphism/kfsummit19,Python,0,0,0,2019-10-28T16:40:46,Example of running kubeflow pipelines on Anthos (lightning talk at Kubeflow Summit 2019)
+240,2026-04-11 21:34:04.773125,1,bmorphism,recommenders,bmorphism/recommenders,Python,0,0,0,2019-09-11T07:43:03,""
+241,2026-04-11 21:34:04.774628,1,bmorphism,deepfakes,bmorphism/deepfakes,Python,1,0,2,2019-04-28T22:53:40,""
+242,2026-04-11 21:34:04.776157,1,bmorphism,dotemacs,bmorphism/dotemacs,Emacs Lisp,1,0,0,2019-03-29T22:57:59,""
+243,2026-04-11 21:34:04.777982,1,bmorphism,woodbridge-lstm,bmorphism/woodbridge-lstm,Jupyter Notebook,1,1,0,2017-11-15T01:48:15,"PyTorch implementation of Woodridge, Anderson, et al paper on predicting domain generation"
+244,2026-04-11 21:34:04.779751,1,bmorphism,talks,bmorphism/talks,JavaScript,3,1,0,2017-11-14T23:07:43,""
+245,2026-04-11 21:34:04.781354,1,zubyul,big-bad-plurigrid-quiz,zubyul/big-bad-plurigrid-quiz,Emacs Lisp,0,0,0,2026-04-09T18:51:31,27 flashcards from bmorphism/plurigrid/zubyul/monaduck1069 recent activity + Emacs drill
+246,2026-04-11 21:34:04.782992,1,zubyul,Gay.jl,zubyul/Gay.jl,Julia,0,0,0,2026-03-28T11:30:01,Wide-gamut color sampling with splittable determinism (Pigeons.jl SPI pattern) + LispSyntax
+247,2026-04-11 21:34:04.784676,1,zubyul,kinesis-kb360pro,zubyul/kinesis-kb360pro,Python,0,0,0,2026-03-26T10:29:40,"Claude Code skill for Kinesis Advantage360 Pro keyboard: hardware schematics, KMonad string diagrams, Gay.jl GF(3) color analysis"
+248,2026-04-11 21:34:04.786374,1,zubyul,gay-world,zubyul/gay-world,Python,1,1,0,2026-03-26T04:03:39,"Goblin world builder: each goblin is a world. MLX task decomposition → composable persistent worlds, not todos."
+249,2026-04-11 21:34:04.787805,1,zubyul,from-possible-worlds,zubyul/from-possible-worlds,TeX,0,0,0,2026-03-16T03:14:55,""
+250,2026-04-11 21:34:04.789448,1,zubyul,tilelang-kernels,zubyul/tilelang-kernels,Python,0,0,0,2026-03-16T02:31:13,"TileLang GPU kernels for SplitMix64 color generation, GF(3) trit classification, Sinkhorn OT, and flash attention. Targeting NVIDIA GB10 Blackwell (CU"
+251,2026-04-11 21:34:04.791003,1,zubyul,fleet-bootstrap,zubyul/fleet-bootstrap,Shell,0,0,0,2026-02-23T08:19:58,""
+252,2026-04-11 21:34:04.792527,1,zubyul,gay-terminal-colors,zubyul/gay-terminal-colors,Clojure,0,0,0,2026-02-21T07:38:14,Gay.jl world_terminal_fingerprint: SplitMix64 per-terminal color identity
+253,2026-04-11 21:34:04.793915,1,zubyul,basin,zubyul/basin,Rust,0,0,0,2026-02-13T10:31:47,""
+254,2026-04-11 21:34:04.795447,1,zubyul,openbci-visualizer,zubyul/openbci-visualizer,Zig,0,0,0,2026-02-04T11:17:41,""
+255,2026-04-11 21:34:04.797125,1,zubyul,plurigrid-site,zubyul/plurigrid-site,Svelte,0,1,11,2026-02-04T03:20:08,Plurigrid world: site deployment
+256,2026-04-11 21:34:04.798666,1,zubyul,repl,zubyul/repl,Python,0,0,0,2026-02-04T01:08:15,""
+257,2026-04-11 21:34:04.800319,1,zubyul,instance-onboarding,zubyul/instance-onboarding,Shell,0,0,0,2026-02-02T11:44:07,""
+258,2026-04-11 21:34:04.802225,1,zubyul,vibesnipe,zubyul/vibesnipe,Move,0,0,1,2026-01-30T22:36:03,""
+259,2026-04-11 21:34:04.804059,1,zubyul,zubyul.github.io,zubyul/zubyul.github.io,CSS,1,0,0,2026-01-27T03:24:34,""
+260,2026-04-11 21:34:04.805739,1,zubyul,toad-warpify-extension,zubyul/toad-warpify-extension,Python,0,0,0,2026-01-17T07:48:40,Warpify extension for Toad - enables ACP agents to control terminal PTY directly
+261,2026-04-11 21:34:04.807459,1,zubyul,thread-site,zubyul/thread-site,Haskell,0,0,0,2025-12-23T23:53:27,""
+262,2026-04-11 21:34:04.809024,1,zubyul,GayMove,zubyul/GayMove,Move,0,0,0,2025-12-18T09:40:08,""
+263,2026-04-11 21:34:04.810569,1,zubyul,gay-brain-world,zubyul/gay-brain-world,Python,0,0,0,2025-12-16T01:19:28,Gay.jl SPI colors for Moduleur Brain (Pico) + OpenBCI EEG
+264,2026-04-11 21:34:04.812033,1,zubyul,multiplayer,zubyul/multiplayer,HTML,0,0,0,2025-12-12T08:56:16,""
+265,2026-04-11 21:34:04.81332,1,zubyul,cat-world,zubyul/cat-world,TypeScript,0,0,0,2025-12-12T08:47:14,Cat gaze tracker - shows bird videos to cats and tracks their preferences using eye detection
+266,2026-04-11 21:34:04.814874,1,zubyul,hue-world,zubyul/hue-world,JavaScript,0,0,0,2025-12-12T08:32:59,Terminal Vibe Snipe puzzle game with ANSI true color
+267,2026-04-11 21:34:04.8165,1,zubyul,multiplayer-emacs,zubyul/multiplayer-emacs,HTML,0,0,0,2025-12-12T08:07:38,Multiplayer world: Emacs split-pane Vibe Snipe with Gay SPI goblin swarm
+268,2026-04-11 21:34:04.818054,1,zubyul,vibe-snipe,zubyul/vibe-snipe,Kotlin,0,0,0,2025-12-12T03:46:26,""
+269,2026-04-11 21:34:04.819629,1,zubyul,chromatic-vrf,zubyul/chromatic-vrf,Kotlin,0,0,0,2025-12-12T03:26:22,Chromatic VRF: I Love Hue puzzle with Gay.jl MCMC and EG-Walker CRDT multiplayer
+270,2026-04-11 21:34:04.821218,1,zubyul,quantum-telephone,zubyul/quantum-telephone,Jupyter Notebook,0,0,0,2025-12-08T22:54:16,Quantum telephone world: entangled message passing
+271,2026-04-11 21:34:04.822941,1,zubyul,c-elegans-connectome,zubyul/c-elegans-connectome,JavaScript,0,0,0,2025-11-22T15:43:55,""
+272,2026-04-11 21:34:04.824648,1,zubyul,zoterobsidian,zubyul/zoterobsidian,Shell,0,0,0,2025-09-28T16:50:50,""
+273,2026-04-11 21:34:04.826212,1,zubyul,cascade-world,zubyul/cascade-world,Python,1,0,0,2025-09-19T18:25:12,Cascade development environment
+274,2026-04-11 21:34:04.827576,1,zubyul,plurigrid-playbook,zubyul/plurigrid-playbook,"",0,0,0,2025-09-17T02:10:35,""
+275,2026-04-11 21:34:04.829034,1,zubyul,defcon,zubyul/defcon,JavaScript,1,0,0,2025-09-17T02:07:00,""
+276,2026-04-11 21:34:04.830509,1,zubyul,ghostty-modifications,zubyul/ghostty-modifications,JavaScript,1,0,0,2025-09-15T02:45:21,Ghostty terminal modifications and MCP servers
+277,2026-04-11 21:34:04.832021,1,zubyul,GoofyLifeChoices,zubyul/GoofyLifeChoices,Python,1,0,0,2025-07-30T18:48:13,""
+278,2026-04-11 21:34:04.833545,1,zubyul,book,zubyul/book,HTML,0,0,0,2025-05-15T20:30:39,""
+279,2026-04-11 21:34:04.834899,1,zubyul,ezAR,zubyul/ezAR,"",0,0,0,2025-02-03T21:02:26,""
+280,2026-04-11 21:34:04.836306,1,zubyul,obsidian,zubyul/obsidian,"",0,0,0,2024-05-24T18:26:28,""
+281,2026-04-11 21:34:04.837574,1,zubyul,private,zubyul/private,SCSS,0,0,0,2023-10-05T21:03:16,""
+282,2026-04-11 21:34:04.839047,1,zubyul,jonikas_for_weronika.-annotated-code,zubyul/jonikas_for_weronika.-annotated-code,Jupyter Notebook,1,0,0,2023-08-17T02:46:42,""
+283,2026-04-11 21:34:04.840428,1,zubyul,jonikas_lab_data_analysis_misc,zubyul/jonikas_lab_data_analysis_misc,Jupyter Notebook,2,0,0,2023-08-16T20:24:40,various scripts used to process large genetic sequence data
+284,2026-04-11 21:34:04.841677,1,zubyul,WGCNA,zubyul/WGCNA,HTML,2,0,0,2023-07-05T18:02:30,weighted gene correlation network analysis project
+285,2026-04-11 21:34:04.843001,1,zubyul,Dr_Niv_Qs,zubyul/Dr_Niv_Qs,Jupyter Notebook,0,0,0,2023-06-29T04:44:01,Dr. Niv''s Interview Questions
+286,2026-04-11 21:34:04.844306,1,zubyul,reddit_scraper,zubyul/reddit_scraper,Python,0,0,0,2023-06-16T14:06:07,""
+287,2026-04-11 21:34:04.845638,1,zubyul,Python_Undergrad,zubyul/Python_Undergrad,Python,0,0,0,2023-06-16T14:02:18,""
+288,2026-04-11 21:34:04.847032,1,zubyul,Nikolova_lab_data_analysis,zubyul/Nikolova_lab_data_analysis,R,2,0,0,2023-06-16T13:56:58,undergraduate thesis - using Human Connectome Project data to study the relationship of cortical thickness to transcription factors for depression
+289,2026-04-11 21:34:04.848376,1,zubyul,lastfm_analysis_copy,zubyul/lastfm_analysis_copy,Jupyter Notebook,1,0,0,2023-06-15T22:20:35,lastfm data analysis
+290,2026-04-11 21:34:04.849622,1,migalkin,kgcourse2021,migalkin/kgcourse2021,HTML,25,9,0,2025-08-04T03:01:46,Материалы к курсу по Knowledge Graphs
+291,2026-04-11 21:34:04.851013,1,migalkin,migalkin.github.io,migalkin/migalkin.github.io,JavaScript,0,0,0,2025-01-22T04:53:51,"Github Pages template for academic personal websites, forked from mmistakes/minimal-mistakes"
+292,2026-04-11 21:34:04.852354,1,migalkin,NBFNet_mlx,migalkin/NBFNet_mlx,Python,10,1,1,2024-03-02T00:15:23,Neural Bellman-Ford networks implemented in MLX for Apple Silicon
+293,2026-04-11 21:34:04.853597,1,migalkin,StarE,migalkin/StarE,Python,88,16,1,2023-12-01T20:12:24,EMNLP 2020: Message Passing for Hyper-Relational Knowledge Graphs
+294,2026-04-11 21:34:04.854817,1,migalkin,rambo,migalkin/rambo,Rust,3,0,1,2023-02-08T14:27:03,""
+295,2026-04-11 21:34:04.856211,1,migalkin,ciss2_project,migalkin/ciss2_project,Jupyter Notebook,0,0,6,2022-12-08T05:50:27,""
+296,2026-04-11 21:34:04.85747,1,migalkin,RWL,migalkin/RWL,Python,7,1,0,2022-12-01T15:58:59,Weisfeiler and Leman Go Relational (LOG 2022)
+297,2026-04-11 21:34:04.858806,1,migalkin,NodePiece,migalkin/NodePiece,Python,143,21,0,2022-02-02T03:34:04,Compositional and Parameter-Efficient Representations for Large Knowledge Graphs (ICLR''22)
+298,2026-04-11 21:34:04.86012,1,migalkin,SQuAD-es-mt,migalkin/SQuAD-es-mt,"",0,1,0,2020-07-14T17:13:08,Spanish version of SQuAD 1.1 and 2.0 obtained via machine translation
+299,2026-04-11 21:34:04.861943,1,migalkin,netquery_rdf,migalkin/netquery_rdf,Python,0,0,0,2019-06-01T12:49:16,NIPS 2018 paper fork for RDF
+300,2026-04-11 21:34:04.863374,1,migalkin,edbt-experiments,migalkin/edbt-experiments,"",0,0,0,2017-11-23T15:27:49,""
+301,2026-04-11 21:34:04.864745,1,migalkin,SMJoin-experiments,migalkin/SMJoin-experiments,R,1,0,0,2017-06-06T12:20:23,ISWC 2017 SMJoin results
+302,2026-04-11 21:34:04.86616,1,migalkin,ekgs_clustering,migalkin/ekgs_clustering,Python,0,0,0,2016-08-28T16:28:02,""
+303,2026-04-11 21:34:04.869227,1,migalkin,r_energyConsumption,migalkin/r_energyConsumption,R,0,0,0,2016-05-12T21:00:16,""
+304,2026-04-11 21:34:04.872641,1,migalkin,ontologies,migalkin/ontologies,Web Ontology Language,0,0,0,2015-12-06T13:49:53,""
+305,2026-04-11 21:34:04.875147,1,migalkin,Tables_Provider,migalkin/Tables_Provider,Java,0,0,0,2015-03-20T00:17:35,""
+306,2026-04-11 21:34:04.877085,1,migalkin,datasciencecoursera,migalkin/datasciencecoursera,"",0,0,0,2015-02-13T00:04:31,The repo for the Coursera Data Science course
+307,2026-04-11 21:34:04.879511,1,migalkin,InformationWorkbenchTestSrc,migalkin/InformationWorkbenchTestSrc,Java,0,0,0,2013-06-22T15:46:54,""
+308,2026-04-11 21:34:04.882114,1,migalkin,LinkedData,migalkin/LinkedData,"",0,0,0,2013-05-20T07:43:46,Information Workbench + Linked Open Data
+309,2026-04-11 21:34:04.885696,1,AustinCStone,EpsteinSearch,AustinCStone/EpsteinSearch,Python,0,0,0,2026-02-11T01:10:54,""
+310,2026-04-11 21:34:04.888816,1,AustinCStone,bmforkupdate,AustinCStone/bmforkupdate,Python,0,0,0,2025-05-09T04:49:24,""
+311,2026-04-11 21:34:04.890554,1,AustinCStone,bmfork,AustinCStone/bmfork,Python,0,0,1,2025-05-09T04:17:17,""
+312,2026-04-11 21:34:04.892258,1,AustinCStone,bitmind-fork,AustinCStone/bitmind-fork,"",0,0,0,2025-01-09T06:16:51,forked on jan 8 2025
+313,2026-04-11 21:34:04.894416,1,AustinCStone,testLogin,AustinCStone/testLogin,Python,0,0,0,2023-02-13T20:52:23,""
+314,2026-04-11 21:34:04.896059,1,AustinCStone,austincstone.github.io,AustinCStone/austincstone.github.io,HTML,0,0,0,2021-10-23T22:48:46,""
+315,2026-04-11 21:34:04.897989,1,AustinCStone,test,AustinCStone/test,"",0,0,0,2021-09-21T21:15:51,""
+316,2026-04-11 21:34:04.90023,1,AustinCStone,stonks,AustinCStone/stonks,Python,0,0,0,2020-09-04T22:54:33,Playing around with some option calculations.
+317,2026-04-11 21:34:04.902572,1,AustinCStone,Z-order-curve,AustinCStone/Z-order-curve,Python,0,0,0,2019-06-09T02:53:41,Demo implementation of things related to space filling z-order curve
+318,2026-04-11 21:34:04.905789,1,AustinCStone,LensBuilder,AustinCStone/LensBuilder,Python,0,0,0,2019-04-04T04:28:05,WIP optimize for the surface of a focusing lens by casting rays
+319,2026-04-11 21:34:04.908963,1,AustinCStone,TFBirds,AustinCStone/TFBirds,Python,0,0,0,2019-01-30T08:07:21,Bird flocking simulator in TensorFlow.
+320,2026-04-11 21:34:04.912221,1,AustinCStone,StructureFromMotion,AustinCStone/StructureFromMotion,Python,1,0,0,2018-06-10T18:56:16,Recover 3D geometry from videos with unknown camera calibration
+321,2026-04-11 21:34:04.914428,1,AustinCStone,OptimalControl,AustinCStone/OptimalControl,Python,0,0,0,2018-02-19T23:13:55,Practicing some concepts from control theory.
+322,2026-04-11 21:34:04.916275,1,AustinCStone,LearningCuda,AustinCStone/LearningCuda,C,0,0,0,2017-11-05T23:48:04,Me working through CUDA by example
+323,2026-04-11 21:34:04.919414,1,AustinCStone,TextGAN,AustinCStone/TextGAN,Python,92,30,5,2016-10-04T03:19:12,"A generative adversarial network for text generation, written in TensorFlow."
+324,2026-04-11 21:34:04.922533,1,AustinCStone,StereoVisionMRF,AustinCStone/StereoVisionMRF,Python,11,4,0,2016-01-10T08:34:29,Using a MRF with loopy belief propagation to infer depth from stereo images.
+325,2026-04-11 21:34:04.925899,1,AustinCStone,SpectralClustering,AustinCStone/SpectralClustering,Python,3,2,0,2015-11-09T03:27:15,Implementing spectral clustering as part of a homework assignment for graduate statistical modeling I
+326,2026-04-11 21:34:04.929051,1,AustinCStone,statsHw2,AustinCStone/statsHw2,Python,0,0,0,2015-09-28T15:56:31,Simple linear regression and model selection stuff I''m required to do...
+327,2026-04-11 21:34:04.933293,1,AustinCStone,StatsModelingHw1,AustinCStone/StatsModelingHw1,Python,0,0,0,2015-09-19T04:13:52,My first homework for statistical modeling
+328,2026-04-11 21:34:04.93714,1,AustinCStone,ConvNet,AustinCStone/ConvNet,Python,0,0,0,2015-09-08T00:43:12,"A ""deep"" convolutional neural network for classifying the MNIST database. Uses dropout and rmsprop. "
+329,2026-04-11 21:34:04.940382,1,AustinCStone,TheanoStuff,AustinCStone/TheanoStuff,Python,0,0,0,2015-09-04T02:14:00,Getting acquainted with Theano
+330,2026-04-11 21:34:04.943827,1,AustinCStone,bash_profile,AustinCStone/bash_profile,"",0,0,0,2015-08-26T17:59:50,bash profile that I use
+331,2026-04-11 21:34:04.947267,1,AustinCStone,Founderati-Server,AustinCStone/Founderati-Server,Python,0,1,0,2015-08-25T19:17:44,Server for Founderati
+332,2026-04-11 21:34:04.951156,1,AustinCStone,Founderati-client,AustinCStone/Founderati-client,JavaScript,0,1,0,2015-08-25T19:16:57,"AngelList or LinkedIn, are excellent tools, but these networks are so large that it returns to a game of “who you know” offline.  It is easy to get lo"
+333,2026-04-11 21:34:04.953826,1,AustinCStone,logisticRegressionHaskell,AustinCStone/logisticRegressionHaskell,Haskell,1,0,0,2015-06-07T19:37:42,Logistic regression done in Haskell. Classifies digits of the MNIST handwritten digit database as 0 or 1. 
+334,2026-04-11 21:34:04.956252,1,AustinCStone,Genetic-Algorithm-Sorting-Network,AustinCStone/Genetic-Algorithm-Sorting-Network,Python,0,0,0,2015-05-12T19:30:48,""
+335,2026-04-11 21:34:04.958621,1,AustinCStone,RealTimeRayTracingFractalWorld,AustinCStone/RealTimeRayTracingFractalWorld,C++,0,0,0,2015-05-11T02:03:41,"Real time ray tracing of a fractal world consisting of mountains, water, clouds, and snow. "
+336,2026-04-11 21:34:04.960249,1,AustinCStone,gibbs_sampling,AustinCStone/gibbs_sampling,Python,0,0,0,2015-04-09T03:15:55,A proof of concept of the eventual convergence of gibbs sampling and ancestral rejection sampling. 
+337,2026-04-11 21:34:04.961951,1,AustinCStone,lexer,AustinCStone/lexer,C,0,0,0,2015-02-09T22:45:55,A lexer for prolog
+338,2026-04-11 21:34:04.964098,1,AustinCStone,HTTPCache,AustinCStone/HTTPCache,Java,0,0,0,2015-02-05T22:04:01,Takes URLs and caches responses from GET requests to these URLs. Returns responses from cache based on the header fields Max-age and Expires. 
+339,2026-04-11 21:34:04.965938,1,TeglonLabs,mathpix-gem,TeglonLabs/mathpix-gem,Ruby,2,0,11,2026-01-01T12:13:13,Transform mathematical images to LaTeX
+340,2026-04-11 21:34:04.968412,1,TeglonLabs,monad-mcp-server,TeglonLabs/monad-mcp-server,"",0,0,0,2025-05-14T11:36:14,Monad MCP Server
+341,2026-04-11 21:34:04.970888,1,TeglonLabs,topoi,TeglonLabs/topoi,Python,0,0,1,2025-01-24T04:49:26,""
+342,2026-04-11 21:34:04.973643,1,TeglonLabs,coin-flip-mcp,TeglonLabs/coin-flip-mcp,JavaScript,0,2,1,2025-09-21T08:57:27,MCP server for flipping coins with varying degrees of randomness
+343,2026-04-11 21:34:04.97614,1,wasita,wm-cv,wasita/wm-cv,Svelte,0,0,0,2026-04-08T22:54:06,Academic CV written as a single page web app
+344,2026-04-11 21:34:04.97906,1,wasita,wasita.github.io,wasita/wasita.github.io,Svelte,0,0,8,2026-03-24T00:39:35,personal website
+345,2026-04-11 21:34:04.981633,1,wasita,magic-garden,wasita/magic-garden,Python,1,1,1,2026-01-13T23:51:32,a bot for the magic garden discord activity game
+346,2026-04-11 21:34:04.984552,1,wasita,food-diary,wasita/food-diary,Svelte,0,0,0,2025-12-13T01:06:39,""
+347,2026-04-11 21:34:04.987436,1,wasita,send2kobo,wasita/send2kobo,TypeScript,0,0,0,2025-12-12T19:09:12,Website for sending books to your kobo
+348,2026-04-11 21:34:04.99,1,kristinezheng,kristinezheng.github.io,kristinezheng/kristinezheng.github.io,HTML,0,0,0,2026-04-09T17:09:42,""
+349,2026-04-11 21:34:04.992802,1,kristinezheng,Portfolio,kristinezheng/Portfolio,HTML,0,0,0,2025-02-12T00:00:42,July 2021
+350,2026-04-11 21:34:04.99569,1,kristinezheng,lookit-jenga,kristinezheng/lookit-jenga,Jupyter Notebook,0,0,0,2024-05-16T18:29:01,""
+351,2026-04-11 21:34:04.998031,1,M1shaaa,M1shaaa,M1shaaa/M1shaaa,"",0,0,0,2026-04-11T12:51:31,Config files for my GitHub profile.
+352,2026-04-11 21:34:05.00095,1,M1shaaa,lab-bookshelf-,M1shaaa/lab-bookshelf-,TypeScript,0,0,0,2024-12-31T05:11:14,""
+353,2026-04-11 21:34:05.004389,1,M1shaaa,MNIST-Classifier,M1shaaa/MNIST-Classifier,Python,0,0,0,2023-11-28T06:12:13,""
+354,2026-04-11 21:34:05.006411,1,DJedamski,kaggle_ncaa18,DJedamski/kaggle_ncaa18,Jupyter Notebook,0,0,0,2018-03-07T12:36:09,Code for NCAA March Madness competition (2018)
+355,2026-04-11 21:34:05.00897,1,DJedamski,Project_Euler,DJedamski/Project_Euler,"",0,0,0,2015-10-14T02:10:45,""
+356,2026-04-11 21:34:05.011938,1,DJedamski,EDA,DJedamski/EDA,R,0,0,0,2014-11-09T16:51:34,Coursera Project
