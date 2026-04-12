@@ -1,8 +1,8 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-12
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 384 |
+| Total Repo Snapshots | 384 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallet Snapshots | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Market Tickers | 10 |
 
 ---
 
@@ -140,3 +143,58 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances (28 addresses)
+
+All 28 Hamming swarm addresses queried against Aptos mainnet fullnode at `fullnode.mainnet.aptoslabs.com`.
+
+| World | Address | APT Balance |
+|-------|---------|-------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...2d5d | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+> All balances are 0 APT — addresses exist on-chain but have no `CoinStore<AptosCoin>` resource initialized, indicating fresh/unfunded swarm nodes.
+
+### Multisig Contract Probes (5 pairs)
+
+All 5 multisig accounts probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4...7003 | 2 | ✓ |
+| A-G | 0xf56c...0096 | 2 | ✓ |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ |
+| S-T | 0x3b1c...7883 | 2 | ✓ |
+| V-W | 0x40fa...eb6d | 2 | ✓ |
+
+**5/5 multisig contracts healthy — 2-of-N threshold uniformly configured.**
+
+### MNX Markets (testnet.mnx.fi)
+
+Extracted from SPA serialized state (30+ markets available):
+
+| Ticker | Name | Price | 24h Δ |
+|--------|------|-------|-------|
+| GOLD | Gold | $4,700.00 | -0.01% |
+| GOOGL | Alphabet | $317.88 | -0.07% |
+| SILVER | Silver | $76.05 | -0.05% |
+| URA | Uranium ETF | $50.90 | -0.06% |
+| H100 | GPU Rental Index | $2.81 | -0.25% |
+
+Full category coverage: Stocks, AI Valuations (OpenAI, Anthropic futures), Compute (H100), Commodities, Prediction Markets (2028 election, Taiwan invasion). Volume ~$285–294M/asset.
+
+### DuckDB Tables Final State
+
+```
+world-increments.duckdb
+├── world_increments    384 rows  (GF3 color-annotated events)
+├── repo_snapshots      384 rows  (GitHub repo metadata)
+├── aptos_snapshots      28 rows  (Hamming swarm balances)
+├── multisig_probes       5 rows  (Aptos multisig health)
+└── mnx_snapshots        10 rows  (MNX market snapshot)
+```
