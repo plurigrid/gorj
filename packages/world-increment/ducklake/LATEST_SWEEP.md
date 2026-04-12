@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-12T16:30Z
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-12T16:30:00Z
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.2.1
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -132,11 +132,57 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 
 ## Notable Highlights
 - **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
+- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-12)
+- **kubeflow/spark-operator**: 3,112 stars — Kubernetes operator for Apache Spark (pushed 2026-04-11)
 - **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
 - **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-12)
+- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring (pushed 2026-04-12T16:15Z)
+- **Increment 13**: PLUS — zubyul PullRequestEvent on plurigrid/gorj closes this sweep cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances (28 addresses, 1s sleep between calls)
+
+All 28 addresses queried via `fullnode.mainnet.aptoslabs.com`.
+**Result:** All wallets returned 0.00000000 APT — accounts are either unregistered for AptosCoin or have zero balance on mainnet.
+
+| World | Address (prefix) | Balance (APT) |
+|-------|-----------------|---------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...12d5d | 0.0 |
+| A–Z | 0x8699...e197c | 0.0 each |
+
+Full rows: 28 in `aptos_snapshots`.
+
+### Multisig Contract Probes
+
+All 5 probed via `0x1::multisig_account::num_signatures_required` view function.
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|---------------|---------|
+| A-B | 0x0da4...7003 | 2 | ✓ |
+| A-G | 0xf56c...0096 | 2 | ✓ |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ |
+| S-T | 0x3b1c...7883 | 2 | ✓ |
+| V-W | 0x40fa...eb6d | 2 | ✓ |
+
+All 5 multisig contracts are healthy with 2-of-N signature requirement.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: Unavailable** — Next.js SPA with no public REST API. `/api/markets` returns HTML shell. Market data loads client-side only; not extractable without browser execution. `mnx_snapshots` table: 0 rows.
+
+---
+
+## DuckDB Table Summary
+
+| Table | Rows | Description |
+|-------|------|-------------|
+| world_increments | 13 | GF(3)-colored sweep events |
+| repo_snapshots | 49 | GitHub repo metadata |
+| aptos_snapshots | 28 | Hamming swarm APT balances |
+| multisig_probes | 5 | 2-of-N multisig health checks |
+| mnx_snapshots | 0 | MNX testnet (unavailable) |
