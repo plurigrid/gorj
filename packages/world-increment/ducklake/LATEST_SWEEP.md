@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-14
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-14T16:08Z
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,34 +12,87 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments (cumulative) | 427 |
+| Total Repo Snapshots (cumulative) | 1,317 |
+| New Increments This Sweep | 404 |
+| New Repo Snapshots This Sweep | 373 |
+| Sources Covered | 2 orgs + 9 users (plurigrid rate-limited) |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | Unavailable (Next.js SPA) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+Rule: `id%3==0` → trit=0 ERGODIC `#d3869b` · `id%3==1` → trit=1 PLUS `#b8bb26` · `id%3==2` → trit=-1 MINUS `#cc241d`
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+| GF(3) State | Color | Count (this sweep) |
+|-------------|-------|-------------------|
+| ERGODIC | #d3869b | ~135 |
+| PLUS | #b8bb26 | ~135 |
+| MINUS | #cc241d | ~135 |
+
+Sweep IDs 1–404 distributed evenly across GF(3) — balanced trit ergodicity confirmed.
 
 ---
 
-## Top Repos by Source
+## JOB 1: GitHub Social Graph Sweep
+
+### Source Breakdown (this sweep)
+| Source | Type | Increments |
+|--------|------|-----------|
+| bmorphism | user | 130 (100 repos + 30 events) |
+| TeglonLabs | org | 53 |
+| kubeflow | org | 47 |
+| AustinCStone | user | 43 |
+| wasita | user | 31 |
+| migalkin | user | 30 |
+| zubyul | user | 24 |
+| kristinezheng | user | 18 |
+| M1shaaa | user | 16 |
+| DJedamski | user | 11 |
+| plurigrid | org | 1 (rate-limited placeholder) |
+
+### Recent bmorphism Events (2026-04-14)
+| Event Type | Repo |
+|------------|------|
+| CreateEvent | plurigrid/nash-portal |
+| PushEvent | plurigrid/nash-portal |
+| PullRequestEvent | plurigrid/nash-portal |
+| IssuesEvent | plurigrid/nash-portal |
+| PushEvent | plurigrid/asi |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Balances
+Queried via `https://fullnode.mainnet.aptoslabs.com` — all 28 wallets returned **0.0 APT** (unfunded or CoinStore not registered). Addresses resolve as valid Aptos accounts.
+
+| Label | Address (prefix) | APT |
+|-------|-----------------|-----|
+| alice | 0xc793ac… | 0.0 |
+| bob | 0x0a3c00… | 0.0 |
+| A–Z | 0x8699ed…–0x7af0ef… | 0.0 each |
+
+### Multisig Contract Probes
+`0x1::multisig_account::num_signatures_required` — all 5 returned **2-of-N**, healthy.
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4f4… | 2 | HEALTHY |
+| A-G | 0xf56c4a… | 2 | HEALTHY |
+| Y-Z | 0xd3ffe1… | 2 | HEALTHY |
+| S-T | 0x3b1c3a… | 2 | HEALTHY |
+| V-W | 0x40fad7… | 2 | HEALTHY |
+
+### MNX Markets
+`https://testnet.mnx.fi` — **SPA (Next.js), no REST API endpoints accessible.** All `/api/*` paths return the frontend HTML bundle. Market data unavailable via HTTP scraping; noted as `N/A` in `mnx_snapshots` table.
+
+---
+
+## Top Repos by Source (from prior sweeps — plurigrid accessible)
 
 ### plurigrid (100 repos)
 | Repo | Language | Stars | Pushed At |
