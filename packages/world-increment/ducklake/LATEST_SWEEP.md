@@ -1,142 +1,100 @@
-# World-Increment Sweep — 2026-04-12
-
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
-- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+# World-Increment Sweep + Hamming Snapshot
+**Date:** 2026-04-16  
+**Run timestamp:** 2026-04-16T21:10 UTC  
+**GF(3) chain:** ERGODIC #d3869b · PLUS #b8bb26 · MINUS #cc241d
 
 ---
 
-## Summary Counts
+## JOB 1: GitHub Social Graph Sweep
 
-| Metric | Value |
-|--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+### Sources queried
+| Source | Type | Repos captured | Status |
+|--------|------|---------------|--------|
+| plurigrid | org | 100 | ✓ |
+| kubeflow | org | 47 | ✓ |
+| TeglonLabs | org | 0 | rate-limited |
+| bmorphism | user | 0 | rate-limited |
+| zubyul | user | 0 | rate-limited |
+| migalkin | user | 0 | rate-limited |
+| DJedamski | user | 0 | rate-limited |
+| wasita | user | 0 | rate-limited |
+| kristinezheng | user | 0 | rate-limited |
+| M1shaaa | user | 0 | rate-limited |
+| AustinCStone | user | 0 | rate-limited |
 
----
+GitHub unauthenticated API limit (60 req/hr) was exhausted mid-sweep. plurigrid (100) and kubeflow (47) repos captured before limit hit.
 
-## GF(3) Color Chain — All 12 Increments
-
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
-
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+### DuckDB Ducklake
+- **DB path:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **world_increments:** 170 rows (GF3: 56 ERGODIC / 57 PLUS / 57 MINUS)
+- **repo_snapshots:** 1091 rows (cumulative across runs)
+- **New this run:** 147 increment + repo rows from plurigrid + kubeflow
 
 ---
 
-## Top Repos by Source
+## JOB 2: Hamming Swarm Snapshot
 
-### plurigrid (100 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| asi | HTML | 16 | 2026-04-10 |
-| ontology | JavaScript | 7 | 2025-05-27 |
-| asi-skills | Julia | 3 | 2026-04-09 |
-| zig-syrup | Zig | 2 | 2026-04-09 |
-| vivarium | Clojure | 1 | 2026-04-08 |
+### Aptos Wallet Balances (Mainnet, 2026-04-16)
 
-### kubeflow (47 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| kubeflow | — | 15565 | 2026-01-05 |
-| pipelines | Python | 4119 | 2026-04-10 |
-| spark-operator | Python | 3111 | 2026-04-10 |
-| trainer | Go | 2080 | 2026-04-10 |
-| katib | Python | 1676 | 2026-04-02 |
+| World | APT Balance |
+|-------|-------------|
+| alice | 0.43643352 |
+| bob   | **12.65700700** |
+| A | 0.05176700 |
+| B | 0.03625600 |
+| C | 0.01018500 |
+| D | 0.01162900 |
+| E | 0.00937200 |
+| **F** | **1.96051600** |
+| G | 0.00068100 |
+| H | 0.00168100 |
+| I | 0.00068100 |
+| **J** | **1.89509300** |
+| K | 0.16196100 |
+| **L** | **1.92726900** |
+| M | 0.11228500 |
+| N | 0.10612100 |
+| O | 0.21013600 |
+| P | 0.14013600 |
+| Q | 0.10324000 |
+| R | 0.09021700 |
+| S | 0.09178800 |
+| T | 0.07371300 |
+| U | 0.05577300 |
+| V | 0.04883299 |
+| W | 0.04070500 |
+| X | 0.04257700 |
+| Y | 0.04444900 |
+| Z | 0.02426800 |
 
-### TeglonLabs (53 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| acp.el | — | 1 |
-| mcp-terminal | — | 1 |
+**Total swarm APT:** ~18.79 APT  
+**Richest:** bob (12.66 APT), F (1.96 APT), L (1.93 APT), J (1.90 APT)  
+**Balance queried via:** `0x1::coin::balance` view function (CoinStore resource not registered on these accounts)
 
-### bmorphism (100 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
-| anti-bullshit-mcp-server | JavaScript | 23 |
-| shitcoin | Python | 5 |
-| open-location-code-zig | Zig | 3 |
+### Multisig Contract Probes
 
-### migalkin (30 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| NodePiece | Python | 143 |
-| StarE | Python | 88 |
-| kgcourse2021 | HTML | 25 |
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 | **2** | ✓ |
+| A-G | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 | **2** | ✓ |
+| Y-Z | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 | **2** | ✓ |
+| S-T | 0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883 | **2** | ✓ |
+| V-W | 0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d | **2** | ✓ |
 
-### AustinCStone (43 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| TextGAN | Python | 92 |
-| StereoVisionMRF | Python | 11 |
-| SpectralClustering | Python | 3 |
+All 5 multisig contracts healthy. All require 2-of-N signatures.
 
----
+### MNX Markets (testnet.mnx.fi)
 
-## Repo Counts by Source
-
-| Source | Type | Repos |
-|--------|------|-------|
-| plurigrid | org | 100 |
-| bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+Status: **Unavailable as JSON API** — returns Next.js SPA HTML on all probed paths (`/`, `/api/markets`, `/api/v1/markets`). No structured market data extractable via HTTP.
 
 ---
 
-## Schema
-```sql
-world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
-                 source_type, source_name, event_type, repo_name,
-                 actor, snapshot_hash)
+## DuckDB Table Summary
 
-repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
-               full_name, language, stars, forks, open_issues,
-               pushed_at, description)
-
-aptos_snapshots(timestamp, world, address, balance_apt)
-multisig_probes(timestamp, pair, address, sigs_required, healthy)
-mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
-```
-
-## GF(3) Assignment Rule
-- `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
-- `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
-- `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
-
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+| Table | Rows |
+|-------|------|
+| world_increments | 170 |
+| repo_snapshots | 1091 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 1 (SPA note) |
