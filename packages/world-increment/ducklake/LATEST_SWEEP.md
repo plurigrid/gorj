@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-04-16
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-16
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment ID:** 12 (GF3: trit=0, color=#d3869b, ERGODIC)
 
 ---
 
@@ -36,6 +37,50 @@
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
 
 GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances (28 addresses)
+
+All 28 addresses (alice, bob, A–Z) queried via `https://fullnode.mainnet.aptoslabs.com/v1`.
+
+| World | Address (short) | Balance (APT) |
+|-------|----------------|---------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...512d | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+> All balances returned 0 — CoinStore resource not initialized or accounts hold no APT on mainnet.
+
+### Multisig Contract Probes (5 pairs)
+
+| Pair | Address (short) | Sigs Required | Healthy |
+|------|----------------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | ✓ |
+| A-G | 0xf56c...096 | 2 | ✓ |
+| Y-Z | 0xd3ff...883 | 2 | ✓ |
+| S-T | 0x3b1c...883 | 2 | ✓ |
+| V-W | 0x40fa...b6d | 2 | ✓ |
+
+All 5 multisig contracts healthy — each requires **2-of-N** signatures.
+
+### MNX Markets (testnet.mnx.fi)
+
+testnet.mnx.fi returns a Next.js SPA shell. No machine-readable `/api/markets` endpoint exposed. Market data **unavailable** via API at sweep time.
+
+---
+
+## DuckDB Tables (this sweep)
+
+| Table | New Rows |
+|-------|----------|
+| world_increments | 1 (id=12) |
+| repo_snapshots | 313 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 |
 
 ---
 
