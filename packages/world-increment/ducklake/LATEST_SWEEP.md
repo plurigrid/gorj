@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-17
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-17
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (this sweep) | 56 |
+| Total Repo Snapshots (this sweep) | 56 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos wallets snapshotted | 28 (alice, bob, A–Z) |
+| Multisig contracts probed | 5 (all healthy, 2-of-N) |
+| MNX markets | SPA only, no REST API data |
 
 ---
 
@@ -131,12 +134,23 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
+- **kubeflow/kubeflow**: 15,579 stars — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,121 stars — ML pipeline (pushed 2026-04-17)
+- **kubeflow/spark-operator**: 3,117 stars — Kubernetes operator for Apache Spark
 - **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol
+- **plurigrid/asi**: 17 stars — topological chemputer (pushed 2026-04-13)
+- **plurigrid/gorj**: This repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
+
+## Hamming Swarm: Aptos Snapshot
+- **28 wallets** (alice, bob, A–Z): all returning 0.0 APT on mainnet
+- **5 multisig contracts** all healthy with `num_signatures_required = 2`
+  - A-B: `0x0da4f428…`
+  - A-G: `0xf56c4a1c…`
+  - Y-Z: `0xd3ffe181…`
+  - S-T: `0x3b1c3ae9…`
+  - V-W: `0x40fad7b4…`
+
+## MNX Markets (testnet.mnx.fi)
+- Site is a Next.js SPA; `/api/markets` returned HTML, not JSON
+- No structured market data available via REST; recorded as unavailable
