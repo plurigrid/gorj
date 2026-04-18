@@ -1,7 +1,104 @@
-# World-Increment Sweep — 2026-04-12
+# World Increment Sweep + Hamming Snapshot — 2026-04-18
+
+**Sweep Date:** 2026-04-18  
+**DuckDB:** `/home/user/gorj/packages/world-increment/ducklake/sweep.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Repos Found Per Org/User
+
+| Entity | Type | Repos Found | Notes |
+|--------|------|-------------|-------|
+| plurigrid | org | 100 (capped at 100) | Active: gorj(225 issues), nanoclj-zig, asi(17 stars), ontology(7 stars) |
+| kubeflow | org | 47 | Active: kubeflow(15583 stars), pipelines(4121 stars), spark-operator(3117 stars) |
+| TeglonLabs | org | 4 | mathpix-gem(2 stars), topoi, monad-mcp-server, coin-flip-mcp |
+| bmorphism | user | 100 (capped) | ocaml-mcp-sdk(60 stars), anti-bullshit-mcp-server(23 stars), say-mcp-server(20 stars) |
+| zubyul | user | 47 | gay-world(1 star), WGCNA(2 stars), nash-tui, plurigrid-site |
+| migalkin | user | 19 | NodePiece(143 stars), StarE(89 stars), kgcourse2021(25 stars) |
+| DJedamski | user | 6 | Getting-and-Cleaning-Data(1 star), School(1 star), kaggle_ncaa18 |
+| wasita | user | 10 | magic-garden(1 star), wins-search(1 star), wasita.github.io(active) |
+| kristinezheng | user | 6 | Portfolio, lookit-jenga, kristinezheng.github.io(active 2026) |
+| M1shaaa | user | 8 | lab-bookshelf-, M1shaaa profile(active 2026-04-18) |
+| AustinCStone | user | 40 | TextGAN(92 stars), StereoVisionMRF(11 stars), SpectralClustering(3 stars) |
+
+**Total GitHub repos indexed (DuckDB):** 60 representative repos (curated from full sweep)
+
+### Notable Active Repos (pushed 2026)
+- `plurigrid/gorj` - Clojure, 225 open issues, pushed 2026-04-18 (TODAY)
+- `plurigrid/nanoclj-zig` - Zig Clojure interpreter with GF(3) trit conservation, 21 issues
+- `plurigrid/asi` - HTML, 17 stars, pushed 2026-04-13
+- `plurigrid/horse` - TeX, 10 open issues, pushed 2026-04-16
+- `kubeflow/pipelines` - Python, 4121 stars, 476 open issues, active daily
+- `bmorphism/Gay.jl` - Julia, 187 open issues, pushed 2026-04-18 (TODAY)
+- `M1shaaa/M1shaaa` - profile repo pushed 2026-04-18 (TODAY)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances
+
+All 28 wallets queried via `fullnode.mainnet.aptoslabs.com`. All returned **0 APT** — the `CoinStore<AptosCoin>` resource was not found/unfunded for each address at time of sweep.
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793...c7b | 0.0 |
+| bob | 0x0a3c...2d5d | 0.0 |
+| A through Z | (26 addresses) | 0.0 each |
+
+**Sum total:** 0.0 APT across all 28 wallets.
+
+### Multisig Contract Probes
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`. All returned **2 signatures required** and are considered **HEALTHY**.
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | YES |
+| A-G | 0xf56c...096 | 2 | YES |
+| Y-Z | 0xd3ff...883 | 2 | YES |
+| S-T | 0x3b1c...883 | 2 | YES |
+| V-W | 0x40fa...b6d | 2 | YES |
+
+**All multisigs healthy (5/5), all require 2-of-N signatures.**
+
+### MNX Market Data
+
+**Status: UNAVAILABLE**  
+Both `https://testnet.mnx.fi/api/markets` and `https://testnet.mnx.fi/api/tickers` returned no JSON response (connection failed or server down). No market data recorded.
+
+---
+
+## GF(3) Color Chain Statistics
+
+Applied to 60 world increment records:
+
+| GF(3) Name | Trit | Color | Count |
+|------------|------|-------|-------|
+| ERGODIC | 0 | #d3869b (pink) | 20 |
+| PLUS | 1 | #b8bb26 (yellow-green) | 20 |
+| MINUS | 2 | #cc241d (red) | 20 |
+
+**Perfect balance:** 20 increments per trit class (60 total, 3-way balanced).
+
+---
+
+## DuckDB Table Summary
+
+| Table | Rows |
+|-------|------|
+| world_increments | 60 |
+| repo_snapshots | 60 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 (unavailable) |
+
+---
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
+- **Date:** 2026-04-18
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
