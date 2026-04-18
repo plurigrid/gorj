@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-04-18
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
+- **Date:** 2026-04-18
 - **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **DuckDB version:** v1.2.1
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 40 |
+| Total Repo Snapshots | 967 (unique) |
+| Sources Covered | 3 orgs + 8 users = 11 total |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
 
 ---
 
@@ -91,22 +93,46 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ---
 
-## Repo Counts by Source
+## Repo Counts by Source (2026-04-18)
 
 | Source | Type | Repos |
 |--------|------|-------|
-| plurigrid | org | 100 |
-| bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| plurigrid | org | 283 |
+| bmorphism | user | 182 |
+| kubeflow | org | 94 |
+| AustinCStone | user (zubyul social) | 84 |
+| TeglonLabs | org | 68 |
+| migalkin | user (zubyul social) | 60 |
+| wasita | user (zubyul social) | 58 |
+| zubyul | user | 48 |
+| kristinezheng | user (zubyul social) | 36 |
+| M1shaaa | user (zubyul social) | 32 |
+| DJedamski | user (zubyul social) | 22 |
+| **TOTAL** | | **967 unique** |
+
+## Hamming Swarm — Aptos Balances (2026-04-18)
+
+All 28 addresses queried via Aptos mainnet fullnode. All returned balance=0.0 APT (accounts exist but CoinStore resource returns 404 — unfunded or balance held in alternative resource).
+
+| World | Balance (APT) |
+|-------|---------------|
+| alice, bob, A–Z | 0.0 each |
+
+## Multisig Probe Results (2026-04-18)
+
+All 5 multisig pairs healthy with 2-of-N signature requirement.
+
+| Pair | Sigs Required | Healthy |
+|------|---------------|---------|
+| A-B | 2 | YES |
+| A-G | 2 | YES |
+| Y-Z | 2 | YES |
+| S-T | 2 | YES |
+| V-W | 2 | YES |
+
+## MNX Markets
+
+Status: UNAVAILABLE — `https://testnet.mnx.fi/api/markets` returns HTML SPA, not JSON. No market data extractable without browser execution.
 
 ---
 
