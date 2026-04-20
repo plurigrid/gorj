@@ -1,8 +1,8 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-20
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+- **Date:** 2026-04-20
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
@@ -12,13 +12,15 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 955 |
+| Aptos Addresses Snapshotted | 28 |
+| Multisig Contracts Probed | 5 |
+| Sources Covered (historical) | 3 orgs + 8 users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — Current + Latest Increment
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +36,10 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **plurigrid (org)** | **sweep_complete** | **+1** | **`#b8bb26`** | **PLUS** ← this sweep |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`  
+Next sweep: id=14 → MINUS #cc241d (trit=-1)
 
 ---
 
@@ -140,3 +144,33 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **Increment 13**: PLUS #b8bb26 — this sweep (2026-04-20) + first Hamming swarm snapshot
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-04-20)
+
+### Aptos Mainnet Wallet Balances
+
+All 28 Hamming addresses queried against `fullnode.mainnet.aptoslabs.com`.
+All accounts exist on-chain (CoinStore resource readable) but carry **0 APT** balance.
+
+| World | Balance |
+|---|---|
+| alice, bob, A–Z | 0.0 APT each |
+
+### Multisig Contract Probes
+
+| Pair | Sigs Required | Healthy |
+|---|---|---|
+| A-B | 2 | ✓ |
+| A-G | 2 | ✓ |
+| Y-Z | 2 | ✓ |
+| S-T | 2 | ✓ |
+| V-W | 2 | ✓ |
+
+All 5 multisigs healthy — 2-of-N configuration confirmed.
+
+### MNX Testnet Markets
+
+`https://testnet.mnx.fi` — Next.js SPA, no REST API accessible from server-side. Market data: unavailable.
