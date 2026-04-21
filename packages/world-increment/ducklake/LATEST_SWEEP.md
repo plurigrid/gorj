@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-21
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-21
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 223 (cumulative) |
+| Total Repo Snapshots | 1,144 (cumulative) |
+| This Sweep Added | 200 new repo snapshots |
+| Sources Covered | 3 orgs + 8 users (rate-limited: 8 users) |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts | 5 (all healthy, 2-of-N) |
+| MNX Markets | UNAVAILABLE (DNS failure) |
 
 ---
 
@@ -131,12 +135,41 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **kubeflow/kubeflow**: 15,589 stars — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,125 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-20)
+- **kubeflow/spark-operator**: 3,117 stars — Kubernetes operator for Apache Spark (pushed 2026-04-16)
+- **kubeflow/trainer**: 2,085 stars — distributed ML training on Kubernetes (pushed 2026-04-21)
+- **migalkin/NodePiece**: scalable knowledge graph embeddings
+- **bmorphism/ocaml-mcp-sdk**: OCaml SDK for Model Context Protocol
+- **AustinCStone/TextGAN**: text generation with GANs
+- **plurigrid/gorj**: This repo — forj + GF(3) trit coloring + Hamming swarm
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Balances (2026-04-21)
+
+All 28 wallets queried via `https://fullnode.mainnet.aptoslabs.com`. CoinStore resources returned null/empty for all addresses — balances recorded as 0.0 APT.
+
+| World | Address (prefix) | APT |
+|-------|-----------------|-----|
+| alice | 0xc793...cc7b | 0.0 |
+| bob   | 0x0a3c...2d5d | 0.0 |
+| A–Z   | (26 addresses) | 0.0 each |
+
+### Multisig Contract Health
+
+All 5 contracts probed via `0x1::multisig_account::num_signatures_required`. All return `["2"]`.
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|------|-----------------|--------------|--------|
+| A-B | 0x0da4...7003 | 2 | ✅ HEALTHY |
+| A-G | 0xf56c...0096 | 2 | ✅ HEALTHY |
+| Y-Z | 0xd3ff...b883 | 2 | ✅ HEALTHY |
+| S-T | 0x3b1c...7883 | 2 | ✅ HEALTHY |
+| V-W | 0x40fa...eb6d | 2 | ✅ HEALTHY |
+
+### MNX Markets (testnet.mnx.fi)
+
+Status: **UNAVAILABLE** — DNS resolution failed (`DNS cache overflow`). No market data captured. `mnx_snapshots` table is empty.
