@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-21
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-21
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.2.2
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,28 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 387 |
+| Total Repo Snapshots | 387 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts | 5 (all healthy, 2-sig) |
+| MNX Market Data | unavailable (SPA, no public API) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — 387 Increments
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+387 world increments assigned via `id % 3`:
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+| Trit | Name | Color | Count |
+|------|------|-------|-------|
+| 0 | ERGODIC | `#d3869b` | 129 |
+| +1 | PLUS | `#b8bb26` | 129 |
+| -1 | MINUS | `#cc241d` | 129 |
+
+> Perfect balance: 387 = 129 × 3. GF(3) field fully covered.
+
+GF(3) chain: `ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ...` (129 full cycles)
 
 ---
 
@@ -97,16 +95,48 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 |--------|------|-------|
 | plurigrid | org | 100 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
 | kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| zubyul | user | 47 |
+| AustinCStone | user | 40 |
+| migalkin | social | 19 |
+| wasita | social | 10 |
+| M1shaaa | social | 8 |
+| kristinezheng | social | 6 |
+| DJedamski | social | 6 |
+| TeglonLabs | org | 4 |
+| **TOTAL** | | **387** |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 wallets)
+
+All wallets probed via `fullnode.mainnet.aptoslabs.com/v1/accounts/{addr}/resource/0x1::coin::CoinStore`.
+
+| World | Balance (APT) |
+|-------|---------------|
+| alice | 0.0 |
+| bob | 0.0 |
+| A–Z (26) | 0.0 each |
+
+> All 28 Hamming swarm wallets return 0.0 APT. Accounts exist on-chain but hold no balance at this snapshot.
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | `0x0da4f428...87003` | 2 | ✅ healthy |
+| A-G | `0xf56c4a1c...0096` | 2 | ✅ healthy |
+| Y-Z | `0xd3ffe181...b883` | 2 | ✅ healthy |
+| S-T | `0x3b1c3ae9...7883` | 2 | ✅ healthy |
+| V-W | `0x40fad7b4...eb6d` | 2 | ✅ healthy |
+
+> All 5 multisig contracts operational with 2-of-N threshold.
+
+### MNX Markets (`testnet.mnx.fi`)
+
+testnet.mnx.fi is a Next.js SPA. API endpoints `/api/markets` and `/api/v1/markets` returned 404. No market data accessible via public REST. **Status: unavailable.**
 
 ---
 
