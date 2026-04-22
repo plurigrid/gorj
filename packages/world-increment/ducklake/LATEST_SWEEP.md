@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-22
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-22
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,45 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 69 |
+| Total Repo Snapshots | 473 |
 | Sources Covered | 3 orgs + 8 users |
+| Events Captured | 58 (bmorphism + zubyul) |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts | 5 (all healthy, sigs=2) |
+| MNX Markets | unavailable (503) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — 69 World Increments
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+11 repo-source increments + 58 event increments = 69 total. Perfectly balanced at 23 per trit.
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+| Trit | Name | Color | Count |
+|------|------|-------|-------|
+| 0 | ERGODIC | `#d3869b` | 23 |
+| +1 | PLUS | `#b8bb26` | 23 |
+| −1 | MINUS | `#cc241d` | 23 |
+
+GF(3) rule: `id mod 3 == 0 → ERGODIC`, `id mod 3 == 1 → PLUS`, `id mod 3 == 2 → MINUS`
+
+### Repo-Source Increments (IDs 1–11)
+
+| ID | Source | Type | Trit | Color | Name |
+|----|--------|------|------|-------|------|
+| 1  | plurigrid | org | 0 | `#d3869b` | ERGODIC |
+| 2  | kubeflow | org | +1 | `#b8bb26` | PLUS |
+| 3  | TeglonLabs | org | -1 | `#cc241d` | MINUS |
+| 4  | bmorphism | user | 0 | `#d3869b` | ERGODIC |
+| 5  | zubyul | user | +1 | `#b8bb26` | PLUS |
+| 6  | migalkin | user | -1 | `#cc241d` | MINUS |
+| 7  | DJedamski | user | 0 | `#d3869b` | ERGODIC |
+| 8  | wasita | user | +1 | `#b8bb26` | PLUS |
+| 9  | kristinezheng | user | -1 | `#cc241d` | MINUS |
+| 10 | M1shaaa | user | 0 | `#d3869b` | ERGODIC |
+| 11 | AustinCStone | user | +1 | `#b8bb26` | PLUS |
+
+Events (IDs 12–69): 28 bmorphism + 30 zubyul public events — PushEvent (29), CreateEvent (9), PullRequestEvent (6), WatchEvent (3), ForkEvent (3), PullRequestReviewEvent (3), other (5).
 
 ---
 
@@ -93,20 +108,20 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ## Repo Counts by Source
 
-| Source | Type | Repos |
-|--------|------|-------|
-| plurigrid | org | 100 |
-| bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| Source | Type | Repos | Stars |
+|--------|------|-------|-------|
+| plurigrid | org | 100 | 43 |
+| bmorphism | user | 100 | 128 |
+| TeglonLabs | org | 53 | 6 |
+| kubeflow | org | 47 | 33,923 |
+| AustinCStone | user | 43 | 108 |
+| migalkin | user | 30 | 278 |
+| wasita | user | 31 | 4 |
+| zubyul | user | 24 | 13 |
+| kristinezheng | user | 18 | 0 |
+| M1shaaa | user | 16 | 0 |
+| DJedamski | user | 11 | 7 |
+| **TOTAL** | | **473** | **34,510** |
 
 ---
 
@@ -131,12 +146,24 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **kubeflow/kubeflow**: 15,594 stars — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,125 stars — most popular ML pipeline for Kubernetes
+- **kubeflow/spark-operator**: 3,117 stars — Kubernetes operator for Apache Spark
+- **kubeflow/trainer**: 2,085 stars — distributed training operator
+- **migalkin/NodePiece**: scalable knowledge graph embeddings
+- **bmorphism/ocaml-mcp-sdk**: OCaml SDK for Model Context Protocol
+- **AustinCStone/TextGAN**: text generation with GANs
+- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) trit coloring
+- **69 increments**: closes 23 full GF(3) cycles (perfectly balanced trit distribution)
+
+## Hamming Swarm — Aptos Mainnet
+
+All 28 swarm addresses (alice, bob, A–Z) have no initialized APT CoinStore resource at mainnet ledger ~4.97B. Accounts exist on-chain but hold no APT balance.
+
+## Multisig Health
+
+All 5 Hamming-pair multisig contracts (A-B, A-G, Y-Z, S-T, V-W) are live with `num_signatures_required = 2`. No degradation detected.
+
+## MNX Markets
+
+`testnet.mnx.fi` returned 503 Service Unavailable / DNS failures on all probed endpoints. No market data captured.
