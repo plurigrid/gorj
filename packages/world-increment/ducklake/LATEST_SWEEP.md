@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-23
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-23
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,25 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 388 |
+| Total Repo Snapshots | 388 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, sigs_required=2) |
+| MNX Markets | SPA — no JSON API exposed |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — 388 Increments
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| Trit | Name | Color | Count |
+|------|------|-------|-------|
+| 0 | ERGODIC | `#d3869b` | 129 |
+| +1 | PLUS | `#b8bb26` | 130 |
+| -1 | MINUS | `#cc241d` | 129 |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+Assignment rule: `id % 3 == 0 → ERGODIC`, `id % 3 == 1 → PLUS`, `id % 3 == 2 → MINUS`.  
+GF(3) chain repeats: `ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ...` (129 full cycles + 1 PLUS).
 
 ---
 
@@ -91,22 +86,22 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ---
 
-## Repo Counts by Source
+## Repo Counts by Source (2026-04-23 sweep)
 
 | Source | Type | Repos |
 |--------|------|-------|
 | plurigrid | org | 100 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
+| zubyul | user | 48 |
 | kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| AustinCStone | user (social) | 40 |
+| migalkin | user (social) | 19 |
+| wasita | user (social) | 10 |
+| M1shaaa | user (social) | 8 |
+| kristinezheng | user (social) | 6 |
+| DJedamski | user (social) | 6 |
+| TeglonLabs | org | 4 |
+| **TOTAL** | | **388** |
 
 ---
 
@@ -139,4 +134,58 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **wasita/wasita.github.io**: Pushed 2026-04-22 (yesterday) — most recently active in zubyul social graph
+- **M1shaaa/M1shaaa**: Pushed 2026-04-23 (today) — most recently active repo in entire sweep
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances — 28 Addresses
+
+Queried Aptos mainnet `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` for all 28 addresses.
+
+| World | Address (truncated) | Balance APT |
+|-------|---------------------|-------------|
+| alice | 0xc793ac...cc7b | NULL |
+| bob | 0x0a3c00...2d5d | NULL |
+| A–Z (26) | 0x86...–0x7a... | NULL (all) |
+
+**All 28 addresses returned NULL** — none have funded CoinStore resources on Aptos mainnet. Recorded in `aptos_snapshots` (28 rows).
+
+### Multisig Contract Probes — 5 Pairs
+
+Probed `0x1::multisig_account::num_signatures_required` on Aptos mainnet.
+
+| Pair | Address (truncated) | sigs_required | Status |
+|------|---------------------|--------------|--------|
+| A-B | 0x0da4f4...87003 | 2 | ✓ healthy |
+| A-G | 0xf56c4a...c0096 | 2 | ✓ healthy |
+| Y-Z | 0xd3ffe1...b883 | 2 | ✓ healthy |
+| S-T | 0x3b1c3a...7883 | 2 | ✓ healthy |
+| V-W | 0x40fad7...eb6d | 2 | ✓ healthy |
+
+**All 5 multisig contracts healthy** — each requires 2-of-N signature threshold. Recorded in `multisig_probes` (5 rows).
+
+### MNX Markets (testnet.mnx.fi)
+
+Probed `https://testnet.mnx.fi/api/markets` and `/api/v1/markets`.  
+**Result: SPA only** — site is a Next.js application; API endpoints return HTML shell. No market data extractable. `mnx_snapshots` table remains empty (0 rows).
+
+---
+
+## Full DuckDB Schema
+
+```sql
+world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
+                 source_type, source_name, event_type, repo_name,
+                 actor, snapshot_hash)          -- 388 rows
+
+repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
+               full_name, language, stars, forks, open_issues,
+               pushed_at, description)          -- 388 rows
+
+aptos_snapshots(timestamp, world, address, balance_apt)  -- 28 rows
+multisig_probes(timestamp, pair, address, sigs_required, healthy)  -- 5 rows
+mnx_snapshots(timestamp, ticker, name, category, price, change_pct)  -- 0 rows
+```
