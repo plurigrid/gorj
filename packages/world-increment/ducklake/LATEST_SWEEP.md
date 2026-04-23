@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-04-23
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-23
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 29 |
+| Total Repo Snapshots | 979 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (A-B, A-G, Y-Z, S-T, V-W) |
+| MNX Markets | unavailable (SPA) |
 
 ---
 
@@ -131,12 +134,20 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+### GitHub (this sweep, 2026-04-23)
+- **kubeflow/kubeflow**: 15,596 stars — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,125 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-23)
+- **kubeflow/spark-operator**: 3,117 stars — Kubernetes operator for Apache Spark (pushed 2026-04-21)
+- **kubeflow/trainer**: 2,088 stars — Distributed AI Model Training on Kubernetes (pushed 2026-04-22)
+- **plurigrid/gorj**: 0 stars, 256 open issues — forj + Rama topology nREPL routing + GF(3) gay trit coloring (pushed 2026-04-22)
+- **plurigrid/zig-syrup**: 2 stars — High-performance OCapN Syrup (pushed 2026-04-21)
+- **plurigrid/graywall**: 0 stars — Container-free deny-by-default sandbox for AI agents (pushed 2026-04-10)
+
+### Hamming Swarm Snapshot (Aptos Mainnet, 2026-04-23)
+- **28 wallets probed** (alice, bob, A–Z) — all returned `resource_not_found` for CoinStore; on-chain addresses but no funded APT balance
+- **5 multisig contracts** — all responsive, all require 2-of-N signatures: A-B, A-G, Y-Z, S-T, V-W ✓ healthy
+- **MNX testnet** — SPA (Next.js), no public JSON market API discoverable
+
+### GF(3) chain continuation
+- Increment 29 (id%3==2): trit=-1, color=#cc241d, name=**MINUS**
