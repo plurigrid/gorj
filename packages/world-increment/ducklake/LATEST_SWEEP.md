@@ -1,6 +1,109 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-24
 
-## Sweep Metadata
+**Sweep timestamp:** 2026-04-24 (UTC)
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+| Increment ID | GF(3) Trit | Color | Name | Source | Repos Captured |
+|---|---|---|---|---|---|
+| 1 | +1 | #b8bb26 | PLUS | plurigrid | 100 |
+| 2 | -1 | #cc241d | MINUS | kubeflow | 47 |
+| 3 | 0 | #d3869b | ERGODIC | TeglonLabs | 4 |
+| 4 | +1 | #b8bb26 | PLUS | bmorphism | 100 |
+| 5 | -1 | #cc241d | MINUS | zubyul | 49 |
+| 6 | 0 | #d3869b | ERGODIC | migalkin | 19 |
+| 7 | +1 | #b8bb26 | PLUS | DJedamski | 6 |
+| 8 | -1 | #cc241d | MINUS | wasita | 10 |
+| 9 | 0 | #d3869b | ERGODIC | kristinezheng | 6 |
+| 10 | +1 | #b8bb26 | PLUS | M1shaaa | 8 |
+| 11 | -1 | #cc241d | MINUS | AustinCStone | 40 |
+
+**Total repos snapshotted: 389**
+
+### Top Repos by Stars
+| Repo | Stars | Language |
+|---|---|---|
+| kubeflow/kubeflow | 15,599 | — |
+| kubeflow/pipelines | 4,125 | Python |
+| kubeflow/spark-operator | 3,120 | Python |
+| kubeflow/trainer | 2,091 | Go |
+| kubeflow/katib | 1,679 | Python |
+| kubeflow/examples | 1,460 | Jsonnet |
+| kubeflow/manifests | 1,012 | YAML |
+| kubeflow/arena | 810 | Go |
+| kubeflow/kale | 685 | Python |
+| kubeflow/mpi-operator | 524 | Go |
+
+### Notable Activity
+- **bmorphism** (100 repos): active plurigrid contributor, diverse projects
+- **zubyul** (49 repos): active social graph node
+- **AustinCStone** (40 repos): ML/CV researcher
+- **TeglonLabs** (4 repos): `mathpix-gem` (Ruby, math OCR), `topoi` (Python), `monad-mcp-server`, `coin-flip-mcp`
+- **wasita** (10 repos): `wasita.github.io` (Svelte personal site, pushed 2026-04-22 — most recent in social graph)
+
+### Data Notes
+- GitHub public API returned 403 (unauthenticated); all data sourced via GitHub MCP search API
+- Search API returns up to 100 results per query; bmorphism and plurigrid capped at 100
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (alice–Z, 28 addresses)
+
+All 28 addresses queried against `fullnode.mainnet.aptoslabs.com`.
+
+**Result:** All addresses return `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`. None of the Hamming swarm addresses have initialized an APT CoinStore on mainnet.
+
+| Status | Count |
+|---|---|
+| CoinStore not initialized (0 APT) | 28 |
+| APT balance > 0 | 0 |
+
+### Multisig Contract Probes
+
+All 5 contracts probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Address | Sigs Required | Healthy |
+|---|---|---|---|
+| A-B | `0x0da4f428...987003` | 2 | ✓ |
+| A-G | `0xf56c4a1c...c0096` | 2 | ✓ |
+| Y-Z | `0xd3ffe181...5b883` | 2 | ✓ |
+| S-T | `0x3b1c3ae9...7883` | 2 | ✓ |
+| V-W | `0x40fad7b4...eb6d` | 2 | ✓ |
+
+**All 5 multisig contracts respond: 2-of-N threshold, all healthy.**
+
+### MNX Markets (testnet.mnx.fi)
+
+Next.js SPA with no public REST API. All API paths return HTTP 404. The `/markets` route requires wallet authentication. **No market data extractable without wallet connection.**
+
+---
+
+## DuckDB Tables
+
+```
+world_increments   — 11 rows (one per source, GF(3) color chain)
+repo_snapshots     — 389 rows (all public repos snapshotted)
+aptos_snapshots    —  28 rows (alice–Z, all 0 APT / no CoinStore)
+multisig_probes    —   5 rows (all healthy, 2-of-N)
+mnx_snapshots      —   0 rows (SPA, no unauthenticated API)
+```
+
+## Query the database
+
+```bash
+duckdb packages/world-increment/ducklake/world-increments.duckdb \
+  "SELECT org_or_user, COUNT(*) as repos FROM repo_snapshots GROUP BY org_or_user ORDER BY repos DESC;"
+```
+
+---
+
+## Sweep Metadata (legacy format)
 - **Date:** 2026-04-12
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
