@@ -1,14 +1,70 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-26
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-26
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **GF(3) chain this run:** 13=PLUS (#b8bb26), 14=MINUS (#cc241d)
 
 ---
 
 ## Summary Counts
+
+| Metric | Value |
+|--------|-------|
+| Total World Increments | 25 |
+| Total Repo Snapshots | 944 (cumulative; GitHub API rate-limited this run) |
+| Aptos Wallet Snapshots | 28 |
+| Multisig Probes | 5 (all healthy, 2-of-N) |
+| MNX Snapshots | 0 (SPA only, no REST API surface found) |
+
+## GitHub Social Graph Sweep — 2026-04-26
+
+**Status: Rate Limited** (0/60 unauthenticated requests remaining; reset ~2026-04-27 02:00 UTC)
+
+Targets not fetched this run: `plurigrid` org, `kubeflow` org, `TeglonLabs` org,
+users `bmorphism`, `zubyul`, `migalkin`, `DJedamski`, `wasita`, `kristinezheng`, `M1shaaa`, `AustinCStone`
+
+**plurigrid/gorj** (MCP, rate-limit exempt):
+- Latest commit: `ebf263f` — "world-increment ducklake: sync world.duckdb sweep state" (2026-04-14)
+
+## Hamming Swarm Snapshot — 2026-04-26
+
+### Aptos Wallet Balances
+
+All 28 wallets queried via Aptos mainnet `fullnode.mainnet.aptoslabs.com`.
+Accounts `alice` (seq=72) and `bob` (seq=67) confirmed active.
+All wallets return 0.0 APT via `0x1::coin::CoinStore` — likely migrated to Aptos FA standard.
+
+| World | Address | Balance APT |
+|-------|---------|-------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob   | 0x0a3c...512d | 0.0 |
+| A–Z   | (26 addresses) | 0.0 each |
+
+### Multisig Contract Probes
+
+All 5 pairs probed via `0x1::multisig_account::num_signatures_required`. **All healthy.**
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B  | 0x0da4...003 | 2 | ✓ |
+| A-G  | 0xf56c...096 | 2 | ✓ |
+| Y-Z  | 0xd3ff...883 | 2 | ✓ |
+| S-T  | 0x3b1c...883 | 2 | ✓ |
+| V-W  | 0x40fa...b6d | 2 | ✓ |
+
+### MNX Markets
+
+`testnet.mnx.fi` is a Next.js SPA. No public REST endpoints found (`/api/markets`,
+`/api/v1/markets`, `/api/tickers`, `/api/pools` all return HTML). Status: **unavailable**.
+
+---
+
+## Previous Sweep: 2026-04-12
+
+### Summary Counts (historical)
 
 | Metric | Value |
 |--------|-------|
