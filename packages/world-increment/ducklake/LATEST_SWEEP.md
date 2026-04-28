@@ -1,8 +1,116 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot
+**Timestamp:** 2026-04-28  
+**GF(3) Color Chain:** trit=0 ERGODIC #d3869b · trit=1 PLUS #b8bb26 · trit=-1 MINUS #cc241d
 
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+| Source | Type | Repos Captured | Total Stars | Total Forks |
+|--------|------|---------------|-------------|-------------|
+| plurigrid | org | 100 | 65 | 42 |
+| kubeflow | org | 47 | 33,957 | 13,383 |
+| TeglonLabs | org | 4 | 2 | 2 |
+| bmorphism | user | 100 | 246 | 73 |
+| zubyul | user | 49 | 14 | 2 |
+| migalkin | user (social graph) | 19 | 278 | 49 |
+| DJedamski | user (social graph) | 6 | 3 | 1 |
+| wasita | user (social graph) | 10 | 4 | 1 |
+| AustinCStone | user (social graph) | 30 | 108 | 38 |
+| **TOTAL** | | **365** | **34,677** | **13,591** |
+
+> kristinezheng and M1shaaa returned 0 public repos. GitHub API rate-limit exhausted; MCP GitHub search tools used.
+
+### Top 10 Most-Starred Repos
+| Repo | Stars |
+|------|-------|
+| kubeflow/kubeflow | 15,609 |
+| kubeflow/pipelines | 4,127 |
+| kubeflow/spark-operator | 3,120 |
+| kubeflow/trainer | 2,094 |
+| kubeflow/katib | 1,681 |
+| kubeflow/examples | 1,460 |
+| kubeflow/manifests | 1,012 |
+| kubeflow/arena | 810 |
+| kubeflow/kale | 685 |
+| kubeflow/mpi-operator | 524 |
+
+### Top Languages Across Swarm
+| Language | Repos |
+|----------|-------|
+| Python | 75 |
+| Rust | 26 |
+| JavaScript | 23 |
+| TypeScript | 22 |
+| Go | 15 |
+| Clojure | 13 |
+| Jupyter Notebook | 13 |
+| HTML | 13 |
+| Julia | 9 |
+| Zig | 7 |
+
+### Recently Active plurigrid Repos (top 5 by pushed_at)
+- `plurigrid/gorj` (Clojure) — pushed 2026-04-28 — "forj + Rama topology nREPL routing + GF(3) gay trit coloring"
+- `plurigrid/zig-syrup` (Zig) — pushed 2026-04-26 — "High-performance Zig OCapN Syrup implementation"
+- `plurigrid/horse` (TeX) — pushed 2026-04-26
+- `plurigrid/asi` (HTML) — pushed 2026-04-26 — "everything is topological chemputer!"
+- `plurigrid/nash-portal` (Rust) — pushed 2026-04-26 — "NASH token TUI in the browser"
+
+### GF(3) World-Increment Distribution
+| Trit | Name | Color | Count |
+|------|------|-------|-------|
+| 0 | ERGODIC | #d3869b | 121 |
+| +1 | PLUS | #b8bb26 | 122 |
+| -1 | MINUS | #cc241d | 122 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet)
+**Timestamp:** 2026-04-28
+
+All 28 wallets probed via `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` resource.
+
+| World | Address (truncated) | Balance (APT) | Status |
+|-------|--------------------|----|--------|
+| alice | 0xc793...cc7b | 0.0 | No CoinStore |
+| bob | 0x0a3c...512d | 0.0 | No CoinStore |
+| A | 0x8699...9d7a | 0.0 | No CoinStore |
+| B | 0x3f89...b13 | 0.0 | No CoinStore |
+| C | 0x38b9...35e | 0.0 | No CoinStore |
+| D | 0xf776...dd1 | 0.0 | No CoinStore |
+| E–Z | (24 addresses) | 0.0 each | No CoinStore |
+
+> All 28 addresses returned empty for CoinStore resource — wallets not yet initialized APT coin storage. Total swarm balance: **0.0 APT**.
+
+### Multisig Contract Probes (Mainnet)
+| Pair | Address (truncated) | Sigs Required | Status |
+|------|--------------------|----|--------|
+| A-B | 0x0da4...003 | 2 | ✓ Healthy |
+| A-G | 0xf56c...096 | 2 | ✓ Healthy |
+| Y-Z | 0xd3ff...883 | 2 | ✓ Healthy |
+| S-T | 0x3b1c...883 | 2 | ✓ Healthy |
+| V-W | 0x40fa...b6d | 2 | ✓ Healthy |
+
+All 5 multisig contracts are **2-of-N** (2 signatures required). All healthy.
+
+### MNX Markets (testnet.mnx.fi)
+**Status:** Unavailable — testnet.mnx.fi serves a Next.js SPA with no public REST API. `/api/markets` returns 404. No market data extractable.
+
+---
+
+## DuckDB Schema Summary (`world-increments.duckdb`)
+| Table | Rows | Description |
+|-------|------|-------------|
+| world_increments | 365 | One per repo snapshot, GF(3) trit colored |
+| repo_snapshots | 365 | Full repo metadata |
+| aptos_snapshots | 28 | All wallets alice/bob/A–Z |
+| multisig_probes | 5 | All pairs healthy, sigs_required=2 |
+| mnx_snapshots | 1 | Unavailable marker |
+
+**Previous sweep metadata:**
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
