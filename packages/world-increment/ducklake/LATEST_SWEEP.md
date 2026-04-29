@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-04-29
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-04-29
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,64 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 34 (+11 this sweep, ids 13–23) |
+| Total Repo Snapshots | 1333 (+389 this sweep) |
+| Sources Covered | 3 orgs + 8 users (social graph) |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep — New Increments (ids 13–23)
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| ID | Source | Type | GF3 Trit | Color | Repos |
+|----|--------|------|-----------|-------|-------|
+| 13 | plurigrid | org | +1 | `#b8bb26` PLUS | 100 |
+| 14 | kubeflow | org | -1 | `#cc241d` MINUS | 47 |
+| 15 | TeglonLabs | org | 0 | `#d3869b` ERGODIC | 4 |
+| 16 | bmorphism | user | +1 | `#b8bb26` PLUS | 100 |
+| 17 | zubyul | user | -1 | `#cc241d` MINUS | 49 |
+| 18 | migalkin | user | 0 | `#d3869b` ERGODIC | 19 |
+| 19 | DJedamski | user | +1 | `#b8bb26` PLUS | 6 |
+| 20 | wasita | user | -1 | `#cc241d` MINUS | 10 |
+| 21 | kristinezheng | user | 0 | `#d3869b` ERGODIC | 6 |
+| 22 | M1shaaa | user | +1 | `#b8bb26` PLUS | 8 |
+| 23 | AustinCStone | user | -1 | `#cc241d` MINUS | 40 |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain continues: `…MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS`
+
+### Notable Activity (2026-04-29 sweep)
+- **wasita/wasita.github.io** — Svelte personal site pushed 2026-04-28 (yesterday)
+- **M1shaaa/M1shaaa** — profile config repo pushed 2026-04-29 (today)
+- **TeglonLabs/mathpix-gem** — Ruby math OCR gem (11 open issues)
+- **plurigrid** org snapshot refreshed: 100 repos across AI/energy/coordination research
+- **bmorphism**: 100 repos — plurigrid ecosystem, ocaml-mcp-sdk (60★), anti-bullshit-mcp-server (23★)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (Aptos Mainnet)
+
+### Wallet Balances (28 addresses: alice, bob, A–Z)
+
+All 28 addresses queried against Aptos mainnet `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+**All returned `resource_not_found`** — accounts unfunded/uninitialized on mainnet at ledger ~5047247582.
+Balance recorded as **0.0 APT** for each.
+
+### Multisig Contract Probes — ALL HEALTHY
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4f428a0c007… | 2 | ✓ healthy |
+| A-G | 0xf56c4a1c090621… | 2 | ✓ healthy |
+| Y-Z | 0xd3ffe1812b2df4… | 2 | ✓ healthy |
+| S-T | 0x3b1c3ae905d44c… | 2 | ✓ healthy |
+| V-W | 0x40fad7b423a843… | 2 | ✓ healthy |
+
+All 5 contracts use 2-of-2 multisig scheme and are live on Aptos mainnet.
+
+### MNX Markets (testnet.mnx.fi)
+
+`https://testnet.mnx.fi` is a Next.js SPA. No public REST API endpoints found — market data **unavailable** via direct API probe. mnx_snapshots table empty this sweep.
 
 ---
 
