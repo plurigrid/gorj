@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-05-01
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-01T03:30 UTC
+- **Agent:** autonomous two-job sweep
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,25 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 389 |
+| Total Repo Snapshots | 389 |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| Sources Covered | 3 orgs + 8 users + 6 social graph users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — 389 Increments
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+Each of the 389 repo snapshots is assigned a GF(3) trit in sequence:
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+| id%3 | Trit | Color | Name |
+|------|------|-------|------|
+| 0 | 0 | `#d3869b` | ERGODIC |
+| 1 | +1 | `#b8bb26` | PLUS |
+| 2 | -1 | `#cc241d` | MINUS |
+
+Chain cycles 129 full GF(3) rotations plus 2 remainder (389 = 129×3 + 2).
 
 ---
 
@@ -91,22 +86,54 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ---
 
-## Repo Counts by Source
+## Repo Counts by Source (2026-05-01 sweep)
 
 | Source | Type | Repos |
 |--------|------|-------|
 | plurigrid | org | 100 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
+| zubyul | user | 49 |
 | kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| AustinCStone | user | 40 |
+| migalkin | user | 19 |
+| wasita | user | 10 |
+| M1shaaa | user | 8 |
+| kristinezheng | user | 6 |
+| DJedamski | user | 6 |
+| TeglonLabs | org | 4 |
+| **TOTAL** | | **389** |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet)
+
+All 28 wallets queried via Aptos mainnet fullnode. All returned 0.0 APT (accounts are empty or have no APT CoinStore resource registered).
+
+| World | Address (first 8 chars) | APT |
+|-------|------------------------|-----|
+| alice | 0xc793ac... | 0.0 |
+| bob | 0x0a3c00... | 0.0 |
+| A–Z (26 wallets) | various | 0.0 each |
+
+### Multisig Probes (Aptos Mainnet)
+
+| Pair | Multisig Address (truncated) | Sigs Required | Healthy |
+|------|------------------------------|---------------|---------|
+| A-B | 0x0da4f4...003 | 2 | YES |
+| A-G | 0xf56c4a...096 | 2 | YES |
+| Y-Z | 0xd3ffe1...883 | 2 | YES |
+| S-T | 0x3b1c3a...883 | 2 | YES |
+| V-W | 0x40fad7...b6d | 2 | YES |
+
+All 5 multisig contracts require 2-of-N signers — all healthy.
+
+### MNX Markets
+
+`testnet.mnx.fi/api/markets` → HTTP 404 HTML page  
+`mnx.fi/api/markets` → HTML page (Next.js frontend)  
+Status: **UNAVAILABLE** — no public REST/JSON market data API found.
 
 ---
 
