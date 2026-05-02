@@ -1,4 +1,61 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-02
+
+> **GF(3) Color Chain:** ERGODIC #d3869b → PLUS #b8bb26 → MINUS #cc241d
+
+## This Run (2026-05-02)
+
+### GitHub Social Graph Sweep
+
+| Source | Type | Repos | Stars | Latest Push |
+|--------|------|-------|-------|-------------|
+| plurigrid | org | 46 | 59 | 2026-05-02 (gorj) |
+| bmorphism | user | 15 | 105 | 2026-05-02 (Gay.jl) |
+| kubeflow | org | 20 | 32,113 | 2026-05-01 (hub) |
+| zubyul | user | 15 | 2 | 2026-04-24 (voice-observatory) |
+| wasita | user | 7 | 4 | 2026-04-28 (wasita.github.io) |
+| M1shaaa | user | 5 | 0 | 2026-05-02 (M1shaaa profile) |
+| migalkin | user | 7 | 277 | 2025-08-04 (kgcourse2021) |
+| AustinCStone | user | 6 | 106 | 2026-02-11 (EpsteinSearch) |
+| TeglonLabs | org | 4 | 2 | 2026-01-01 (mathpix-gem) |
+| kristinezheng | user | 5 | 0 | 2026-04-09 (kristinezheng.github.io) |
+| DJedamski | user | 4 | 2 | 2018-03-07 (kaggle_ncaa18) |
+
+**134 repos snapshotted, 134 GF(3) world_increments added**
+
+### Notable Recent Activity
+
+- **plurigrid/gorj** — 2026-05-02 — 47 open issues — forj + GF(3) trit coloring
+- **bmorphism/Gay.jl** — 2026-05-02 — 187 open issues — Wide-gamut color sampling
+- **kubeflow/hub** — 2026-05-01 — Model Registry (174⭐)
+- **plurigrid/nanoclj-zig** — 2026-04-25 — NaN-boxed Clojure in Zig, GF(3) trit conservation
+- **plurigrid/asi** — 2026-04-26 — 17⭐ — topological chemputer
+- **zubyul/big-bad-plurigrid-quiz** — 2026-04-09 — 27 flashcards from bmorphism/plurigrid/zubyul
+
+### Hamming Swarm Snapshot (Aptos Mainnet)
+
+**28 wallets** (alice, bob, A–Z) queried via `fullnode.mainnet.aptoslabs.com`.  
+**Result:** All addresses returned **0.0 APT** — no `CoinStore<AptosCoin>` resource found.  
+Addresses are provisioned in Hamming swarm config but not yet funded on mainnet.
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f428... | 2 | HEALTHY |
+| A-G | 0xf56c4a1c... | 2 | HEALTHY |
+| Y-Z | 0xd3ffe181... | 2 | HEALTHY |
+| S-T | 0x3b1c3ae9... | 2 | HEALTHY |
+| V-W | 0x40fad7b4... | 2 | HEALTHY |
+
+All 5 multisig contracts live and requiring 2-of-N signatures.
+
+### MNX Markets (testnet.mnx.fi)
+
+**UNAVAILABLE** — Next.js SPA, no REST API accessible. Recorded in `mnx_snapshots` table as unavailable.
+
+---
+
+# World-Increment Sweep — 2026-04-12 (archived)
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
