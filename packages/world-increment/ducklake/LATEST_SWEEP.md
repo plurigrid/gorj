@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-02
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-02
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 72 (cumulative, +49 this sweep) |
+| Total Repo Snapshots | 993 (cumulative, +49 this sweep) |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts | 5 (all healthy, 2-of-2) |
+| MNX Markets | unavailable (SPA, no public JSON API) |
 
 ---
 
@@ -130,13 +133,29 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
+## Notable Highlights (2026-05-02 Sweep)
+
+### GitHub Social Graph
+- **kubeflow/kubeflow**: 15,614 stars — flagship ML platform for Kubernetes (growing)
+- **kubeflow/pipelines**: 4,130 stars — ML pipeline for Kubernetes (pushed 2026-05-01)
+- **kubeflow/spark-operator**: 3,121 stars — Kubernetes operator for Apache Spark (pushed 2026-04-28)
+- **bmorphism/Gay.jl**: Active today (2026-05-02), 187 open issues — GF(3) wide-gamut color sampling
+- **plurigrid/gorj**: This repo — 35 open issues, pushed today — GF(3) trit coloring for compositional REPL
+- **plurigrid/nanoclj-zig**: NaN-boxed Clojure interpreter in Zig 0.15 — GF(3) trit conservation built in
+- **plurigrid/zig-syrup**: OCapN Syrup zig implementation with CapTP optimizations, pushed 2026-04-30
+- **AustinCStone/TextGAN**: 92 stars — text generation with GANs (2016 classic)
 - **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+### Hamming Swarm (Aptos Mainnet)
+- All 28 wallets (alice, bob, A–Z) queried successfully
+- All wallets show 0.00000000 APT balance on mainnet
+- All 5 multisig contracts respond with `sigs_required=2` (healthy)
+  - A-B: `0x0da4f428...987003` — 2-of-2 ✅
+  - A-G: `0xf56c4a1c...c0096` — 2-of-2 ✅
+  - Y-Z: `0xd3ffe181...75b883` — 2-of-2 ✅
+  - S-T: `0x3b1c3ae9...d7883` — 2-of-2 ✅
+  - V-W: `0x40fad7b4...0eb6d` — 2-of-2 ✅
+
+### MNX Markets (testnet.mnx.fi)
+- Site is a Next.js SPA; no JSON API endpoints accessible without browser execution
+- Status: **unavailable** (no data inserted into mnx_snapshots)
