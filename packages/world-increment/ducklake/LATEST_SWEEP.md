@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-02
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-02
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (cumulative) | 37 |
+| Total Repo Snapshots (cumulative) | 1,323 |
+| New Repo Snapshots (this sweep) | 379 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
 
 ---
 
@@ -130,13 +133,23 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights — 2026-05-02 Sweep
+- **kubeflow/kubeflow**: 15,616 stars (↑51 since last sweep) — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,130 stars — pushed 2026-05-01
+- **kubeflow/trainer**: 2,095 stars — Distributed AI Model Training on K8s (pushed 2026-05-01)
+- **plurigrid/zig-syrup**: pushed 2026-04-30 — High-performance OCapN Syrup in Zig
+- **plurigrid/nash-portal**: pushed 2026-04-26 — NASH token TUI in WASM
+- **M1shaaa/M1shaaa**: pushed 2026-05-02 — active profile repo
+- **wasita/wasita.github.io**: pushed 2026-04-28 — personal site (Svelte + SvelteKit)
+
+## Hamming Swarm — Aptos Snapshot (2026-05-02)
+- **28 wallets probed** (alice, bob, A–Z): all returned 0.00 APT
+  - Accounts have no initialized `CoinStore<AptosCoin>` resource on mainnet
+  - Likely pre-funded or testnet-only wallets
+- **5 multisig contracts probed**: all healthy, all require **2-of-N signatures**
+  - A-B: 0x0da4...003 → 2 sigs ✓
+  - A-G: 0xf56c...096 → 2 sigs ✓
+  - Y-Z: 0xd3ff...883 → 2 sigs ✓
+  - S-T: 0x3b1c...883 → 2 sigs ✓
+  - V-W: 0x40fa...b6d → 2 sigs ✓
+- **MNX testnet.mnx.fi**: Next.js SPA — no JSON API accessible; market data loads client-side only
