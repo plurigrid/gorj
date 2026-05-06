@@ -1,10 +1,12 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-06
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-06
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment ID:** 13 — GF(3) trit=+1 `#b8bb26` **PLUS**
+- **Snapshot Hash:** `8aa5409dbb5d5798`
 
 ---
 
@@ -12,9 +14,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 944 |
+| Aptos Snapshots (this run) | 28 |
+| Multisig Probes (this run) | 5 |
+| Sources Covered | 3 orgs + 8 users + hamming swarm |
 
 ---
 
@@ -140,3 +144,50 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-05-06)
+
+### GitHub Social Graph Sweep
+**Status: RATE LIMITED / MCP TOKEN EXPIRED**
+- Unauthenticated GitHub REST API: IP rate limit exceeded (shared egress)
+- GitHub MCP server: token expired, requires re-authorization
+- Targets attempted: orgs `plurigrid`, `kubeflow`, `TeglonLabs`; users `bmorphism`, `zubyul`, `migalkin`, `DJedamski`, `wasita`, `kristinezheng`, `M1shaaa`, `AustinCStone`
+- Existing repo_snapshots carried forward from prior sweeps: **944 rows**
+
+### Aptos Mainnet Wallet Balances
+
+Queried via `fullnode.mainnet.aptoslabs.com/v1` (ledger version 5,161,761,919).  
+All 28 addresses returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — no coin store registered, balance = **0.0 APT** each.
+
+| World | Address | APT |
+|-------|---------|-----|
+| alice | `0xc793...cc7b` | 0.0 |
+| bob | `0x0a3c...512d` | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+**Total APT across all 28 swarm wallets: 0.0 APT**
+
+### Multisig Contract Health
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | `0x0da4...003` | 2 | HEALTHY |
+| A-G | `0xf56c...096` | 2 | HEALTHY |
+| Y-Z | `0xd3ff...883` | 2 | HEALTHY |
+| S-T | `0x3b1c...883` | 2 | HEALTHY |
+| V-W | `0x40fa...b6d` | 2 | HEALTHY |
+
+All 5 multisig contracts are **2-of-N** and responding correctly.
+
+### MNX Markets (testnet.mnx.fi)
+**Status: SPA — no REST API accessible**  
+Next.js app; `/api/markets`, `/api/v1/markets`, `/api/v1/tickers`, `/api/v2/markets` all return the HTML shell. Market data requires browser JS execution.
+
+### GF(3) Color Chain — Increment 13
+```
+id=13  mod=1  trit=+1  color=#b8bb26  name=PLUS  ← this sweep
+id=12  mod=0  trit=0   color=#d3869b  name=ERGODIC
+id=11  mod=2  trit=-1  color=#cc241d  name=MINUS
+```
