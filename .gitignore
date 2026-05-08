@@ -16,6 +16,9 @@ target/
 .DS_Store
 Thumbs.db
 
+# Binaries
+/duckdb
+
 # Claude Code
 .claude/settings.json
 .claude/settings.local.json
