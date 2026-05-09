@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-05-09
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-09
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 34 (11 new this sweep) |
+| Total Repo Snapshots | 1335 (391 new this sweep) |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Pairs Probed | 5 |
+| MNX Markets | SPA-only, no API |
 
 ---
 
@@ -130,13 +133,41 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
+## Hamming Swarm Snapshot (2026-05-09)
+
+### Aptos Mainnet Wallet Balances (28 addresses)
+
+All 28 addresses (alice, bob, A–Z) returned `resource_not_found` for
+`0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`. These accounts have not
+initialized an APT coin store on mainnet. **Total swarm APT: 0.0**
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | ✓ |
+| A-G | 0xf56c...096 | 2 | ✓ |
+| Y-Z | 0xd3ff...883 | 2 | ✓ |
+| S-T | 0x3b1c...883 | 2 | ✓ |
+| V-W | 0x40fa...b6d | 2 | ✓ |
+
+All 5 multisig contracts live on mainnet, all requiring 2-of-N signatures.
+
+### MNX Markets
+
+`testnet.mnx.fi` is a Next.js SPA. No REST API found at `/api/markets` or
+`/api/v1/markets`. Market data unavailable via direct API probe.
+
+---
+
+## Notable Highlights (2026-05-09 update)
+- **kubeflow/kubeflow**: 15,628 stars (↑63 since Apr 12) — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,137 stars — most popular ML pipeline for Kubernetes (pushed 2026-05-08)
+- **kubeflow/spark-operator**: 3,125 stars — Kubernetes operator for Apache Spark (pushed 2026-05-08)
 - **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **plurigrid/asi**: 21 stars (↑5 since Apr 12) — topological chemputer (pushed 2026-04-26)
+- **plurigrid/gorj**: This very repo — forj + Clojure REPL + GF(3) trit coloring (pushed 2026-05-09)
+- **M1shaaa/M1shaaa**: profile repo pushed 2026-05-09 (active today)
+- **Hamming swarm**: all 5 multisig pairs healthy (2-of-N), 0 APT balances on mainnet
