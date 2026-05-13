@@ -1,3 +1,9 @@
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-13
+
+> **Latest:** increment id=13 · GF(3) PLUS · #b8bb26
+
+---
+
 # World-Increment Sweep — 2026-04-12
 
 ## Sweep Metadata
@@ -140,3 +146,79 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+# Hamming Swarm Snapshot — 2026-05-13 (Increment 13 · PLUS · #b8bb26)
+
+## GitHub Sweep (increment 13)
+GitHub public API rate limit was exhausted (0/60 unauthenticated). Only `plurigrid/gorj` was accessible via MCP GitHub integration.
+
+| Metric | Value |
+|--------|-------|
+| Total World Increments | 24 |
+| Total Repo Snapshots | 946 |
+| New repos this sweep | 2 (gorj + rate-limit meta) |
+
+## Aptos Wallet Balances — Hamming Swarm (28 addresses)
+All 28 accounts queried against Aptos mainnet (`fullnode.mainnet.aptoslabs.com`).  
+All returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — accounts are not initialized with APT. Ledger confirmed live: block 764,097,610, epoch 15789.
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob   | 0x0a3c...2d5d | 0.0 |
+| A | 0x8699...9d7a | 0.0 |
+| B | 0x3f89...b13  | 0.0 |
+| C | 0x38b9...35e  | 0.0 |
+| D | 0xf776...dd1  | 0.0 |
+| E | 0xdc1d...d36  | 0.0 |
+| F | 0x18a1...f71  | 0.0 |
+| G | 0x69a3...f32  | 0.0 |
+| H | 0xce67...00f  | 0.0 |
+| I | 0x070f...fc9  | 0.0 |
+| J | 0x4d96...f54  | 0.0 |
+| K | 0xa732...dc4  | 0.0 |
+| L | 0x7c2e...ba9  | 0.0 |
+| M | 0x6fed...2e9  | 0.0 |
+| N | 0xe7dd...b2c  | 0.0 |
+| O | 0x7325...89d  | 0.0 |
+| P | 0x6218...948  | 0.0 |
+| Q | 0xac40...89a9 | 0.0 |
+| R | 0x7ce6...e10  | 0.0 |
+| S | 0xb875...386  | 0.0 |
+| T | 0x3578...588  | 0.0 |
+| U | 0x7586...956  | 0.0 |
+| V | 0xb59d...2c3  | 0.0 |
+| W | 0x5f32...7b0  | 0.0 |
+| X | 0xa95c...047d | 0.0 |
+| Y | 0xd8e3...44c4 | 0.0 |
+| Z | 0x7af0...97c  | 0.0 |
+
+## Multisig Contract Probes — 5/5 Healthy
+
+All 5 multisig accounts respond with `num_signatures_required = 2` via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | ✓ |
+| A-G | 0xf56c...096 | 2 | ✓ |
+| Y-Z | 0xd3ff...883 | 2 | ✓ |
+| S-T | 0x3b1c...883 | 2 | ✓ |
+| V-W | 0x40fa...b6d | 2 | ✓ |
+
+## MNX Markets (testnet.mnx.fi)
+Root URL returns HTTP 200 (SPA). No REST API endpoints exposed at `/api/markets`, `/api/v1/markets`, or `/api/tickers`. Market data unavailable via API probe — noted as unavailable in `mnx_snapshots`.
+
+## DuckDB Final State (2026-05-13)
+| table | rows |
+|-------|------|
+| world_increments | 24 |
+| repo_snapshots | 946 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 1 |
+
+## GF(3) Chain Position
+`... ERGODIC(12) → **PLUS(13)** → MINUS(14) → ...`  
+Next sweep: id=14 · trit=-1 · MINUS · #cc241d
