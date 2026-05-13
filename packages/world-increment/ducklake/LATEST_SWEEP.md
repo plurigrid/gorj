@@ -1,8 +1,110 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot
 
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+**Date:** 2026-05-13
+**Branch:** world-increment/sweep
+**GF(3) color chain:** ERGODIC #d3869b · PLUS #b8bb26 · MINUS #cc241d
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Summary
+
+| Source | Repos | Stars | Top Language |
+|--------|-------|-------|-------------|
+| plurigrid | 100 | 72 | Clojure / Rust / Zig |
+| kubeflow | 48 | 34,045 | Go / Python |
+| bmorphism | 100 | 248 | Rust / JavaScript / Julia |
+| zubyul | 49 | 14 | Python / Rust |
+| AustinCStone | 40 | 108 | Python |
+| migalkin | 19 | 279 | Python (KG research) |
+| wasita | 11 | 4 | Svelte |
+| M1shaaa | 8 | 0 | TypeScript |
+| kristinezheng | 6 | 0 | Python |
+| DJedamski | 6 | 3 | R / Jupyter |
+| TeglonLabs | 4 | 2 | Ruby / JavaScript |
+| **TOTAL** | **391** | **34,775** | |
+
+### Top Repos by Stars
+
+| Rank | Repo | Stars |
+|------|------|-------|
+| 1 | kubeflow/kubeflow | ★15,628 |
+| 2 | kubeflow/pipelines | ★4,140 |
+| 3 | kubeflow/spark-operator | ★3,126 |
+| 4 | kubeflow/trainer | ★2,098 |
+| 5 | kubeflow/katib | ★1,682 |
+| 6 | kubeflow/examples | ★1,462 |
+| 7 | kubeflow/manifests | ★1,017 |
+| 8 | kubeflow/arena | ★810 |
+| 9 | kubeflow/kale | ★686 |
+| 10 | kubeflow/mpi-operator | ★526 |
+
+### Notable Highlights
+
+- **plurigrid/gorj** (this repo): Clojure, 171 open issues, pushed 2026-05-13 — active development today
+- **plurigrid/asi**: 21 stars — "everything is topological chemputer!"
+- **bmorphism/Gay.jl**: Julia, 188 open issues, active today — wide-gamut color sampling with splittable determinism
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for MCP using Jane Street's oxcaml_effect
+- **bmorphism/anti-bullshit-mcp-server**: 23 stars — multi-epistemic claim analysis
+- **migalkin/NodePiece**: 144 stars — ICLR'22 KG representation paper
+- **TeglonLabs/mathpix-gem**: Ruby gem for mathematical OCR, active through Jan 2026
+
+### GF(3) Trit Distribution (391 world increments)
+
+| Trit | Color | Name | Count |
+|------|-------|------|-------|
+| 0 | #d3869b | ERGODIC | 130 |
+| 1 | #b8bb26 | PLUS | 131 |
+| -1 | #cc241d | MINUS | 130 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances
+
+All 28 addresses (alice, bob, A–Z) were queried against `fullnode.mainnet.aptoslabs.com`.
+All addresses returned **0.0 APT** — no active CoinStore balances detected.
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...2d5d | 0.0 |
+| A–Z (26) | various | 0.0 each |
+
+### Multisig Contract Probes
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`.
+All are **HEALTHY** — each requires exactly **2 signatures**.
+
+| Pair | Address (truncated) | Sigs Required | Status |
+|------|---------------------|--------------|--------|
+| A-B | 0x0da4...003 | 2 | ✅ HEALTHY |
+| A-G | 0xf56c...096 | 2 | ✅ HEALTHY |
+| Y-Z | 0xd3ff...883 | 2 | ✅ HEALTHY |
+| S-T | 0x3b1c...883 | 2 | ✅ HEALTHY |
+| V-W | 0x40fa...b6d | 2 | ✅ HEALTHY |
+
+### MNX Markets (testnet.mnx.fi)
+
+`testnet.mnx.fi` is a Next.js SPA (client-side rendered). Public REST API endpoints
+(`/api/markets`, `/api/v1/markets`, `/api/tickers`) returned HTML rather than JSON.
+**Market data: unavailable from server-side probe.** No entries in `mnx_snapshots`.
+
+---
+
+## DuckDB Schema
+
+Database: `packages/world-increment/ducklake/world-increments.duckdb`
+
+| Table | Rows |
+|-------|------|
+| world_increments | 391 |
+| repo_snapshots | 391 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 (SPA, no public API) |
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
