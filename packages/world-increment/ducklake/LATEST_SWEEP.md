@@ -1,4 +1,92 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-15
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Increments Added (IDs 13–23)
+
+| ID | GF3 Trit | Color | Name | Source | Repos Snapped |
+|----|----------|-------|------|--------|---------------|
+| 13 | +1 | `#b8bb26` | PLUS | plurigrid (org) | 33 |
+| 14 | -1 | `#cc241d` | MINUS | kubeflow (org) | 20 |
+| 15 | 0 | `#d3869b` | ERGODIC | TeglonLabs (org) | 4 |
+| 16 | +1 | `#b8bb26` | PLUS | bmorphism (user) | 25 |
+| 17 | -1 | `#cc241d` | MINUS | zubyul (user) | 15 |
+| 18 | 0 | `#d3869b` | ERGODIC | migalkin (social) | 7 |
+| 19 | +1 | `#b8bb26` | PLUS | DJedamski (social) | 6 |
+| 20 | -1 | `#cc241d` | MINUS | AustinCStone (social) | 6 |
+| 21 | 0 | `#d3869b` | ERGODIC | kristinezheng (social) | 6 |
+| 22 | +1 | `#b8bb26` | PLUS | wasita (social) | 8 |
+| 23 | -1 | `#cc241d` | MINUS | M1shaaa (social) | 8 |
+
+**Total new repo snapshots: 138 | Total in DB: 1082**
+
+### Notable Repos by Source
+
+**plurigrid** — gorj (Clojure, 202 open issues, 2026-05-15), nanoclj-zig (Zig GF3 trit conservation), zig-syrup (OCapN Syrup), asi (HTML 23★)
+
+**kubeflow** — pipelines (Python 4140★), kubeflow/kubeflow (15632★), trainer (Go 2098★), katib (AutoML 1682★), spark-operator (3125★)
+
+**TeglonLabs** — topoi (Python), mathpix-gem (Ruby), monad-mcp-server, coin-flip-mcp (JS)
+
+**bmorphism** — Gay.jl (Julia, 188 open issues, 2026-05-15), anti-bullshit-mcp (JS 23★), ocaml-mcp-sdk (OCaml 61★), say-mcp-server (JS 20★), nanoclj-zig (Zig), zig-syrup (Zig)
+
+**zubyul** — gay-world (Python goblin world builder), big-bad-plurigrid-quiz (Emacs Lisp), voice-observatory, nash-tui/nash-web (Rust)
+
+**migalkin** (social) — NodePiece (Python 144★ ICLR'22), StarE (89★ EMNLP'20), NBFNet_mlx (Apple Silicon)
+
+**AustinCStone** (social) — TextGAN (Python 92★), StereoVisionMRF (11★)
+
+**wasita** (social) — wasita.github.io (Svelte 2026-05-14), magic-garden (Python bot 2★), wm-cv
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 addresses)
+
+All 28 Hamming-swarm addresses returned **0 APT** at time of snapshot.
+Network: Aptos Mainnet (`fullnode.mainnet.aptoslabs.com`)
+
+| World | Address | Balance APT |
+|-------|---------|-------------|
+| alice | 0xc793...cc7b | 0.00000000 |
+| bob | 0x0a3c...512d | 0.00000000 |
+| A–Z (26) | (see aptos_snapshots table) | 0.00000000 each |
+
+### Multisig Contract Probes (5 pairs) — ALL HEALTHY
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | ✓ |
+| A-G | 0xf56c...096 | 2 | ✓ |
+| Y-Z | 0xd3ff...883 | 2 | ✓ |
+| S-T | 0x3b1c...883 | 2 | ✓ |
+| V-W | 0x40fa...b6d | 2 | ✓ |
+
+### MNX Markets (`testnet.mnx.fi`)
+
+Status: **SPA (Next.js) — no REST API endpoint available**.
+Probed `/api/markets`, `/api/v1/markets`, `/api/tickers` — all returned HTML shell, no extractable market data.
+
+---
+
+## DuckDB State
+
+```
+world_increments : 34 rows  (11 new this sweep)
+repo_snapshots   : 1082 rows (138 new this sweep)
+aptos_snapshots  : 28 rows
+multisig_probes  : 5 rows
+mnx_snapshots    : 1 row  (spa_unavailable)
+```
+
+DB: `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+# Previous Sweep — 2026-04-12
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
