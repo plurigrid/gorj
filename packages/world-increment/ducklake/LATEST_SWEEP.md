@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-15
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-15
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,55 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 75 (+52 this sweep) |
+| Total Repo Snapshots | 996 (+52 this sweep) |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
 | Sources Covered | 3 orgs + 8 users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+### Fresh Repos This Sweep (2026-05-15)
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+| Org/User    | Repos | Stars  | Forks  | Latest Push              |
+|-------------|-------|--------|--------|--------------------------|
+| kubeflow    | 10    | 29,887 | 9,298  | 2026-05-15T18:52:49Z     |
+| bmorphism   | 16    | 201    | 60     | 2026-05-15T12:46:39Z     |
+| plurigrid   | 14    | 56     | 31     | 2026-05-15T18:22:31Z     |
+| zubyul      | 8     | 1      | 2      | 2026-04-24T05:56:17Z     |
+| TeglonLabs  | 4     | 2      | 2      | 2026-01-01T12:13:13Z     |
+
+### Social Graph Users (from prior sweep, retained in DB)
+migalkin, DJedamski, wasita, kristinezheng, M1shaaa, AustinCStone — GitHub token refresh required for re-query; prior data intact.
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Balances (28 wallets)
+All balances: **0.0 APT** — addresses appear unfunded on mainnet.
+Wallets: alice, bob, A–Z (26 lettered worlds).
+
+### Multisig Contract Probes (5 contracts)
+
+| Pair | Sigs Required | Healthy |
+|------|---------------|---------|
+| A-B  | 2             | ✓       |
+| A-G  | 2             | ✓       |
+| Y-Z  | 2             | ✓       |
+| S-T  | 2             | ✓       |
+| V-W  | 2             | ✓       |
+
+All 5 multisig contracts healthy with 2-of-N threshold.
+
+### MNX Markets (testnet.mnx.fi)
+`/api/markets` → **404** — SPA frontend, no REST API endpoint. Status: **unavailable**.
+
+---
+
+## GF(3) Color Chain — This Sweep (increments 24–75)
 
 ---
 
