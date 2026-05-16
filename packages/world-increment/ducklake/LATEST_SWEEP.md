@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-05-16
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-16
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment ID:** 13 — **PLUS** `#b8bb26` (trit=1)
 
 ---
 
@@ -12,13 +13,16 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 (id #1–#13 plus sweep variants) |
+| Total Repo Snapshots | 945 (cumulative) |
+| Sources Targeted | 3 orgs + 8 users (rate-limited, MCP fallback for gorj) |
+| Aptos Wallets Queried | 28 |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | UNAVAILABLE (SPA) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — Current Increment
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +38,9 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **plurigrid** | **sweep_complete** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
 
 ---
 
@@ -130,13 +135,34 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
+## Hamming Swarm Snapshot (2026-05-16)
+
+### Aptos Mainnet Balances — 28 addresses (alice, bob, A–Z)
+All accounts queried against `fullnode.mainnet.aptoslabs.com/v1`. No `CoinStore<AptosCoin>` resource found on any address — all report **0.00 APT**. Accounts appear unfunded on mainnet.
+
+**Total APT across swarm: 0.00**
+
+### Multisig Contracts — 5 pairs
+All probed via `0x1::multisig_account::num_signatures_required`. Every contract returned `sigs_required=2` and is healthy.
+
+| Pair | Contract | Status |
+|------|----------|--------|
+| A-B | 0x0da4...003 | ✓ healthy (2-of-N) |
+| A-G | 0xf56c...096 | ✓ healthy (2-of-N) |
+| Y-Z | 0xd3ff...883 | ✓ healthy (2-of-N) |
+| S-T | 0x3b1c...883 | ✓ healthy (2-of-N) |
+| V-W | 0x40fa...b6d | ✓ healthy (2-of-N) |
+
+### MNX Markets (testnet.mnx.fi)
+**UNAVAILABLE** — site is a Next.js SPA with no discoverable REST API. Paths `/api/markets`, `/api/v1/markets`, `/api/tickers` all 404. No mnx_snapshots inserted.
+
+---
+
+## Notable Highlights (historical, from sweep #12)
 - **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
+- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes
 - **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for MCP using Jane Street's oxcaml_effect
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **plurigrid/asi**: 16 stars — topological chemputer
+- **Increment 13**: PLUS `#b8bb26` — sweep_complete, opening 5th GF(3) cycle
