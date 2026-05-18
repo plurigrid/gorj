@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-18
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-18
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,24 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 25 |
+| Total Repo Snapshots | 944 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Addresses Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| Multisigs Healthy | 5/5 |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — Latest Increments (ids 12-25)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 12 | world-increment-sweep | sweep_complete | 0 | `#d3869b` | **ERGODIC** |
+| 13 | hamming-swarm | aptos_balance_scan | +1 | `#b8bb26` | **PLUS** |
+| 14 | github/social-graph | rate_limit_exhausted | -1 | `#cc241d` | **MINUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain continues: `... → ERGODIC → PLUS → MINUS`
 
 ---
 
@@ -91,22 +85,54 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ---
 
-## Repo Counts by Source
+## Repo Counts by Source (cumulative DuckDB state)
 
-| Source | Type | Repos |
-|--------|------|-------|
-| plurigrid | org | 100 |
-| bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| Source | Type | Repos | Last Push |
+|--------|------|-------|-----------|
+| bmorphism | user | 200 | 2026-04-09 |
+| plurigrid | org | 200 | 2026-04-14 |
+| TeglonLabs | org | 106 | 2026-01-16 |
+| kubeflow | org | 94 | 2026-04-14 |
+| AustinCStone | user (zubyul graph) | 86 | 2026-02-11 |
+| wasita | user (zubyul graph) | 60 | 2026-04-13 |
+| migalkin | user (zubyul graph) | 60 | 2025-08-04 |
+| zubyul | user | 48 | 2026-04-09 |
+| kristinezheng | user (zubyul graph) | 36 | 2026-04-09 |
+| M1shaaa | user (zubyul graph) | 32 | 2026-04-13 |
+| DJedamski | user (zubyul graph) | 22 | 2018-03-07 |
+| **TOTAL** | | **944** | |
+
+**Note:** GitHub API unauthenticated rate limit (60 req/hr) was exhausted on this run. Counts reflect prior sweep data persisted in DuckDB.
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances (Ledger v5325140194)
+
+All 28 addresses returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — accounts not yet initialized with APT on mainnet.
+
+| World | Address (truncated) | Balance APT |
+|-------|---------------------|-------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...512d | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+### Multisig Contract Probes
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | ✓ |
+| A-G | 0xf56c...096 | 2 | ✓ |
+| Y-Z | 0xd3ff...883 | 2 | ✓ |
+| S-T | 0x3b1c...883 | 2 | ✓ |
+| V-W | 0x40fa...b6d | 2 | ✓ |
+
+**5/5 multisigs healthy. All 2-of-2.**
+
+### MNX Markets (testnet.mnx.fi)
+
+Next.js SPA — no public JSON API paths found. `mnx_snapshots` table has 0 rows.
 
 ---
 
