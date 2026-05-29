@@ -10,10 +10,11 @@
 
 ## JOB 1: GitHub Social Graph Sweep
 
-### New Repos Snapshotted Today (67 fresh snapshots)
+### New Repos Snapshotted Today (167 fresh snapshots)
 
 | Source | Type | Repos Added | Notable |
 |--------|------|-------------|---------|
+| bmorphism | user | 100 | ocaml-mcp-sdk (61★), anti-bullshit-mcp (23★), say-mcp (20★) |
 | plurigrid | org | 20 | gorj (255 open issues), eirobri, nanoclj-zig, zig-syrup |
 | kubeflow | org | 13 | pipelines (4150★), kubeflow (15686★), spark-operator (3124★) |
 | TeglonLabs | org | 4 | mathpix-gem, coin-flip-mcp, monad-mcp-server, topoi |
@@ -25,7 +26,7 @@
 | kristinezheng | social | 3 | kristinezheng.github.io, lookit-jenga |
 | M1shaaa | social | 3 | lab-bookshelf-, Python-Lookit-Uploads |
 
-**Cumulative DB state: 1,011 repo_snapshots, 90 world_increments** (includes April 2026 prior sweep)
+**Cumulative DB state: 1,111 repo_snapshots, 190 world_increments** (includes April 2026 prior sweep)
 
 ### GF(3) Color Distribution (Today's 67 Increments)
 - ERGODIC trit=0 #d3869b: **22 increments**
@@ -114,12 +115,12 @@ All 5 multisig contracts respond healthy with **2-of-2 signature threshold**.
 world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
                  source_type, source_name, event_type, repo_name,
                  actor, snapshot_hash)
-  -- 90 rows total (67 new today + 23 from April 2026 sweep)
+  -- 190 rows total (167 new today + 23 from April 2026 sweep)
 
 repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
                full_name, language, stars, forks, open_issues,
                pushed_at, description)
-  -- 1011 rows total (67 new today + 944 from prior sweeps)
+  -- 1111 rows total (167 new today + 944 from prior sweeps)
 
 aptos_snapshots(timestamp, world, address, balance_apt)
   -- 28 wallets, 20.3448 APT total
