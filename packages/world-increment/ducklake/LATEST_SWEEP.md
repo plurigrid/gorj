@@ -1,8 +1,121 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot
 
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+**Sweep timestamp:** 2026-06-01T00:00:00Z  
+**GF(3) color chain:** id%3==0 → trit=0 ERGODIC `#d3869b` | id%3==1 → trit=1 PLUS `#b8bb26` | id%3==2 → trit=-1 MINUS `#cc241d`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Coverage
+
+| Source | Type | Repos Captured | Total Stars |
+|--------|------|----------------|-------------|
+| kubeflow | org | 48 | 34,166 |
+| migalkin | user (social) | 19 | 280 |
+| bmorphism | user | 100 | 247 |
+| AustinCStone | user (social) | 30 | 108 |
+| plurigrid | org | 100 | 75 |
+| zubyul | user | 49 | 14 |
+| wasita | user (social) | 11 | 5 |
+| DJedamski | user (social) | 6 | 3 |
+| TeglonLabs | org | 4 | 2 |
+| kristinezheng | user (social) | 6 | 0 |
+| M1shaaa | user (social) | 8 | 0 |
+| **TOTAL** | | **381** | **34,900** |
+
+### Top 15 Repos by Stars
+
+| Repo | Stars | Language | Last Pushed |
+|------|-------|----------|-------------|
+| kubeflow/kubeflow | 15,700 | — | 2026-05-24 |
+| kubeflow/pipelines | 4,151 | Python | 2026-06-01 |
+| kubeflow/spark-operator | 3,125 | Python | 2026-06-01 |
+| kubeflow/trainer | 2,109 | Go | 2026-05-30 |
+| kubeflow/katib | 1,685 | Python | 2026-05-29 |
+| kubeflow/examples | 1,462 | Jsonnet | 2025-04-14 |
+| kubeflow/manifests | 1,019 | YAML | 2026-05-29 |
+| kubeflow/arena | 811 | Go | 2026-05-07 |
+| kubeflow/kale | 691 | Python | 2026-06-01 |
+| kubeflow/mpi-operator | 528 | Go | 2026-05-29 |
+| kubeflow/fairing | 337 | Jsonnet | 2022-04-11 |
+| kubeflow/pytorch-operator | 310 | Jsonnet | 2021-12-01 |
+| kubeflow/community | 195 | Jupyter Notebook | 2026-06-01 |
+| kubeflow/website | 184 | HTML | 2026-05-28 |
+| kubeflow/kfctl | 182 | Go | 2023-08-15 |
+
+### TeglonLabs Repos (org)
+
+| Repo | Language | Stars | Description |
+|------|----------|-------|-------------|
+| mathpix-gem | Ruby | 2 | Transform mathematical images to LaTeX; security-first design |
+| coin-flip-mcp | JavaScript | 0 | MCP server for coin flipping via random.org |
+| monad-mcp-server | — | 0 | Monad MCP Server |
+| topoi | Python | 0 | — |
+
+### DuckDB Schema
+
+```
+world_increments  — 381 rows (GF3-tagged repo push events)
+repo_snapshots    — 381 rows (full repo metadata)
+aptos_snapshots   — 28 rows  (hamming swarm wallet balances)
+multisig_probes   — 5 rows   (multisig contract health)
+mnx_snapshots     — 1 row    (MNX testnet, unavailable)
+```
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (mainnet)
+
+All 28 hamming-swarm wallets (alice, bob, A–Z) queried against `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+
+**Result: All wallets return 0 APT.** The CoinStore resource was not found for any address on Aptos mainnet, indicating these are unfunded / uninitialized accounts.
+
+| Wallet | Address (prefix) | Balance (APT) |
+|--------|-----------------|---------------|
+| alice | 0xc793ac... | 0.0 |
+| bob | 0x0a3c00... | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+### Multisig Contract Health
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|---------------|---------|
+| A-B | 0x0da4f4... | 2 | ✓ |
+| A-G | 0xf56c4a... | 2 | ✓ |
+| Y-Z | 0xd3ffe1... | 2 | ✓ |
+| S-T | 0x3b1c3a... | 2 | ✓ |
+| V-W | 0x40fad7... | 2 | ✓ |
+
+**All 5 multisig contracts healthy — each requires 2-of-N signatures.**
+
+### MNX Markets (testnet.mnx.fi)
+
+The MNX testnet is a Next.js SPA. All API paths (`/api/markets`, `/api/v1/markets`) return the SPA HTML shell — no REST market data is exposed client-side. **MNX snapshot: unavailable.**
+
+---
+
+## DuckDB Location
+
+```
+packages/world-increment/ducklake/world-increments.duckdb
+```
+
+Query example:
+```sql
+-- Top repos by stars
+SELECT full_name, stars, language FROM repo_snapshots ORDER BY stars DESC LIMIT 10;
+
+-- GF3 color distribution
+SELECT gf3_name, gf3_color, count(*) FROM world_increments GROUP BY gf3_name, gf3_color;
+
+-- Aptos swarm summary
+SELECT world, balance_apt FROM aptos_snapshots ORDER BY world;
+```
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
