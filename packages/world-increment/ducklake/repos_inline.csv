@@ -1,0 +1,25 @@
+org_or_user,repo_name,full_name,language,stars,forks,open_issues,pushed_at,description
+TeglonLabs,mathpix-gem,TeglonLabs/mathpix-gem,Ruby,2,0,11,2026-01-01T12:13:13Z,"Transform mathematical images to LaTeX, chemistry structures to SMILES, and documents to markdown with security-first design."
+TeglonLabs,coin-flip-mcp,TeglonLabs/coin-flip-mcp,JavaScript,0,2,1,2025-09-21T08:57:27Z,MCP server for flipping coins with varying degrees of randomness from random.org
+TeglonLabs,monad-mcp-server,TeglonLabs/monad-mcp-server,,0,0,0,2025-05-14T11:36:14Z,Monad MCP Server
+TeglonLabs,topoi,TeglonLabs/topoi,Python,0,0,1,2025-01-24T04:49:26Z,
+DJedamski,kaggle_ncaa18,DJedamski/kaggle_ncaa18,Jupyter Notebook,0,0,0,2018-02-26T16:33:24Z,Code for NCAA March Madness competition (2018)
+DJedamski,Project_Euler,DJedamski/Project_Euler,,0,0,0,2015-09-05T17:13:32Z,
+DJedamski,EDA,DJedamski/EDA,R,0,0,0,2014-11-09T17:00:39Z,Coursera Project
+DJedamski,Kaggle,DJedamski/Kaggle,,1,0,0,2023-04-21T01:42:35Z,
+DJedamski,Getting-and-Cleaning-Data,DJedamski/Getting-and-Cleaning-Data,R,1,0,0,2023-04-21T01:42:34Z,Coursera Project
+DJedamski,School,DJedamski/School,R,1,1,0,2023-04-21T01:42:33Z,A couple small projects from grad school
+kristinezheng,kristinezheng.github.io,kristinezheng/kristinezheng.github.io,HTML,0,0,0,2026-05-14T22:29:01Z,
+kristinezheng,Portfolio,kristinezheng/Portfolio,,0,0,0,2025-02-12T00:00:45Z,July 2021
+kristinezheng,lookit-jenga,kristinezheng/lookit-jenga,Jupyter Notebook,0,0,0,2024-05-16T18:29:05Z,Lookit study for 9.85
+kristinezheng,auditory-illusion,kristinezheng/auditory-illusion,CSS,0,0,0,2022-03-07T02:57:44Z,9.35 spring 2022 auditory illusion
+kristinezheng,graph_example,kristinezheng/graph_example,Python,0,0,0,2021-10-08T07:29:53Z,
+kristinezheng,Green-Machine,kristinezheng/Green-Machine,Python,0,0,0,2021-09-19T05:33:04Z,HackMIT 2021: Sustainability Track
+M1shaaa,M1shaaa,M1shaaa/M1shaaa,,0,0,0,2026-02-04T19:32:04Z,Config files for my GitHub profile.
+M1shaaa,lab-bookshelf-,M1shaaa/lab-bookshelf-,TypeScript,0,0,0,2024-12-31T05:11:18Z,
+M1shaaa,rosie-s-study-3-lookit-project,M1shaaa/rosie-s-study-3-lookit-project,,0,0,0,2024-11-04T22:15:39Z,
+M1shaaa,Python-Lookit-Uploads,M1shaaa/Python-Lookit-Uploads,Python,0,0,0,2024-02-15T22:59:37Z,random projects
+M1shaaa,Classes,M1shaaa/Classes,,0,0,0,2023-12-06T18:20:27Z,
+M1shaaa,Yale-Work,M1shaaa/Yale-Work,HTML,0,0,0,2023-12-06T18:33:14Z,
+M1shaaa,MNIST-Classifier,M1shaaa/MNIST-Classifier,,0,0,0,2023-11-28T06:10:47Z,
+M1shaaa,Lookit-Demo,M1shaaa/Lookit-Demo,,0,0,0,2023-04-10T02:44:01Z,
