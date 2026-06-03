@@ -1,4 +1,106 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-03
+
+**Date:** 2026-06-03  
+**Branch:** world-increment/sweep  
+**DB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+
+| Source | Type | Repos |
+|--------|------|-------|
+| plurigrid | org | 101 total (21 snapshotted) |
+| kubeflow | org | 48 total (16 snapshotted) |
+| TeglonLabs | org | 4 total (4 snapshotted) |
+| bmorphism | user | 103 total (14 snapshotted) |
+| zubyul | user | 49 total (8 snapshotted) |
+| migalkin | social graph | 5 snapshotted |
+| wasita | social graph | 3 snapshotted |
+| kristinezheng | social graph | 2 snapshotted |
+| M1shaaa | social graph | 2 snapshotted |
+| AustinCStone | social graph | 4 snapshotted |
+| DJedamski | social graph | 2 snapshotted |
+
+**Total repo snapshots:** 80
+**World increments:** 80 (GF3 color chain applied)
+
+### GF(3) Color Chain Distribution
+
+| Trit | Color | Name | Count |
+|------|-------|------|-------|
+| 0 | `#d3869b` | ERGODIC | 26 |
+| +1 | `#b8bb26` | PLUS | 27 |
+| -1 | `#cc241d` | MINUS | 27 |
+
+### Notable Repos
+
+**plurigrid** — top by stars: `asi` (24*), `vcg-auction` (7*), `agent` (5*)
+- `gorj` (this repo!): 312 open issues, active
+- `nanoclj-zig`: NaN-boxed Clojure in Zig with GF(3) trit conservation
+
+**kubeflow** — flagship ML-on-K8s org
+- `kubeflow/kubeflow`: 15,704* — top repo in sweep
+- `pipelines`: 4,151*, active (pushed 2026-06-02)
+- `spark-operator`: 3,125*
+- `trainer`: 2,110* (distributed AI training)
+- `mcp-apache-spark-history-server`: 173* — MCP integration for Spark
+
+**bmorphism** — prolific MCP ecosystem builder
+- `Gay.jl`: 189 open issues — very active
+- `ocaml-mcp-sdk`: 61* — OCaml MCP SDK
+- `say-mcp-server`, `babashka-mcp-server`, `manifold-mcp-server`
+
+**migalkin** (knowledge graph researcher)
+- `NodePiece`: 144* — compositional KG representations (ICLR 22)
+- `StarE`: 89* — hyper-relational KG message passing (EMNLP 20)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet)
+
+All 28 addresses queried via Aptos fullnode mainnet API.
+
+| World | Balance (APT) | Note |
+|-------|---------------|------|
+| alice | 0.0 | CoinStore absent — unfunded |
+| bob   | 0.0 | CoinStore absent — unfunded |
+| A-Z   | 0.0 each | All 26 addresses unfunded |
+
+All addresses returned 0 APT. Accounts have no CoinStore resource, consistent with key pairs that have never received a transaction.
+
+### Multisig Contract Probes (Aptos Mainnet)
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4...7003 | 2 | YES |
+| A-G | 0xf56c...0096 | 2 | YES |
+| Y-Z | 0xd3ff...b883 | 2 | YES |
+| S-T | 0x3b1c...7883 | 2 | YES |
+| V-W | 0x40fa...eb6d | 2 | YES |
+
+All 5 multisig accounts live, requiring 2-of-N signatures. All healthy.
+
+### MNX Markets (testnet.mnx.fi)
+
+Status: Unavailable for programmatic extraction. Next.js SPA — no /api/markets endpoint accessible. Zero rows in mnx_snapshots.
+
+---
+
+## DuckDB Schema
+
+```
+world-increments.duckdb
+  world_increments    80 rows  -- GF3-colored repo push events
+  repo_snapshots      80 rows  -- full repo metadata
+  aptos_snapshots     28 rows  -- Hamming swarm wallet balances
+  multisig_probes      5 rows  -- on-chain multisig health
+  mnx_snapshots        0 rows  -- MNX markets (SPA, unavailable)
+```
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
