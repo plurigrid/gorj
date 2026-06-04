@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-04
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-04
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.3 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (this sweep) | 390 |
+| Total Repo Snapshots (this sweep) | 390 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Snapshotted | 28 |
+| Multisig Contracts Probed | 5 |
+| Total APT in Hamming Swarm | **20.344773** |
+| MNX Markets | unavailable (Vercel auth) |
 
 ---
 
@@ -140,3 +144,68 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot — 2026-06-04
+
+### Aptos Wallet Balances (28 addresses via `0x1::coin::balance` view function)
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793…cc7b | 0.43643352 |
+| bob | 0x0a3c…512d | **12.657007** |
+| A | 0x8699…9d7a | 0.051767 |
+| B | 0x3f89…b13 | 0.036256 |
+| C | 0x38b9…35e | 0.010185 |
+| D | 0xf776…dd1 | 0.011629 |
+| E | 0xdc1d…d36 | 0.009372 |
+| F | 0x18a1…f71 | **1.960516** |
+| G | 0x69a3…f32 | 0.000681 |
+| H | 0xce67…00f | 0.001681 |
+| I | 0x070f…fc9 | 0.000681 |
+| J | 0x4d96…f54 | **1.895093** |
+| K | 0xa732…dc4 | 0.161961 |
+| L | 0x7c2e…ba9 | **1.927269** |
+| M | 0x6fed…2e9 | 0.112285 |
+| N | 0xe7dd…b2c | 0.106121 |
+| O | 0x7325…89d | 0.210136 |
+| P | 0x6218…948 | 0.140136 |
+| Q | 0xac40…a9 | 0.103240 |
+| R | 0x7ce6…e10 | 0.090217 |
+| S | 0xb875…386 | 0.091788 |
+| T | 0x3578…588 | 0.073713 |
+| U | 0x7586…956 | 0.055773 |
+| V | 0xb59d…2c3 | 0.048833 |
+| W | 0x5f32…7b0 | 0.040705 |
+| X | 0xa95c…47d | 0.042577 |
+| Y | 0xd8e3…4c4 | 0.044449 |
+| Z | 0x7af0…97c | 0.024268 |
+
+**Total swarm APT: 20.344773**  
+**Leader: bob (12.657007 APT, 62.2% of swarm)**
+
+Top 5: bob 12.66 → F 1.96 → L 1.93 → J 1.90 → alice 0.44
+
+### Multisig Contract Probes (5/5 healthy, all 2-of-N)
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4…003 | 2 | ✓ |
+| A-G | 0xf56c…096 | 2 | ✓ |
+| Y-Z | 0xd3ff…883 | 2 | ✓ |
+| S-T | 0x3b1c…883 | 2 | ✓ |
+| V-W | 0x40fa…b6d | 2 | ✓ |
+
+All multisig contracts are live and responding. Each uses 2-of-N threshold.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: UNAVAILABLE** — Vercel authentication gate on all endpoints. Probed: `/api/markets`, `/api/v1/markets`, `/api/tickers`, `/markets`, `/v1/markets`. Placeholder row inserted in `mnx_snapshots`.
+
+---
+
+## GF(3) Chain Note (this sweep)
+
+390 repos ingested. Chain cycles: 130 full GF(3) triples  
+`ERGODIC(#d3869b) → PLUS(#b8bb26) → MINUS(#cc241d) → …` × 130
