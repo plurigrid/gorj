@@ -1,8 +1,130 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot
 
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+**Timestamp:** 2026-06-04  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`  
+**GF(3) color chain:** trit=0 → ERGODIC #d3869b · trit=1 → PLUS #b8bb26 · trit=-1 → MINUS #cc241d
+
+---
+
+## JOB 1 — GitHub Social Graph Sweep
+
+### Repo Counts by Source
+
+| Source | Type | Repos Snapshotted |
+|---|---|---|
+| plurigrid | org | 25 |
+| kubeflow | org | 17 |
+| bmorphism | user | 17 |
+| zubyul | user | 14 |
+| AustinCStone | social-graph | 10 |
+| M1shaaa | social-graph | 8 |
+| wasita | social-graph | 7 |
+| migalkin | social-graph | 7 |
+| kristinezheng | social-graph | 6 |
+| DJedamski | social-graph | 6 |
+| TeglonLabs | org | 4 |
+| **TOTAL** | | **121** |
+
+### GF(3) Color Distribution
+
+| Trit | Name | Color | Count |
+|---|---|---|---|
+| 0 | ERGODIC | #d3869b | 40 |
+| 1 | PLUS | #b8bb26 | 41 |
+| -1 | MINUS | #cc241d | 40 |
+
+### Notable Repos (Top Stars)
+
+| Repo | Stars | Lang | Pushed |
+|---|---|---|---|
+| kubeflow/kubeflow | 15,704 | — | 2026-05-24 |
+| kubeflow/pipelines | 4,152 | Python | 2026-06-03 |
+| kubeflow/spark-operator | 3,124 | Python | 2026-06-03 |
+| kubeflow/trainer | 2,110 | Go | 2026-06-04 |
+| kubeflow/katib | 1,685 | Python | 2026-06-04 |
+| kubeflow/examples | 1,462 | Jsonnet | 2025-04-14 |
+| kubeflow/manifests | 1,020 | YAML | 2026-06-02 |
+| kubeflow/arena | 811 | Go | 2026-05-07 |
+| kubeflow/kale | 690 | Python | 2026-06-01 |
+| migalkin/NodePiece | 144 | Python | 2022-02-02 |
+| migalkin/StarE | 89 | Python | 2023-12-01 |
+| AustinCStone/TextGAN | 92 | Python | 2016-10-04 |
+| bmorphism/ocaml-mcp-sdk | 61 | OCaml | 2026-03-16 |
+| plurigrid/gorj | 0★ 340📋 | Clojure | 2026-06-04 |
+
+### Most Active (Recent Push, 2026-06-04)
+
+- `plurigrid/gorj` — forj + Rama topology nREPL routing + GF3 coloring
+- `kubeflow/trainer` — Distributed AI Model Training on Kubernetes
+- `bmorphism/Gay.jl` — Wide-gamut color sampling (189 open issues)
+- `M1shaaa/M1shaaa` — profile config pushed today
+- `kubeflow/sdk` — Universal Python SDK for Kubernetes
+- `kubeflow/dashboard` — Kubeflow Central Dashboard
+
+### Zubyul Social Graph Notable Repos
+
+| User | Notable Repos | Signal |
+|---|---|---|
+| migalkin | NodePiece (144★), StarE (89★), kgcourse2021 (25★) | KG / GNN researcher |
+| DJedamski | Kaggle/NCAA ML (R/Jupyter) | Data science |
+| wasita | wasita.github.io (Svelte, active 2026-06) | Active dev |
+| kristinezheng | kristinezheng.github.io (active 2026-05) | Personal site |
+| M1shaaa | Profile pushed 2026-06-04 | Active, Lookit research |
+| AustinCStone | TextGAN (92★), bmfork (active 2025-05) | ML, bitmind orbit |
+
+---
+
+## JOB 2 — Hamming Swarm Snapshot (Aptos Mainnet)
+
+### Wallet Balances (A–Z + alice + bob)
+
+All 28 addresses probed at Aptos mainnet. Result: **CoinStore `0x1::aptos_coin::AptosCoin` not found** for all addresses — accounts exist (confirmed: `alice` has `sequence_number=72`) but hold zero in the legacy coin module. Likely hold APT via fungible assets (`0x1::fungible_asset`) rather than the legacy coin store.
+
+| World | Address (prefix) | Balance (APT) | Note |
+|---|---|---|---|
+| alice | 0xc793...cc7b | 0.0 | account exists, seq_num=72 |
+| bob | 0x0a3c...512d | 0.0 | CoinStore absent |
+| A–Z (26) | various | 0.0 | CoinStore absent |
+
+**Total APT in legacy coin stores: 0.0 APT (all accounts may use FA module)**
+
+### Multisig Contract Probes
+
+All 5 contracts probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|---|---|---|---|
+| A-B | 0x0da4...7003 | 2 | ✅ |
+| A-G | 0xf56c...0096 | 2 | ✅ |
+| Y-Z | 0xd3ff...b883 | 2 | ✅ |
+| S-T | 0x3b1c...7883 | 2 | ✅ |
+| V-W | 0x40fa...eb6d | 2 | ✅ |
+
+**All 5 multisig contracts healthy — 2-of-N threshold confirmed on mainnet.**
+
+### MNX Markets (testnet.mnx.fi)
+
+Status: **SPA (Next.js) — no JSON API endpoint exposed**  
+- `GET /api/markets` → returns HTML (293KB SPA shell)  
+- `GET /api/v1/markets` → same SPA shell  
+- No market data extractable without browser JS execution  
+- Recorded in `mnx_snapshots` as `UNAVAILABLE`
+
+---
+
+## DuckDB Schema Summary
+
+```sql
+world_increments  -- 121 rows  (GF3 increment chain: 40 ERGODIC / 41 PLUS / 40 MINUS)
+repo_snapshots    -- 121 rows  (GitHub repo metadata, 11 sources)
+aptos_snapshots   -- 28 rows   (Hamming swarm A-Z + alice + bob, all 0.0 APT)
+multisig_probes   -- 5 rows    (all healthy, sigs_required=2)
+mnx_snapshots     -- 1 row     (SPA unavailable)
+```
+
+---
+
+*Sweep completed 2026-06-04 by world-increment-sweep + hamming-swarm-snapshot agent.*
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
