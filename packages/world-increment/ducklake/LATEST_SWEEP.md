@@ -1,4 +1,138 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-06
+
+**Generated:** 2026-05-06  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Crawled
+
+| Source | Type | Repos Captured | Total Stars |
+|--------|------|---------------|-------------|
+| kubeflow | org | 20 | 32,272 |
+| plurigrid | org | 100 | 68 |
+| bmorphism | user | 50 | 120 |
+| zubyul | user | 49 | 14 |
+| migalkin | user | 19 | 278 |
+| TeglonLabs | org | 4 | 2 |
+| AustinCStone | user | 4 | 103 |
+| DJedamski | user | 3 | 0 |
+| wasita | user | 4 | 4 |
+| kristinezheng | user | 3 | 0 |
+| M1shaaa | user | 3 | 0 |
+| **Total** | | **259** | **32,861** |
+
+### Notable Repos by Stars
+
+| Repo | Stars | Language | Description |
+|------|-------|----------|-------------|
+| kubeflow/kubeflow | 15,622 | — | ML Toolkit for Kubernetes |
+| kubeflow/pipelines | 4,132 | Python | ML Pipelines for Kubeflow |
+| kubeflow/spark-operator | 3,123 | Python | Kubernetes operator for Apache Spark |
+| kubeflow/trainer | 2,096 | Go | Distributed AI Model Training |
+| kubeflow/katib | 1,683 | Python | AutoML on Kubernetes |
+| kubeflow/examples | 1,460 | Jsonnet | Extended examples and tutorials |
+| kubeflow/manifests | 1,015 | YAML | Deployment Manifests |
+| kubeflow/arena | 810 | Go | CLI for Kubeflow |
+| kubeflow/kale | 684 | Python | Kubeflow superfood for Data Scientists |
+| migalkin/NodePiece | 143 | Python | KG representations (LOG 2022) |
+| migalkin/StarE | 89 | Python | EMNLP 2020 hyper-relational KGs |
+| AustinCStone/TextGAN | 92 | Python | GAN for text generation in TF |
+| bmorphism/ocaml-mcp-sdk | 60 | OCaml | OCaml SDK for MCP |
+| plurigrid/gorj | 0 | Clojure | forj + Rama topology nREPL (this repo) |
+
+### GF(3) Color Chain Distribution
+
+| Trit | Color | Name | Count |
+|------|-------|------|-------|
+| 0 | `#d3869b` | ERGODIC | 86 |
+| +1 | `#b8bb26` | PLUS | 87 |
+| -1 | `#cc241d` | MINUS | 86 |
+
+259 world-increments, GF(3) balanced (±1 deviation).
+
+### Recently Active Plurigrid Repos (top 10 by push date)
+
+| Repo | Language | Pushed |
+|------|----------|--------|
+| gorj | Clojure | 2026-05-06 |
+| zig-syrup | Zig | 2026-04-30 |
+| horse | TeX | 2026-04-29 |
+| asi | HTML | 2026-04-26 |
+| nash-portal | Rust | 2026-04-26 |
+| asi-skills | Julia | 2026-04-26 |
+| bci-blue-share | JavaScript | 2026-04-26 |
+| nanoclj-zig | Zig | 2026-04-25 |
+| spi-race | Swift | 2026-04-21 |
+| reafference | HTML | 2026-04-16 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet)
+
+All 28 addresses (alice, bob, A–Z) queried against Aptos mainnet at ledger version ~5,155,730,935.
+
+**Result:** `resource_not_found` for all — CoinStore<AptosCoin> not initialized. Hamming swarm addresses are unfunded on mainnet.
+
+| World | Address (prefix) | Balance (APT) |
+|-------|-----------------|--------------|
+| alice | 0xc793acde… | 0.00 |
+| bob | 0x0a3c00c5… | 0.00 |
+| A–Z | 0x8699edc0…–0x7af0ef6e… | 0.00 each |
+
+### Multisig Contract Probes (Aptos Mainnet)
+
+All 5 multisig contracts healthy. All require **2 signatures**.
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|--------------|---------|
+| A-B | 0x0da4f428… | 2 | ✓ |
+| A-G | 0xf56c4a1c… | 2 | ✓ |
+| Y-Z | 0xd3ffe181… | 2 | ✓ |
+| S-T | 0x3b1c3ae9… | 2 | ✓ |
+| V-W | 0x40fad7b4… | 2 | ✓ |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status:** Unavailable as structured data. All routes return Next.js HTML shell — no JSON API accessible. No `mnx_snapshots` rows inserted.
+
+---
+
+## DuckDB Schema Summary
+
+```
+world_increments   -- 259 rows  (GF3-colored repo push events)
+repo_snapshots     -- 259 rows  (full repo metadata)
+aptos_snapshots    --  28 rows  (alice, bob, A-Z balances)
+multisig_probes    --   5 rows  (A-B, A-G, Y-Z, S-T, V-W)
+mnx_snapshots      --   0 rows  (SPA, no API data)
+```
+
+### Query Examples
+
+```sql
+-- Top repos by stars
+SELECT full_name, stars, language FROM repo_snapshots
+ORDER BY stars DESC LIMIT 10;
+
+-- GF3 color distribution
+SELECT gf3_name, gf3_color, COUNT(*) FROM world_increments
+GROUP BY gf3_name, gf3_color;
+
+-- Healthy multisigs
+SELECT pair, sigs_required FROM multisig_probes WHERE healthy = true;
+
+-- Active plurigrid repos
+SELECT repo_name, pushed_at FROM repo_snapshots
+WHERE org_or_user = 'plurigrid'
+ORDER BY pushed_at DESC LIMIT 10;
+```
+
+---
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
