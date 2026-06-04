@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-05-04
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-04T00:54 UTC
+- **Agent:** world-increment-sweep + hamming-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (cumulative) | 34 |
+| Total Repo Snapshots (cumulative) | 1064 |
+| New Repos This Sweep | 120 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | UNAVAILABLE (SPA endpoint) |
 
 ---
 
@@ -130,13 +134,47 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
+## Aptos Hamming Swarm Snapshot (2026-05-04)
+
+All 28 wallets queried. All returned 0.0 APT (zero CoinStore balance).
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...2d5d | 0.0 |
+| A-Z | (26 addresses) | 0.0 each |
+
+Full address list stored in `aptos_snapshots` table in DuckDB.
+
+---
+
+## Multisig Probe Results (2026-05-04)
+
+All 5 multisig contracts healthy (sigs_required=2).
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | true |
+| A-G | 0xf56c...096 | 2 | true |
+| Y-Z | 0xd3ff...883 | 2 | true |
+| S-T | 0x3b1c...883 | 2 | true |
+| V-W | 0x40fa...b6d | 2 | true |
+
+---
+
+## MNX Markets
+
+**Status: UNAVAILABLE** — All 3 endpoints (`/api/markets`, `/api/v1/markets`, `/api/tickers`) return HTML (Next.js SPA). The `mnx_snapshots` table is empty.
+
+---
+
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
+- **kubeflow/kubeflow**: 15,619 stars — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,131 stars — ML Pipelines (pushed 2026-05-01)
+- **kubeflow/spark-operator**: 3,123 stars — Kubernetes Spark operator
 - **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **bmorphism/Gay.jl**: 187 open issues — wide-gamut GF(3) color sampling (pushed 2026-05-04)
+- **plurigrid/gorj**: This repo — forj + Rama topology nREPL routing + GF(3) trit coloring
+- **All multisigs HEALTHY** — Hamming swarm fully operational with 2-of-N signatures
