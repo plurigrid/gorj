@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-05-04
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-05-04
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.2 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,41 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (repo) | 137 |
+| Total Repo Snapshots | 137 |
+| Aptos Wallets Snapshotted | 28 |
+| Multisig Contracts Probed | 5 |
 | Sources Covered | 3 orgs + 8 users |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances — 28 addresses (alice, bob, A–Z)
+
+All 28 addresses returned **0.0 APT** — `CoinStore<AptosCoin>` resource not found on mainnet, indicating accounts have not received APT or CoinStore has not been initialized.
+
+| Pair | Count | Total APT |
+|---|---|---|
+| alice, bob | 2 | 0.0 |
+| A–Z (26 worlds) | 26 | 0.0 |
+| **TOTAL** | **28** | **0.0 APT** |
+
+### Multisig Contract Probes — 5 contracts
+
+All 5 probed via `0x1::multisig_account::num_signatures_required`. All returned `2` (2-of-N), all **healthy**.
+
+| Pair | Contract Address | Sigs Required | Healthy |
+|---|---|---|---|
+| A-B | `0x0da4f428a0c007da...` | 2 | ✓ |
+| A-G | `0xf56c4a1c09062...` | 2 | ✓ |
+| Y-Z | `0xd3ffe1812b2df4...` | 2 | ✓ |
+| S-T | `0x3b1c3ae905d44c...` | 2 | ✓ |
+| V-W | `0x40fad7b423a843...` | 2 | ✓ |
+
+### MNX Markets (testnet.mnx.fi)
+
+`testnet.mnx.fi` responds with a **Next.js SPA** — no REST market data API accessible at common paths (`/api/markets`, `/api/v1/markets`). Recorded as `unavailable` in `mnx_snapshots`. Browser-side JS execution required to extract market data.
 
 ---
 
@@ -131,12 +163,15 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **kubeflow/kubeflow**: 15,620 stars — flagship ML platform for Kubernetes (2026-05-04)
+- **kubeflow/pipelines**: 4,132 stars — most popular ML pipeline for Kubernetes (pushed 2026-05-01)
+- **kubeflow/spark-operator**: 3,123 stars — Kubernetes operator for Apache Spark
+- **kubeflow/trainer**: 2,096 stars — Distributed AI Model Training (pushed 2026-05-01)
+- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings (ICLR 22)
+- **migalkin/StarE**: 89 stars — hyper-relational knowledge graph message passing (EMNLP 20)
+- **AustinCStone/TextGAN**: 92 stars — text generation with GANs in TensorFlow
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for MCP using Jane Street's oxcaml_effect
+- **plurigrid/asi**: 17 stars — topological chemputer (pushed 2026-04-26)
+- **plurigrid/gorj**: 57 open issues — forj + Rama topology nREPL routing + GF(3) coloring (this repo!)
+- **bmorphism/Gay.jl**: 187 open issues — wide-gamut GF(3) color sampling (pushed 2026-05-04)
+- **Hamming swarm**: 28 wallets (alice, bob, A–Z) all at 0 APT; 5 multisigs all requiring 2 sigs
