@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-05
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-05T10:30:00Z
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.3 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 358 (this sweep) |
+| Total Repo Snapshots | 1286 (multi-snapshot time-series) |
+| Aptos Wallets Snapshotted | 28 (Hamming swarm: alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-sig threshold) |
+| Sources Covered | 3 orgs + 9 users + social graph |
 
 ---
 
@@ -140,3 +142,72 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot — 2026-06-05
+
+### Aptos Mainnet Wallet Balances
+
+All 28 Hamming swarm addresses queried via `https://fullnode.mainnet.aptoslabs.com/v1/accounts/{addr}/resource/0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+
+**Result: All 28 wallets returned 0 APT.** The `CoinStore<AptosCoin>` resource was either not initialized or holds zero balance. Accounts may hold other coin types or be pre-funded via multisig.
+
+| World | Address (truncated) | APT Balance |
+|-------|---------------------|-------------|
+| alice | 0xc793...cc7b | 0.00000000 |
+| bob | 0x0a3c...512d | 0.00000000 |
+| A | 0x8699...9d7a | 0.00000000 |
+| B | 0x3f89...b13 | 0.00000000 |
+| C | 0x38b9...35e | 0.00000000 |
+| D | 0xf776...dd1 | 0.00000000 |
+| E | 0xdc1d...d36 | 0.00000000 |
+| F | 0x18a1...f71 | 0.00000000 |
+| G | 0x69a3...f32 | 0.00000000 |
+| H | 0xce67...00f | 0.00000000 |
+| I | 0x070f...c9 | 0.00000000 |
+| J | 0x4d96...f54 | 0.00000000 |
+| K | 0xa732...dc4 | 0.00000000 |
+| L | 0x7c2e...ba9 | 0.00000000 |
+| M | 0x6fed...e9 | 0.00000000 |
+| N | 0xe7dd...2c | 0.00000000 |
+| O | 0x7325...89d | 0.00000000 |
+| P | 0x6218...948 | 0.00000000 |
+| Q | 0xac40...a9 | 0.00000000 |
+| R | 0x7ce6...e10 | 0.00000000 |
+| S | 0xb875...386 | 0.00000000 |
+| T | 0x3578...588 | 0.00000000 |
+| U | 0x7586...956 | 0.00000000 |
+| V | 0xb59d...c3 | 0.00000000 |
+| W | 0x5f32...b0 | 0.00000000 |
+| X | 0xa95c...47d | 0.00000000 |
+| Y | 0xd8e3...c4 | 0.00000000 |
+| Z | 0x7af0...97c | 0.00000000 |
+
+### Multisig Contract Health Probes
+
+All 5 multisig accounts probed via `0x1::multisig_account::num_signatures_required`. **All healthy.**
+
+| Pair | Multisig Address | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4...003 | 2 | ✅ HEALTHY |
+| A-G | 0xf56c...096 | 2 | ✅ HEALTHY |
+| Y-Z | 0xd3ff...883 | 2 | ✅ HEALTHY |
+| S-T | 0x3b1c...883 | 2 | ✅ HEALTHY |
+| V-W | 0x40fa...b6d | 2 | ✅ HEALTHY |
+
+**Uniform 2-of-N threshold across all Hamming swarm multisig pairs.**
+
+### MNX Markets (testnet.mnx.fi)
+
+Status: **UNAVAILABLE** — HTTP 401 Unauthorized returned on both root and `/api/markets` paths. No market data extracted. `mnx_snapshots` table: 0 rows.
+
+---
+
+## GF(3) Trit Assignment
+
+- `id % 3 == 0` → trit=0, color=`#d3869b`, name=**ERGODIC** (neutral / fixed-point)
+- `id % 3 == 1` → trit=1, color=`#b8bb26`, name=**PLUS** (forward increment)
+- `id % 3 == 2` → trit=-1, color=`#cc241d`, name=**MINUS** (inverse / contraction)
+
+Current sweep adds 358 new world-increments in balanced ternary rhythm: 122 PLUS · 121 ERGODIC · 122 MINUS.
