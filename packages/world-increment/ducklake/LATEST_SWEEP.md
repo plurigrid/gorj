@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-06
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-06
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.3 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,96 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 87 (cumulative) |
+| Total Repo Snapshots | 1008 (cumulative) |
+| This Sweep Added | 64 new increments |
+| Sources Covered | 3 orgs + 8 users + social graph |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts | 5 (all healthy, 2-of-N) |
+| MNX Markets | unavailable (Vercel auth required) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep
+
+### GF(3) Color Chain (latest 64 increments, ids 1–64)
+
+GF(3) rule: `id%3==0 → ERGODIC #d3869b | id%3==1 → PLUS #b8bb26 | id%3==2 → MINUS #cc241d`
+
+| Trit | Name | Hex | Count |
+|------|------|-----|-------|
+| 0 | ERGODIC | #d3869b | 22 |
+| +1 | PLUS | #b8bb26 | 21 |
+| -1 | MINUS | #cc241d | 21 |
+
+### Repo Activity by Source (2026-06-06 sweep)
+
+| Source | Type | Repos Indexed | Top Repo (Stars) |
+|--------|------|---------------|-----------------|
+| plurigrid | org | 211 cumul. | `asi` (25★) |
+| bmorphism | user | 209 cumul. | `ocaml-mcp-sdk` (61★) |
+| kubeflow | org | 112 cumul. | `kubeflow` (15,706★) |
+| TeglonLabs | org | 110 cumul. | `mathpix-gem` (2★) |
+| AustinCStone | user | 89 cumul. | `TextGAN` (92★) |
+| migalkin | user | 64 cumul. | `NodePiece` (144★) |
+| wasita | user | 63 cumul. | `magic-garden` (2★) |
+| zubyul | user | 54 cumul. | `jonikas_lab_data_analysis_misc` (2★) |
+| kristinezheng | user | 38 cumul. | — |
+| M1shaaa | user | 34 cumul. | — |
+| DJedamski | user | 24 cumul. | `School` (1★) |
+
+### Hot Repos (pushed 2026-06-06)
+- **plurigrid/gorj** — 394 open issues; Clojure; forj+Rama+GF(3) REPL
+- **kubeflow/pipelines** — 4,152★ Python ML pipelines
+- **kubeflow/notebooks** — interactive dev environments on Kubernetes
+- **bmorphism/Gay.jl** — Julia wide-gamut color sampling, 189 open issues
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 worlds)
+
+All 28 addresses queried against `fullnode.mainnet.aptoslabs.com`. The CoinStore resource was not found for any address (addresses may be unfunded, or the resource path is unavailable from this execution container).
+
+| World | Address | Balance |
+|-------|---------|---------|
+| alice | 0xc793...cc7b | NULL |
+| bob | 0x0a3c...2d5d | NULL |
+| A–Z | 0x8699...–0x7af0... | NULL ×26 |
+
+### Multisig Probes — 5/5 Healthy ✓
+
+All five multisig contracts respond with `num_signatures_required = 2`:
+
+| Pair | Contract Address | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4...7003 | **2** | ✓ HEALTHY |
+| A-G | 0xf56c...0096 | **2** | ✓ HEALTHY |
+| Y-Z | 0xd3ff...b883 | **2** | ✓ HEALTHY |
+| S-T | 0x3b1c...7883 | **2** | ✓ HEALTHY |
+| V-W | 0x40fa...eb6d | **2** | ✓ HEALTHY |
+
+### MNX Markets (testnet.mnx.fi)
+**Unavailable** — all API endpoints (`/api/markets`, `/api/v1/markets`, `/api/tickers`) return Vercel authentication gate. `mnx_snapshots` table: 0 rows.
+
+---
+
+## GF(3) Color Chain — Selected Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 1  | plurigrid | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
+| 2  | kubeflow | repo_snapshot | -1 | `#cc241d` | **MINUS** |
+| 3  | TeglonLabs | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
+| 4  | bmorphism | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
+| 5  | zubyul | repo_snapshot | -1 | `#cc241d` | **MINUS** |
+| 6  | migalkin | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
+| ... | ... | ... | ... | ... | ... |
+| 63 | M1shaaa | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
+| 64 | DJedamski | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain continues: `PLUS→MINUS→ERGODIC→PLUS→MINUS→ERGODIC→...`
 
 ---
 
