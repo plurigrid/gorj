@@ -1,8 +1,8 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-06
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+- **Date:** 2026-06-06T02:10:41Z
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
@@ -140,3 +140,68 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## 2026-06-06 Sweep Update — GitHub Social Graph + Hamming Swarm
+
+### GitHub Social Graph (this sweep)
+Sources: plurigrid, kubeflow, TeglonLabs, bmorphism, zubyul + social graph (migalkin, DJedamski, wasita, kristinezheng, M1shaaa, AustinCStone)
+
+**New observations vs. 2026-04-12:**
+- `plurigrid/gorj` pushed **today** (2026-06-06T01:17:16Z) — 384 open issues, active dev
+- `bmorphism/Gay.jl` pushed today (2026-06-06T00:39:09Z) — 189 open issues
+- `kubeflow/pipelines` now at 4,152 ⭐ (was 4,119), pushed 2026-06-05
+- `kubeflow/spark-operator` pushed 2026-06-04
+- `wasita/wasita.github.io` pushed 2026-06-01
+- Cumulative ducklake: **490 distinct repos**, **998 repo_snapshot rows**
+
+**Star ranking (cumulative):**
+| Org/User | Distinct Repos | Total Stars |
+|----------|---------------|-------------|
+| kubeflow | 47 | 99,014 |
+| migalkin | 30 | 822 |
+| bmorphism | 108 | 447 |
+| AustinCStone | 43 | 319 |
+| plurigrid | 109 | 147 |
+| zubyul | 24 | 26 |
+| DJedamski | 11 | 15 |
+| TeglonLabs | 53 | 14 |
+| wasita | 31 | 10 |
+| M1shaaa | 16 | 0 |
+| kristinezheng | 18 | 0 |
+
+---
+
+## JOB 2 — Hamming Swarm Snapshot (2026-06-06)
+
+### Aptos Mainnet Wallet Balances
+28 addresses queried via `https://fullnode.mainnet.aptoslabs.com/v1/accounts/{addr}/resource/0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`
+
+**All 28 wallets (alice, bob, A–Z): 0.0 APT** — no CoinStore funded on mainnet.
+
+| World | Address | APT |
+|-------|---------|-----|
+| alice | 0xc793acdec12b4a63717b001e21bbb7a8564d5e9690f80d41f556c2d0d624cc7b | 0.0 |
+| bob | 0x0a3c00c58fdf9020b27854a3229042efa70cf782d7d2a9de0c13d00e05512d5d | 0.0 |
+| A–Z | (see aptos_snapshots table) | 0.0 each |
+
+### Multisig Contract Probes
+Method: `0x1::multisig_account::num_signatures_required` via POST `/v1/view`
+
+| Pair | Address | sigs_required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 | 2 | ✅ healthy |
+| A-G | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 | 2 | ✅ healthy |
+| Y-Z | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 | 2 | ✅ healthy |
+| S-T | 0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883 | 2 | ✅ healthy |
+| V-W | 0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d | 2 | ✅ healthy |
+
+All 5 multisigs require 2-of-N signatures and respond to on-chain view calls.
+
+### MNX Markets (testnet.mnx.fi)
+**Status: UNAVAILABLE** — both `https://testnet.mnx.fi` and `https://testnet.mnx.fi/api/markets` return HTTP 401 Unauthorized. Authentication is required; no market data could be extracted. `mnx_snapshots` table has 0 rows for this sweep.
+
+---
+
+*Sweep complete: 2026-06-06T02:10:41Z — GF(3) chain continues, world_increments=77*
