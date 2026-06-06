@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-06
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-06
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.3 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,70 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 371 |
+| Total Repo Snapshots | 371 |
+| Sources Covered | 3 orgs + 8 users (social graph) |
+| Aptos Wallets Probed | 28 |
+| Total APT Swarm Balance | 20.344773 APT |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | unavailable (Vercel auth) |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances (2026-06-06)
+
+> Queried via `0x1::coin::balance` view (FA-compatible). Legacy `CoinStore` absent on all accounts.
+
+| World | APT Balance | Address (prefix) |
+|-------|-------------|-----------------|
+| bob | **12.657007** | 0x0a3c… |
+| F | 1.960516 | 0x18a1… |
+| L | 1.927269 | 0x7c2e… |
+| J | 1.895093 | 0x4d96… |
+| alice | 0.436434 | 0xc793… |
+| O | 0.210136 | 0x7325… |
+| K | 0.161961 | 0xa732… |
+| P | 0.140136 | 0x6218… |
+| M | 0.112285 | 0x6fed… |
+| N | 0.106121 | 0xe7dd… |
+| Q | 0.103240 | 0xac40… |
+| S | 0.091788 | 0xb875… |
+| R | 0.090217 | 0x7ce6… |
+| T | 0.073713 | 0x3578… |
+| U | 0.055773 | 0x7586… |
+| A | 0.051767 | 0x8699… |
+| V | 0.048833 | 0xb59d… |
+| Y | 0.044449 | 0xd8e3… |
+| W | 0.040705 | 0x5f32… |
+| X | 0.042577 | 0xa95c… |
+| B | 0.036256 | 0x3f89… |
+| Z | 0.024268 | 0x7af0… |
+| D | 0.011629 | 0xf776… |
+| C | 0.010185 | 0x38b9… |
+| E | 0.009372 | 0xdc1d… |
+| H | 0.001681 | 0xce67… |
+| G | 0.000681 | 0x69a3… |
+| I | 0.000681 | 0x070f… |
+
+**Total swarm: 20.344773 APT**
+
+### Multisig Contract Probes
+
+All 5 contracts healthy — all return `num_signatures_required = 2`.
+
+| Pair | Contract Address (prefix) | Sigs | Healthy |
+|------|--------------------------|------|---------|
+| A-B | 0x0da4… | 2 | ✓ |
+| A-G | 0xf56c… | 2 | ✓ |
+| Y-Z | 0xd3ff… | 2 | ✓ |
+| S-T | 0x3b1c… | 2 | ✓ |
+| V-W | 0x40fa… | 2 | ✓ |
+
+### MNX Markets
+
+`testnet.mnx.fi` — behind **Vercel deployment protection** (visitor password required). No market data retrievable without bypass token. `mnx_snapshots` table left empty.
 
 ---
 
@@ -97,16 +158,16 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 |--------|------|-------|
 | plurigrid | org | 100 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| zubyul | user | 49 |
+| kubeflow | org | 48 |
+| AustinCStone | user (social) | 30 |
+| migalkin | user (social) | 19 |
+| wasita | user (social) | 11 |
+| TeglonLabs | org | 4 |
+| M1shaaa | user (social) | 4 |
+| kristinezheng | user (social) | 3 |
+| DJedamski | user (social) | 3 |
+| **TOTAL** | | **371** |
 
 ---
 
