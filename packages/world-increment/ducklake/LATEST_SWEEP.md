@@ -1,8 +1,101 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot
 
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+**Timestamp:** 2026-06-08  
+**Branch:** world-increment/sweep  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Summary Table
+
+| GF3 ID | Trit | Color | Name | Source | Repos | Stars | Forks | Most Recent Push |
+|--------|------|-------|------|--------|-------|-------|-------|-----------------|
+| 1 | +1 | `#b8bb26` | PLUS | plurigrid | 100 | 76 | 47 | 2026-06-08 |
+| 2 | -1 | `#cc241d` | MINUS | kubeflow | 48 | 34180 | 13523 | 2026-06-08 |
+| 3 | 0 | `#d3869b` | ERGODIC | bmorphism | 100 | 247 | 72 | 2026-06-08 |
+| 4 | +1 | `#b8bb26` | PLUS | zubyul | 49 | 14 | 2 | 2026-04-24 |
+| 5 | -1 | `#cc241d` | MINUS | migalkin | 19 | 280 | 49 | 2025-08-04 |
+| 6 | 0 | `#d3869b` | ERGODIC | AustinCStone | 40 | 108 | 38 | 2026-02-11 |
+| 7 | +1 | `#b8bb26` | PLUS | wasita | 11 | 5 | 1 | 2026-06-01 |
+| 8 | -1 | `#cc241d` | MINUS | TeglonLabs | 5 | 2 | 2 | 2026-06-08 |
+| 9 | 0 | `#d3869b` | ERGODIC | DJedamski | 6 | 3 | 1 | 2018-03-07 |
+| 10 | +1 | `#b8bb26` | PLUS | kristinezheng | 5 | 0 | 0 | 2026-06-07 |
+| 11 | -1 | `#cc241d` | MINUS | M1shaaa | 8 | 0 | 0 | 2026-06-08 |
+
+**Total repos snapshotted: 391**
+
+### Notable Highlights
+
+- **kubeflow/kubeflow**: 15,707 stars — most starred repo in sweep
+- **kubeflow/pipelines**: 4,152 stars, 2,006 forks — active ML pipeline infra
+- **kubeflow/spark-operator**: 3,126 stars — Kubernetes Spark lifecycle mgmt
+- **kubeflow/trainer**: 2,112 stars — distributed AI training on Kubernetes
+- **plurigrid/gorj**: 433 open issues — active forj/Rama nREPL routing project
+- **bmorphism/Gay.jl**: 189 open issues — wide-gamut GF(3) color sampling
+- **TeglonLabs/jank-crane**: pushed 2026-06-08 — crane-jank converged-IR hub
+- **M1shaaa/M1shaaa**: pushed 2026-06-08 (same day)
+- **kristinezheng/kristinezheng.github.io**: pushed 2026-06-07
+
+### Most Active Today (2026-06-08)
+- `kubeflow/dashboard` (TypeScript, 2026-06-08T00:34:15Z)
+- `kubeflow/sdk` (Python, 2026-06-08T03:07:18Z)
+- `plurigrid/gorj` (Clojure, 2026-06-08T03:14:34Z)
+- `TeglonLabs/jank-crane` (C++, 2026-06-08T02:13:17Z)
+- `bmorphism/Gay.jl` (Julia, 2026-06-08T00:42:52Z)
+- `M1shaaa/M1shaaa` (config, 2026-06-08T03:38:51Z)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (Aptos Mainnet)
+
+### Wallet Balances (28 addresses)
+
+All 28 Hamming swarm addresses queried against Aptos mainnet.  
+**Result: All balances are 0.00000000 APT** — wallets exist on-chain (accounts queryable) but hold no APT coin balance at time of snapshot.
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793...cc7b | 0.00000000 |
+| bob | 0x0a3c...512d | 0.00000000 |
+| A–Z | (26 addresses) | 0.00000000 each |
+
+### Multisig Contract Probes (5 pairs)
+
+All 5 multisig accounts probed via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4...7003 | 2 | YES |
+| A-G | 0xf56c...0096 | 2 | YES |
+| Y-Z | 0xd3ff...b883 | 2 | YES |
+| S-T | 0x3b1c...7883 | 2 | YES |
+| V-W | 0x40fa...eb6d | 2 | YES |
+
+**All 5 multisig contracts are healthy with 2-of-N threshold.**
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: UNAVAILABLE** — `testnet.mnx.fi` is protected by Vercel authentication (password-gated deployment). No public market data accessible without bypass token. Recorded as N/A in `mnx_snapshots` table.
+
+---
+
+## DuckDB Schema
+
+```
+world_increments  — 11 rows (one per source, GF3-colored)
+repo_snapshots    — 391 rows (full GitHub social graph)
+aptos_snapshots   — 28 rows (alice + bob + A-Z balances)
+multisig_probes   — 5 rows (A-B, A-G, Y-Z, S-T, V-W)
+mnx_snapshots     — 1 row (unavailable marker)
+```
+
+## GF(3) Color Chain
+
+- **ERGODIC** `#d3869b` (trit=0): bmorphism, AustinCStone, DJedamski
+- **PLUS** `#b8bb26` (trit=+1): plurigrid, zubyul, wasita, kristinezheng
+- **MINUS** `#cc241d` (trit=-1): kubeflow, migalkin, TeglonLabs, M1shaaa
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
