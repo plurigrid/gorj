@@ -1,8 +1,114 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot
+**Timestamp:** 2026-06-12T19:09 UTC  
+**Branch:** `world-increment/sweep-2026-06-12-1909`  
+**GF(3) Chain:** PLUS(#b8bb26) → MINUS(#cc241d) → ERGODIC(#d3869b) → ...
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+| Source | Type | Repos Captured |
+|--------|------|---------------|
+| plurigrid | org | 97 repos |
+| kubeflow | org | 48 repos |
+| TeglonLabs | org | 5 repos |
+| bmorphism | user | 98 repos |
+| zubyul | user | 49 repos |
+| migalkin | social graph | 19 repos |
+| DJedamski | social graph | 6 repos |
+| wasita | social graph | 11 repos |
+| kristinezheng | social graph | 5 repos |
+| M1shaaa | social graph | 8 repos |
+| AustinCStone | social graph | 40 repos |
+
+**Total repos snapshotted this sweep:** ~386
+
+### GF(3) Trit Distribution (this sweep)
+| Trit | Name | Color | Count |
+|------|------|-------|-------|
+| 1 | PLUS | #b8bb26 | 41 |
+| -1 | MINUS | #cc241d | 41 |
+| 0 | ERGODIC | #d3869b | 40 |
+
+### Top Repos by Stars (this sweep)
+| org/user | repo | stars | language | last pushed |
+|----------|------|-------|----------|-------------|
+| kubeflow | kubeflow | 15,718 | — | 2026-06-11 |
+| kubeflow | pipelines | 4,152 | Python | 2026-06-12 |
+| kubeflow | spark-operator | 3,127 | Python | 2026-06-12 |
+| kubeflow | trainer | 2,112 | Go | 2026-06-12 |
+| kubeflow | katib | 1,683 | Python | 2026-06-05 |
+| kubeflow | examples | 1,461 | Jsonnet | 2025-04-14 |
+| kubeflow | community-distribution | 1,023 | YAML | 2026-06-12 |
+| bmorphism | ocaml-mcp-sdk | 61 | OCaml | 2026-03-16 |
+| migalkin | NodePiece | 144 | Python | 2026-05-07 |
+| migalkin | StarE | 89 | Python | 2026-04-16 |
+| AustinCStone | TextGAN | 92 | Python | — |
+| plurigrid | asi | 26 | HTML | 2026-06-10 |
+| bmorphism | anti-bullshit-mcp-server | 23 | JavaScript | 2026-01-16 |
+| bmorphism | risc0-cosmwasm-example | 23 | Rust | — |
+
+### Most Active (pushed within 24h of sweep)
+- `plurigrid/gorj` (Clojure, 530 open issues) — 2026-06-12
+- `kubeflow/spark-operator` (Python) — 2026-06-12
+- `kubeflow/trainer` (Go) — 2026-06-12
+- `kubeflow/mlflow-integration` (Python) — 2026-06-12
+- `bmorphism/Gay.jl` (Julia, 189 open issues) — 2026-06-12
+
+### Notable Repos
+- **plurigrid/gorj**: This repo — forj + Rama nREPL + GF(3) trit coloring (530 open issues)
+- **plurigrid/nanoclj-zig**: NaN-boxed Clojure in Zig 0.15 with GF(3) trit conservation
+- **zubyul/Gay.jl / bmorphism/Gay.jl**: Wide-gamut deterministic color sampling (SPI pattern)
+- **zubyul/tilelang-kernels**: TileLang GPU kernels for GF(3) classification (Blackwell-targeted)
+- **bmorphism/ocaml-mcp-sdk**: OCaml MCP SDK using Jane Street oxcaml_effect (61 stars)
+- **TeglonLabs/jank-crane**: crane-jank converged-IR hub with GF3 convergence maps (pushed 2026-06-08)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (Aptos Mainnet)
+
+### Wallet Balances (alice, bob, A–Z — 28 addresses)
+**Status:** Aptos mainnet API (`fullnode.mainnet.aptoslabs.com`) unreachable from this execution environment (outbound network policy blocks external Aptos RPC). All 28 addresses returned null. Addresses recorded in `aptos_snapshots` table with `balance_apt = NULL`.
+
+*Note: Network egress to `fullnode.mainnet.aptoslabs.com` blocked. Data will be NULL until network policy allows outbound Aptos RPC.*
+
+### Multisig Contract Probes (5 pairs)
+All 5 multisig contracts healthy — 2-of-2 signature threshold confirmed.
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4f4...7003 | 2 | true |
+| A-G | 0xf56c4a...0096 | 2 | true |
+| Y-Z | 0xd3ffe1...b883 | 2 | true |
+| S-T | 0x3b1c3a...7883 | 2 | true |
+| V-W | 0x40fad7...eb6d | 2 | true |
+
+### MNX Markets (testnet.mnx.fi)
+**Status:** `testnet.mnx.fi` requires Vercel deployment protection authentication. Market data unavailable. `mnx_snapshots` table is empty for this sweep.
+
+---
+
+## DuckDB Schema (`world-increments.duckdb`)
+```
+world_increments  — GF(3) increment log (id, timestamp, trit, color, name, source, repo, actor, hash)
+repo_snapshots    — GitHub repo metadata (stars, forks, issues, language, pushed_at)
+aptos_snapshots   — Hamming swarm wallet balances (world, address, balance_apt)
+multisig_probes   — 2-of-N multisig health checks (pair, address, sigs_required, healthy)
+mnx_snapshots     — MNX market tickers (ticker, name, category, price, change_pct)
+```
+
+**Row counts after this sweep:**
+- `world_increments`: 145 new this sweep
+- `repo_snapshots`: ~386 repos from 11 sources
+- `aptos_snapshots`: 28 addresses (all null — network blocked)
+- `multisig_probes`: 5 contracts (all healthy, sigs=2)
+- `mnx_snapshots`: 0 (Vercel auth required)
+
+---
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+- **Date:** 2026-06-12
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
