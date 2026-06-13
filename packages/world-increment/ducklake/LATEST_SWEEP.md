@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-13
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-13
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.3 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments (cumulative) | 34 |
+| Total Repo Snapshots (cumulative) | 1,335 |
+| New Repo Snapshots (this run) | 391 |
+| Sources Covered (this run) | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | Unavailable (HTTP 401) |
 
 ---
 
@@ -131,12 +135,20 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
+- **kubeflow/kubeflow**: 15,719 stars — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,152 stars — most popular ML pipeline for Kubernetes
+- **kubeflow/spark-operator**: 3,127 stars — Kubernetes operator for Apache Spark
+- **kubeflow/trainer**: 2,112 stars — distributed training operator
 - **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **TeglonLabs/jank-crane**: crane-jank converged-IR hub with GF3 convergence maps (pushed 2026-06-08)
+- **M1shaaa/M1shaaa**: Active profile repo (pushed 2026-06-12)
+- **kristinezheng/kristinezheng.github.io**: Active personal site (pushed 2026-06-07)
+
+## Hamming Swarm — Aptos Mainnet
+- All 28 wallets (alice, bob, A–Z) returned 0.0 APT balance
+  - Addresses appear empty or have no AptosCoin CoinStore resource initialized on mainnet
+- All 5 multisig contracts healthy with threshold=2
+  - Pairs: A-B, A-G, Y-Z, S-T, V-W
+- MNX testnet markets: HTTP 401 Unauthorized — auth required, data unavailable
