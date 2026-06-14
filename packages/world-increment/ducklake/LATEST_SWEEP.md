@@ -1,6 +1,120 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-14
 
-## Sweep Metadata
+**Timestamp:** 2026-06-14  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Summary
+
+| Source | Type | Repos Captured |
+|--------|------|---------------|
+| plurigrid | org | 60 |
+| kubeflow | org | 20 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 98 |
+| zubyul | user | 14 |
+| migalkin | social graph | 6 |
+| wasita | social graph | 5 |
+| AustinCStone | social graph | 5 |
+| DJedamski | social graph | 3 |
+| kristinezheng | social graph | 3 |
+| M1shaaa | social graph | 3 |
+| **TOTAL** | | **222** |
+
+### GF(3) Color Chain (perfectly balanced)
+
+| Trit | Color | Name | Count |
+|------|-------|------|-------|
+| 0 | `#d3869b` | ERGODIC | 74 |
+| +1 | `#b8bb26` | PLUS | 74 |
+| -1 | `#cc241d` | MINUS | 74 |
+
+### Notable Repos by Stars
+
+| Repo | Stars | Language | Description |
+|------|-------|----------|-------------|
+| kubeflow/kubeflow | 15,721 | — | Machine Learning Toolkit for Kubernetes |
+| kubeflow/pipelines | 4,153 | Python | Machine Learning Pipelines |
+| kubeflow/spark-operator | 3,128 | Python | Kubernetes operator for Apache Spark |
+| kubeflow/trainer | 2,114 | Go | Distributed AI Model Training |
+| kubeflow/katib | 1,683 | Python | Automated Machine Learning on Kubernetes |
+| plurigrid/asi | 26 | HTML | everything is topological chemputer! |
+| bmorphism/ocaml-mcp-sdk | 61 | OCaml | OCaml SDK for Model Context Protocol |
+| bmorphism/anti-bullshit-mcp-server | 23 | JavaScript | MCP server for analyzing claims |
+| bmorphism/risc0-cosmwasm-example | 23 | Rust | CosmWasm + zkVM RISC-V EFI template |
+| migalkin/NodePiece | 144 | Python | Compositional Representations for Knowledge Graphs |
+| AustinCStone/TextGAN | 92 | Python | Generative adversarial network for text |
+
+### Most Active (by open issues)
+
+| Repo | Open Issues |
+|------|-------------|
+| plurigrid/gorj | 559 |
+| kubeflow/pipelines | 488 |
+| bmorphism/Gay.jl | 189 |
+| kubeflow/docs-agent | 151 |
+| kubeflow/sdk | 132 |
+
+### Most Recent Pushes
+
+| Repo | Pushed At |
+|------|-----------|
+| bmorphism/Gay.jl | 2026-06-14T00:43:08Z |
+| plurigrid/gorj | 2026-06-14T00:11:17Z |
+| kubeflow/website | 2026-06-13T16:50:04Z |
+| kubeflow/pipelines | 2026-06-13T15:59:06Z |
+| kubeflow/trainer | 2026-06-13T03:19:28Z |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 addresses)
+
+All 28 addresses queried against Aptos mainnet CoinStore resource.
+
+**Result:** All 28 addresses returned 0.0 APT. Accounts either have zero APT balance or CoinStore is not yet registered on-chain.
+
+| World | Address | Balance (APT) |
+|-------|---------|---------------|
+| alice | 0xc793acdec12b4a63717b001e21bbb7a8564d5e9690f80d41f556c2d0d624cc7b | 0.0 |
+| bob | 0x0a3c00c58fdf9020b27854a3229042efa70cf782d7d2a9de0c13d00e05512d5d | 0.0 |
+| A–Z | (all 26 lettered addresses) | 0.0 each |
+
+### Multisig Contract Probes (5 pairs)
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 | 2 | ✓ |
+| A-G | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 | 2 | ✓ |
+| Y-Z | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 | 2 | ✓ |
+| S-T | 0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883 | 2 | ✓ |
+| V-W | 0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d | 2 | ✓ |
+
+**Result:** All 5 multisig contracts healthy. Consistent 2-of-N threshold across the swarm.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Result:** Unavailable. `testnet.mnx.fi` is behind Vercel Deployment Protection (401 on all paths including `/`, `/api/markets`, `/api/v1/markets`). No market data could be extracted without a Vercel bypass token.
+
+---
+
+## DuckDB Schema Summary
+
+```
+world_increments  — 222 rows  (GF3 trit-colored repo snapshot events)
+repo_snapshots    — 222 rows  (org/user, full_name, language, stars, forks, issues, pushed_at)
+aptos_snapshots   —  28 rows  (world, address, balance_apt)
+multisig_probes   —   5 rows  (pair, address, sigs_required, healthy)
+mnx_snapshots     —   0 rows  (unavailable: Vercel auth required)
+```
+
+## Previous Sweep Metadata
 - **Date:** 2026-04-12
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
