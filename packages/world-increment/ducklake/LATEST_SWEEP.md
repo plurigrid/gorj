@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-15
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-15
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.3 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,82 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (cumulative) | 97 |
+| Total Repo Snapshots (cumulative) | 1018 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | Unavailable (Vercel auth) |
+
+---
+
+## JOB 1: GitHub Social Graph Sweep — 2026-06-15 Delta
+
+### Sources Queried This Run
+| Source | Type | Repos Discovered |
+|--------|------|-----------------|
+| plurigrid | org | 100 |
+| kubeflow | org | 48 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 104 |
+| zubyul | user | 49 |
+| migalkin | social | 19 |
+| DJedamski | social | 6 |
+| wasita | social | 11 |
+| kristinezheng | social | 5 |
+| M1shaaa | social | 8 |
+| AustinCStone | social | 40 |
+
+**Total repos discovered: ~395**
+
+### Most Recently Pushed (as of 2026-06-15)
+- `plurigrid/gorj` — 2026-06-15T17:12:06Z (Clojure, **599** open issues)
+- `kubeflow/sdk` — 2026-06-15T18:05:30Z (Python)
+- `kubeflow/pipelines` — 2026-06-15T17:45:03Z (Python)
+- `bmorphism/Gay.jl` — 2026-06-15T16:43:51Z (Julia, 188 open issues)
+- `kubeflow/community-distribution` — 2026-06-15T16:47:58Z (YAML)
+
+### Notable New Repos Since Last Sweep
+- `TeglonLabs/jank-crane` (C++, 2026-06-08): "crane-jank converged-IR hub: loopify pass spec, GF3 convergence maps, simonw workflow"
+- `bmorphism/satreadout` (Lean, 2026-06-10): machine-checked saturating non-Riemannian perceptual readout
+- `bmorphism/world` (Python, 2026-06-02): Local worlds launcher for SA3, jank, and world proofs
+- `zubyul/voice-observatory` (Python, 2026-04-24): Passive macOS TUI observing voice-download pathways
+
+### Star Counts Delta (top repos, now vs. April 2026)
+| Repo | Stars (Apr) | Stars (Jun) | Δ |
+|------|-------------|-------------|---|
+| kubeflow/kubeflow | 15565 | 15726 | +161 |
+| kubeflow/pipelines | 4119 | 4154 | +35 |
+| kubeflow/spark-operator | 3111 | 3127 | +16 |
+| kubeflow/trainer | 2080 | 2115 | +35 |
+| plurigrid/asi | 16 | 26 | +10 |
+| bmorphism/ocaml-mcp-sdk | 60 | 61 | +1 |
+| AustinCStone/TextGAN | 92 | 92 | 0 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot — Aptos Mainnet
+
+### Wallet Balances (28 addresses: alice, bob, A–Z)
+**All probed 2026-06-15 via Aptos fullnode mainnet API.**
+
+All 28 addresses returned 0 APT. The CoinStore resource was not found on mainnet for any address — accounts are likely not initialized or pre-funded on mainnet.
+
+### Multisig Contract Probes
+All 5 pairs probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f4...7003 | **2** | ✓ HEALTHY |
+| A-G | 0xf56c4a...0096 | **2** | ✓ HEALTHY |
+| Y-Z | 0xd3ffe1...b883 | **2** | ✓ HEALTHY |
+| S-T | 0x3b1c3a...7883 | **2** | ✓ HEALTHY |
+| V-W | 0x40fad7...eb6d | **2** | ✓ HEALTHY |
+
+**All 5 multisig contracts are live on mainnet, requiring 2-of-N co-signatures.**
+
+### MNX Markets (testnet.mnx.fi)
+Status: **UNAVAILABLE** — behind Vercel visitor-password authentication. No market data extracted.
 
 ---
 
