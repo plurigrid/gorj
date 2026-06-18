@@ -1,4 +1,106 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-18
+
+**Sweep date:** 2026-06-18  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### GF(3) Color Chain
+| id%3 | Trit | Color | Name |
+|------|------|-------|------|
+| 0 | 0 | `#d3869b` | ERGODIC |
+| 1 | +1 | `#b8bb26` | PLUS |
+| 2 | -1 | `#cc241d` | MINUS |
+
+### Sources Swept (11 World Increments)
+
+| id | GF3 | Source | Type | Repos |
+|----|-----|--------|------|-------|
+| 1 | PLUS #b8bb26 | plurigrid | org | 100+ (20 sampled) |
+| 2 | MINUS #cc241d | kubeflow | org | 48 (20 sampled) |
+| 3 | ERGODIC #d3869b | TeglonLabs | org | 5 |
+| 4 | PLUS #b8bb26 | bmorphism | user | 100 (10 sampled) |
+| 5 | MINUS #cc241d | zubyul | user | 49 (9 sampled) |
+| 6 | ERGODIC #d3869b | migalkin | user | 19 (6 sampled) |
+| 7 | PLUS #b8bb26 | DJedamski | user | 6 |
+| 8 | MINUS #cc241d | kristinezheng | user | 5 |
+| 9 | ERGODIC #d3869b | M1shaaa | user | 8 |
+| 10 | PLUS #b8bb26 | wasita | user | 11 (6 sampled) |
+| 11 | MINUS #cc241d | AustinCStone | user | 40 (8 sampled) |
+
+### Notable Repos by Stars
+
+| Repo | Stars | Language | Last Pushed |
+|------|-------|----------|-------------|
+| kubeflow/kubeflow | 15,734 | — | 2026-06-18 |
+| kubeflow/pipelines | 4,154 | Python | 2026-06-18 |
+| kubeflow/spark-operator | 3,127 | Python | 2026-06-17 |
+| kubeflow/trainer | 2,115 | Go | 2026-06-18 |
+| kubeflow/katib | 1,683 | Python | 2026-06-15 |
+| migalkin/NodePiece | 144 | Python | 2022-02-02 |
+| AustinCStone/TextGAN | 92 | Python | 2016-10-04 |
+| migalkin/StarE | 89 | Python | 2023-12-01 |
+| bmorphism/ocaml-mcp-sdk | 61 | OCaml | 2025-06-01 |
+| plurigrid/asi | 26 | HTML | 2026-06-10 |
+| migalkin/kgcourse2021 | 25 | HTML | 2025-08-04 |
+| bmorphism/say-mcp-server | 20 | JavaScript | 2025-06-01 |
+| migalkin/NBFNet_mlx | 10 | Python | 2024-03-02 |
+| plurigrid/ontology | 8 | JavaScript | 2025-05-27 |
+
+### Hot Activity (recently pushed today)
+- `plurigrid/gorj` — pushed 2026-06-18, **651 open issues** (most active repo in sweep)
+- `kubeflow/community`, `kubeflow/pipelines`, `kubeflow/trainer` — all active today
+- `M1shaaa/M1shaaa` — pushed 2026-06-18
+- `bmorphism/Gay.jl` — pushed 2026-06-18, 187 open issues
+
+### Social Graph Coverage
+- **Orgs:** plurigrid, kubeflow, TeglonLabs
+- **Primary users:** bmorphism, zubyul
+- **Zubyul social graph:** migalkin (KG ML researcher), DJedamski (data science), wasita (network science), kristinezheng (cog sci), M1shaaa (dev psych), AustinCStone (ML/CV)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 wallets)
+
+All 28 wallets returned **null** from the Aptos mainnet CoinStore API — no initialized `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` resource found. Accounts may not have been funded on mainnet or have not initialized their coin store.
+
+**Balance: 0.0 APT** for all wallets (alice, bob, A–Z)
+
+### Multisig Contract Probes
+
+All 5 multisig accounts are **healthy** and respond with `num_signatures_required = 2`.
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | `0x0da4f4...987003` | 2 | HEALTHY |
+| A-G | `0xf56c4a...c0096` | 2 | HEALTHY |
+| Y-Z | `0xd3ffe1...b883` | 2 | HEALTHY |
+| S-T | `0x3b1c3a...d7883` | 2 | HEALTHY |
+| V-W | `0x40fad7...eb6d` | 2 | HEALTHY |
+
+All pairs require 2-of-2 signatures. Swarm multisig infrastructure is operational.
+
+### MNX Markets
+
+`testnet.mnx.fi` is protected by **Vercel authentication** — requires deployment protection bypass token. Market data unavailable in automated sweep context.
+
+---
+
+## DuckDB Schema Summary
+
+```
+world_increments:  11 rows  (one per source, GF3 colored)
+repo_snapshots:   103 rows  (sampled from 400+ total repos)
+aptos_snapshots:   28 rows  (alice, bob, A-Z — all 0.0 APT on mainnet)
+multisig_probes:    5 rows  (all healthy, 2-of-2)
+mnx_snapshots:      1 row   (unavailable — Vercel auth)
+```
+
+---
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
