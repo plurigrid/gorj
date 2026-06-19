@@ -55,8 +55,8 @@
 | kubeflow/community-distribution | 1,025 | 2026-06-18T19:10:25Z |
 | kubeflow/notebooks | 73 | 2026-06-18T18:58:28Z |
 
-Notable: `kubeflow/mcp-apache-spark-history-server` (177 stars) signals kubeflow expanding into AI-agent-for-infra territory.
-TeglonLabs/jank-crane pushed 2026-06-08: crane+jank converged IR hub with GF3 convergence maps.
+Notable: `kubeflow/mcp-apache-spark-history-server` (177 stars) — a new MCP server for Apache Spark History Server, signaling kubeflow's push into AI-agent-for-infra territory.
+TeglonLabs/jank-crane pushed 2026-06-08 — crane+jank converged IR hub with GF3 convergence maps, recent activity.
 
 ---
 
