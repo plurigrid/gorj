@@ -1,0 +1,12 @@
+id,timestamp,gf3_trit,gf3_color,gf3_name,source_type,source_name,event_type,repo_name,actor,snapshot_hash
+1,2026-06-19 04:11:03.198828,1,PLUS,"#b8bb26",org,plurigrid,repo_sweep,,,12ad99a8c62a6928
+2,2026-06-19 04:11:03.200796,-1,MINUS,"#cc241d",org,kubeflow,repo_sweep,,,5a30c5e49949f705
+3,2026-06-19 04:11:03.202708,0,ERGODIC,"#d3869b",org,TeglonLabs,repo_sweep,,,f4784ef4cc88c982
+4,2026-06-19 04:11:03.204635,1,PLUS,"#b8bb26",user,bmorphism,repo_sweep,,,1539db055f0b914b
+5,2026-06-19 04:11:03.206701,-1,MINUS,"#cc241d",user,zubyul,repo_sweep,,,95b3c7b984324b4d
+6,2026-06-19 04:11:03.208973,0,ERGODIC,"#d3869b",user,migalkin,repo_sweep,,,c0dc2e0f8b7f63e9
+7,2026-06-19 04:11:03.210976,1,PLUS,"#b8bb26",user,DJedamski,repo_sweep,,,ab975a2bbe4083e8
+8,2026-06-19 04:11:03.217777,-1,MINUS,"#cc241d",user,wasita,repo_sweep,,,d6afa159a0f171ae
+9,2026-06-19 04:11:03.219822,0,ERGODIC,"#d3869b",user,kristinezheng,repo_sweep,,,999634c788feddc5
+10,2026-06-19 04:11:03.221941,1,PLUS,"#b8bb26",user,M1shaaa,repo_sweep,,,e945fb96fba1cb94
+11,2026-06-19 04:11:03.223763,-1,MINUS,"#cc241d",user,AustinCStone,repo_sweep,,,5118ff847c0f4dcc

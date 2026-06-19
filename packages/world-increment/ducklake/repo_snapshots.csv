@@ -1,0 +1,61 @@
+id,timestamp,increment_id,org_or_user,repo_name,full_name,language,stars,forks,open_issues,pushed_at,description
+1,2026-06-19 04:11:03.225644,1,plurigrid,asi,plurigrid/asi,HTML,26,8,4,2026-06-10T12:51:42Z,everything is topological chemputer!
+2,2026-06-19 04:11:03.227344,1,plurigrid,place,plurigrid/place,TeX,1,2,8,2026-06-15T23:04:11Z,""
+3,2026-06-19 04:11:03.229205,1,plurigrid,eirobri,plurigrid/eirobri,Clojure,0,0,29,2026-06-03T20:43:46Z,EiRoBri replay world
+4,2026-06-19 04:11:03.231201,1,plurigrid,nash-portal,plurigrid/nash-portal,Rust,2,3,1,2026-05-19T01:49:59Z,NASH token TUI in the browser — ratzilla WASM + GeckoTerminal OHLCV candlesticks
+5,2026-06-19 04:11:03.232988,1,plurigrid,gorj,plurigrid/gorj,Clojure,0,0,663,2026-06-19T03:14:56Z,forj + Rama topology nREPL routing + GF(3) gay trit coloring for compositional open game REPL orchestration
+6,2026-06-19 04:11:03.235276,1,plurigrid,zig-syrup,plurigrid/zig-syrup,Zig,2,2,0,2026-04-30T03:52:16Z,High-performance Zig implementation of OCapN Syrup with CapTP optimizations
+7,2026-06-19 04:11:03.237291,1,plurigrid,asi-skills,plurigrid/asi-skills,Julia,3,1,0,2026-04-26T08:09:26Z,69 skills with Galois Hole Type accessibility
+8,2026-06-19 04:11:03.241065,1,plurigrid,bci-blue-share,plurigrid/bci-blue-share,JavaScript,0,0,0,2026-04-26T07:08:03Z,BCI signal infrastructure
+9,2026-06-19 04:11:03.243069,1,plurigrid,nanoclj-zig,plurigrid/nanoclj-zig,Zig,1,2,20,2026-04-25T07:29:09Z,NaN-boxed Clojure interpreter in Zig 0.15
+10,2026-06-19 04:11:03.244952,1,plurigrid,ontology,plurigrid/ontology,JavaScript,8,9,16,2025-05-27T18:18:34Z,autopoietic ergodicity and embodied gradualism
+11,2026-06-19 04:11:03.247116,1,plurigrid,vcg-auction,plurigrid/vcg-auction,Rust,7,2,1,2023-03-16T21:53:08Z,a simple contract that performs a VCG auction
+12,2026-06-19 04:11:03.249265,1,plurigrid,agent,plurigrid/agent,Python,5,1,6,2023-03-31T18:45:23Z,Framework for agency amplification
+13,2026-06-19 04:11:03.251271,1,plurigrid,StochFlow,plurigrid/StochFlow,Python,4,1,0,2024-03-20T23:34:57Z,Stochastic interpolant models
+14,2026-06-19 04:11:03.25312,1,plurigrid,microworlds,plurigrid/microworlds,Rust,3,5,3,2023-05-13T03:54:56Z,""
+15,2026-06-19 04:11:03.254817,2,kubeflow,kubeflow,kubeflow/kubeflow,"",15736,2679,0,2026-06-18T11:45:16Z,Machine Learning Toolkit for Kubernetes
+16,2026-06-19 04:11:03.256564,2,kubeflow,pipelines,kubeflow/pipelines,Python,4154,2008,452,2026-06-18T20:30:56Z,Machine Learning Pipelines for Kubeflow
+17,2026-06-19 04:11:03.258301,2,kubeflow,spark-operator,kubeflow/spark-operator,Python,3127,1490,100,2026-06-18T15:39:22Z,Kubernetes operator for managing the lifecycle of Apache Spark applications on Kubernetes.
+18,2026-06-19 04:11:03.261645,2,kubeflow,trainer,kubeflow/trainer,Go,2116,970,119,2026-06-18T14:29:04Z,Distributed AI Model Training and LLM Fine-Tuning on Kubernetes
+19,2026-06-19 04:11:03.263588,2,kubeflow,katib,kubeflow/katib,Python,1683,528,117,2026-06-15T20:07:37Z,Automated Machine Learning on Kubernetes
+20,2026-06-19 04:11:03.265428,2,kubeflow,community-distribution,kubeflow/community-distribution,YAML,1025,1065,21,2026-06-18T19:10:25Z,Kubeflow Community Distribution
+21,2026-06-19 04:11:03.267271,2,kubeflow,arena,kubeflow/arena,Go,813,190,44,2026-05-07T06:46:17Z,A CLI for Kubeflow.
+22,2026-06-19 04:11:03.268835,2,kubeflow,kale,kubeflow/kale,Python,694,155,54,2026-06-17T21:23:08Z,Kubeflow's superfood for Data Scientists
+23,2026-06-19 04:11:03.270505,2,kubeflow,mcp-apache-spark-history-server,kubeflow/mcp-apache-spark-history-server,Python,177,65,26,2026-06-19T00:32:53Z,MCP Server and CLI for Apache Spark History Server
+24,2026-06-19 04:11:03.272192,2,kubeflow,community,kubeflow/community,Jupyter Notebook,194,264,13,2026-06-18T20:07:55Z,Information about the Kubeflow community
+25,2026-06-19 04:11:03.273786,2,kubeflow,internal-acls,kubeflow/internal-acls,Go,19,389,1,2026-06-19T01:07:46Z,Repository used to main group ACLs used by Kubeflow developers
+26,2026-06-19 04:11:03.27558,3,TeglonLabs,jank-crane,TeglonLabs/jank-crane,C++,0,0,0,2026-06-08T19:03:03Z,"crane-jank converged-IR hub: loopify pass spec, GF3 convergence maps, simonw workflow"
+27,2026-06-19 04:11:03.277553,3,TeglonLabs,mathpix-gem,TeglonLabs/mathpix-gem,Ruby,2,0,11,2026-01-01T12:13:13Z,Transform mathematical images to LaTeX
+28,2026-06-19 04:11:03.280481,3,TeglonLabs,coin-flip-mcp,TeglonLabs/coin-flip-mcp,JavaScript,0,2,1,2025-09-21T08:57:27Z,MCP server for flipping coins with varying degrees of randomness from random.org
+29,2026-06-19 04:11:03.282277,3,TeglonLabs,monad-mcp-server,TeglonLabs/monad-mcp-server,"",0,0,0,2025-05-14T11:36:14Z,Monad MCP Server
+30,2026-06-19 04:11:03.284046,3,TeglonLabs,topoi,TeglonLabs/topoi,Python,0,0,1,2025-01-24T04:49:26Z,""
+31,2026-06-19 04:11:03.285755,4,bmorphism,ocaml-mcp-sdk,bmorphism/ocaml-mcp-sdk,OCaml,61,2,0,2026-03-16T05:24:25Z,OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect library
+32,2026-06-19 04:11:03.287561,4,bmorphism,anti-bullshit-mcp-server,bmorphism/anti-bullshit-mcp-server,JavaScript,23,7,1,2026-01-16T08:54:58Z,"MCP server for analyzing claims, validating sources, and detecting manipulation"
+33,2026-06-19 04:11:03.289366,4,bmorphism,risc0-cosmwasm-example,bmorphism/risc0-cosmwasm-example,Rust,23,2,1,2022-10-20T23:50:40Z,CosmWasm + zkVM RISC-V EFI template
+34,2026-06-19 04:11:03.29099,4,bmorphism,say-mcp-server,bmorphism/say-mcp-server,JavaScript,20,9,3,2025-01-07T03:15:18Z,MCP server for macOS text-to-speech functionality
+35,2026-06-19 04:11:03.292896,4,bmorphism,babashka-mcp-server,bmorphism/babashka-mcp-server,JavaScript,19,6,3,2025-01-05T11:09:42Z,A Model Context Protocol server for interacting with Babashka
+36,2026-06-19 04:11:03.294584,4,bmorphism,manifold-mcp-server,bmorphism/manifold-mcp-server,JavaScript,14,9,5,2025-01-11T10:36:58Z,MCP server for interacting with Manifold Markets prediction markets
+37,2026-06-19 04:11:03.296317,4,bmorphism,penrose-mcp,bmorphism/penrose-mcp,JavaScript,10,4,0,2025-01-20T21:44:55Z,Penrose server for the Infinity-Topos environment
+38,2026-06-19 04:11:03.299174,4,bmorphism,marginalia-mcp-server,bmorphism/marginalia-mcp-server,JavaScript,8,6,0,2025-01-06T05:47:24Z,An MCP server implementation for managing marginalia and annotations
+39,2026-06-19 04:11:03.300962,4,bmorphism,nats-mcp-server,bmorphism/nats-mcp-server,"",7,3,2,2025-01-06T23:33:41Z,MCP server for NATS messaging system
+40,2026-06-19 04:11:03.302717,4,bmorphism,Gay.jl,bmorphism/Gay.jl,Julia,1,1,187,2026-06-19T00:48:59Z,Wide-gamut color sampling with splittable determinism
+41,2026-06-19 04:11:03.304512,5,zubyul,voice-observatory,zubyul/voice-observatory,Python,0,0,0,2026-04-24T05:56:17Z,Passive macOS TUI observing voice-download pathways
+42,2026-06-19 04:11:03.306273,5,zubyul,ghostel-emacs-worlds,zubyul/ghostel-emacs-worlds,GLSL,0,0,0,2026-04-24T00:20:56Z,Ghostty config + ghostel family + alice/bob emacs-mods
+43,2026-06-19 04:11:03.308165,5,zubyul,nash-tui,zubyul/nash-tui,Rust,0,0,0,2026-04-13T07:45:16Z,NASH token TUI: real-time candles
+44,2026-06-19 04:11:03.310213,5,zubyul,gay-world,zubyul/gay-world,Python,1,1,0,2026-03-26T04:03:39Z,Goblin world builder: each goblin is a world
+45,2026-06-19 04:11:03.311983,5,zubyul,Gay.jl,zubyul/Gay.jl,Julia,0,0,0,2026-03-28T11:30:01Z,Wide-gamut color sampling with splittable determinism + LispSyntax
+46,2026-06-19 04:11:03.313952,5,zubyul,plurigrid-site,zubyul/plurigrid-site,Svelte,0,1,11,2026-02-04T03:20:08Z,Plurigrid world: site deployment
+47,2026-06-19 04:11:03.31573,6,migalkin,NodePiece,migalkin/NodePiece,Python,144,21,0,2026-05-07T05:40:02Z,Compositional and Parameter-Efficient Representations for Large Knowledge Graphs (ICLR 22)
+48,2026-06-19 04:11:03.320409,6,migalkin,StarE,migalkin/StarE,Python,89,16,1,2026-04-16T14:12:45Z,EMNLP 2020: Message Passing for Hyper-Relational Knowledge Graphs
+49,2026-06-19 04:11:03.322294,6,migalkin,kgcourse2021,migalkin/kgcourse2021,HTML,25,9,0,2026-02-16T05:16:08Z,Knowledge Graphs course materials
+50,2026-06-19 04:11:03.324188,6,migalkin,NBFNet_mlx,migalkin/NBFNet_mlx,Python,10,1,1,2026-03-11T01:31:21Z,Neural Bellman-Ford networks implemented in MLX for Apple Silicon
+51,2026-06-19 04:11:03.326219,7,DJedamski,Getting-and-Cleaning-Data,DJedamski/Getting-and-Cleaning-Data,R,1,0,0,2023-04-21T01:42:34Z,Coursera Project
+52,2026-06-19 04:11:03.328141,7,DJedamski,School,DJedamski/School,R,1,1,0,2023-04-21T01:42:33Z,A couple small projects from grad school
+53,2026-06-19 04:11:03.329974,8,wasita,wasita.github.io,wasita/wasita.github.io,Svelte,1,0,8,2026-06-15T20:14:23Z,personal website
+54,2026-06-19 04:11:03.331723,8,wasita,magic-garden,wasita/magic-garden,Python,2,1,1,2026-04-22T21:16:43Z,a bot for the magic garden discord activity game
+55,2026-06-19 04:11:03.333361,9,kristinezheng,kristinezheng.github.io,kristinezheng/kristinezheng.github.io,HTML,0,0,0,2026-06-07T22:53:10Z,""
+56,2026-06-19 04:11:03.335613,9,kristinezheng,lookit-jenga,kristinezheng/lookit-jenga,Jupyter Notebook,0,0,0,2024-05-16T18:29:05Z,Lookit study for 9.85
+57,2026-06-19 04:11:03.337609,10,M1shaaa,lab-bookshelf-,M1shaaa/lab-bookshelf-,TypeScript,0,0,0,2024-12-31T05:11:18Z,""
+58,2026-06-19 04:11:03.339559,11,AustinCStone,TextGAN,AustinCStone/TextGAN,Python,92,30,5,2025-03-03T13:26:32Z,"A generative adversarial network for text generation, written in TensorFlow."
+59,2026-06-19 04:11:03.342487,11,AustinCStone,StereoVisionMRF,AustinCStone/StereoVisionMRF,Python,11,4,0,2026-04-01T07:39:41Z,Using a MRF with loopy belief propagation to infer depth from stereo images.
+60,2026-06-19 04:11:03.344336,11,AustinCStone,EpsteinSearch,AustinCStone/EpsteinSearch,Python,0,0,0,2026-02-11T01:10:57Z,""
