@@ -1,4 +1,138 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot
+**Date:** 2026-06-19  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### GF(3) World-Increment Color Chain
+
+| id | GF3 trit | color | name | source | repos snapshotted | latest push |
+|----|----------|-------|------|--------|-------------------|-------------|
+| 1  | +1  | `#b8bb26` PLUS     | plurigrid     | org   | 20  | 2026-06-19 (gorj) |
+| 2  | -1  | `#cc241d` MINUS    | kubeflow      | org   | 20  | 2026-06-19 (mcp-apache-spark) |
+| 3  | 0   | `#d3869b` ERGODIC  | TeglonLabs    | org   | 5   | 2026-06-08 (jank-crane) |
+| 4  | +1  | `#b8bb26` PLUS     | bmorphism     | user  | 20  | 2026-06-19 (Gay.jl) |
+| 5  | -1  | `#cc241d` MINUS    | zubyul        | user  | 12  | 2026-04-24 (voice-observatory) |
+| 6  | 0   | `#d3869b` ERGODIC  | migalkin      | social| 6   | 2026-05-28 (RWL) |
+| 7  | +1  | `#b8bb26` PLUS     | wasita        | social| 5   | 2026-06-15 (wasita.github.io) |
+| 8  | -1  | `#cc241d` MINUS    | AustinCStone  | social| 6   | 2026-04-01 (StereoVisionMRF) |
+| 9  | 0   | `#d3869b` ERGODIC  | kristinezheng | social| 3   | 2026-06-07 (kristinezheng.github.io) |
+| 10 | +1  | `#b8bb26` PLUS     | M1shaaa       | social| 3   | 2026-02-04 (M1shaaa profile) |
+| 11 | -1  | `#cc241d` MINUS    | DJedamski     | social| 3   | 2023-04-21 (Kaggle) |
+
+**Total:** 11 world-increments · 103 repo-snapshots
+
+### Top Repos by Stars
+
+| repo | stars | forks | lang | pushed |
+|------|-------|-------|------|--------|
+| kubeflow/kubeflow | 15,736 | 2,680 | — | 2026-06-18 |
+| kubeflow/pipelines | 4,154 | 2,009 | Python | 2026-06-19 |
+| kubeflow/spark-operator | 3,127 | 1,490 | Python | 2026-06-18 |
+| kubeflow/trainer | 2,117 | 970 | Go | 2026-06-19 |
+| kubeflow/katib | 1,683 | 528 | Python | 2026-06-15 |
+| kubeflow/examples | 1,460 | 756 | Jsonnet | 2025-04-14 |
+| migalkin/NodePiece | 144 | 21 | Python | 2026-05-07 |
+| migalkin/StarE | 89 | 16 | Python | 2026-04-16 |
+| AustinCStone/TextGAN | 92 | 30 | Python | 2025-03-03 |
+| bmorphism/ocaml-mcp-sdk | 61 | 2 | OCaml | 2026-03-16 |
+| plurigrid/gorj | 0 | 0 | Clojure | 2026-06-19 ⭐ 678 issues |
+| plurigrid/asi | 26 | 8 | HTML | 2026-06-10 |
+
+### Active Today (2026-06-19)
+- `kubeflow/mcp-apache-spark-history-server` — pushed 18:33 UTC
+- `kubeflow/pipelines` — pushed 18:21 UTC
+- `plurigrid/gorj` — pushed 18:14 UTC (678 open issues)
+- `bmorphism/Gay.jl` — pushed 00:48 UTC (187 open issues)
+
+### Org Star Totals
+| org/user | repos | total_stars | latest_push |
+|----------|-------|-------------|-------------|
+| kubeflow | 20 | 32,666 | 2026-06-19 |
+| migalkin | 6 | 279 | 2026-05-28 |
+| bmorphism | 20 | 206 | 2026-06-19 |
+| AustinCStone | 6 | 107 | 2026-04-01 |
+| plurigrid | 20 | 67 | 2026-06-19 |
+| wasita | 5 | 5 | 2026-06-15 |
+| zubyul | 12 | 5 | 2026-04-24 |
+| TeglonLabs | 5 | 2 | 2026-06-08 |
+| DJedamski | 3 | 2 | 2023-04-21 |
+| kristinezheng | 3 | 0 | 2026-06-07 |
+| M1shaaa | 3 | 0 | 2026-02-04 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos APT Balances (mainnet, 2026-06-19)
+
+*Queried via `0x1::coin::balance` view function on Aptos mainnet fullnode.*
+
+| world | balance (APT) | address (truncated) |
+|-------|--------------|---------------------|
+| alice | 0.43643352 | 0xc793...cc7b |
+| bob   | **12.657007** | 0x0a3c...2d5d |
+| A     | 0.051767 | 0x8699...9d7a |
+| B     | 0.036256 | 0x3f89...b13 |
+| C     | 0.010185 | 0x38b9...35e |
+| D     | 0.011629 | 0xf776...dd1 |
+| E     | 0.009372 | 0xdc1d...d36 |
+| F     | **1.960516** | 0x18a1...f71 |
+| G     | 0.000681 | 0x69a3...f32 |
+| H     | 0.001681 | 0xce67...00f |
+| I     | 0.000681 | 0x070f...c9 |
+| J     | **1.895093** | 0x4d96...f54 |
+| K     | 0.161961 | 0xa732...dc4 |
+| L     | **1.927269** | 0x7c2e...ba9 |
+| M     | 0.112285 | 0x6fed...e9 |
+| N     | 0.106121 | 0xe7dd...b2c |
+| O     | 0.210136 | 0x7325...89d |
+| P     | 0.140136 | 0x6218...948 |
+| Q     | 0.103240 | 0xac40...a9 |
+| R     | 0.090217 | 0x7ce6...e10 |
+| S     | 0.091788 | 0xb875...386 |
+| T     | 0.073713 | 0x3578...588 |
+| U     | 0.055773 | 0x7586...956 |
+| V     | 0.048833 | 0xb59d...2c3 |
+| W     | 0.040705 | 0x5f32...b0 |
+| X     | 0.042577 | 0xa95c...47d |
+| Y     | 0.044449 | 0xd8e3...c4 |
+| Z     | 0.024268 | 0x7af0...97c |
+
+**Total swarm APT:** ~20.36 APT  
+**Richest:** bob (12.66 APT), F (1.96 APT), L (1.93 APT), J (1.90 APT)  
+**Driest:** G, I (0.000681 APT each)
+
+### Multisig Probes (5 pairs)
+
+All 5 multisig contracts returned `sigs_required = 2` (healthy 2-of-N).
+
+| pair | address (truncated) | sigs required | healthy |
+|------|---------------------|--------------|---------|
+| A-B | 0x0da4...003 | 2 | ✓ |
+| A-G | 0xf56c...096 | 2 | ✓ |
+| Y-Z | 0xd3ff...883 | 2 | ✓ |
+| S-T | 0x3b1c...883 | 2 | ✓ |
+| V-W | 0x40fa...b6d | 2 | ✓ |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: UNAVAILABLE** — `https://testnet.mnx.fi` returned HTTP 401 Unauthorized. No market data retrievable without credentials. Table `mnx_snapshots` is empty.
+
+---
+
+## DuckDB Schema Summary
+
+```
+world-increments.duckdb
+├── world_increments   11 rows  (GF3 color chain per source)
+├── repo_snapshots    103 rows  (GitHub repo metadata)
+├── aptos_snapshots    28 rows  (Hamming swarm APT balances)
+├── multisig_probes     5 rows  (all healthy, 2-of-N)
+└── mnx_snapshots       0 rows  (unavailable — 401)
+```
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
