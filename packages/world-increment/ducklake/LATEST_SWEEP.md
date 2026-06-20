@@ -98,7 +98,7 @@ All 28 addresses probed via Aptos mainnet `CoinStore<AptosCoin>` resource endpoi
 5 multisig contracts probed via Aptos `/v1/view` → `0x1::multisig_account::num_signatures_required`.
 
 | Pair | Address | Sigs Required | Healthy |
-|------|---------|--------------|----------|
+|------|---------|--------------|---------|
 | A-B | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 | 2 | ✓ |
 | A-G | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 | 2 | ✓ |
 | Y-Z | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 | 2 | ✓ |
