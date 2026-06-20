@@ -34,6 +34,8 @@
 | kubeflow/pipelines | 4,155 | Python | Machine Learning Pipelines for Kubeflow |
 | kubeflow/sdk | 120 | Python | Universal Python SDK |
 | kubeflow/kale | 694 | Python | Kubeflow superfood for Data Scientists |
+| kubeflow/dashboard | 16 | TypeScript | Kubeflow Central Dashboard |
+| kubeflow/pipelines-components | 11 | Python | Kubeflow Pipelines components |
 | plurigrid/gorj | 0 | Clojure | forj + Rama topology nREPL + GF(3) |
 | plurigrid/place | 1 | TeX | bci.place forester |
 | bmorphism/Gay.jl | 2 | Julia | Wide-gamut color sampling GF(3) |
@@ -43,7 +45,7 @@
 
 - **kubeflow/kubeflow**: 15,737★ — ML Toolkit for Kubernetes, last pushed 2026-06-18
 - **kubeflow/mcp-apache-spark-history-server**: 177★ — new MCP tool for Spark debugging
-- **plurigrid/gorj**: 704 open issues — most issue-active repo in the plurigrid org
+- **plurigrid/gorj**: 704 open issues — this repo is the most issue-active in the plurigrid org
 - **bmorphism/Gay.jl**: 187 open issues — GF(3) color sampler with SPI pattern, very active
 - **bmorphism/ocaml-mcp-sdk**: 61★ — OCaml SDK for MCP using Jane Street's oxcaml_effect
 - **TeglonLabs/jank-crane**: C++/GF3 converged-IR hub, pushed 2026-06-08
@@ -63,14 +65,32 @@
 
 ### Aptos Wallet Balances (28 wallets)
 
-All 28 wallets (alice, bob, A–Z) returned **0.0 APT**. CoinStore resource absent for all — accounts exist on mainnet but have no registered native APT.
+**Endpoint:** `https://fullnode.mainnet.aptoslabs.com/v1/accounts/{addr}/resource/0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`
+
+All 28 wallets (alice, bob, A–Z) returned **0.0 APT**. The `CoinStore` resource was absent for all addresses — these accounts exist on Aptos mainnet but have no registered native APT coin store (may hold other assets or are newly initialized).
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793acde...cc7b | 0.0 |
+| bob | 0x0a3c00c5...2d5d | 0.0 |
+| A | 0x8699edc0...c7a | 0.0 |
+| B | 0x3f892ebe...b13 | 0.0 |
+| C | 0x38b99e63...35e | 0.0 |
+| D | 0xf7765624...dd1 | 0.0 |
+| E | 0xdc1d9d53...d36 | 0.0 |
+| F | 0x18a14b5b...f71 | 0.0 |
+| G | 0x69a394c0...f32 | 0.0 |
+| H | 0xce67c327...00f | 0.0 |
+| I–Z | (16 wallets) | 0.0 each |
 
 ### Multisig Contract Probes (5 pairs)
 
-All 5 multisig accounts are live on mainnet with `sigs_required = 2`:
+**Endpoint:** POST `https://fullnode.mainnet.aptoslabs.com/v1/view` → `0x1::multisig_account::num_signatures_required`
+
+All 5 multisig accounts are live on mainnet with `sigs_required = 2` (2-of-N threshold):
 
 | Pair | Address (truncated) | Sigs Required | Healthy |
-|------|---------------------|---------------|--------|
+|------|---------------------|---------------|---------|
 | A-B | 0x0da4f428...003 | 2 | ✅ |
 | A-G | 0xf56c4a1c...096 | 2 | ✅ |
 | Y-Z | 0xd3ffe181...883 | 2 | ✅ |
@@ -79,11 +99,28 @@ All 5 multisig accounts are live on mainnet with `sigs_required = 2`:
 
 ### MNX Markets (testnet.mnx.fi)
 
-**Status: UNAVAILABLE** — `https://testnet.mnx.fi/api/markets` returned no data.
+**Status: UNAVAILABLE**  
+`https://testnet.mnx.fi/api/markets` returned no data. The site appears to be a SPA without a discoverable public API endpoint, or the testnet is currently down. No market data could be extracted.
 
 ---
 
-## DuckDB Table Counts
+## DuckDB Schema
+
+```sql
+world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
+                 source_type, source_name, event_type, repo_name,
+                 actor, snapshot_hash)
+
+repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
+               full_name, language, stars, forks, open_issues,
+               pushed_at, description)
+
+aptos_snapshots(timestamp, world, address, balance_apt)
+multisig_probes(timestamp, pair, address, sigs_required, healthy)
+mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
+```
+
+## Table Counts
 
 | Table | Rows |
 |-------|------|
