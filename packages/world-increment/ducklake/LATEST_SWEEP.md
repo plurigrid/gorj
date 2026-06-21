@@ -1,20 +1,38 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-21
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-21
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## Summary Counts (Cumulative)
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 345 |
+| Total Repo Snapshots | 1266 |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| Sources Covered | 3 orgs + 8 users + 6 social-graph users |
+
+### New This Run (2026-06-21)
+| Source | Repos |
+|--------|-------|
+| plurigrid (org) | 100 |
+| kubeflow (org) | 48 |
+| TeglonLabs (org) | 5 |
+| bmorphism (user) | 100 |
+| zubyul (user) | 49 |
+| migalkin (social) | 19 |
+| DJedamski (social) | 6 |
+| wasita (social) | 11 |
+| kristinezheng (social) | 5 |
+| M1shaaa (social) | 8 |
+| AustinCStone (social) | 40 |
+| **Total new** | **322** |
 
 ---
 
@@ -132,11 +150,33 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 
 ## Notable Highlights
 - **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline (pushed 2026-04-10)
+- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings (ICLR'22)
+- **AustinCStone/TextGAN**: 92 stars — text generation with GANs (TensorFlow)
+- **migalkin/StarE**: 89 stars — message passing for hyper-relational KGs (EMNLP 2020)
+- **bmorphism/ocaml-mcp-sdk**: ~60 stars — OCaml SDK for MCP
+- **TeglonLabs/jank-crane**: new 2026-06-08 — crane-jank converged-IR hub with GF(3) convergence maps
+- **wasita/proj-template**: most recently pushed (2026-06-19)
+- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) trit coloring
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet, 2026-06-21)
+All 28 addresses probed (alice, bob, A–Z). All returned **0.0 APT** — addresses unfunded on mainnet.
+
+### Multisig Contract Health
+All 5 contracts returned `sigs_required = 2` — **all healthy**.
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4f428... | 2 | ✓ healthy |
+| A-G | 0xf56c4a1c... | 2 | ✓ healthy |
+| Y-Z | 0xd3ffe181... | 2 | ✓ healthy |
+| S-T | 0x3b1c3ae9... | 2 | ✓ healthy |
+| V-W | 0x40fad7b4... | 2 | ✓ healthy |
+
+### MNX Markets (testnet.mnx.fi)
+**Unavailable** — HTTP 401 on both root and `/api/markets`. Requires authentication.
