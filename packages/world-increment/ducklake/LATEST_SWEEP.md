@@ -42,7 +42,7 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ### plurigrid (59 repos snapshotted)
 | Repo | Language | Stars | Open Issues | Pushed At |
-|------|----------|-------|-------------|----------|
+|------|----------|-------|-------------|-----------|
 | gorj | Clojure | 0 | **745** | 2026-06-22 |
 | asi | HTML | **26** | 4 | 2026-06-10 |
 | ontology | JavaScript | 8 | 16 | 2025-05-27 |
@@ -51,7 +51,7 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ### kubeflow (24 repos snapshotted)
 | Repo | Language | Stars | Pushed At |
-|------|----------|-------|----------|
+|------|----------|-------|-----------|
 | kubeflow | — | **15,740** | 2026-06-18 |
 | pipelines | Python | **4,157** | 2026-06-22 |
 | spark-operator | Python | **3,128** | 2026-06-22 |
@@ -121,7 +121,7 @@ All 28 addresses queried against Aptos mainnet `fullnode.mainnet.aptoslabs.com`.
 ### Multisig Contract Health
 
 | Pair | Contract | Sigs Required | Healthy |
-|------|---------|---------------|--------|
+|------|---------|---------------|---------|
 | A-B | 0x0da4...7003 | 2 | ✓ |
 | A-G | 0xf56c...0096 | 2 | ✓ |
 | Y-Z | 0xd3ff...b883 | 2 | ✓ |
