@@ -1,10 +1,12 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-23
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-23
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **GF(3) increment id:** 12 (new) · trit=0 · color=#d3869b · name=ERGODIC
+- **Snapshot hash:** bf257ccd6d3ce459
 
 ---
 
@@ -12,9 +14,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 1305 |
+| Sources Covered | 3 orgs + 8 users (same as prior; +361 new snapshots this run) |
+| Aptos wallets probed | 28 (alice, bob, A–Z) |
+| Multisig contracts probed | 5 |
+| MNX markets | Unavailable (Vercel auth wall) |
 
 ---
 
@@ -130,13 +135,28 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+## Notable Highlights (2026-06-23 run)
+- **kubeflow/kubeflow**: 15,741 stars (+176 since Apr) — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,157 stars — pushed TODAY (19:17 UTC)
+- **kubeflow/spark-operator**: 3,128 stars — pushed TODAY (18:27 UTC)
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for MCP (pushed 2026-03-16)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **TeglonLabs/jank-crane**: NEW — C++ crane-jank converged-IR hub with GF3 convergence maps (pushed 2026-06-08)
+- **M1shaaa/M1shaaa**: profile README pushed TODAY (2026-06-23 14:40Z)
+- **wasita/proj-template**: pushed 2026-06-19 (4 days ago)
+- **kristinezheng/kristinezheng.github.io**: personal site pushed 2026-06-07
+- **plurigrid/gorj**: This very repo — pushed TODAY 19:11 UTC
+- **Increment 12 (new)**: ERGODIC #d3869b — completing 4th GF(3) cycle
+
+## Hamming Swarm (Aptos Mainnet)
+
+### Wallet Balances
+All 28 Hamming swarm wallets (alice, bob, A–Z) return **0.0 APT** — CoinStore resources absent or accounts unfunded on mainnet.
+
+### Multisig Contracts
+All 5 probed multisig contracts are **healthy**, each requiring exactly **2 signatures**:
+- A-B · A-G · Y-Z · S-T · V-W
+
+### MNX Markets
+**Unavailable** — `testnet.mnx.fi` protected by Vercel deployment authentication. No market data extractable.
