@@ -11,7 +11,7 @@
 ### Sources Snapshotted
 
 | Source | Type | Repos | Total Stars | Most Recent Push |
-|--------|------|------:|------------:|------------------|
+|--------|------|------:|------------:|-----------------|
 | plurigrid | org | 100 | 77 | 2026-06-23 (gorj, eirobri) |
 | bmorphism | user | 100 | 248 | 2026-06-23 (Gay.jl) |
 | zubyul | user | 49 | 14 | 2026-04-24 (voice-observatory) |
