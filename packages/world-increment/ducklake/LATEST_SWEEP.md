@@ -1,8 +1,106 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-24
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+- **Date:** 2026-06-24
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+
+| ID | GF(3) | Color | Type | Source | Repos |
+|----|-------|-------|------|--------|-------|
+| 13 | +1 PLUS | #b8bb26 | org | plurigrid | 44 |
+| 14 | -1 MINUS | #cc241d | org | kubeflow | 23 |
+| 15 | 0 ERGODIC | #d3869b | org | TeglonLabs | 5 |
+| 16 | +1 PLUS | #b8bb26 | user | bmorphism | 52 |
+| 17 | -1 MINUS | #cc241d | user | zubyul | 20 |
+| 18 | 0 ERGODIC | #d3869b | social | migalkin | 7 |
+| 19 | +1 PLUS | #b8bb26 | social | DJedamski | 6 |
+| 20 | -1 MINUS | #cc241d | social | wasita | 7 |
+| 21 | 0 ERGODIC | #d3869b | social | kristinezheng | 5 |
+| 22 | +1 PLUS | #b8bb26 | social | M1shaaa | 8 |
+| 23 | -1 MINUS | #cc241d | social | AustinCStone | 10 |
+
+**New repo snapshots this sweep:** 184 | **Total in DB:** 1,128 | **world_increments total:** 34
+
+### Notable Repos (by stars)
+
+**kubeflow:** `kubeflow/kubeflow` 15,742⭐, `kubeflow/pipelines` 4,157⭐ (pushed today), `kubeflow/spark-operator` 3,128⭐
+
+**bmorphism (active MCP ecosystem):** `ocaml-mcp-sdk` 61⭐, `anti-bullshit-mcp-server` 23⭐, `risc0-cosmwasm-example` 23⭐, `say-mcp-server` 20⭐, `babashka-mcp-server` 19⭐, `Gay.jl` 187 open issues (most active)
+
+**plurigrid:** `gorj` 789 open issues (this repo), `asi` 26⭐, `vcg-auction` 7⭐
+
+**migalkin (KG researcher):** `NodePiece` 144⭐ ICLR'22, `StarE` 89⭐ EMNLP'20
+
+**AustinCStone:** `TextGAN` 92⭐, `StereoVisionMRF` 11⭐
+
+### GF(3) Chain (IDs 13–23)
+```
+13 [+1 PLUS    #b8bb26] plurigrid
+14 [-1 MINUS   #cc241d] kubeflow
+15 [ 0 ERGODIC #d3869b] TeglonLabs
+16 [+1 PLUS    #b8bb26] bmorphism
+17 [-1 MINUS   #cc241d] zubyul
+18 [ 0 ERGODIC #d3869b] migalkin
+19 [+1 PLUS    #b8bb26] DJedamski
+20 [-1 MINUS   #cc241d] wasita
+21 [ 0 ERGODIC #d3869b] kristinezheng
+22 [+1 PLUS    #b8bb26] M1shaaa
+23 [-1 MINUS   #cc241d] AustinCStone
+```
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (alice, bob, A–Z)
+
+All 28 addresses probed against Aptos mainnet fullnode.  
+**Result: 0 APT across all 28 swarm wallets.** CoinStore resources exist but hold no balance.
+
+| World | Address | APT |
+|-------|---------|-----|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...512d5d | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+### Multisig Contract Probes
+
+All 5 pairs healthy — 2-of-N signature threshold confirmed.
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4...7003 | 2 | healthy |
+| A-G | 0xf56c...0096 | 2 | healthy |
+| Y-Z | 0xd3ff...b883 | 2 | healthy |
+| S-T | 0x3b1c...7883 | 2 | healthy |
+| V-W | 0x40fa...eb6d | 2 | healthy |
+
+### MNX Markets (testnet.mnx.fi)
+
+**UNAVAILABLE** — Vercel deployment authentication required. No bypass token present. No market data extracted.
+
+---
+
+## DuckDB State
+
+```
+world_increments : 34 rows  (+11 this sweep)
+repo_snapshots   : 1,128 rows (+184 this sweep)
+aptos_snapshots  : 28 rows  (new)
+multisig_probes  : 5 rows   (new)
+mnx_snapshots    : 0 rows   (auth-gated)
+```
+
+DB: `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## Previous Sweep (2026-04-12)
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
