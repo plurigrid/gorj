@@ -1,9 +1,8 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-24
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-24
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +11,21 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 320 |
+| Total Repo Snapshots | 320 |
+| Aptos Wallet Snapshots | 28 |
+| Multisig Probes | 5 |
 | Sources Covered | 3 orgs + 8 users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Distribution (320 increments)
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
-
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+| GF(3) Name | Trit | Color | Count |
+|------------|------|-------|-------|
+| ERGODIC | 0 | `#d3869b` | 106 |
+| PLUS | +1 | `#b8bb26` | 107 |
+| MINUS | -1 | `#cc241d` | 107 |
 
 ---
 
@@ -97,16 +87,42 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 |--------|------|-------|
 | plurigrid | org | 100 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| zubyul | user | 49 |
+| kubeflow | org | 48 |
+| TeglonLabs | org | 5 |
+| migalkin | user (social) | 5 |
+| wasita | user (social) | 4 |
+| AustinCStone | user (social) | 3 |
+| kristinezheng | user (social) | 2 |
+| DJedamski | user (social) | 2 |
+| M1shaaa | user (social) | 2 |
+| **TOTAL** | | **320** |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances (28 wallets: alice, bob, A–Z)
+
+All wallets queried at ledger version ~5,897,235,538.
+
+**Result:** All 28 wallets returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`. These addresses have not initialized an APT coin store on mainnet. All balance_apt = 0.0.
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4f428a0c0... | 2 | ✓ |
+| A-G | 0xf56c4a1c0906... | 2 | ✓ |
+| Y-Z | 0xd3ffe1812b2d... | 2 | ✓ |
+| S-T | 0x3b1c3ae905d4... | 2 | ✓ |
+| V-W | 0x40fad7b423a8... | 2 | ✓ |
+
+**All 5 multisig contracts healthy: 2-of-N threshold.**
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: Unavailable** — behind Vercel deployment protection authentication. No bypass token available. `mnx_snapshots` table created, 0 rows.
 
 ---
 
