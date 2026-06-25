@@ -1,20 +1,23 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-06-25
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-25T23:09 UTC
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## Summary Counts (this run)
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| New World Increments | 11 (GF3 color chain) |
+| New Repo Snapshots | 381 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (all 0 APT on mainnet) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | unavailable (Vercel auth wall) |
 
 ---
 
@@ -140,3 +143,52 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-06-25)
+
+### Aptos Mainnet Wallet Balances — 28 Addresses
+
+All 28 Hamming-swarm addresses (alice, bob, A–Z) queried via Aptos mainnet fullnode with 1s delay between calls.
+
+**Result: All 28 balances = 0.00000000 APT** — addresses are registered on-chain but unfunded on Aptos mainnet as of this sweep.
+
+| World | Address | Balance |
+|-------|---------|---------|
+| alice | 0xc793acdec12b4a63717b001e21bbb7a8564d5e9690f80d41f556c2d0d624cc7b | 0.0 APT |
+| bob | 0x0a3c00c58fdf9020b27854a3229042efa70cf782d7d2a9de0c13d00e05512d5d | 0.0 APT |
+| A | 0x8699edc0960dd5b916074f1e9bd25d86fb416a8decfa46f78ab0af6eaebe9d7a | 0.0 APT |
+| B–Z | (26 addresses) | 0.0 APT each |
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 | 2 | ✓ |
+| A-G | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 | 2 | ✓ |
+| Y-Z | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 | 2 | ✓ |
+| S-T | 0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883 | 2 | ✓ |
+| V-W | 0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d | 2 | ✓ |
+
+All 5 multisig accounts require 2-of-N signatures and are responding correctly on Aptos mainnet.
+
+### MNX Markets (testnet.mnx.fi)
+
+Status: **UNAVAILABLE** — testnet.mnx.fi is behind Vercel visitor-password authentication. No market data can be extracted without the bypass token. Zero rows inserted into `mnx_snapshots`.
+
+### GF(3) Chain for This Run (this-run increments 1–11)
+
+| ID | Source | trit | Color |
+|----|--------|------|-------|
+| 1 | plurigrid | 0 | ERGODIC #d3869b |
+| 2 | kubeflow | 1 | PLUS #b8bb26 |
+| 3 | bmorphism | 2 | MINUS #cc241d |
+| 4 | zubyul | 0 | ERGODIC #d3869b |
+| 5 | migalkin | 1 | PLUS #b8bb26 |
+| 6 | AustinCStone | 2 | MINUS #cc241d |
+| 7 | wasita | 0 | ERGODIC #d3869b |
+| 8 | kristinezheng | 1 | PLUS #b8bb26 |
+| 9 | M1shaaa | 2 | MINUS #cc241d |
+| 10 | DJedamski | 0 | ERGODIC #d3869b |
+| 11 | TeglonLabs | 1 | PLUS #b8bb26 |
