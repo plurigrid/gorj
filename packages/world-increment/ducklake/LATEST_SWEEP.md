@@ -1,10 +1,48 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-25
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-25
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Ledger v5916137534)
+
+All 28 Hamming swarm addresses (alice, bob, A–Z) returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` on Aptos mainnet.
+
+**Balance: 0 APT across all wallets** — no coin stores initialized at snapshot time.
+
+| World | Address (prefix) | APT Balance |
+|-------|-----------------|-------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...512d | 0.0 |
+| A | 0x8699...9d7a | 0.0 |
+| B | 0x3f89...b13 | 0.0 |
+| C–Z | (24 addresses) | 0.0 each |
+
+### Multisig Contract Probes (`0x1::multisig_account::num_signatures_required`)
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|--------------|---------|
+| A-B | 0x0da4...7003 | 2 | ✓ |
+| A-G | 0xf56c...0096 | — | ✗ (no response / not found) |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ |
+| S-T | 0x3b1c...7883 | 2 | ✓ |
+| V-W | 0x40fa...eb6d | 2 | ✓ |
+
+**4/5 multisigs healthy** (require 2 signatures). A-G returned empty — contract may not exist.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: Unavailable** — Vercel deployment requires visitor password authentication (HTTP 401). No market data could be extracted. Noted in `mnx_snapshots` as unavailable.
+
+---
+
+## JOB 1: GitHub Social Graph Sweep (2026-06-25 update)
 
 ---
 
