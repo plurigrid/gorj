@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-06-25 (+ Hamming Swarm Snapshot)
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-25
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 207 |
+| Total Repo Snapshots | 1128 (cumulative) |
+| Sources Covered | 3 orgs + 8 users + 1 social graph sweep |
+| Aptos Worlds Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | UNAVAILABLE (Vercel auth required) |
 
 ---
 
@@ -130,13 +133,24 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (2026-06-25 update)
+
+### GitHub
+- **plurigrid/gorj**: 815 open issues, pushed TODAY — forj + Rama + GF(3)
+- **plurigrid/asi**: 26⭐ "everything is topological chemputer!" (was 16⭐ in April)
+- **bmorphism/ocaml-mcp-sdk**: 61⭐ (was 60⭐) — Jane Street oxcaml_effect
+- **bmorphism/say-mcp-server**: 20⭐, **babashka-mcp-server**: 19⭐
+- **bmorphism/anti-bullshit-mcp-server**: 23⭐
+- **bmorphism/Gay.jl**: 2⭐, 187 open issues, default branch=`gay`
+- **bmorphism/satreadout**: new repo — Machine-checked non-Riemannian readout (Lean 4.28 + mathlib)
+- **zubyul/tilelang-kernels**: TileLang GPU kernels for GF(3) trit classification, NVIDIA GB10 Blackwell
+- **TeglonLabs/jank-crane**: C++, crane-jank converged-IR hub, GF3 convergence maps
+- **migalkin/NodePiece**: 144⭐ (was 143⭐), **StarE**: 89⭐
+
+### Hamming Swarm (Aptos)
+- **All 28 addresses** (alice, bob, A–Z): APT CoinStore unregistered → 0.0 APT
+- **All 5 multisigs** (A-B, A-G, Y-Z, S-T, V-W): 2-of-N, all healthy ✓
+- **MNX testnet**: Vercel deployment protection active, data unavailable
+
+### GF(3) Current Chain (latest 12 entries)
+`ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS`
