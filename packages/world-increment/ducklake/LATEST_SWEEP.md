@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-26
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-26
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,77 +12,75 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments (DB) | 110 |
+| Total Repo Snapshots (DB) | 1031 |
+| New Increments This Run | 87 |
+| Sources Covered This Run | 3 orgs + 8 users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
-
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
-
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+## GF(3) Color Chain — This Run (87 increments, ids 1–87)
+- **ERGODIC** `#d3869b` (trit=0): ids 3,6,9,12,… (id%3==0)
+- **PLUS** `#b8bb26` (trit=+1): ids 1,4,7,10,… (id%3==1)
+- **MINUS** `#cc241d` (trit=-1): ids 2,5,8,11,… (id%3==2)
 
 ---
 
-## Top Repos by Source
+## Top Repos by Source (this sweep)
 
-### plurigrid (100 repos)
+### plurigrid (15 repos snapshotted)
 | Repo | Language | Stars | Pushed At |
 |------|----------|-------|-----------|
-| asi | HTML | 16 | 2026-04-10 |
-| ontology | JavaScript | 7 | 2025-05-27 |
-| asi-skills | Julia | 3 | 2026-04-09 |
-| zig-syrup | Zig | 2 | 2026-04-09 |
-| vivarium | Clojure | 1 | 2026-04-08 |
+| asi | HTML | 26 | 2026-06-26 |
+| gorj | Clojure | 0 (830 issues!) | 2026-06-26 |
+| place | TeX | 1 | 2026-06-26 |
+| eirobri | Clojure | 0 | 2026-06-23 |
+| nanoclj-zig | Zig | 1 | 2026-04-25 |
 
-### kubeflow (47 repos)
+### kubeflow (16 repos snapshotted)
 | Repo | Language | Stars | Pushed At |
 |------|----------|-------|-----------|
-| kubeflow | — | 15565 | 2026-01-05 |
-| pipelines | Python | 4119 | 2026-04-10 |
-| spark-operator | Python | 3111 | 2026-04-10 |
-| trainer | Go | 2080 | 2026-04-10 |
-| katib | Python | 1676 | 2026-04-02 |
+| kubeflow | — | 15,744 | 2026-06-18 |
+| pipelines | Python | 4,156 | 2026-06-25 |
+| spark-operator | Python | 3,128 | 2026-06-26 |
+| trainer | Go | 2,122 | 2026-06-25 |
+| katib | Python | 1,685 | 2026-06-23 |
 
-### TeglonLabs (53 repos)
+### TeglonLabs (5 repos)
 | Repo | Language | Stars |
 |------|----------|-------|
+| jank-crane | C++ | 0 |
 | mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| acp.el | — | 1 |
-| mcp-terminal | — | 1 |
+| coin-flip-mcp | JavaScript | 0 |
+| monad-mcp-server | — | 0 |
+| topoi | Python | 0 |
 
-### bmorphism (100 repos)
+### bmorphism (20 repos snapshotted)
 | Repo | Language | Stars |
 |------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
+| ocaml-mcp-sdk | OCaml | 61 |
 | anti-bullshit-mcp-server | JavaScript | 23 |
-| shitcoin | Python | 5 |
-| open-location-code-zig | Zig | 3 |
+| risc0-cosmwasm-example | Rust | 23 |
+| say-mcp-server | JavaScript | 20 |
+| Gay.jl | Julia | 2 |
 
-### migalkin (30 repos)
+### zubyul (11 repos snapshotted)
 | Repo | Language | Stars |
 |------|----------|-------|
-| NodePiece | Python | 143 |
-| StarE | Python | 88 |
-| kgcourse2021 | HTML | 25 |
+| gay-world | Python | 1 |
+| WGCNA | HTML | 2 |
+| vibesnipe | Move | 0 |
 
-### AustinCStone (43 repos)
+### migalkin (social graph)
+| Repo | Language | Stars |
+|------|----------|-------|
+| NodePiece | Python | 144 |
+| StarE | Python | 89 |
+| kgcourse2021 | HTML | 25 |
+| NBFNet_mlx | Python | 10 |
+| RWL | Python | 8 |
+
+### AustinCStone (social graph)
 | Repo | Language | Stars |
 |------|----------|-------|
 | TextGAN | Python | 92 |
@@ -91,22 +89,52 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ---
 
-## Repo Counts by Source
+## Repo Counts (this sweep)
 
 | Source | Type | Repos |
 |--------|------|-------|
-| plurigrid | org | 100 |
-| bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| plurigrid | org | 15 |
+| bmorphism | user | 20 |
+| kubeflow | org | 16 |
+| zubyul | user | 11 |
+| TeglonLabs | org | 5 |
+| AustinCStone | social | 4 |
+| migalkin | social | 5 |
+| wasita | social | 4 |
+| DJedamski | social | 3 |
+| kristinezheng | social | 2 |
+| M1shaaa | social | 2 |
+| **TOTAL** | | **87** |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 wallets)
+All wallets queried against `fullnode.mainnet.aptoslabs.com`. All returned `Resource not found`
+for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — these accounts use the
+**Fungible Asset (FA)** standard, not the legacy CoinStore. Recorded as NULL in DB.
+
+| World | Address (truncated) | Legacy APT |
+|-------|---------------------|-----------|
+| alice | 0xc793…cc7b | NULL (FA) |
+| bob | 0x0a3c…2d5d | NULL (FA) |
+| A | 0x8699…9d7a | NULL (FA) |
+| B–Z | … | NULL (FA) |
+
+### Multisig Contract Probes
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|--------------|---------|
+| A-B | 0x0da4…7003 | **2** | ✓ |
+| A-G | 0xf56c…0096 | **2** | ✓ |
+| Y-Z | 0xd3ff…b883 | **2** | ✓ |
+| S-T | 0x3b1c…7883 | **2** | ✓ |
+| V-W | 0x40fa…eb6d | **2** | ✓ |
+
+All 5 multisig contracts healthy — 2-of-N threshold confirmed.
+
+### MNX Markets (testnet.mnx.fi)
+**UNAVAILABLE** — Vercel deployment protection (auth required). No data extracted.
 
 ---
 
