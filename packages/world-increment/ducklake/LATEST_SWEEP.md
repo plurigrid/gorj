@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-26
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-26
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,107 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 351 |
+| Total Repo Snapshots | 1,272 |
+| Aptos Addresses Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | unavailable (SPA) |
+| Sources Covered | 3 orgs + 8 users + 6 social graph |
+| Total GitHub Stars | 103,878 |
+| Latest Observed Push | 2026-06-26T05:09:22Z |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+
+| Source | Type | Repos | Total Stars |
+|--------|------|-------|-------------|
+| plurigrid | org | 100 | ~157 |
+| kubeflow | org | 48 | ~101,980 |
+| TeglonLabs | org | 5 | 2 |
+| bmorphism | user | 100 | ~509 |
+| zubyul | user | 49 | ~40 |
+| migalkin | social | 19 | ~283 |
+| wasita | social | 11 | 5 |
+| AustinCStone | social | 40 | ~107 |
+| DJedamski | social | 6 | 3 |
+| kristinezheng | social | 5 | 0 |
+| M1shaaa | social | 8 | 0 |
+
+### Notable Repos (this sweep)
+- **kubeflow/kubeflow** — ⭐15,565 — flagship ML platform for Kubernetes
+- **kubeflow/pipelines** — ⭐4,119 — most popular ML pipeline (pushed 2026-04-10)
+- **migalkin/NodePiece** — ⭐144 — Compositional KG representations (ICLR'22)
+- **migalkin/StarE** — ⭐89 — Hyper-relational KG message passing (EMNLP 2020)
+- **AustinCStone/TextGAN** — ⭐92 — GAN for text generation (TensorFlow)
+- **TeglonLabs/jank-crane** — C++ — crane-jank converged-IR hub with GF3 convergence maps (pushed 2026-06-08)
+- **TeglonLabs/mathpix-gem** — ⭐2, 11 open issues — Math image to LaTeX Ruby gem
+- **wasita/wasita.github.io** — Svelte — Updated 2026-06-25 (most recently active in sweep)
+
+### GF(3) Color Chain Distribution
+
+| GF3 Trit | Name | Color | Rule | Count |
+|----------|------|-------|------|-------|
+| 0 | ERGODIC | #d3869b | id % 3 == 0 | 117 |
+| +1 | PLUS | #b8bb26 | id % 3 == 1 | 118 |
+| -1 | MINUS | #cc241d | id % 3 == 2 | 116 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (Aptos Mainnet)
+
+### Wallet Balances
+All 28 addresses (alice, bob, A–Z) returned **0 APT** — no registered
+`0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` resource found.
+Addresses exist on chain but APT coin storage has not been initialized.
+
+### Multisig Contract Probes — ALL HEALTHY
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|--------------|--------|
+| A-B | 0x0da4...7003 | 2 | ✓ healthy |
+| A-G | 0xf56c...0096 | 2 | ✓ healthy |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ healthy |
+| S-T | 0x3b1c...7883 | 2 | ✓ healthy |
+| V-W | 0x40fa...eb6d | 2 | ✓ healthy |
+
+### MNX Markets (testnet.mnx.fi)
+**Status: SPA only — no REST API data available.**
+All probed paths (`/api/markets`, `/api/v1/markets`, `/markets`, `/api/tickers`, `/v1/markets`)
+return the single-page application HTML shell. No market data extractable without a headless browser.
+
+---
+
+## GF(3) Color Chain — Sample (first 12 increments)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
 | 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 2  | plurigrid (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
+| 3  | plurigrid (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
+| 4  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
+| 5  | plurigrid (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
+| 6  | plurigrid (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
+| ... | ... | ... | ... | ... | ... |
+| 351 | M1shaaa (social) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain cycles: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → ...`
+
+---
+
+## DuckDB Ducklake Schema
+
+Located at: `packages/world-increment/ducklake/world-increments.duckdb`
+
+| Table | Rows |
+|-------|------|
+| world_increments | 351 |
+| repo_snapshots | 1,272 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 |
 
 ---
 
