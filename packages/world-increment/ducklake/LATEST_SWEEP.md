@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-27
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-27
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 34 |
+| Total Repo Snapshots | 1003 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Swarm Wallets | 28 (alice, bob, A–Z) |
+| Multisig Probes | 5 (all healthy, 2/2 sigs) |
+| MNX Markets | unavailable (Vercel auth) |
 
 ---
 
@@ -130,13 +133,19 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+## Notable Highlights (2026-06-27 sweep)
+- **kubeflow/kubeflow**: 15,746 stars (+181 since last sweep) — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,156 stars (+37) — ML pipeline for Kubernetes (pushed 2026-06-26)
+- **kubeflow/trainer**: 2,123 stars (+43) — Distributed AI Training (pushed 2026-06-26, active)
+- **migalkin/NodePiece**: 144 stars (+1) — scalable knowledge graph embeddings ICLR'22
+- **bmorphism/ocaml-mcp-sdk**: 61 stars (+1) — OCaml SDK for Model Context Protocol
+- **bmorphism/Gay.jl**: 187 open issues — wide-gamut GF(3) color sampling (pushed 2026-06-20)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **plurigrid/asi**: 26 stars (+10 since last sweep!) — topological chemputer (pushed 2026-06-26)
+- **plurigrid/gorj**: 850 open issues — this repo (forj + Rama + GF3)
+- **TeglonLabs/jank-crane**: new repo, C++, GF3 convergence maps (pushed 2026-06-08)
+
+## Hamming Swarm Status
+- All 28 Aptos wallets (alice, bob, A–Z): **0 APT** — no funded accounts on mainnet
+- All 5 multisig pairs (A-B, A-G, Y-Z, S-T, V-W): **HEALTHY** — 2-of-2 signature threshold
+- MNX testnet: **unavailable** — Vercel deployment protection (no bypass token)
