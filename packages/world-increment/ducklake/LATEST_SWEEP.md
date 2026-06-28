@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-06-28
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-28
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 346 |
+| Total Repo Snapshots | 1,267 |
+| Sources Covered | 3 orgs + 8 users + 6 social-graph users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | Unavailable (Vercel auth wall) |
 
 ---
 
@@ -131,12 +134,46 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **kubeflow/kubeflow**: 15,751 stars — flagship ML platform for Kubernetes (pushed 2026-06-18)
+- **kubeflow/pipelines**: 4,159 stars — most popular ML pipeline for Kubernetes (pushed 2026-06-27)
+- **kubeflow/spark-operator**: 3,129 stars — Kubernetes operator for Apache Spark (pushed 2026-06-26)
+- **migalkin/NodePiece**: 144 stars — scalable KG embeddings (ICLR'22, pushed 2026-05-07)
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **TeglonLabs/jank-crane**: C++ converged-IR hub with GF3 convergence maps (pushed 2026-06-08)
+- **plurigrid/gorj**: This very repo — forj + GF(3) color chain
+- **Increment 346**: closing this sweep cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 addresses: alice, bob, A–Z)
+**API:** `https://fullnode.mainnet.aptoslabs.com`
+
+All 28 addresses returned `Resource not found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.  
+These accounts exist on-chain but have not initialized an APT CoinStore — no APT balance registered.
+
+| World | Address (truncated) | Balance |
+|-------|---------------------|---------|
+| alice | 0xc793...4cc7b | uninitialized |
+| bob | 0x0a3c...12d5d | uninitialized |
+| A–Z (26 wallets) | 0x8699... → 0x7af0... | all uninitialized |
+
+### Multisig Contract Probes
+Probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4...7003 | 2 | ✓ healthy |
+| A-G | 0xf56c...0096 | 2 | ✓ healthy |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ healthy |
+| S-T | 0x3b1c...7883 | 2 | ✓ healthy |
+| V-W | 0x40fa...eb6d | 2 | ✓ healthy |
+
+All 5 multisig accounts are **live and healthy** requiring 2-of-N signatures.
+
+### MNX Markets (testnet.mnx.fi)
+**Status:** UNAVAILABLE — Vercel visitor password authentication required.  
+No market data could be extracted from any path (`/`, `/api/markets`).  
+`mnx_snapshots` table contains 0 rows.
