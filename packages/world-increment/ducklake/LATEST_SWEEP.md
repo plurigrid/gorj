@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-06-29
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-06-29
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,55 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 34 (cumulative) |
+| Total Repo Snapshots | 1,263 (cumulative) |
+| This-Run Sources | 3 orgs + 8 users = 391 repos |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts | 5 (all healthy) |
+| MNX Markets | unavailable (Vercel auth-gated) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## Hamming Swarm — Aptos Mainnet Snapshot (2026-06-29)
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+All 28 addresses queried via `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+**Result: All wallets return 0.00 APT** — registered on-chain but unfunded at snapshot time.
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+### Multisig Contract Health
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|:---:|:---:|
+| A-B | 0x0da4…7003 | 2 | ✓ |
+| A-G | 0xf56c…0096 | 2 | ✓ |
+| Y-Z | 0xd3ff…b883 | 2 | ✓ |
+| S-T | 0x3b1c…7883 | 2 | ✓ |
+| V-W | 0x40fa…eb6d | 2 | ✓ |
+
+All 5 multisig accounts require **2-of-N** signatures and responded correctly.
+
+### MNX Markets (testnet.mnx.fi)
+
+**UNAVAILABLE** — site returns HTTP 401, protected by Vercel deployment auth. All probed paths (`/api/markets`, `/api/v1/markets`, `/api/tickers`) are auth-gated. No market data recorded.
+
+---
+
+## GF(3) Color Chain — This Run (11 new Increments)
+
+| Source | Type | GF3 Trit | Color | Name |
+|--------|------|:---------:|-------|------|
+| plurigrid | org | 0 | `#d3869b` | **ERGODIC** |
+| kubeflow | org | +1 | `#b8bb26` | **PLUS** |
+| TeglonLabs | org | -1 | `#cc241d` | **MINUS** |
+| bmorphism | user | 0 | `#d3869b` | **ERGODIC** |
+| zubyul | user | +1 | `#b8bb26` | **PLUS** |
+| migalkin | social | -1 | `#cc241d` | **MINUS** |
+| DJedamski | social | 0 | `#d3869b` | **ERGODIC** |
+| wasita | social | +1 | `#b8bb26` | **PLUS** |
+| kristinezheng | social | -1 | `#cc241d` | **MINUS** |
+| M1shaaa | social | 0 | `#d3869b` | **ERGODIC** |
+| AustinCStone | social | +1 | `#b8bb26` | **PLUS** |
+
+GF(3) assignment: `id%3==0` → ERGODIC #d3869b | `id%3==1` → PLUS #b8bb26 | `id%3==2` → MINUS #cc241d
 
 ---
 
