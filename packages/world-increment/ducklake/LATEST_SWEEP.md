@@ -1,7 +1,116 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-02
 
-## Sweep Metadata
-- **Date:** 2026-04-12
+**Sweep date:** 2026-07-02  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+
+| Source | Type | Repos Captured |
+|--------|------|---------------|
+| plurigrid | org | 100 |
+| kubeflow | org | 48 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 100 |
+| zubyul | user | 49 |
+| migalkin | user (social graph) | 5 |
+| DJedamski | user (social graph) | 3 |
+| wasita | user (social graph) | 4 |
+| kristinezheng | user (social graph) | 2 |
+| M1shaaa | user (social graph) | 3 |
+| AustinCStone | user (social graph) | 4 |
+| **TOTAL** | | **323** |
+
+### Top Active Repos (by push recency)
+
+**plurigrid/**
+- `asi` — HTML, ⭐29, pushed 2026-06-29 — "everything is topological chemputer!"
+- `place` — TeX, 12 open issues, pushed 2026-06-29
+- `eirobri` — Clojure, 30 open issues, pushed 2026-06-30
+
+**TeglonLabs/**
+- `jank-crane` — C++, pushed 2026-06-08 — "crane-jank converged-IR hub: loopify pass spec, GF3 convergence maps"
+- `mathpix-gem` — Ruby, ⭐2, 11 open issues — LaTeX/OCR gem
+
+**Social Graph Highlights**
+- `migalkin/NodePiece` — Python, ⭐144, 21 forks — ICLR'22 KG representation
+- `migalkin/StarE` — Python, ⭐89, 16 forks — EMNLP 2020 hyper-relational KGs
+- `AustinCStone/TextGAN` — Python, ⭐92, 30 forks — TensorFlow GAN for text
+- `wasita/wasita.github.io` — Svelte, pushed 2026-07-02 (fresh today)
+- `kristinezheng/kristinezheng.github.io` — pushed 2026-07-01
+
+### GF(3) Color Chain Distribution
+
+| GF3 Name | Trit | Color   | Count |
+|----------|------|---------|-------|
+| ERGODIC  | 0    | #d3869b | 107   |
+| PLUS     | +1   | #b8bb26 | 108   |
+| MINUS    | -1   | #cc241d | 108   |
+
+Rule: `id%3==0` → ERGODIC, `id%3==1` → PLUS, `id%3==2` → MINUS
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 addresses)
+
+All 28 Hamming-swarm accounts (alice, bob, A–Z) exist on Aptos mainnet
+but hold **0.00000000 APT** — accounts are registered with no CoinStore balance.
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob   | 0x0a3c...12d5 | 0.0 |
+| A–Z   | various       | 0.0 (all)     |
+
+### Multisig Contract Probes (5 pairs)
+
+All 5 multisig contracts are **healthy**, each requiring 2-of-N signatures:
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B  | 0x0da4...7003 | 2 | ✓ |
+| A-G  | 0xf56c...0096 | 2 | ✓ |
+| Y-Z  | 0xd3ff...b883 | 2 | ✓ |
+| S-T  | 0x3b1c...7883 | 2 | ✓ |
+| V-W  | 0x40fa...eb6d | 2 | ✓ |
+
+**Assessment:** Swarm multisig topology fully operational. All pairs healthy at 2-of-N.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: UNAVAILABLE** — `https://testnet.mnx.fi/api/markets` returned HTTP 401 Unauthorized.
+The testnet requires authentication; no market data could be extracted.
+
+---
+
+## DuckDB Schema Summary
+
+```
+world_increments   323 rows  — GF3-tagged repo snapshot events
+repo_snapshots     323 rows  — full repo metadata
+aptos_snapshots     28 rows  — Hamming swarm wallet balances
+multisig_probes      5 rows  — multisig contract health probes
+mnx_snapshots        1 row   — MNX market status (unavailable)
+```
+
+---
+
+## Notable Signals
+
+1. **plurigrid/asi** most-starred plurigrid repo (⭐29), pushed 2026-06-29 — active "topological chemputer" work
+2. **wasita** pushed today (2026-07-02) — live social graph activity
+3. **TeglonLabs/jank-crane** references GF3 in its description — cross-system convergence marker
+4. **All 28 Hamming swarm accounts** exist on mainnet but are unfunded (0 APT) — swarm registered, not capitalized
+5. **All 5 multisig pairs** online at 2-of-N — governance structure intact
+
+---
+
+## Previous Sweep Metadata
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
