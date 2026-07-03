@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-03
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-03
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,82 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 1335 |
+| Sources Covered | 3 orgs + 8 users (GitHub sweep) |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| MNX Market Snapshots | 0 (auth required) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — Increments 13–24 (this sweep)
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+GF(3) rule: `id%3==0` → ERGODIC #d3869b · `id%3==1` → PLUS #b8bb26 · `id%3==2` → MINUS #cc241d
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+This run added increment id=24 (ERGODIC #d3869b) for the consolidated multi-org GitHub sweep.
+
+Cumulative chain (ids 1–24): 8 PLUS · 8 MINUS · 8 ERGODIC — balanced GF(3) sequence.
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-07-03)
+
+### Aptos Wallet Balances (28 addresses)
+
+All 28 Hamming-swarm addresses probed against Aptos mainnet fullnode.
+
+**Result:** All return `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+Accounts exist on-chain but no APT CoinStore has been initialized / no balance. Recorded as NULL.
+
+| World | Address | Balance APT |
+|-------|---------|-------------|
+| alice | 0xc793ac...4cc7b | null |
+| bob | 0x0a3c00...512d5d | null |
+| A | 0x8699ed...9d7a | null |
+| B | 0x3f892e...cb13 | null |
+| C | 0x38b99e...535e | null |
+| D | 0xf77656...fdd1 | null |
+| E | 0xdc1d9d...8d36 | null |
+| F | 0x18a14b...f71 | null |
+| G | 0x69a394...f32 | null |
+| H | 0xce67c3...300f | null |
+| I | 0x070fe5...1fc9 | null |
+| J | 0x4d964d...f54 | null |
+| K | 0xa73204...dc4 | null |
+| L | 0x7c2eae...ba9 | null |
+| M | 0x6fed37...f2e9 | null |
+| N | 0xe7dde6...1b2c | null |
+| O | 0x73252b...a89d | null |
+| P | 0x621879...948 | null |
+| Q | 0xac40fa...89a9 | null |
+| R | 0x7ce605...6e10 | null |
+| S | 0xb87530...386 | null |
+| T | 0x357819...588 | null |
+| U | 0x75860d...956 | null |
+| V | 0xb59dd8...f2c3 | null |
+| W | 0x5f32ae...b0 | null |
+| X | 0xa95cbb...47d | null |
+| Y | 0xd8e328...44c4 | null |
+| Z | 0x7af0ef...97c | null |
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4f4...003 | 2 | ✓ |
+| A-G | 0xf56c4a...096 | 2 | ✓ |
+| Y-Z | 0xd3ffe1...883 | 2 | ✓ |
+| S-T | 0x3b1c3a...883 | 2 | ✓ |
+| V-W | 0x40fad7...b6d | 2 | ✓ |
+
+**All 5 multisig contracts healthy — 2-of-N threshold confirmed.**
+
+### MNX Testnet Markets
+
+`testnet.mnx.fi` is Vercel-protected (HTTP 401, visitor password required). No market data accessible without credentials. `mnx_snapshots` table: 0 rows.
+
+---
 
 ---
 
@@ -91,22 +143,24 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ---
 
-## Repo Counts by Source
+## Repo Counts by Source (cumulative DB: 1335 rows)
+
+### This Sweep (391 new repos)
 
 | Source | Type | Repos |
 |--------|------|-------|
 | plurigrid | org | 100 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| kubeflow | org | 48 |
+| zubyul | user | 49 |
+| AustinCStone | user | 40 |
+| wasita | user | 11 |
+| migalkin | user | 19 |
+| M1shaaa | user | 8 |
+| DJedamski | user | 6 |
+| kristinezheng | user | 5 |
+| TeglonLabs | org | 5 |
+| **TOTAL** | | **391** |
 
 ---
 
