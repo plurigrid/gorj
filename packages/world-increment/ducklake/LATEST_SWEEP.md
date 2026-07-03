@@ -1,6 +1,109 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-07-03
 
-## Sweep Metadata
+**Generated:** 2026-07-03 UTC  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+
+| Source | Type | Repos Captured |
+|--------|------|----------------|
+| plurigrid | org | 27 |
+| kubeflow | org | 14 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 10 |
+| zubyul | user | 12 |
+| migalkin | social graph | 6 |
+| DJedamski | social graph | 4 |
+| wasita | social graph | 6 |
+| kristinezheng | social graph | 4 |
+| M1shaaa | social graph | 4 |
+| AustinCStone | social graph | 7 |
+| **Total** | | **102** |
+
+### Notable Activity (pushed within 7 days of 2026-07-03)
+
+| Repo | Stars | Language | Description |
+|------|-------|----------|-------------|
+| kubeflow/hub | 174 | Go | Model Registry — pushed today |
+| kubeflow/dashboard | 16 | TypeScript | Central Dashboard — pushed today |
+| kubeflow/trainer | 2129 | Go | Distributed AI training — pushed today |
+| kubeflow/pipelines | 4169 | Python | ML Pipelines — pushed today |
+| plurigrid/gorj | 0 | Clojure | **This repo** — 943 open issues, pushed today |
+| bmorphism/Gay.jl | 2 | Julia | 187 open issues, active development |
+| plurigrid/eirobri | 0 | Clojure | EiRoBri replay world — 30 open issues |
+| wasita/wasita.github.io | 1 | Svelte | Personal site — pushed yesterday |
+
+### GF(3) Color Chain Distribution (this run, 102 increments)
+
+| Trit | Name | Color | Count |
+|------|------|-------|-------|
+| 0 | ERGODIC | `#d3869b` | 34 |
+| +1 | PLUS | `#b8bb26` | 34 |
+| -1 | MINUS | `#cc241d` | 34 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Balances (28 addresses: alice, bob, A–Z)
+
+**All 28 addresses returned 0 APT.** The Aptos mainnet fullnode returned no
+`CoinStore` resource — accounts not funded on mainnet (expected for dev/testnet addresses).
+
+| Range | Addresses | APT Total |
+|-------|-----------|-----------|
+| alice, bob | 2 | 0.0 |
+| A–M | 13 | 0.0 |
+| N–Z | 13 | 0.0 |
+| **All** | **28** | **0.0 APT** |
+
+### Multisig Contract Probes
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | `0x0da4f428...` | 2 | ✅ |
+| A-G | `0xf56c4a1c...` | 2 | ✅ |
+| Y-Z | `0xd3ffe181...` | 2 | ✅ |
+| S-T | `0x3b1c3ae9...` | 2 | ✅ |
+| V-W | `0x40fad7b4...` | 2 | ✅ |
+
+**All 5 multisig contracts healthy — 2-of-2 signature requirement confirmed.**
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: UNAVAILABLE** — All endpoints return Vercel authentication challenge.
+No market data extracted.
+
+---
+
+## DuckDB Tables (world-increments.duckdb)
+
+| Table | New Rows | Notes |
+|-------|----------|-------|
+| world_increments | 102 | GF3 color-chained repo events |
+| repo_snapshots | 102 | Full repo metadata |
+| aptos_snapshots | 28 | All 0.0 APT |
+| multisig_probes | 5 | All healthy, sigs_required=2 |
+| mnx_snapshots | 0 | Auth blocked |
+
+---
+
+## Key Signals
+
+- **plurigrid/gorj** has 943 open issues — highest in plurigrid org; warrants triage
+- **bmorphism/Gay.jl** has 187 open issues — highly active GF(3) color research
+- **kubeflow** ecosystem very active: trainer, pipelines, hub, dashboard all pushed today
+- **TeglonLabs/jank-crane** links crane IR to GF(3) convergence maps — aligned with gorj topology
+- **All Hamming swarm multisigs healthy** — 2-of-2 quorum intact across all 5 pairs
+- **Aptos wallets at 0 APT** — swarm not funded on mainnet
+
+## Previous Sweep Metadata
 - **Date:** 2026-04-12
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
