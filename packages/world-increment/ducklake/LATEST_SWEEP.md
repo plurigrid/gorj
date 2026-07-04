@@ -1,8 +1,118 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-04
 
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+Generated: 2026-07-04 UTC
+DB: `packages/world-increment/ducklake/world-increments.duckdb`
+Total world_increments: **336** | repo_snapshots: **1257** | aptos_snapshots: **28** | multisig_probes: **5**
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+
+| Source | Type | Repos |
+|--------|------|-------|
+| plurigrid | org | 100 |
+| kubeflow | org | 48 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 100 |
+| zubyul | user | 49 |
+| migalkin (zubyul social) | user | 19 |
+| wasita (zubyul social) | user | 11 |
+| AustinCStone (zubyul social) | user | 40 |
+| **Total** | | **372 repos** |
+
+### Top Repos by Stars
+
+#### plurigrid
+| Repo | Lang | ★ | Forks | Pushed |
+|------|------|---|-------|--------|
+| plurigrid/asi | HTML | 28 | 8 | 2026-06-29 |
+| plurigrid/ontology | JavaScript | 8 | 9 | 2025-05-27 |
+| plurigrid/vcg-auction | Rust | 7 | 2 | 2023-03-16 |
+| plurigrid/agent | Python | 5 | 1 | 2023-03-31 |
+| plurigrid/StochFlow | Python | 4 | 1 | 2024-03-20 |
+
+#### kubeflow
+| Repo | Lang | ★ | Forks | Pushed |
+|------|------|---|-------|--------|
+| kubeflow/kubeflow | — | 15,761 | 2,683 | 2026-06-18 |
+| kubeflow/pipelines | Python | 4,169 | 2,023 | 2026-07-03 |
+
+#### TeglonLabs
+| Repo | Lang | ★ | Pushed |
+|------|------|---|--------|
+| TeglonLabs/jank-crane | C++ | 0 | 2026-06-08 |
+| TeglonLabs/mathpix-gem | Ruby | 2 | 2026-01-01 |
+| TeglonLabs/coin-flip-mcp | JavaScript | 0 | 2025-09-21 |
+
+#### bmorphism (most recent)
+| Repo | Lang | ★ | Pushed |
+|------|------|---|--------|
+| bmorphism/Gay.jl | Julia | 2 | 2026-07-04 |
+| bmorphism/satreadout | HTML | 0 | 2026-06-20 |
+| bmorphism/bci-preview | HTML | 0 | 2026-06-20 |
+| bmorphism/world | Python | 0 | 2026-06-02 |
+| bmorphism/oxgame | OCaml | 0 | 2026-05-15 |
+
+#### Zubyul Social Graph highlights
+| Repo | User | Lang | ★ |
+|------|------|------|---|
+| migalkin/NodePiece | migalkin | Python | 144 |
+| migalkin/StarE | migalkin | Python | 89 |
+| AustinCStone/TextGAN | AustinCStone | Python | 92 |
+| wasita/wasita.github.io | wasita | Svelte | 1 |
+
+### GF(3) Color Chain Distribution (this sweep — 302 primary repos)
+| Name | Trit | Color | Count |
+|------|------|-------|-------|
+| PLUS | +1 | `#b8bb26` | 109 |
+| MINUS | -1 | `#cc241d` | 108 |
+| ERGODIC | 0 | `#d3869b` | 108 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet)
+
+All 28 addresses (alice, bob, A–Z) returned **0.000000 APT** — accounts on-chain but CoinStore resources not initialized (unfunded). Consistent with prior sweeps.
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793…cc7b | 0.0 |
+| bob | 0x0a3c…12d5 | 0.0 |
+| A–Z | 0x8699…–0x7af0… | 0.0 each |
+
+### Multisig Contract Probes (Aptos Mainnet)
+
+All 5 multisig contracts are **healthy** — `num_signatures_required = 2`.
+
+| Pair | Address (truncated) | Sigs Required | Status |
+|------|---------------------|---------------|--------|
+| A-B | 0x0da4…7003 | 2 | healthy |
+| A-G | 0xf56c…0096 | 2 | healthy |
+| Y-Z | 0xd3ff…b883 | 2 | healthy |
+| S-T | 0x3b1c…7883 | 2 | healthy |
+| V-W | 0x40fa…eb6d | 2 | healthy |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Unavailable** — HTTP 401 (Vercel deployment protection / visitor password gate). No market data accessible. No entries in `mnx_snapshots`.
+
+---
+
+## DuckDB Table Counts
+
+```
+world_increments  336 rows  (GF3-colored event log, cumulative)
+repo_snapshots    1257 rows (cumulative across sweeps)
+aptos_snapshots   28 rows   (this sweep)
+multisig_probes   5 rows    (this sweep)
+mnx_snapshots     0 rows    (unavailable)
+```
+
+GF(3) color: `id%3==0` → trit=0 ERGODIC `#d3869b` | `id%3==1` → trit=+1 PLUS `#b8bb26` | `id%3==2` → trit=-1 MINUS `#cc241d`
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
