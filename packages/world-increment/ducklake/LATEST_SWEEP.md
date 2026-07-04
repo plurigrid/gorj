@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-04
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-04
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 1008 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Snapshotted | 28 |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Testnet Markets | Unavailable (Vercel auth) |
 
 ---
 
@@ -130,13 +133,31 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+## Notable Highlights (2026-07-04 sweep)
+- **kubeflow/kubeflow**: 15,761 stars (+196 since Apr) — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,169 stars (+50 since Apr), 416 open issues — most popular ML pipeline for K8s
+- **kubeflow/spark-operator**: 3,132 stars (+21 since Apr)
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for MCP using Jane Street's oxcaml_effect
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **plurigrid/asi**: 28 stars (+12 since Apr) — topological chemputer (pushed 2026-06-29)
+- **plurigrid/gorj**: 962 open issues, pushed 2026-07-04 — this very repo, highly active
+- **bmorphism/Gay.jl**: 187 open issues vs 2 stars — very active internal GF(3) color tool
+- **Increment 24**: ERGODIC — current sweep; all 5 Hamming multisig contracts healthy (2-of-N)
+
+## Hamming Swarm Snapshot (2026-07-04)
+
+### APT Balances — All 28 addresses: 0.0 APT
+All addresses queried against `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` returned zero balance. Possible explanations: accounts unfunded on mainnet, assets in non-APT tokens, or value locked in staking/DeFi.
+
+### Multisig Contracts — 5/5 Healthy (2-of-N threshold)
+| Pair | Contract Address | Sigs Required |
+|------|-----------------|--------------|
+| A-B | 0x0da4f428…7003 | 2 |
+| A-G | 0xf56c4a1c…0096 | 2 |
+| Y-Z | 0xd3ffe181…b883 | 2 |
+| S-T | 0x3b1c3ae9…7883 | 2 |
+| V-W | 0x40fad7b4…eb6d | 2 |
+
+### MNX Testnet
+`https://testnet.mnx.fi` is protected by Vercel deployment authentication. No market data extractable without bypass token.
