@@ -1,142 +1,123 @@
-# World-Increment Sweep — 2026-04-12
-
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
-- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+# World Increment Sweep + Hamming Swarm Snapshot
+**Date:** 2026-07-05  
+**GF(3) Chain:** ERGODIC(trit=0,#d3869b) → PLUS(trit=1,#b8bb26) → MINUS(trit=-1,#cc241d) → repeat
 
 ---
 
-## Summary Counts
+## JOB 1: GitHub Social Graph Sweep
 
-| Metric | Value |
-|--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+### Summary
+- **Unique repos indexed:** 645
+- **World increment entries:** 34
+- **Sources covered:** plurigrid, kubeflow, TeglonLabs (orgs); bmorphism, zubyul, migalkin, DJedamski, wasita, kristinezheng, M1shaaa, AustinCStone (users)
 
----
-
-## GF(3) Color Chain — All 12 Increments
-
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
-
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
-
----
-
-## Top Repos by Source
-
-### plurigrid (100 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| asi | HTML | 16 | 2026-04-10 |
-| ontology | JavaScript | 7 | 2025-05-27 |
-| asi-skills | Julia | 3 | 2026-04-09 |
-| zig-syrup | Zig | 2 | 2026-04-09 |
-| vivarium | Clojure | 1 | 2026-04-08 |
-
-### kubeflow (47 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| kubeflow | — | 15565 | 2026-01-05 |
-| pipelines | Python | 4119 | 2026-04-10 |
-| spark-operator | Python | 3111 | 2026-04-10 |
-| trainer | Go | 2080 | 2026-04-10 |
-| katib | Python | 1676 | 2026-04-02 |
-
-### TeglonLabs (53 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| acp.el | — | 1 |
-| mcp-terminal | — | 1 |
-
-### bmorphism (100 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
-| anti-bullshit-mcp-server | JavaScript | 23 |
-| shitcoin | Python | 5 |
-| open-location-code-zig | Zig | 3 |
-
-### migalkin (30 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| NodePiece | Python | 143 |
-| StarE | Python | 88 |
-| kgcourse2021 | HTML | 25 |
-
-### AustinCStone (43 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| TextGAN | Python | 92 |
-| StereoVisionMRF | Python | 11 |
-| SpectralClustering | Python | 3 |
-
----
-
-## Repo Counts by Source
+### Repo Counts by Source
 
 | Source | Type | Repos |
 |--------|------|-------|
 | plurigrid | org | 100 |
+| kubeflow | org | 48 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| zubyul | user | 49 |
+| TeglonLabs | org | 5 |
+| migalkin | user | 19 |
+| AustinCStone | user | 40 |
+| wasita | user | 11 |
+| M1shaaa | user | 8 |
+| DJedamski | user | 6 |
+| kristinezheng | user | 5 |
+
+### Top Repos by Stars
+
+| Repo | Language | Stars |
+|------|----------|-------|
+| kubeflow/kubeflow | — | ★15762 |
+| kubeflow/pipelines | Python | ★4169 |
+| kubeflow/spark-operator | Python | ★3132 |
+| kubeflow/trainer | Go | ★2129 |
+| kubeflow/katib | Python | ★1689 |
+| kubeflow/examples | Jsonnet | ★1460 |
+| kubeflow/community-distribution | YAML | ★1028 |
+| kubeflow/manifests | YAML | ★1010 |
+| migalkin/NodePiece | Python | ★144 |
+| AustinCStone/TextGAN | Python | ★92 |
+| migalkin/StarE | Python | ★89 |
+| migalkin/kgcourse2021 | HTML | ★25 |
+| TeglonLabs/mathpix-gem | Ruby | ★2 |
+
+### Notable Social Graph Signals
+
+- **migalkin**: KG/GNN researcher — NodePiece (★144), StarE (★89), NBFNet MLX impl (★10), RWL (★8)
+- **AustinCStone**: TextGAN (★92), bmfork/bmforkupdate repos suggest active bitmind subnet work (2025-05)
+- **wasita**: Active Svelte/web dev — wasita.github.io last pushed **2026-07-05T03:54** (today)
+- **kristinezheng**: MIT cognitive science researcher — Lookit studies, last push 2026-07-01
+- **TeglonLabs/jank-crane**: `crane-jank converged-IR hub: loopify pass spec, GF3 convergence maps, simonw workflow` — C++, last push 2026-06-08
+- **TeglonLabs/coin-flip-mcp**: Random.org coin flip MCP server, 2 forks
 
 ---
 
-## Schema
-```sql
-world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
-                 source_type, source_name, event_type, repo_name,
-                 actor, snapshot_hash)
+## JOB 2: Hamming Swarm Snapshot (Aptos Mainnet)
 
-repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
-               full_name, language, stars, forks, open_issues,
-               pushed_at, description)
+### Wallet Balances (alice, bob, A–Z)
 
-aptos_snapshots(timestamp, world, address, balance_apt)
-multisig_probes(timestamp, pair, address, sigs_required, healthy)
-mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
-```
+| World | Address (prefix) | APT Balance |
+|-------|-----------------|-------------|
+| alice | 0xc793acdec1… | 0.0 APT |
+| bob | 0x0a3c00c58f… | 0.0 APT |
+| A | 0x8699edc096… | 0.0 APT |
+| B | 0x3f892ebe6e… | 0.0 APT |
+| C | 0x38b99e63ad… | 0.0 APT |
+| D | 0xf77656248f… | 0.0 APT |
+| E | 0xdc1d9d533b… | 0.0 APT |
+| F | 0x18a14b5b4b… | 0.0 APT |
+| G | 0x69a394c0b0… | 0.0 APT |
+| H | 0xce67c327a7… | 0.0 APT |
+| I | 0x070fe5d74e… | 0.0 APT |
+| J | 0x4d964db8f5… | 0.0 APT |
+| K | 0xa732040a6b… | 0.0 APT |
+| L | 0x7c2eaeafad… | 0.0 APT |
+| M | 0x6fed37a755… | 0.0 APT |
+| N | 0xe7dde6da0a… | 0.0 APT |
+| O | 0x73252b6011… | 0.0 APT |
+| P | 0x6218792de4… | 0.0 APT |
+| Q | 0xac40fa50b8… | 0.0 APT |
+| R | 0x7ce605cc8f… | 0.0 APT |
+| S | 0xb8753014e4… | 0.0 APT |
+| T | 0x35781dc0e4… | 0.0 APT |
+| U | 0x75860da475… | 0.0 APT |
+| V | 0xb59dd81703… | 0.0 APT |
+| W | 0x5f32aef70f… | 0.0 APT |
+| X | 0xa95cbbd116… | 0.0 APT |
+| Y | 0xd8e32848f1… | 0.0 APT |
+| Z | 0x7af0ef6e1b… | 0.0 APT |
 
-## GF(3) Assignment Rule
-- `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
-- `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
-- `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
+**Note:** All 28 addresses returned 0.0 APT. Accounts either have no CoinStore<AptosCoin> resource initialized or hold zero balance on Aptos mainnet.
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+### Multisig Contract Probes (5 pairs)
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4f428a0… | 2-of-N | healthy |
+| A-G | 0xf56c4a1c09… | 2-of-N | healthy |
+| Y-Z | 0xd3ffe1812b… | 2-of-N | healthy |
+| S-T | 0x3b1c3ae905… | 2-of-N | healthy |
+| V-W | 0x40fad7b423… | 2-of-N | healthy |
+
+All 5 multisig contracts respond correctly, all configured as 2-of-N threshold.
+
+### MNX Markets (testnet.mnx.fi)
+
+Status: HTTP 401 — Vercel deployment protection active (password required). Market data unavailable this run.
+
+---
+
+## DuckDB Schema
+
+File: packages/world-increment/ducklake/world-increments.duckdb
+
+Tables:
+  world_increments  — 34 rows — GF(3) color-chained event log
+  repo_snapshots    — 1266 rows — per-repo GitHub metadata
+  aptos_snapshots   — 28 rows — Aptos wallet balances (alice,bob,A-Z)
+  multisig_probes   — 5 rows — on-chain multisig threshold config
+  mnx_snapshots     — 0 rows — MNX market data (unavailable this run)
