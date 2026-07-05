@@ -1,6 +1,99 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-05
 
-## Sweep Metadata
+**Timestamp:** 2026-07-05T06:30 UTC
+**GF(3) chain:** id%3==0 → trit=0 ERGODIC #d3869b · id%3==1 → trit=1 PLUS #b8bb26 · id%3==2 → trit=-1 MINUS #cc241d
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+
+| Source | Type | Repos Captured |
+|--------|------|----------------|
+| plurigrid | org | 15 |
+| kubeflow | org | 14 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 9 |
+| zubyul | user | 7 |
+| migalkin (social) | user | 3 |
+| wasita (social) | user | 2 |
+| AustinCStone (social) | user | 1 |
+| DJedamski (social) | user | 1 |
+| **Total** | | **57** |
+
+### Notable Repos (by push recency)
+
+| full_name | lang | stars | pushed_at | notes |
+|-----------|------|-------|-----------|-------|
+| plurigrid/gorj | Clojure | 0 | 2026-07-05 | 981 open issues; GF(3) nREPL routing |
+| bmorphism/Gay.jl | Julia | 2 | 2026-07-05 | 187 open issues; splittable determinism |
+| wasita/wasita.github.io | Svelte | 1 | 2026-07-05 | 8 open issues |
+| kubeflow/pipelines | Python | 4169 | 2026-07-04 | 416 open issues |
+| kubeflow/trainer | Go | 2129 | 2026-07-03 | Distributed AI training on K8s |
+| kubeflow/spark-operator | Python | 3132 | 2026-07-02 | Kubernetes Spark lifecycle |
+| kubeflow/kubeflow | — | 15762 | 2026-06-18 | Main ML toolkit for K8s |
+| TeglonLabs/jank-crane | C++ | 0 | 2026-06-08 | GF3 convergence maps; loopify pass |
+| bmorphism/ocaml-mcp-sdk | OCaml | 61 | 2026-03-16 | OCaml SDK for MCP via Jane Street effects |
+| migalkin/NodePiece | Python | 144 | 2026-05-07 | ICLR'22 KG embeddings |
+
+### DuckDB State
+
+```
+world_increments: 80 rows (cumulative)
+repo_snapshots:   1001 rows (cumulative)
+```
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 wallets)
+
+All 28 Hamming-swarm addresses probed against Aptos mainnet fullnode.
+**Result:** All wallets return `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+Accounts are registered on-chain (sequence numbers present) but have **no APT CoinStore initialized** — balance recorded as 0.0 APT.
+
+| World | Address (truncated) | APT Balance |
+|-------|---------------------|-------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...512d | 0.0 |
+| A–Z (26) | 0x8699...–0x7af0... | 0.0 each |
+
+> alice account has sequence_number=72 — has transacted on-chain before, but no APT CoinStore.
+
+### Multisig Contract Probes (5 pairs)
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4...7003 | 2 | ✓ |
+| A-G | 0xf56c...0096 | 2 | ✓ |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ |
+| S-T | 0x3b1c...7883 | 2 | ✓ |
+| V-W | 0x40fa...eb6d | 2 | ✓ |
+
+**All multisigs healthy — 2-of-N threshold confirmed on all pairs.**
+
+### MNX Markets (testnet.mnx.fi)
+
+**UNAVAILABLE** — Vercel deployment requires authentication. All API paths return a Vercel auth gate. No market data extractable.
+
+---
+
+## DuckDB Schema
+
+```
+packages/world-increment/ducklake/world-increments.duckdb
+├── world_increments    (80 rows) — GF(3) colored increment log
+├── repo_snapshots      (1001 rows) — GitHub repo snapshots
+├── aptos_snapshots     (28 rows) — Hamming swarm wallet balances
+├── multisig_probes     (5 rows) — Multisig health checks
+└── mnx_snapshots       (0 rows) — MNX markets unavailable (Vercel auth)
+```
+
+## Sweep Metadata (legacy)
 - **Date:** 2026-04-12
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
