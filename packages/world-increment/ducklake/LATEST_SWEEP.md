@@ -1,7 +1,122 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot
+
+**Timestamp:** 2026-07-05T00:00Z  
+**Branch:** world-increment/sweep-2026-07-05  
+**GF(3) color chain:** trit=0 → ERGODIC #d3869b | trit=1 → PLUS #b8bb26 | trit=-1 → MINUS #cc241d
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Swept
+
+| Source | Type | Repos |
+|---|---|---|
+| plurigrid | org | 100 |
+| kubeflow | org | 48 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 100 |
+| zubyul | user | 49 |
+| migalkin | user (social graph) | 19 |
+| DJedamski | user (social graph) | 6 |
+| wasita | user (social graph) | 11 |
+| kristinezheng | user (social graph) | 5 |
+| M1shaaa | user (social graph) | 8 |
+| AustinCStone | user (social graph) | 30 |
+| **TOTAL** | | **381** |
+
+### Top Repos by Stars
+
+| Org/User | Repo | Stars | Language |
+|---|---|---|---|
+| kubeflow | kubeflow | 15,761 | - |
+| kubeflow | pipelines | 4,169 | Python |
+| kubeflow | spark-operator | 3,132 | Python |
+| kubeflow | trainer | 2,129 | Go |
+| kubeflow | katib | 1,689 | Python |
+
+### Recently Active (TeglonLabs)
+
+| Repo | Language | Pushed | Description |
+|---|---|---|---|
+| jank-crane | C++ | 2026-06-08 | crane-jank converged-IR hub: loopify pass spec, GF3 convergence maps |
+| mathpix-gem | Ruby | 2026-01-01 | LaTeX/SMILES/Markdown OCR SDK |
+| coin-flip-mcp | JavaScript | 2025-09-21 | MCP server random.org coin flips |
+
+### DuckDB Tables
+- `world_increments`: 381 rows (GF3 trit-colored)
+- `repo_snapshots`: 381 rows (stars, forks, issues, pushed_at, language)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (Aptos Mainnet)
+
+### Wallet Balances (via `0x1::coin::balance` view function)
+
+| World | Address (prefix) | Balance (APT) |
+|---|---|---|
+| alice | 0xc793acde... | 0.43643352 |
+| bob | 0x0a3c00c5... | 12.65700700 |
+| A | 0x8699edc0... | 0.05176700 |
+| B | 0x3f892ebe... | 0.03625600 |
+| C | 0x38b99e63... | 0.01018500 |
+| D | 0xf7765624... | 0.01162900 |
+| E | 0xdc1d9d53... | 0.00937200 |
+| F | 0x18a14b5b... | 1.96051600 |
+| G | 0x69a394c0... | 0.00068100 |
+| H | 0xce67c327... | 0.00168100 |
+| I | 0x070fe5d7... | 0.00068100 |
+| J | 0x4d964db8... | 1.89509300 |
+| K | 0xa732040a... | 0.16196100 |
+| L | 0x7c2eaeaf... | 1.92726900 |
+| M | 0x6fed37a7... | 0.11228500 |
+| N | 0xe7dde6da... | 0.10612100 |
+| O | 0x73252b60... | 0.21013600 |
+| P | 0x62187927... | 0.14013600 |
+| Q | 0xac40fa50... | 0.10324000 |
+| R | 0x7ce605cc... | 0.09021700 |
+| S | 0xb8753014... | 0.09178800 |
+| T | 0x35781dc0... | 0.07371300 |
+| U | 0x75860da4... | 0.05577300 |
+| V | 0xb59dd817... | 0.04883299 |
+| W | 0x5f32aef7... | 0.04070500 |
+| X | 0xa95cbbd1... | 0.04257700 |
+| Y | 0xd8e32848... | 0.04444900 |
+| Z | 0x7af0ef6e... | 0.02426800 |
+
+**Total swarm balance:** ~20.34 APT  
+**Note:** CoinStore resource returns 404 for all addresses (migrated to Fungible Asset model); balances retrieved via `0x1::coin::balance` view function successfully.
+
+### Multisig Contract Probes
+
+All 5 multisig contracts are **healthy** (2-of-N sigs required):
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|---|---|---|---|
+| A-B | 0x0da4f428... | 2 | yes |
+| A-G | 0xf56c4a1c... | 2 | yes |
+| Y-Z | 0xd3ffe181... | 2 | yes |
+| S-T | 0x3b1c3ae9... | 2 | yes |
+| V-W | 0x40fad7b4... | 2 | yes |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: UNAVAILABLE** — All endpoints return HTTP 401 Unauthorized. SPA also returns 401. No market data extracted.
+
+---
+
+## DuckDB Location
+
+```
+packages/world-increment/ducklake/world-increments.duckdb
+```
+
+Tables: `world_increments`, `repo_snapshots`, `aptos_snapshots`, `multisig_probes`, `mnx_snapshots`
+
+---
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
+- **Date:** 2026-07-05
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
