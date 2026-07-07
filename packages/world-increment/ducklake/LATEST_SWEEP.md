@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-07
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-07
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments (this run) | 325 |
+| Total Repo Snapshots (cumulative) | 1,269 |
+| Sources Covered | 3 orgs + 8 users + 6 social-graph users |
+| Aptos Wallets Sampled | 28 |
+| Aptos Total Balance | 20.3448 APT |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-2) |
+| MNX Markets | Unavailable (Vercel auth wall) |
 
 ---
 
@@ -131,12 +135,24 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
+
+### GitHub Social Graph (2026-07-07)
 - **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes
+- **migalkin/NodePiece**: 144★ — scalable KG embeddings (ICLR'22)
+- **migalkin/StarE**: 89★ — hyper-relational KG (EMNLP'20)
+- **AustinCStone/TextGAN**: 92★ — GAN text generation in TensorFlow
+- **TeglonLabs/jank-crane**: crane-jank converged-IR hub, GF3 convergence maps (pushed 2026-06-08, most recent TeglonLabs)
+- **wasita/wasita.github.io**: most recently active social-graph node (pushed 2026-07-06)
+- **kristinezheng/kristinezheng.github.io**: pushed 2026-07-01
+
+### Hamming Swarm — Aptos Mainnet (2026-07-07)
+- **bob** (0x0a3c00c5...): 12.657 APT — largest holder
+- **F** (0x18a14b5b...): 1.961 APT
+- **L** (0x7c2eaeaf...): 1.927 APT
+- **J** (0x4d964db8...): 1.895 APT
+- **alice** (0xc793acde...): 0.436 APT
+- All 5 multisig contracts (A-B, A-G, Y-Z, S-T, V-W) healthy — 2-of-2 threshold
+- Addresses G, H, I are near-zero (≤0.002 APT each)
+- Legacy CoinStore module returned 404 for all; balances confirmed via `0x1::coin::balance` view function
+- **MNX testnet**: inaccessible (Vercel deployment protection / password wall)
