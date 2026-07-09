@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-09
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-09
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,13 +12,51 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 25 |
+| Total Repo Snapshots | 944 |
+| Aptos Addresses Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| GitHub Sweep | BLOCKED — proxy scoped to plurigrid/gorj only |
+| MNX Markets | UNAVAILABLE — Vercel auth required |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 2: Hamming Swarm Snapshot (2026-07-09)
+
+### Aptos Wallet Balances (mainnet, ledger ~v6.2B)
+
+All 28 addresses returned `resource_not_found` for
+`0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — no CoinStore initialized.
+
+| World | Address | Balance APT |
+|-------|---------|-------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob   | 0x0a3c...512d | 0.0 |
+| A–Z   | (see ducklake/aptos_snapshots) | 0.0 each |
+
+**Total swarm APT:** 0.0
+
+### Multisig Contract Probes
+
+All 5 multisig accounts are live on-chain, all set to **2 signatures required**.
+
+| Pair | Address | Sigs | Status |
+|------|---------|------|--------|
+| A-B | 0x0da4...7003 | 2 | HEALTHY |
+| A-G | 0xf56c...0096 | 2 | HEALTHY |
+| Y-Z | 0xd3ff...b883 | 2 | HEALTHY |
+| S-T | 0x3b1c...7883 | 2 | HEALTHY |
+| V-W | 0x40fa...eb6d | 2 | HEALTHY |
+
+### MNX Markets (testnet.mnx.fi)
+
+UNAVAILABLE — Vercel deployment protection on all probed endpoints.
+
+---
+
+---
+
+## GF(3) Color Chain — Latest Increments (IDs 24–25, 2026-07-09)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +72,11 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| … | (IDs 13–23 from prior sweeps) | … | … | … | … |
+| 24 | world-increment-sweep | automated-sweep | +1 | `#b8bb26` | **PLUS** |
+| 25 | github-api-proxy | access-restricted | -1 | `#cc241d` | **MINUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain continues: `… → PLUS → MINUS` (IDs 24–25, 2026-07-09)
 
 ---
 
