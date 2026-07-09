@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-09
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-09
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **New Increment ID:** 13 — **PLUS** `#b8bb26` (trit=+1, 13 mod 3 = 1)
 
 ---
 
@@ -12,9 +13,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 13 (25 rows incl. duplicates from prior merges) |
+| Total Repo Snapshots | 945 |
+| Sources Covered | plurigrid/gorj only (proxy restricts to repo-scoped endpoints) |
+| Aptos Wallets Probed | 28 (all 0.0 APT — no CoinStore resource) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | Unavailable (Vercel auth required) |
 
 ---
 
@@ -34,8 +38,9 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **system (world-increment-sweep)** | **sweep_complete** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
 
 ---
 
@@ -140,3 +145,33 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **Increment 13 (2026-07-09)**: PLUS — hamming swarm snapshot; all 5 multisig contracts healthy (2-of-N)
+
+---
+
+## Hamming Swarm Snapshot (2026-07-09)
+
+### Aptos Wallet Balances
+
+All 28 Hamming-swarm wallets (alice, bob, A–Z) probed via Aptos Mainnet fullnode.
+**All returned `resource_not_found` for `0x1::coin::CoinStore<AptosCoin>`.**
+No wallet holds registered APT coin via the legacy CoinStore module.
+Possible explanations: accounts use FA standard, or were never activated with APT.
+
+**Total swarm APT balance: 0.0 APT**
+
+### Multisig Contract Health
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f428...87003 | 2 | ✓ HEALTHY |
+| A-G | 0xf56c4a1c...0096 | 2 | ✓ HEALTHY |
+| Y-Z | 0xd3ffe181...b883 | 2 | ✓ HEALTHY |
+| S-T | 0x3b1c3ae9...7883 | 2 | ✓ HEALTHY |
+| V-W | 0x40fad7b4...eb6d | 2 | ✓ HEALTHY |
+
+All 5 multisig accounts exist on-chain and require 2-of-N co-signers.
+
+### MNX Markets (`testnet.mnx.fi`)
+
+Deployment requires Vercel visitor authentication — no market data available this sweep.
