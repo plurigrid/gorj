@@ -1,14 +1,55 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-07-09
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-09
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Sweep ID:** 13 · GF(3): trit=1 PLUS #b8bb26
 
 ---
 
 ## Summary Counts
+
+| Metric | Value |
+|--------|-------|
+| Total World Increments | 24 (13 unique IDs) |
+| Total Repo Snapshots | 945 |
+| Aptos Addresses Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5/5 healthy |
+| MNX Markets | unavailable (Vercel auth) |
+
+---
+
+## GitHub Sweep Note (2026-07-09)
+
+Session proxy is scoped to `plurigrid/gorj` only. Cross-org queries to `kubeflow`, `TeglonLabs`, and user queries for `bmorphism`, `zubyul`, and the zubyul social graph were blocked. Increment 13 records the latest `plurigrid/gorj` commit head: `5b28fe0` (2026-05-08).
+
+---
+
+## Hamming Swarm — Aptos Wallet Snapshot
+
+All 28 addresses returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`. These accounts have no legacy CoinStore (may be FA-only or unfunded). **Total APT: 0.0**
+
+### Multisig Probes — All 5 Healthy
+
+| Pair | Sigs Required | Status |
+|------|--------------|--------|
+| A-B  | 2 | ✓ |
+| A-G  | 2 | ✓ |
+| Y-Z  | 2 | ✓ |
+| S-T  | 2 | ✓ |
+| V-W  | 2 | ✓ |
+
+### MNX Markets (testnet.mnx.fi)
+
+Unavailable — Vercel authentication required; no data.
+
+---
+
+## Previous Sweep Data (2026-04-12)
+
+### Summary Counts (prior)
 
 | Metric | Value |
 |--------|-------|
