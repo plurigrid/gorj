@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-11
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-11 18:30 UTC
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Python module)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,8 +12,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| New World Increments (this sweep) | 11 |
+| New Repo Snapshots (this sweep) | 46 |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | Unavailable (Vercel auth) |
 | Sources Covered | 3 orgs + 8 users |
 
 ---
@@ -130,13 +133,39 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (2026-07-11)
+- **kubeflow/kubeflow**: 15,770 stars (+205 since Apr 12) — flagship ML platform
+- **kubeflow/pipelines**: 4,169 stars — pushed 2026-07-11T11:09 (active today)
+- **kubeflow/spark-operator**: 3,137 stars — pushed 2026-07-10
+- **migalkin/NodePiece**: 144 stars — KG embeddings ICLR'22
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml MCP via Jane Street oxcaml_effect
+- **AustinCStone/TextGAN**: 92 stars — GAN text generation
+- **plurigrid/gorj**: 1125 open issues, pushed today — this very repo
+- **plurigrid/asi**: 30 stars (+14 since Apr 12) — topological chemputer
+- **bmorphism/Gay.jl**: 187 open issues — wide-gamut color sampling
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-07-11)
+
+### Aptos Wallet Balances (Mainnet)
+All 28 Hamming-labeled wallets (alice, bob, A–Z) queried.  
+**Result: All 28 wallets → 0.0 APT** (resource_not_found; accounts have no initialized CoinStore).
+
+Total swarm balance: **0.0 APT**
+
+### Multisig Contract Health (5/5 HEALTHY)
+Probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Sigs Required | Status |
+|------|--------------|--------|
+| A-B (0x0da4...7003) | 2 | ✓ HEALTHY |
+| A-G (0xf56c...0096) | 2 | ✓ HEALTHY |
+| Y-Z (0xd3ff...b883) | 2 | ✓ HEALTHY |
+| S-T (0x3b1c...7883) | 2 | ✓ HEALTHY |
+| V-W (0x40fa...eb6d) | 2 | ✓ HEALTHY |
+
+All 5 multisig accounts require exactly 2 signatures — consistent with a 2-of-N Hamming swarm setup.
+
+### MNX Markets
+**UNAVAILABLE** — `https://testnet.mnx.fi` protected by Vercel deployment auth. No market data extracted.
