@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-11
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-11
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -140,3 +140,101 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+# 2026-07-11 Sweep Results
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Snapshotted
+
+| Source | Type | Repos Captured | Total Stars |
+|--------|------|---------------|-------------|
+| plurigrid | org | 20 | 308 |
+| kubeflow | org | 13 | ~28,094 |
+| TeglonLabs | org | 5 | 2 |
+| bmorphism | user | 16 | 583 |
+| zubyul | user | 12 | 50 |
+| migalkin | user | 5 | 275 |
+| DJedamski | user (social) | 4 | 3 |
+| wasita | user (social) | 7 | 4 |
+| kristinezheng | user (social) | 5 | 0 |
+| M1shaaa | user (social) | 4 | 0 |
+| AustinCStone | user (social) | 7 | 103 |
+
+**Total repo snapshots:** 98 repos across 11 sources
+
+### Notable Recent Activity (pushed last 7 days)
+
+- `plurigrid/gorj` — pushed 2026-07-11; 1117 open issues; Clojure nREPL + GF(3)
+- `plurigrid/asi` — pushed 2026-07-10; "everything is topological chemputer!"
+- `plurigrid/place` — pushed 2026-07-07
+- `kubeflow/spark-operator` — pushed 2026-07-11; 3137 stars
+- `kubeflow/kubeflow` — pushed 2026-07-11; **15771 stars** (flagship)
+- `kubeflow/trainer` — pushed 2026-07-11; 2135 stars (LLM fine-tuning on K8s)
+- `kubeflow/pipelines` — pushed 2026-07-10; 4169 stars
+- `migalkin/kgcourse2021` — pushed 2026-07-10 (Knowledge Graphs course)
+- `wasita/wasita.github.io` — pushed 2026-07-06
+- `kristinezheng/kristinezheng.github.io` — pushed 2026-07-01
+- `bmorphism/Gay.jl` — pushed 2026-06-20; 187 open issues
+
+### GF(3) Color Chain — July 11
+
+```
+id=1  PLUS    #b8bb26  org:plurigrid
+id=2  MINUS   #cc241d  org:kubeflow
+id=3  ERGODIC #d3869b  org:TeglonLabs
+id=4  PLUS    #b8bb26  user:bmorphism
+id=5  MINUS   #cc241d  user:zubyul
+id=6  ERGODIC #d3869b  user:migalkin
+id=7  PLUS    #b8bb26  user:DJedamski
+id=8  MINUS   #cc241d  user:wasita
+id=9  ERGODIC #d3869b  user:kristinezheng
+id=10 PLUS    #b8bb26  user:M1shaaa
+id=11 MINUS   #cc241d  user:AustinCStone
+```
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances — alice, bob, A–Z (28 total)
+
+**Result:** All 28 addresses returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` at ledger v6224812382.
+
+These addresses exist on Aptos mainnet but have no APT CoinStore resource initialized. Effective balance: **0 APT** (uninitialized / never funded via legacy coin standard).
+
+*Note: Addresses may hold FA (Fungible Asset) APT via the newer `0x1::primary_fungible_store` standard — not queried in this run.*
+
+### Multisig Contract Probes — ALL 5 HEALTHY ✅
+
+| Pair | Address | Threshold | Status |
+|------|---------|-----------|--------|
+| A-B | `0x0da4f428...7003` | 2-of-N | ✅ healthy |
+| A-G | `0xf56c4a1c...0096` | 2-of-N | ✅ healthy |
+| Y-Z | `0xd3ffe181...b883` | 2-of-N | ✅ healthy |
+| S-T | `0x3b1c3ae9...7883` | 2-of-N | ✅ healthy |
+| V-W | `0x40fad7b4...eb6d` | 2-of-N | ✅ healthy |
+
+All 5 contracts respond on `0x1::multisig_account::num_signatures_required` with threshold=2.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status:** UNAVAILABLE — protected by Vercel deployment authentication (HTTP 200 with auth wall). No API data accessible. `mnx_snapshots` table has 0 rows.
+
+---
+
+## Full Schema
+
+```sql
+world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
+                 source_type, source_name, event_type, repo_name, actor, snapshot_hash)
+
+repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
+               full_name, language, stars, forks, open_issues, pushed_at, description)
+
+aptos_snapshots(timestamp, world, address, balance_apt)
+multisig_probes(timestamp, pair, address, sigs_required, healthy)
+mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
+```
