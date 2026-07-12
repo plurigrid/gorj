@@ -1,24 +1,49 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-12
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-12
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (via Python)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Aptos Ledger Version at Probe:** ~6,234,275,407
 
 ---
 
-## Summary Counts
+## Job 1: GitHub Social Graph Sweep — BLOCKED
 
-| Metric | Value |
-|--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+GitHub API in this environment is proxy-restricted to `repos/{owner}/{repo}/...` only. Org/user listing endpoints return 403. Previous sweep data (2026-04-12) in repo_snapshots (944 rows, 12 increments, 471 repos from 3 orgs + 8 users) remains current.
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## Job 2: Hamming Swarm Snapshot
+
+### Aptos Wallets (28 probed)
+
+All 28 wallets returned `Resource not found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`. Fullnode was reachable (HTTP 200, valid JSON). These accounts hold no legacy coin resource — either uninitialized or using the newer `0x1::fungible_asset` module.
+
+| World | Address | Status |
+|-------|---------|--------|
+| alice | 0xc793ac...624cc7b | resource not found |
+| bob | 0x0a3c00...512d5d | resource not found |
+| A–Z | (26 addresses) | resource not found (all) |
+
+### Multisig Contracts (5 probed) — ALL HEALTHY
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f4...87003 | **2** | ✅ healthy |
+| A-G | 0xf56c4a...c0096 | **2** | ✅ healthy |
+| Y-Z | 0xd3ffe1...5b883 | **2** | ✅ healthy |
+| S-T | 0x3b1c3a...d7883 | **2** | ✅ healthy |
+| V-W | 0x40fad7...eb6d | **2** | ✅ healthy |
+
+### MNX Markets (testnet.mnx.fi)
+
+**AUTH REQUIRED** — Vercel deployment protection active. No market data accessible without bypass token.
+
+---
+
+## GF(3) Color Chain — Increments 1–13
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +59,9 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **hamming-swarm** | **aptos_multisig_probe** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
 
 ---
 
