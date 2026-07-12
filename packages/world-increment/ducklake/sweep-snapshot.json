@@ -1,0 +1,39 @@
+{
+  "sweep_timestamp": "2026-07-12T15:11:24Z",
+  "aptos_note": "All 28 addresses resource_not_found on mainnet — CoinStore not initialized",
+  "multisig_probes": [
+    {"pair": "A-B", "address": "0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003", "sigs_required": 2, "healthy": true},
+    {"pair": "A-G", "address": "0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096", "sigs_required": 2, "healthy": true},
+    {"pair": "Y-Z", "address": "0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883", "sigs_required": 2, "healthy": true},
+    {"pair": "S-T", "address": "0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883", "sigs_required": 2, "healthy": true},
+    {"pair": "V-W", "address": "0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d", "sigs_required": 2, "healthy": true}
+  ],
+  "github_sources": {
+    "kubeflow": {"unique_repos": 51, "total_stars": 136411},
+    "migalkin": {"unique_repos": 30, "total_stars": 829},
+    "bmorphism": {"unique_repos": 115, "total_stars": 506},
+    "AustinCStone": {"unique_repos": 43, "total_stars": 319},
+    "plurigrid": {"unique_repos": 168, "total_stars": 244},
+    "zubyul": {"unique_repos": 59, "total_stars": 54},
+    "TeglonLabs": {"unique_repos": 54, "total_stars": 16},
+    "DJedamski": {"unique_repos": 11, "total_stars": 14},
+    "wasita": {"unique_repos": 31, "total_stars": 6},
+    "kristinezheng": {"unique_repos": 18, "total_stars": 0},
+    "M1shaaa": {"unique_repos": 16, "total_stars": 0}
+  },
+  "mnx_markets": {"status": "unavailable", "reason": "Vercel auth wall at testnet.mnx.fi"},
+  "gf3_chain": [
+    {"id": 1, "trit": 1, "color": "#b8bb26", "name": "PLUS", "source": "plurigrid"},
+    {"id": 2, "trit": -1, "color": "#cc241d", "name": "MINUS", "source": "kubeflow"},
+    {"id": 3, "trit": 0, "color": "#d3869b", "name": "ERGODIC", "source": "bmorphism"},
+    {"id": 4, "trit": 1, "color": "#b8bb26", "name": "PLUS", "source": "zubyul"},
+    {"id": 5, "trit": -1, "color": "#cc241d", "name": "MINUS", "source": "TeglonLabs"},
+    {"id": 6, "trit": 0, "color": "#d3869b", "name": "ERGODIC", "source": "migalkin"},
+    {"id": 7, "trit": 1, "color": "#b8bb26", "name": "PLUS", "source": "DJedamski"},
+    {"id": 8, "trit": -1, "color": "#cc241d", "name": "MINUS", "source": "wasita"},
+    {"id": 9, "trit": 0, "color": "#d3869b", "name": "ERGODIC", "source": "kristinezheng"},
+    {"id": 10, "trit": 1, "color": "#b8bb26", "name": "PLUS", "source": "M1shaaa"},
+    {"id": 11, "trit": -1, "color": "#cc241d", "name": "MINUS", "source": "AustinCStone"},
+    {"id": 12, "trit": 0, "color": "#d3869b", "name": "ERGODIC", "source": "bmorphism"}
+  ]
+}
