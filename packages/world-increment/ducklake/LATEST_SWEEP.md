@@ -8,14 +8,14 @@
 |----|------|-------|------|--------|-------|
 | 12 | 0 | `#d3869b` | **ERGODIC** | bmorphism | gorj |
 | 11 | -1 | `#cc241d` | **MINUS** | AustinCStone |  |
+| 11 | -1 | `#cc241d` | **MINUS** | AustinCStone | None |
 | 10 | 1 | `#b8bb26` | **PLUS** | M1shaaa |  |
+| 10 | 1 | `#b8bb26` | **PLUS** | M1shaaa | None |
 | 9 | 0 | `#d3869b` | **ERGODIC** | kristinezheng |  |
+| 9 | 0 | `#d3869b` | **ERGODIC** | kristinezheng | None |
 | 8 | -1 | `#cc241d` | **MINUS** | wasita |  |
-| 7 | 1 | `#b8bb26` | **PLUS** | DJedamski |  |
-| 6 | 0 | `#d3869b` | **ERGODIC** | migalkin |  |
-| 5 | -1 | `#cc241d` | **MINUS** | TeglonLabs |  |
-| 4 | 1 | `#b8bb26` | **PLUS** | zubyul |  |
-| 3 | 0 | `#d3869b` | **ERGODIC** | bmorphism |  |
+| 8 | -1 | `#cc241d` | **MINUS** | wasita | None |
+| 7 | 1 | `#b8bb26` | **PLUS** | DJedamski | None |
 
 ## GitHub Social Graph Snapshot
 
@@ -41,7 +41,7 @@
 ### Top starred repos (≥50 stars)
 
 | Repo | Stars | Language | Last Push |
-|------|-------|----------|-----------|
+|------|-------|----------|----------|
 | [kubeflow/kubeflow](https://github.com/kubeflow/kubeflow) | ⭐ 15,771 | N/A | 2026-07-10 |
 | [kubeflow/pipelines](https://github.com/kubeflow/pipelines) | ⭐ 4,169 | Python | 2026-07-12 |
 | [kubeflow/spark-operator](https://github.com/kubeflow/spark-operator) | ⭐ 3,137 | Python | 2026-07-12 |
@@ -57,9 +57,6 @@
 | [kubeflow/pytorch-operator](https://github.com/kubeflow/pytorch-operator) | ⭐ 310 | Jsonnet | 2021-12-01 |
 | [kubeflow/community](https://github.com/kubeflow/community) | ⭐ 195 | Jupyter Notebook | 2026-07-11 |
 | [kubeflow/website](https://github.com/kubeflow/website) | ⭐ 184 | HTML | 2026-07-10 |
-| [migalkin/NodePiece](https://github.com/migalkin/NodePiece) | ⭐ 144 | Python | 2026-05-07 |
-| [migalkin/StarE](https://github.com/migalkin/StarE) | ⭐ 89 | Python | 2026-04-16 |
-| [AustinCStone/TextGAN](https://github.com/AustinCStone/TextGAN) | ⭐ 92 | Python | 2025-03-03 |
 
 ## Hamming Swarm — Aptos Mainnet Snapshot
 
@@ -69,22 +66,47 @@
 
 | World | Address (truncated) | APT Balance | Status |
 |-------|--------------------|-----------:|--------|
-| alice | `0xc793acdec12b4a63…` | 0.00000000 | ⚠ resource_not_found |
-| bob | `0x0a3c00c58fdf9020…` | 0.00000000 | ⚠ resource_not_found |
-| A–Z (26) | (all addresses) | 0.00000000 | ⚠ resource_not_found |
+| alice | `0xc793acdec12b4a6371…` | 0.00000000 | ⚠ resource_not_found |
+| U | `0x75860da47565f6509b…` | 0.00000000 | ⚠ resource_not_found |
+| A | `0x8699edc0960dd5b916…` | 0.00000000 | ⚠ resource_not_found |
+| B | `0x3f892ebe6e45164e63…` | 0.00000000 | ⚠ resource_not_found |
+| C | `0x38b99e63ada9b6fef1…` | 0.00000000 | ⚠ resource_not_found |
+| D | `0xf77656248f64d5dd00…` | 0.00000000 | ⚠ resource_not_found |
+| E | `0xdc1d9d533bac3507f9…` | 0.00000000 | ⚠ resource_not_found |
+| bob | `0x0a3c00c58fdf9020b2…` | 0.00000000 | ⚠ resource_not_found |
+| G | `0x69a394c0b0ac842127…` | 0.00000000 | ⚠ resource_not_found |
+| H | `0xce67c327a7844e5488…` | 0.00000000 | ⚠ resource_not_found |
+| I | `0x070fe5d74e4eda30e2…` | 0.00000000 | ⚠ resource_not_found |
+| J | `0x4d964db8f538374034…` | 0.00000000 | ⚠ resource_not_found |
+| K | `0xa732040a6b0d559041…` | 0.00000000 | ⚠ resource_not_found |
+| L | `0x7c2eaeafad9725492e…` | 0.00000000 | ⚠ resource_not_found |
+| M | `0x6fed37a7553ef16b2a…` | 0.00000000 | ⚠ resource_not_found |
+| N | `0xe7dde6da0a65f51062…` | 0.00000000 | ⚠ resource_not_found |
+| O | `0x73252b6011a75115a2…` | 0.00000000 | ⚠ resource_not_found |
+| P | `0x6218792de4a9bc3891…` | 0.00000000 | ⚠ resource_not_found |
+| Q | `0xac40fa50b81b4ca6b1…` | 0.00000000 | ⚠ resource_not_found |
+| R | `0x7ce605cc8fda4f8e4a…` | 0.00000000 | ⚠ resource_not_found |
+| S | `0xb8753014e4888ea48a…` | 0.00000000 | ⚠ resource_not_found |
+| T | `0x35781dc0e42fef3f25…` | 0.00000000 | ⚠ resource_not_found |
+| Z | `0x7af0ef6e1bd706f4b3…` | 0.00000000 | ⚠ resource_not_found |
+| V | `0xb59dd8170321dfab5a…` | 0.00000000 | ⚠ resource_not_found |
+| W | `0x5f32aef70f5ba530d3…` | 0.00000000 | ⚠ resource_not_found |
+| X | `0xa95cbbd116548ac990…` | 0.00000000 | ⚠ resource_not_found |
+| Y | `0xd8e32848f1dffa811b…` | 0.00000000 | ⚠ resource_not_found |
+| F | `0x18a14b5b4bec118c1c…` | 0.00000000 | ⚠ resource_not_found |
 
 > **Note:** All 28 addresses returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
-> Wallets exist on-chain but have not been initialized with an APT coin store on mainnet.
+> This indicates these wallets have not yet been initialized with APT on mainnet (no CoinStore resource registered).
 
 ## Multisig Contract Probes
 
 | Pair | Address (truncated) | Sigs Required | Healthy |
 |------|--------------------|--------------:|--------|
-| A-B | `0x0da4f428a0c007da…` | 2 | ✅ |
-| A-G | `0xf56c4a1c0906214f…` | 2 | ✅ |
-| Y-Z | `0xd3ffe1812b2df406…` | 2 | ✅ |
-| S-T | `0x3b1c3ae905d44c3a…` | 2 | ✅ |
-| V-W | `0x40fad7b423a84365…` | 2 | ✅ |
+| A-B | `0x0da4f428a0c007da0f…` | 2 | ✅ |
+| A-G | `0xf56c4a1c0906214f3f…` | 2 | ✅ |
+| Y-Z | `0xd3ffe1812b2df40622…` | 2 | ✅ |
+| S-T | `0x3b1c3ae905d44c3a49…` | 2 | ✅ |
+| V-W | `0x40fad7b423a843650f…` | 2 | ✅ |
 
 > All 5 multisig contracts healthy — each requires 2-of-N signatures.
 
@@ -105,4 +127,4 @@ No market data could be extracted without credentials.
 | `multisig_probes` | Multisig health probes |
 | `mnx_snapshots` | MNX market data (unavailable this run) |
 
-Database: `packages/world-increment/ducklake/world-increments.duckdb` (local, not committed — binary)
+Database: `packages/world-increment/ducklake/world-increments.duckdb`
