@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-12 + Hamming Swarm Snapshot
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-12
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **Increment ID:** 13 · GF(3) trit=+1 · **PLUS** · `#b8bb26`
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,46 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 945 |
+| Aptos Snapshots (this run) | 28 |
+| Multisig Probes (this run) | 5 |
+| Sources Covered | 3 orgs + 8 users (historical) + plurigrid/gorj (this run) |
+
+---
+
+## 2026-07-12 Run Details
+
+### GitHub Scope
+This session is scoped to `plurigrid/gorj` only. Previous sweeps (id 1–12) captured the full social graph (944 repo snapshots from plurigrid, kubeflow, TeglonLabs, bmorphism, zubyul, migalkin, DJedamski, wasita, kristinezheng, M1shaaa, AustinCStone).
+
+**gorj latest commits:**
+- `5b28fe0` 2026-05-08 — chore: ignore duckdb binary in repo root
+- `ebf263f` 2026-04-14 — world-increment ducklake: sync world.duckdb sweep state
+- `631518b` 2026-04-12 — world-increment sweep 2026-04-12: insert id=12 ERGODIC
+
+**Active sweep branches:** 50+ `world-increment/sweep-*` (latest: 2026-05-02)
+
+### Hamming Swarm — Aptos Mainnet
+**Ledger:** v6,235,525,341 · **Epoch:** 16,503 · **Block:** 892,795,810
+
+All 28 addresses (alice, bob, A–Z) hold **0.00 APT** — `CoinStore` resource not found (accounts exist but are unfunded).
+
+### Multisig Probes — All Healthy
+All 5 pairs: `num_signatures_required = 2`
+
+| Pair | Address (prefix) | Status |
+|---|---|---|
+| A-B | 0x0da4f4… | ✓ 2-of-N |
+| A-G | 0xf56c4a… | ✓ 2-of-N |
+| Y-Z | 0xd3ffe1… | ✓ 2-of-N |
+| S-T | 0x3b1c3a… | ✓ 2-of-N |
+| V-W | 0x40fad7… | ✓ 2-of-N |
+
+### MNX Markets
+`https://testnet.mnx.fi` requires Vercel deployment authentication — unavailable without bypass token.
+
+---
 
 ---
 
