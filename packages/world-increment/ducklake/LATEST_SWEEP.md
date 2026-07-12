@@ -1,4 +1,77 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-12
+
+> Previous sweep: 2026-04-12. See git history for that run's data.
+
+---
+
+# Current Sweep — 2026-07-12
+
+## Sweep Metadata
+- **Date:** 2026-07-12
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Python pip)
+- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+## Job 1: GitHub Social Graph (partial)
+
+> **Scope note:** `gh` CLI unavailable; GitHub MCP scoped to `plurigrid/gorj` only.
+> Orgs kubeflow/TeglonLabs and users bmorphism/zubyul/social-graph not queryable.
+
+Snapshotted: **plurigrid/gorj** — Clojure MCP server (pushed 2026-07-12)
+
+**Remote branches:** 20+ `world-increment/sweep-*` branches exist (Apr 2026 vintage)
+**Master head:** `5b28fe0` — "chore: ignore duckdb binary in repo root"
+
+## GF(3) — New Increment
+
+| ID | Source | Event Type | Trit | Color | Name |
+|----|--------|------------|------|-------|------|
+| 13 | plurigrid/gorj | hamming_swarm_snapshot | +1 | `#b8bb26` | **PLUS** |
+
+Chain continuation: `… [12] ERGODIC → [13] PLUS`
+
+## Job 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Balances (28 addresses)
+
+All 28 addresses returned `resource_not_found` (uninitialized accounts, 0.0 APT each).
+
+| World | Address | APT |
+|-------|---------|-----|
+| alice | 0xc793…4cc7b | 0.0 |
+| bob | 0x0a3c…512d5d | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+**Total swarm APT:** 0.0
+
+### Multisig Contract Probes — ALL HEALTHY ✅
+
+| Pair | Address | Sigs Required |
+|------|---------|---------------|
+| A-B | 0x0da4…7003 | 2 |
+| A-G | 0xf56c…0096 | 2 |
+| Y-Z | 0xd3ff…b883 | 2 |
+| S-T | 0x3b1c…7883 | 2 |
+| V-W | 0x40fa…eb6d | 2 |
+
+5/5 healthy — 2-of-N threshold confirmed on all pairs.
+
+### MNX Markets (testnet.mnx.fi) — UNAVAILABLE
+
+Vercel deployment protection active. No API data extractable without bypass token.
+
+## DB Totals After This Sweep
+
+| Table | Rows |
+|-------|------|
+| world_increments | 24 |
+| aptos_snapshots | 28 (this run) |
+| multisig_probes | 5 (this run) |
+| mnx_snapshots | 0 |
+
+---
+
+# Previous Sweep Archive — 2026-04-12
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
