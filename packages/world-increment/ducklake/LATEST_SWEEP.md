@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-12
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-12
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,51 +12,93 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| New World Increments (this run) | 38 |
+| Total World Increments (cumulative) | 61 |
+| Total Repo Snapshots (cumulative) | 982 |
+| Aptos Addresses Probed | 28 |
+| Multisig Contracts Probed | 5 |
 | Sources Covered | 3 orgs + 8 users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 2: Hamming Swarm Snapshot
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+### Aptos Wallet Balances — All 28 Addresses (alice, bob, A–Z)
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+**Ledger version at query time:** ~6,236,692,920 (mainnet)
+
+All 28 addresses return HTTP 404 / `resource_not_found` for  
+`0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — none have been funded/activated.
+
+| World | Address | APT |
+|-------|---------|-----|
+| alice | 0xc793…cc7b | 0.00 |
+| bob | 0x0a3c…512d | 0.00 |
+| A | 0x8699…9d7a | 0.00 |
+| B–Z | (26 more) | 0.00 each |
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4…7003 | **2** | ✅ healthy |
+| A-G | 0xf56c…0096 | **2** | ✅ healthy |
+| Y-Z | 0xd3ff…b883 | **2** | ✅ healthy |
+| S-T | 0x3b1c…7883 | **2** | ✅ healthy |
+| V-W | 0x40fa…eb6d | **2** | ✅ healthy |
+
+All 5 multisig accounts respond correctly (2-of-N threshold, Aptos Move framework).
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: Unavailable** — Vercel password-protected deployment (HTTP 401). No market data extractable.
 
 ---
 
-## Top Repos by Source
+## GF(3) Color Chain — This Run (IDs 24–61)
 
-### plurigrid (100 repos)
+Rule: `id%3==0 → ERGODIC #d3869b | id%3==1 → PLUS #b8bb26 | id%3==2 → MINUS #cc241d`
+
+| ID | Source | Repo | GF3 | Color |
+|----|--------|------|-----|-------|
+| 24 | plurigrid | asi | ERGODIC | `#d3869b` |
+| 25 | plurigrid | gorj | PLUS | `#b8bb26` |
+| 26 | plurigrid | shrimp | MINUS | `#cc241d` |
+| 27 | TeglonLabs | jank-crane | ERGODIC | `#d3869b` |
+| 28 | bmorphism | satreadout | PLUS | `#b8bb26` |
+| 29 | bmorphism | Gay.jl | MINUS | `#cc241d` |
+| 30 | kubeflow | kubeflow | ERGODIC | `#d3869b` |
+| 31 | kubeflow | pipelines | PLUS | `#b8bb26` |
+| 32 | kubeflow | trainer | MINUS | `#cc241d` |
+| 33 | zubyul | voice-observatory | ERGODIC | `#d3869b` |
+| 34 | zubyul | big-bad-plurigrid-quiz | PLUS | `#b8bb26` |
+| 35 | migalkin | kgcourse2021 | MINUS | `#cc241d` |
+| 36 | wasita | wasita.github.io | ERGODIC | `#d3869b` |
+| 37 | AustinCStone | TextGAN | PLUS | `#b8bb26` |
+| 38 | M1shaaa | M1shaaa | MINUS | `#cc241d` |
+| … | … | … | … | … |
+| 61 | DJedamski | kaggle_ncaa18 | PLUS | `#b8bb26` |
+
+---
+
+## JOB 1: Top Repos by Source (2026-07-12 Snapshot)
+
+### plurigrid (50+ repos)
 | Repo | Language | Stars | Pushed At |
 |------|----------|-------|-----------|
-| asi | HTML | 16 | 2026-04-10 |
-| ontology | JavaScript | 7 | 2025-05-27 |
-| asi-skills | Julia | 3 | 2026-04-09 |
-| zig-syrup | Zig | 2 | 2026-04-09 |
-| vivarium | Clojure | 1 | 2026-04-08 |
+| asi | HTML | **30** | 2026-07-10 |
+| gorj | Clojure | 1 | 2026-07-12 |
+| place | TeX | 1 | 2026-07-07 |
+| nash-portal | Rust | 2 | 2026-05-19 |
+| asi-skills | Julia | 3 | 2026-04-26 |
 
-### kubeflow (47 repos)
+### kubeflow (49 repos)
 | Repo | Language | Stars | Pushed At |
 |------|----------|-------|-----------|
-| kubeflow | — | 15565 | 2026-01-05 |
-| pipelines | Python | 4119 | 2026-04-10 |
-| spark-operator | Python | 3111 | 2026-04-10 |
-| trainer | Go | 2080 | 2026-04-10 |
+| kubeflow | — | **15,770** | 2026-07-11 |
+| pipelines | Python | **4,169** | 2026-07-11 |
+| spark-operator | Python | **3,137** | 2026-07-12 |
+| trainer | Go | **2,136** | 2026-07-11 |
 | katib | Python | 1676 | 2026-04-02 |
 
 ### TeglonLabs (53 repos)
