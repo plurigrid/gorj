@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-07-13
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-13
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (via pip)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 135 (+52 this sweep) |
+| Total Repo Snapshots | 1056 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Pairs Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | unavailable (auth-gated) |
 
 ---
 
@@ -131,12 +134,52 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **kubeflow/kubeflow**: 15,774 stars (+209 since April sweep)
+- **kubeflow/pipelines**: 4,165 stars — active (pushed 2026-07-13)
+- **kubeflow/sdk**: new repo ⭐124 — Universal Python SDK for AI workloads (2025-04-23)
+- **kubeflow/mcp-server**: new repo ⭐26 — Kubeflow MCP server (2026-04-08)
+- **bmorphism/anti-bullshit-mcp-server**: ⭐22, pushed 2026-07-12 (latest activity)
+- **bmorphism/ocaml-mcp-sdk**: ⭐61 (was 60 in April sweep)
+- **bmorphism/satreadout**: new — Lean 4.28 + mathlib machine-checked subadditivity
+- **plurigrid/gorj**: 1157 open issues, pushed 2026-07-13 (this very repo, most active)
+- **plurigrid/asi**: ⭐30 (+14 since April sweep)
+- **TeglonLabs/jank-crane**: new C++ repo with GF3 convergence maps (2026-06-08)
+- **zubyul/tilelang-kernels**: TileLang GPU kernels for GF(3) trit classification (targeting NVIDIA GB10 Blackwell)
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 addresses: alice, bob, A–Z)
+
+All 28 addresses queried via `https://fullnode.mainnet.aptoslabs.com/v1/`.
+
+**Finding:** Zero CoinStore resources found across all addresses. Accounts alice/bob/A–I return `resource_not_found` (no account or no CoinStore). Addresses Q–Z exist on-chain with sequence numbers confirming prior transactions, but hold no legacy APT CoinStore (likely using FungibleAsset module or empty).
+
+| World | Seq# | Status |
+|-------|------|--------|
+| alice, bob, A–I | absent | No account / no CoinStore |
+| Q | 9 | Exists, no CoinStore |
+| R | 15 | Exists, no CoinStore (most active) |
+| S | 11 | Exists, no CoinStore |
+| T | 9 | Exists, no CoinStore |
+| U | 7 | Exists, no CoinStore |
+| V | 5 | Exists, no CoinStore |
+| W | 4 | Exists, no CoinStore |
+| X | 3 | Exists, no CoinStore |
+| Y | 2 | Exists, no CoinStore |
+| Z | 2 | Exists, no CoinStore |
+
+### Multisig Contract Probes — ALL HEALTHY
+
+| Pair | Address (truncated) | Sigs Required |
+|------|---------------------|---------------|
+| A-B | 0x0da4...7003 | 2 |
+| A-G | 0xf56c...0096 | 2 |
+| Y-Z | 0xd3ff...b883 | 2 |
+| S-T | 0x3b1c...7883 | 2 |
+| V-W | 0x40fa...eb6d | 2 |
+
+All 5 multisig contracts responded with `["2"]` — 2-of-N threshold, healthy.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: UNAVAILABLE** — Vercel deployment protection active. The endpoint returns a password-gated SPA; no market data accessible without visitor credentials. Zero rows in `mnx_snapshots`.
