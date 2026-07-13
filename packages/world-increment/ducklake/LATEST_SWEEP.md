@@ -1,10 +1,12 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-13
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-13T11:09:27Z
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Python)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **GF(3) increment:** id=13 · trit=1 · **PLUS** · `#b8bb26`
+- **Actor:** zubyul (Yuliya Zubak)
 
 ---
 
@@ -12,9 +14,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 (new this run: id=13 PLUS #b8bb26) |
+| Total Repo Snapshots | 944 |
+| Sources Covered | 3 orgs + 8 users (from prior sweeps) |
+| Aptos Wallets Queried | 28 (all 404 — zero-balance accounts) |
+| Multisig Contracts Probed | 5/5 healthy (all 2-of-2) |
+| MNX Markets | 401 Unauthorized (auth required) |
 
 ---
 
@@ -34,8 +39,9 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **world-increment (sweep)** | **hamming_snapshot** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
 
 ---
 
@@ -140,3 +146,24 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **Increment 13** (this run): PLUS — hamming_snapshot, all 5 multisig contracts healthy (2-of-2)
+
+## Hamming Swarm — 2026-07-13 Detail
+
+### Aptos Wallet Balances
+All 28 addresses (alice, bob, A–Z) returned HTTP 404 on the CoinStore resource. This is expected behaviour for accounts that hold no APT: the `0x1::coin::CoinStore` resource is absent when balance is zero.
+
+### Multisig Probes ✅
+
+| Pair | Contract Address | Sigs Required |
+|------|-----------------|---------------|
+| A-B | `0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003` | 2 |
+| A-G | `0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096` | 2 |
+| Y-Z | `0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883` | 2 |
+| S-T | `0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883` | 2 |
+| V-W | `0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d` | 2 |
+
+All multisig contracts are live on Aptos mainnet and return valid sig threshold data.
+
+### MNX Markets
+`testnet.mnx.fi` returns HTTP 401 on all paths — authentication required, no public market data endpoint found.
