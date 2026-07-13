@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-13
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-13
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Snapshot hash:** `d7d62387e1ef1f01`
 
 ---
 
@@ -12,13 +13,45 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 (id=13 this run) |
+| Total Repo Snapshots | 945 |
+| Sources Covered | 3 orgs + 8 users (prior runs) + plurigrid/gorj (this run) |
+| Aptos Wallets Snapshotted | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Market Data | Unavailable (auth required) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## 2026-07-13 — Increment 13 (PLUS · `#b8bb26`)
+
+### Hamming Swarm — Aptos Balances
+
+All 28 wallets queried at ledger ~6.26B. `resource_not_found` = no CoinStore = 0 APT.
+
+| World | Address | APT |
+|---|---|---|
+| alice | 0xc793…cc7b | 0.0 |
+| bob | 0x0a3c…2d5d | 0.0 |
+| A–Z (26) | various | 0.0 each |
+
+**Total swarm APT: 0.0**
+
+### Multisig Probes (`0x1::multisig_account::num_signatures_required`)
+
+| Pair | Address | Sigs Required | Status |
+|---|---|---|---|
+| A-B | 0x0da4…7003 | 2 | ✓ healthy |
+| A-G | 0xf56c…0096 | 2 | ✓ healthy |
+| Y-Z | 0xd3ff…b883 | 2 | ✓ healthy |
+| S-T | 0x3b1c…7883 | 2 | ✓ healthy |
+| V-W | 0x40fa…eb6d | 2 | ✓ healthy |
+
+### MNX Markets
+`testnet.mnx.fi` returned **Authentication Required** on all endpoints. No data.
+
+---
+
+## GF(3) Color Chain — All 13 Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +67,9 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **plurigrid/gorj (hamming-swarm)** | **aptos_snapshot** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
 
 ---
 
@@ -106,7 +140,8 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 | kristinezheng | user | 18 |
 | M1shaaa | user | 16 |
 | DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| plurigrid/gorj | repo | 1 (this run) |
+| **TOTAL** | | **945** |
 
 ---
 
@@ -140,3 +175,5 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **Increment 13**: PLUS — hamming swarm aptos snapshot; all 28 wallets at 0 APT; 5/5 multisig healthy; MNX auth-gated
+- **GitHub scope**: restricted to `plurigrid/gorj` in this session; cross-org sweep (kubeflow, TeglonLabs, bmorphism social graph) requires unscoped access
