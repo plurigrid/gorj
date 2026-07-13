@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-13
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-13
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (via Python duckdb package)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment:** id=13 — **PLUS** (GF3 trit=1, color=#b8bb26)
 
 ---
 
@@ -12,105 +13,151 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 945 |
+| Aptos Wallet Snapshots | 28 (NULL balance — egress blocked) |
+| Multisig Probes | 5 (unhealthy — egress blocked) |
+| MNX Market Snapshots | 0 (unavailable — egress blocked) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — Increment #13
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| Field | Value |
+|-------|-------|
+| id | 13 |
+| trit | 1 |
+| color | #b8bb26 |
+| name | **PLUS** |
+| source_type | sweep_agent |
+| event_type | network_blocked_egress |
+| repo | plurigrid/gorj |
+| actor | zubyul |
+| snapshot_hash | derived from SHA 5b28fe0… |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain continues: `…ERGODIC(12) → PLUS(13) → …`
 
 ---
 
-## Top Repos by Source
+## JOB 1: GitHub Social Graph Sweep
 
-### plurigrid (100 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| asi | HTML | 16 | 2026-04-10 |
-| ontology | JavaScript | 7 | 2025-05-27 |
-| asi-skills | Julia | 3 | 2026-04-09 |
-| zig-syrup | Zig | 2 | 2026-04-09 |
-| vivarium | Clojure | 1 | 2026-04-08 |
+### Access Status
 
-### kubeflow (47 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| kubeflow | — | 15565 | 2026-01-05 |
-| pipelines | Python | 4119 | 2026-04-10 |
-| spark-operator | Python | 3111 | 2026-04-10 |
-| trainer | Go | 2080 | 2026-04-10 |
-| katib | Python | 1676 | 2026-04-02 |
+| Source | Type | Status |
+|--------|------|--------|
+| plurigrid/gorj | repo | **MCP only** — 1 repo accessible |
+| plurigrid (full org) | org | BLOCKED — api.github.com denied by egress policy |
+| kubeflow | org | BLOCKED — 403 from proxy |
+| TeglonLabs | org | BLOCKED — 403 from proxy |
+| bmorphism | user | BLOCKED — 403 from proxy |
+| zubyul | user | BLOCKED — 403 from proxy |
+| migalkin | social graph | BLOCKED — 403 from proxy |
+| DJedamski | social graph | BLOCKED — 403 from proxy |
+| wasita | social graph | BLOCKED — 403 from proxy |
+| kristinezheng | social graph | BLOCKED — 403 from proxy |
+| M1shaaa | social graph | BLOCKED — 403 from proxy |
+| AustinCStone | social graph | BLOCKED — 403 from proxy |
 
-### TeglonLabs (53 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| acp.el | — | 1 |
-| mcp-terminal | — | 1 |
+### Accessible Data: plurigrid/gorj (via GitHub MCP)
 
-### bmorphism (100 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
-| anti-bullshit-mcp-server | JavaScript | 23 |
-| shitcoin | Python | 5 |
-| open-location-code-zig | Zig | 3 |
+- **Description:** MCP server + hooks that give AI coding agents a Clojure REPL
+- **Language:** Clojure
+- **Last pushed:** 2026-05-08T14:04:34Z
+- **Latest commit:** `5b28fe0` — chore: ignore duckdb binary in repo root
+- **Active branches:** 60+ world-increment/sweep-\* branches (April–May 2026)
+- **Recent commit authors:** claude (automated sweeps), zubyul
 
-### migalkin (30 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| NodePiece | Python | 143 |
-| StarE | Python | 88 |
-| kgcourse2021 | HTML | 25 |
+### Recent Commit History (plurigrid/gorj)
 
-### AustinCStone (43 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| TextGAN | Python | 92 |
-| StereoVisionMRF | Python | 11 |
-| SpectralClustering | Python | 3 |
+| Date | SHA | Message |
+|------|-----|---------|
+| 2026-05-08 | 5b28fe0 | chore: ignore duckdb binary in repo root |
+| 2026-04-14 | ebf263f | world-increment ducklake: sync world.duckdb sweep state |
+| 2026-04-14 | b434a43 | Merge sweep state into master |
+| 2026-04-12 | 631518b | world-increment sweep 2026-04-12: insert id=12 ERGODIC |
+| 2026-04-10 | c4238bc | world-increments.duckdb: sync latest sweep state |
+| 2026-04-08 | bbcce38 | Merge sweep state into master |
+
+### Prior Sweep Coverage (from DB)
+
+The existing `repo_snapshots` table (944 rows prior to this sweep) reflects the April 2026 sweep with coverage across:
+plurigrid (100), bmorphism (100), TeglonLabs (53), kubeflow (47), AustinCStone (43), migalkin (30), wasita (29), zubyul (24), kristinezheng (18), M1shaaa (16), DJedamski (11).
+
+This sweep adds 1 row for `plurigrid/gorj` (id=474) to mark the 2026-07-13 checkpoint.
 
 ---
 
-## Repo Counts by Source
+## JOB 2: Hamming Swarm Snapshot
 
-| Source | Type | Repos |
-|--------|------|-------|
-| plurigrid | org | 100 |
-| bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+### Aptos Wallet Balances
+
+**Status: BLOCKED** — `fullnode.mainnet.aptoslabs.com` denied by egress policy (403 from proxy).
+
+All 28 addresses (alice, bob, A–Z) recorded with `balance_apt = NULL` as sentinel for this sweep cycle.
+
+| World | Address (truncated) | Balance APT |
+|-------|---------------------|-------------|
+| alice | 0xc793ac…4cc7b | NULL (blocked) |
+| bob | 0x0a3c00…512d5d | NULL (blocked) |
+| A | 0x8699ed…9d7a | NULL (blocked) |
+| B | 0x3f892e…cb13 | NULL (blocked) |
+| C | 0x38b99e…535e | NULL (blocked) |
+| D | 0xf77656…cfdd1 | NULL (blocked) |
+| E | 0xdc1d9d…8d36 | NULL (blocked) |
+| F | 0x18a14b…cf71 | NULL (blocked) |
+| G | 0x69a394…7f32 | NULL (blocked) |
+| H | 0xce67c3…5300f | NULL (blocked) |
+| I | 0x070fe5…1fc9 | NULL (blocked) |
+| J | 0x4d964d…7f54 | NULL (blocked) |
+| K | 0xa73204…25dc4 | NULL (blocked) |
+| L | 0x7c2eae…eba9 | NULL (blocked) |
+| M | 0x6fed37…7f2e9 | NULL (blocked) |
+| N | 0xe7dde6…51b2c | NULL (blocked) |
+| O | 0x73252b…5a89d | NULL (blocked) |
+| P | 0x621879…ec948 | NULL (blocked) |
+| Q | 0xac40fa…c89a9 | NULL (blocked) |
+| R | 0x7ce605…76e10 | NULL (blocked) |
+| S | 0xb87530…0386 | NULL (blocked) |
+| T | 0x357810…4588 | NULL (blocked) |
+| U | 0x758600…f9956 | NULL (blocked) |
+| V | 0xb59dd8…af2c3 | NULL (blocked) |
+| W | 0x5f32ae…c7b0 | NULL (blocked) |
+| X | 0xa95cbb…3047d | NULL (blocked) |
+| Y | 0xd8e328…444c4 | NULL (blocked) |
+| Z | 0x7af0ef…197c | NULL (blocked) |
+
+### Multisig Contract Probes
+
+**Status: BLOCKED** — same egress policy.
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4f4…87003 | NULL | false |
+| A-G | 0xf56c4a…0096 | NULL | false |
+| Y-Z | 0xd3ffe1…5b883 | NULL | false |
+| S-T | 0x3b1c3a…7883 | NULL | false |
+| V-W | 0x40fad7…0eb6d | NULL | false |
+
+### MNX Markets
+
+**Status: UNAVAILABLE** — `testnet.mnx.fi` blocked by egress policy. No market data captured.
+
+---
+
+## Egress Policy Note
+
+The session's network policy allows `pypi.org`, `files.pythonhosted.org`, and GitHub MCP (injected token) but denies direct outbound HTTPS to:
+- `api.github.com` (GitHub REST API — needed for org/user repo sweeps)
+- `objects.githubusercontent.com` (GitHub release CDN — DuckDB CLI download failed)
+- `fullnode.mainnet.aptoslabs.com` (Aptos mainnet RPC)
+- `testnet.mnx.fi` (MNX markets)
+
+To enable full sweeps, add these hosts to the session's egress allowlist.
 
 ---
 
 ## Schema
+
 ```sql
 world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
                  source_type, source_name, event_type, repo_name,
@@ -130,13 +177,6 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+---
+
+*Generated by world-increment-sweep + hamming-swarm-snapshot agent on 2026-07-13*
