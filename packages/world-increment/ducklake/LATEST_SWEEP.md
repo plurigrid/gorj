@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-14
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-14
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4 (Python)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,18 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 1 (gorj only; GitHub proxy blocks org/user listing) |
+| Total Repo Snapshots | 1 |
+| Sources Covered | 1 repo (plurigrid/gorj — session-scoped token) |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | unavailable (auth-gated SPA) |
+
+> **GitHub scope note:** The session token is restricted to repository-scoped endpoints
+> (`repos/plurigrid/gorj/...`). Org-level listing for plurigrid, kubeflow, TeglonLabs and
+> user listings for bmorphism, zubyul, and the social graph (migalkin, DJedamski, wasita,
+> kristinezheng, M1shaaa, AustinCStone) were all rejected by the proxy with HTTP 403.
+> Previous sweep data (2026-04-12) showing 471 repos remains in the DB context from prior runs.
 
 ---
 
@@ -139,4 +148,75 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle (prior run)
+
+---
+
+## Hamming Swarm Snapshot — 2026-07-14
+
+### Aptos Mainnet Wallet Balances
+
+Queried via `fullnode.mainnet.aptoslabs.com` using `CoinStore<AptosCoin>` resource.
+All 28 wallets returned **0.000000 APT** — accounts are either unfunded or have migrated
+to the FungibleAsset (FA) model and do not hold a legacy `coin::CoinStore` resource.
+
+| World | Address | Balance APT |
+|-------|---------|-------------|
+| alice | 0xc793...c7b | 0.000000 |
+| bob   | 0x0a3c...d5d | 0.000000 |
+| A | 0x8699...d7a | 0.000000 |
+| B | 0x3f89...b13 | 0.000000 |
+| C | 0x38b9...35e | 0.000000 |
+| D | 0xf776...dd1 | 0.000000 |
+| E | 0xdc1d...d36 | 0.000000 |
+| F | 0x18a1...f71 | 0.000000 |
+| G | 0x69a3...f32 | 0.000000 |
+| H | 0xce67...00f | 0.000000 |
+| I | 0x070f...c9 | 0.000000 |
+| J | 0x4d96...f54 | 0.000000 |
+| K | 0xa732...dc4 | 0.000000 |
+| L | 0x7c2e...ba9 | 0.000000 |
+| M | 0x6fed...e9 | 0.000000 |
+| N | 0xe7dd...b2c | 0.000000 |
+| O | 0x7325...89d | 0.000000 |
+| P | 0x6218...948 | 0.000000 |
+| Q | 0xac40...a9 | 0.000000 |
+| R | 0x7ce6...e10 | 0.000000 |
+| S | 0xb875...386 | 0.000000 |
+| T | 0x3578...588 | 0.000000 |
+| U | 0x7586...956 | 0.000000 |
+| V | 0xb59d...2c3 | 0.000000 |
+| W | 0x5f32...b0 | 0.000000 |
+| X | 0xa95c...47d | 0.000000 |
+| Y | 0xd8e3...4c4 | 0.000000 |
+| Z | 0x7af0...97c | 0.000000 |
+
+**Total APT (legacy CoinStore):** 0.000000 APT across all 28 wallets
+
+### Multisig Contract Probes
+
+All 5 multisig contracts are **healthy** — on-chain, responsive, 2-of-N threshold confirmed.
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4...003 | 2 | ✓ healthy |
+| A-G | 0xf56c...096 | 2 | ✓ healthy |
+| Y-Z | 0xd3ff...883 | 2 | ✓ healthy |
+| S-T | 0x3b1c...883 | 2 | ✓ healthy |
+| V-W | 0x40fa...b6d | 2 | ✓ healthy |
+
+### MNX Markets (testnet.mnx.fi)
+
+- Root `https://testnet.mnx.fi/` → **HTTP 401** (auth required)
+- `/api/markets`, `/api/v1/markets`, `/markets` → serve SPA HTML shell
+- **Status: unavailable / auth-gated** — no public market data accessible
+
+### DuckDB Tables Updated (2026-07-14 run)
+
+| Table | Rows |
+|-------|------|
+| `world_increments` | 1 |
+| `repo_snapshots` | 1 |
+| `aptos_snapshots` | 28 |
+| `multisig_probes` | 5 |
+| `mnx_snapshots` | 0 (unavailable) |
