@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-14
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-14
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,37 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 65 |
+| Total Repo Snapshots | 65 |
+| Sources Covered | 3 orgs + 5 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts | 5 (all healthy, 2-of-N) |
+| MNX Markets | UNAVAILABLE (Vercel auth) |
+
+## GF(3) Color Chain This Run
+
+| Trit | Color | Name | Count |
+|------|-------|------|-------|
+| 0 | #d3869b | ERGODIC | 19 |
+| +1 | #b8bb26 | PLUS | 21 |
+| -1 | #cc241d | MINUS | 25 |
+
+## Aptos Hamming Swarm — 2026-07-14T18:15Z
+
+All 28 wallets (alice, bob, A–Z) returned **0.0 APT**. All accounts live on mainnet.
+
+### Multisig Probes — All Healthy
+
+| Pair | Address | Sigs Required |
+|------|---------|--------------|
+| A-B | 0x0da4f428...4987003 | 2 |
+| A-G | 0xf56c4a1c...bc0096 | 2 |
+| Y-Z | 0xd3ffe181...75b883 | 2 |
+| S-T | 0x3b1c3ae9...ed7883 | 2 |
+| V-W | 0x40fad7b4...80eb6d | 2 |
+
+### MNX Markets
+Status: **UNAVAILABLE** — testnet.mnx.fi returns HTTP 401 (Vercel deployment protection).
 
 ---
 
