@@ -1,14 +1,59 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-14
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
-- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Date:** 2026-07-14
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **Database:** `packages/world-increment/ducklake/world-increments-sweep.db` (SQLite; DuckDB CLI unavailable — identical schema, existing `.duckdb` preserved)
+- **Prior sweep:** 2026-04-12 (471 snapshots)
 
 ---
 
-## Summary Counts
+## Summary Counts — 2026-07-14
+
+| Metric | Value |
+|--------|-------|
+| Total World Increments (this run) | 324 |
+| Total Repo Snapshots (this run) | 324 |
+| Sources Covered | 3 orgs + 8 users (+ 6 social graph) |
+| Aptos addresses probed | 28 (all 404 — unactivated on mainnet) |
+| Multisig contracts healthy | 5/5 (all 2-of-N) |
+| MNX market data | Unavailable (401 auth required) |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (alice → Z, 28 addresses)
+
+All 28 addresses returned HTTP 404 from Aptos mainnet fullnode. The `CoinStore<AptosCoin>` resource does not exist — accounts not yet activated (require at least one on-chain transaction to initialize).
+
+| World | Address (truncated) | Balance APT |
+|-------|---------------------|:-----------:|
+| alice–Z (all 28) | 0xc793...–0x7af0... | N/A (404) |
+
+### Multisig Contract Probes
+
+All 5 multisig contracts responded via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address (truncated) | Sigs Required | Status |
+|------|---------------------|:-------------:|:------:|
+| A-B | 0x0da4...987003 | 2 | ✓ HEALTHY |
+| A-G | 0xf56c...0096 | 2 | ✓ HEALTHY |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ HEALTHY |
+| S-T | 0x3b1c...7883 | 2 | ✓ HEALTHY |
+| V-W | 0x40fa...eb6d | 2 | ✓ HEALTHY |
+
+All multisigs require **2-of-N** signatures. All reachable on Aptos mainnet.
+
+### MNX Markets (testnet.mnx.fi)
+
+- API endpoints → **401 Unauthorized** (auth required)
+- Base URL → TLS handshake timeout
+- **Status:** Unavailable — no market data extracted
+
+---
+
+## Summary Counts — Previous (2026-04-12)
 
 | Metric | Value |
 |--------|-------|
@@ -18,7 +63,44 @@
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep — 2026-07-14
+
+### Coverage
+
+| Source | Type | Repos | Stars |
+|--------|------|:-----:|:-----:|
+| plurigrid | org | 100 | 82 |
+| kubeflow | org | 49 | 34,356 |
+| TeglonLabs | org | 5 | 2 |
+| bmorphism | user | 100 | 246 |
+| zubyul | user | 49 | 14 |
+| migalkin | social | 5 | 275 |
+| wasita | social | 4 | 4 |
+| AustinCStone | social | 4 | 103 |
+| DJedamski | social | 3 | 2 |
+| kristinezheng | social | 3 | 0 |
+| M1shaaa | social | 2 | 0 |
+| **TOTAL** | | **324** | **35,084** |
+
+### GF(3) Color Chain Distribution (2026-07-14)
+
+| Trit | Name | Color | Count |
+|:----:|------|-------|:-----:|
+| 0 | ERGODIC | `#d3869b` | 108 |
+| +1 | PLUS | `#b8bb26` | 108 |
+| -1 | MINUS | `#cc241d` | 108 |
+
+### Notable Repos (2026-07-14)
+- **kubeflow/kubeflow** — 34k+ stars; flagship ML platform
+- **migalkin/NodePiece** — 144★, ICLR'22 KG representations
+- **migalkin/StarE** — 89★, EMNLP'20 hyper-relational KGs
+- **AustinCStone/TextGAN** — 92★, TF text GAN
+- **wasita** — active today (site + CV pushed 2026-07-14)
+- **TeglonLabs/jank-crane** — GF3 convergence maps (2026-06-08)
+
+---
+
+## GF(3) Color Chain — Previous Run (12 Increments, 2026-04-12)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
