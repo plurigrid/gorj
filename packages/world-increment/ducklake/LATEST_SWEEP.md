@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-14
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-14
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Aptos ledger:** block 899426653, epoch 16538, timestamp 2026-07-14T22:07:35Z
 
 ---
 
@@ -12,9 +13,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 11 (this run) |
+| Total Repo Snapshots | 401 repos across 11 sources |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos wallets probed | 28 (alice, bob, A–Z) — all null (resource_not_found) |
+| Multisig contracts probed | 5 — all healthy (sigs_required=2) |
+| MNX Markets | UNAVAILABLE (Vercel auth protection) |
 
 ---
 
@@ -33,9 +37,7 @@
 | 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
-
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS`
 
 ---
 
@@ -130,13 +132,58 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (2026-07-14)
+- **kubeflow/kubeflow**: 15,777 stars — flagship ML platform (↑212 since April)
+- **kubeflow/pipelines**: 4,166 stars — most popular ML pipeline for Kubernetes
+- **kubeflow/trainer**: 2,142 stars — active, pushed 2026-07-14
+- **bmorphism/gay-chat**: created today — gay://chat over Spritely Brassica Chat (Scheme)
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml MCP SDK
+- **bmorphism/anti-bullshit-mcp-server**: 22 stars — claim analysis MCP
+- **migalkin/NodePiece**: 144 stars — knowledge graph embeddings (ICLR'22)
+- **AustinCStone/TextGAN**: 92 stars — text GAN in TensorFlow
+- **plurigrid/asi**: 30 stars — topological chemputer (↑14 since April)
+- **plurigrid/gorj**: 1 star — this repo, active development
+
+---
+
+## Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Probes (alice, bob, A–Z)
+
+All 28 addresses returned HTTP 404 `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+
+**Interpretation:** These accounts either use the post-v1.7 Fungible Asset standard or are not yet funded on mainnet. No balances recorded. A follow-up probe using `0x1::fungible_asset::FungibleStore` is recommended.
+
+### Multisig Contract Health
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4f428... | 2 | ✅ |
+| A-G | 0xf56c4a1c... | 2 | ✅ |
+| Y-Z | 0xd3ffe181... | 2 | ✅ |
+| S-T | 0x3b1c3ae9... | 2 | ✅ |
+| V-W | 0x40fad7b4... | 2 | ✅ |
+
+All 5/5 multisig accounts respond on mainnet and require 2-of-N signatures.
+
+### MNX Markets
+
+`testnet.mnx.fi` is password-protected via Vercel deployment protection. No market data available this sweep.
+
+---
+
+## Schema Reference
+
+```sql
+world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
+                 source_type, source_name, event_type, repo_name,
+                 actor, snapshot_hash)
+
+repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
+               full_name, language, stars, forks, open_issues,
+               pushed_at, description)
+
+aptos_snapshots(timestamp, world, address, balance_apt)
+multisig_probes(timestamp, pair, address, sigs_required, healthy)
+mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
+```
