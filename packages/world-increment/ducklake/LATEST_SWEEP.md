@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-15
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-15
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (cumulative) | 88 |
+| Total Repo Snapshots (cumulative) | 1009 |
+| This sweep: new increments | 65 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | UNAVAILABLE (Vercel auth) |
 
 ---
 
@@ -138,5 +142,62 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring (1186 open issues, pushed 2026-07-15)
+- **kubeflow/spark-operator**: 3,136 stars (up from 3,111 previous sweep) — pushed 2026-07-15
+- **bmorphism/Gay.jl**: 187 open issues — wide-gamut color sampling with splittable determinism
+- **AustinCStone/byteruckus**: brand new repo pushed 2026-07-15
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet, Ledger ~6,297,718,623)
+All 28 Hamming swarm addresses returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`. Accounts exist on-chain but have not initialized an APT CoinStore (no APT holdings recorded).
+
+| World | Address (prefix) | Balance (APT) | Status |
+|-------|-----------------|---------------|--------|
+| alice | 0xc793acde... | 0.0 | resource_not_found |
+| bob | 0x0a3c00c5... | 0.0 | resource_not_found |
+| A | 0x8699edc0... | 0.0 | resource_not_found |
+| B | 0x3f892ebe... | 0.0 | resource_not_found |
+| C | 0x38b99e63... | 0.0 | resource_not_found |
+| D | 0xf7765624... | 0.0 | resource_not_found |
+| E–Z | (22 addrs) | 0.0 each | resource_not_found |
+
+### Multisig Contract Probes (Mainnet)
+All 5 contracts probed via `0x1::multisig_account::num_signatures_required`. All healthy, all require 2 signatures.
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|---------------|---------|
+| A-B | 0x0da4f428... | 2 | ✓ |
+| A-G | 0xf56c4a1c... | 2 | ✓ |
+| Y-Z | 0xd3ffe181... | 2 | ✓ |
+| S-T | 0x3b1c3ae9... | 2 | ✓ |
+| V-W | 0x40fad7b4... | 2 | ✓ |
+
+**All 5 multisigs healthy — consistent 2-of-N threshold.**
+
+### MNX Markets (testnet.mnx.fi)
+**Status: UNAVAILABLE** — Vercel deployment protection requires authentication (OIDC token or bypass). No market data available this sweep.
+
+---
+
+## Schema
+```sql
+world_increments(id, timestamp, gf3_trit, gf3_color, gf3_name,
+                 source_type, source_name, event_type, repo_name,
+                 actor, snapshot_hash)
+
+repo_snapshots(id, timestamp, increment_id, org_or_user, repo_name,
+               full_name, language, stars, forks, open_issues,
+               pushed_at, description)
+
+aptos_snapshots(timestamp, world, address, balance_apt, status)
+multisig_probes(timestamp, pair, address, sigs_required, healthy)
+mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
+```
+
+## GF(3) Assignment Rule
+- `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
+- `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
+- `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
