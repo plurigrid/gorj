@@ -1,10 +1,85 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-16
 
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+> Previous sweep: 2026-04-12 (471 repo snapshots, 12 world_increments)
+
+---
+
+## 2026-07-16 Sweep Metadata
+- **Date:** 2026-07-16T13:30Z
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1 — GitHub Social Graph Sweep (2026-07-16)
+
+### Sources Snapshotted This Run
+| Source | Type | Repos Captured | Notable |
+|--------|------|---------------|---------|
+| plurigrid | org | 50 (103 total) | gorj 1201 issues, asi 30⭐ |
+| kubeflow | org | 49 | kubeflow/kubeflow 15779⭐, pipelines 4167⭐ |
+| TeglonLabs | org | 5 | jank-crane (C++), mathpix-gem 2⭐ |
+| bmorphism | user | 50 (106 total) | Gay.jl 187 issues, ocaml-mcp-sdk 61⭐ |
+| zubyul | user | 49 | voice-observatory, ghostel-emacs-worlds |
+| migalkin | user (social) | 19 | NodePiece 144⭐, StarE 89⭐ |
+| DJedamski | user (social) | 6 | data-science focus |
+| wasita | user (social) | 11 | wasita.github.io active 2026-07 |
+| kristinezheng | user (social) | 5 | cognitive science / web |
+| M1shaaa | user (social) | 8 | cognitive/neuro lab work |
+| AustinCStone | user (social) | 20 (41 total) | TextGAN 92⭐, byteruckus updated 2026-07-15 |
+
+### Most Active plurigrid repos
+- **gorj** — 1201 open issues, Clojure, pushed 2026-07-16 (this repo)
+- **eirobri** — 30 open issues, Clojure, EiRoBri replay world
+- **place** — 13 open issues, TeX, pushed 2026-07-14
+
+### New since 2026-04-12
+| Repo | Created | Lang |
+|------|---------|------|
+| bmorphism/gay-chat | 2026-07-14 | Scheme |
+| AustinCStone/byteruckus | 2026-07-15 | HTML |
+| bmorphism/bci-preview | 2026-06-19 | HTML |
+| bmorphism/satreadout | 2026-06-10 | HTML |
+| bmorphism/world | 2026-06-02 | Python |
+
+---
+
+## JOB 2 — Hamming Swarm Snapshot (Aptos Mainnet, 2026-07-16)
+
+### Wallet Balances (alice, bob, A–Z) — 28 addresses
+All queried via `GET /v1/accounts/{addr}/resource/0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`
+
+**Result: All 28 wallets returned 0.0 APT** — CoinStore resource not found. Accounts may be unfunded, use a different coin type, or the resource path returns 404 on mainnet for these addresses.
+
+### Multisig Contract Probes — 5 contracts
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | ✅ |
+| A-G | 0xf56c...096 | 2 | ✅ |
+| Y-Z | 0xd3ff...883 | 2 | ✅ |
+| S-T | 0x3b1c...883 | 2 | ✅ |
+| V-W | 0x40fa...b6d | 2 | ✅ |
+
+**5/5 multisig contracts healthy.** All require 2-of-N signatures (consistent with last sweep).
+
+### MNX Markets (testnet.mnx.fi)
+**UNAVAILABLE** — Vercel authentication required on all probed endpoints. No market data extractable without credentials.
+
+---
+
+## DuckDB State After This Sweep
+| Table | Cumulative Rows |
+|-------|----------------|
+| world_increments | 108 |
+| repo_snapshots | 1029 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 |
+
+---
+
+## Previous Sweep (2026-04-12) Summary
 
 ---
 
