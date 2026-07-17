@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-17
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-17
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (cumulative) | 296 |
+| New Repo Snapshots (this run) | 273 |
+| Total Repo Snapshots (cumulative) | 1217 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | unavailable (401) |
 
 ---
 
@@ -140,3 +144,65 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-07-17)
+
+### Aptos Wallet Balances — 28 addresses (alice, bob, A–Z)
+
+All 28 addresses returned HTTP 404 from Aptos mainnet fullnode. The `CoinStore<AptosCoin>` resource is absent — accounts are unregistered or have never received APT.
+
+| World | Address (first 10 chars) | Status |
+|-------|--------------------------|--------|
+| alice | 0xc793acde... | 404 unregistered |
+| bob   | 0x0a3c00c5... | 404 unregistered |
+| A     | 0x8699edc0... | 404 unregistered |
+| B     | 0x3f892ebe... | 404 unregistered |
+| C     | 0x38b99e63... | 404 unregistered |
+| D     | 0xf7765624... | 404 unregistered |
+| E     | 0xdc1d9d53... | 404 unregistered |
+| F     | 0x18a14b5b... | 404 unregistered |
+| G     | 0x69a394c0... | 404 unregistered |
+| H     | 0xce67c327... | 404 unregistered |
+| I     | 0x070fe5d7... | 404 unregistered |
+| J     | 0x4d964db8... | 404 unregistered |
+| K     | 0xa732040a... | 404 unregistered |
+| L     | 0x7c2eaeaf... | 404 unregistered |
+| M     | 0x6fed37a7... | 404 unregistered |
+| N     | 0xe7dde6da... | 404 unregistered |
+| O     | 0x73252b60... | 404 unregistered |
+| P     | 0x62187920... | 404 unregistered |
+| Q     | 0xac40fa50... | 404 unregistered |
+| R     | 0x7ce605cc... | 404 unregistered |
+| S     | 0xb8753014... | 404 unregistered |
+| T     | 0x35781dc0... | 404 unregistered |
+| U     | 0x75860da4... | 404 unregistered |
+| V     | 0xb59dd817... | 404 unregistered |
+| W     | 0x5f32aef7... | 404 unregistered |
+| X     | 0xa95cbbd1... | 404 unregistered |
+| Y     | 0xd8e32848... | 404 unregistered |
+| Z     | 0x7af0ef6e... | 404 unregistered |
+
+### Multisig Contract Probes
+
+All 5 probed contracts are healthy and require 2 signatures.
+
+| Pair | Address (first 10 chars) | Sigs Required | Healthy |
+|------|--------------------------|---------------|---------|
+| A-B  | 0x0da4f428... | 2 | ✓ |
+| A-G  | 0xf56c4a1c... | 2 | ✓ |
+| Y-Z  | 0xd3ffe181... | 2 | ✓ |
+| S-T  | 0x3b1c3ae9... | 2 | ✓ |
+| V-W  | 0x40fad7b4... | 2 | ✓ |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Unavailable** — API returned HTTP 401 Unauthorized. No market data retrieved.
+
+### GF(3) Trit Distribution (this run, 273 new increments)
+
+- ERGODIC (#d3869b): 91
+- PLUS (#b8bb26): 91  
+- MINUS (#cc241d): 91
+
