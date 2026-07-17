@@ -1,4 +1,82 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-17
+
+> Previous sweep: 2026-04-12 (471 repo snapshots, 12 increments). See git history for archive.
+
+---
+
+# World-Increment Sweep — 2026-07-17 (CURRENT)
+
+## Sweep Metadata
+- **Date:** 2026-07-17
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **Database:** `sweep-2026-07-17.sqlite` (SQLite3; DuckDB CLI/pip blocked in env)
+
+## Summary Counts
+
+| Table | Rows |
+|-------|------|
+| world_increments | 58 |
+| repo_snapshots | 58 |
+| aptos_snapshots | 28 (all NULL — Aptos mainnet blocked by proxy) |
+| multisig_probes | 5 (all healthy, sigs_required=2) |
+| mnx_snapshots | 1 (note: Vercel auth required) |
+
+## GF(3) Color Chain
+
+| Trit | Color | Name | Count |
+|------|-------|------|-------|
+| 0 | `#d3869b` | ERGODIC | 20 |
+| +1 | `#b8bb26` | PLUS | 19 |
+| -1 | `#cc241d` | MINUS | 19 |
+
+## GitHub Sources Covered
+
+| Source | Type | Repos Snapshotted | Latest Push |
+|--------|------|-------------------|-------------|
+| plurigrid | org | 10 | nanoclj-zig 2026-04-25 |
+| kubeflow | org | 10 | hub/trainer 2026-07-17 |
+| TeglonLabs | org | 5 | jank-crane 2026-06-08 |
+| bmorphism | user | 10 | anti-bullshit-mcp 2026-07-12 |
+| zubyul | user | 6 | voice-observatory 2026-04-24 |
+| migalkin | user | 4 | kgcourse2021 2026-07-10 |
+| wasita | user | 4 | pnas-typst-template 2026-07-16 |
+| AustinCStone | user | 3 | byteruckus 2026-07-15 |
+| DJedamski | user | 2 | historical |
+| kristinezheng | user | 2 | .github.io 2026-07-01 |
+| M1shaaa | user | 2 | profile 2026-02-04 |
+
+## Top Activity Highlights
+
+- **kubeflow/hub** (Go, 177★) — 2026-07-17, model registry most active today
+- **kubeflow/trainer** (Go, 2151★) — 2026-07-17, distributed AI training
+- **kubeflow/pipelines** (Python, 4167★) — 2026-07-16
+- **kubeflow/kubeflow** — 15779★, flagship ML toolkit
+- **bmorphism/anti-bullshit-mcp-server** — 22★, updated 2026-07-12
+- **bmorphism/Gay.jl** — 187 open issues, wide-gamut color sampling
+- **wasita/pnas-typst-template** — 2026-07-16 (newest in social graph)
+- **AustinCStone/byteruckus** — 2026-07-15
+
+## Hamming Swarm: Multisig Probes (ALL HEALTHY)
+
+| Pair | sigs_required | Status |
+|------|---------------|--------|
+| A-B (`0x0da4f428…`) | 2 | ✓ |
+| A-G (`0xf56c4a1c…`) | 2 | ✓ |
+| Y-Z (`0xd3ffe181…`) | 2 | ✓ |
+| S-T (`0x3b1c3ae9…`) | 2 | ✓ |
+| V-W (`0x40fad7b4…`) | 2 | ✓ |
+
+## Hamming Swarm: Aptos Wallet Balances
+
+**UNREACHABLE** — `fullnode.mainnet.aptoslabs.com` coin endpoint blocked by proxy. 28 addresses (alice, bob, A–Z) recorded as NULL. Multisig /v1/view succeeded (different endpoint), coin balance GET failed.
+
+## MNX Markets
+
+**UNAVAILABLE** — `testnet.mnx.fi` requires Vercel visitor authentication.
+
+---
+
+# Previous Sweep — 2026-04-12 (ARCHIVED)
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
