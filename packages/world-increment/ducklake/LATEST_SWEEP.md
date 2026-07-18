@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-18
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-18
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (cumulative) | 335 |
+| Total Repo Snapshots (cumulative) | 1,256 |
+| This-run Repo Snapshots | 312 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | UNAVAILABLE (Vercel auth wall) |
 
 ---
 
@@ -130,13 +134,66 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
+## Notable Highlights (2026-07-18 run)
 - **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **kubeflow/spark-operator**: 3,138 stars — active (pushed 2026-07-17)
+- **kubeflow/trainer**: 2,151 stars — pushed 2026-07-18 (active dev)
+- **kubeflow/mcp-server**: Python, pushed 2026-07-18 ★26 — kubeflow MCP integration new
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings (+1 since Apr)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **bmorphism/gay-chat**: Scheme, pushed 2026-07-14 (most recent bmorphism activity)
+- **plurigrid/asi**: ★31 (up from 16 in April) — topological chemputer active
+- **plurigrid/gorj**: pushed 2026-07-18 (this repo, active today)
+- **TeglonLabs/jank-crane**: C++, pushed 2026-06-08 — GF3 convergence maps, crane-jank IR hub
+- **wasita/wasita.github.io**: Svelte, pushed 2026-07-16 (most recent social graph activity)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances
+
+All 28 Hamming worlds (alice, bob, A–Z) probed against Aptos mainnet (ledger ~6,339,052,412).
+
+**Result: ALL addresses returned `resource_not_found` for `0x1::coin::CoinStore<AptosCoin>`.**
+
+These addresses have no initialized APT coin store on mainnet — likely devnet/testnet-only or unfunded.
+
+| World | Address (prefix) | Balance APT |
+|-------|-----------------|-------------|
+| alice | 0xc793ac... | NULL |
+| bob   | 0x0a3c00... | NULL |
+| A     | 0x8699ed... | NULL |
+| B–Z   | (26 addrs) | NULL (all) |
+
+All 28 rows inserted into `aptos_snapshots` with `balance_apt = NULL`.
+
+### Multisig Contract Health (5 probes)
+
+All probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4f4... | 2 | ✅ healthy |
+| A-G | 0xf56c4a... | 2 | ✅ healthy |
+| Y-Z | 0xd3ffe1... | 2 | ✅ healthy |
+| S-T | 0x3b1c3a... | 2 | ✅ healthy |
+| V-W | 0x40fad7... | 2 | ✅ healthy |
+
+All 5 multisig accounts are live and requiring 2-of-N signatures.
+
+### MNX Markets
+
+`testnet.mnx.fi` and `/api/markets` both return a Vercel authentication wall. No market data available without credentials. `mnx_snapshots` table has 0 rows this run.
+
+---
+
+## DuckDB Table Summary (cumulative)
+
+| Table | Total Rows | This Run |
+|-------|-----------|----------|
+| `world_increments` | 335 | 312 |
+| `repo_snapshots` | 1,256 | 312 |
+| `aptos_snapshots` | 28 | 28 |
+| `multisig_probes` | 5 | 5 |
+| `mnx_snapshots` | 0 | 0 |
