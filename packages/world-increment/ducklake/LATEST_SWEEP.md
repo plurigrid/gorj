@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-18
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-18
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 344 |
+| Total Repo Snapshots | 1,265 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Snapshots (this run) | 28 |
+| Multisig Probes (this run) | 5 |
+| MNX Snapshots | 0 (auth-gated) |
 
 ---
 
@@ -140,3 +143,46 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## Job 2: Hamming Swarm Snapshot (2026-07-18)
+
+### Aptos Mainnet Wallet Balances
+
+All 28 Hamming swarm addresses (alice, bob, A–Z) queried via `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+
+**Result: All 28 addresses return 0.0 APT** — CoinStore resource absent or zero balance.
+
+| World | Address | APT Balance |
+|-------|---------|-------------|
+| alice | 0xc793acdec12b...d0d624cc7b | 0.0 |
+| bob | 0x0a3c00c58fdf90...e05512d5d | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+### Multisig Contract Probes
+
+All 5 probed multisig pairs respond healthy with 2-of-N threshold:
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f428a0c007... | 2 | ✅ |
+| A-G | 0xf56c4a1c09062... | 2 | ✅ |
+| Y-Z | 0xd3ffe1812b2df4... | 2 | ✅ |
+| S-T | 0x3b1c3ae905d44c... | 2 | ✅ |
+| V-W | 0x40fad7b423a843... | 2 | ✅ |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: Unavailable** — Vercel deployment protection (password-gated). No API data accessible.
+
+---
+
+## GF(3) Color Chain — Current Distribution
+
+| Name | Color | Count |
+|------|-------|-------|
+| ERGODIC | #d3869b | 114 |
+| PLUS | #b8bb26 | 115 |
+| MINUS | #cc241d | 115 |
+
