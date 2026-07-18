@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-07-18
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-18
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 103 (80 new this sweep) |
+| Total Repo Snapshots | 1024 (80 new this sweep) |
+| Sources Covered | 2 orgs + 8 users + social graph |
+| Aptos Addresses Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | unavailable (SPA)
 
 ---
 
@@ -130,13 +133,23 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (2026-07-18 sweep)
+- **plurigrid/gorj**: ⭐1, pushed TODAY (2026-07-18) — this repo is actively being developed
+- **plurigrid/asi**: ⭐31 (up from 16 in April sweep), pushed 2026-07-10
+- **bmorphism/gay-chat** (new): Scheme, pushed 2026-07-14 — newest bmorphism repo
+- **bmorphism/ocaml-mcp-sdk**: ⭐61 (up from 60), OCaml MCP SDK
+- **bmorphism/anti-bullshit-mcp-server**: ⭐22 (down from 23), active 2026-07-12
+- **wasita/pnas-typst-template** (new): pushed 2026-07-16 — very fresh
+- **AustinCStone/byteruckus** (new): pushed 2026-07-15
+- **migalkin/kgcourse2021**: pushed 2026-07-10, still active
+- **migalkin/NodePiece**: ⭐144 (up from 143)
+
+## Hamming Swarm — Aptos Snapshot
+- **All 28 Hamming addresses (alice, bob, A–Z) are unfunded on Aptos mainnet** — `resource_not_found` for CoinStore
+- **5/5 multisig contracts healthy** — all require 2-of-N signatures (A-B, A-G, Y-Z, S-T, V-W)
+- **MNX testnet**: SPA frontend only, no public REST API accessible
+
+## GF(3) This-Sweep Distribution
+- ERGODIC (#d3869b): 27 new increments
+- PLUS (#b8bb26): 27 new increments  
+- MINUS (#cc241d): 26 new increments
