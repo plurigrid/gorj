@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-18
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-18
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 31 (11 new this sweep) |
+| Total Repo Snapshots | 981 cumulative |
+| Sources Covered | 3 orgs + 8 users (plurigrid, kubeflow, TeglonLabs + bmorphism, zubyul, migalkin, DJedamski, wasita, kristinezheng, M1shaaa, AustinCStone) |
+| Aptos Hamming Swarm Addresses | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (A-B, A-G, Y-Z, S-T, V-W) |
+| MNX Markets | Unavailable (Vercel auth required) |
 
 ---
 
@@ -130,13 +133,52 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (Updated 2026-07-18)
+- **kubeflow/kubeflow**: 15,781 stars (↑216 since Apr-12) — updated 2026-07-18
+- **kubeflow/pipelines**: 4,168 stars (↑49) — updated 2026-07-17
+- **kubeflow/spark-operator**: 3,138 stars (↑27) — updated 2026-07-18
+- **kubeflow/hub**: Model Registry 177 stars — very active 2026-07-18
+- **kubeflow/mcp-apache-spark-history-server**: 183 stars new entry — MCP for Spark (2026-07-16)
+- **migalkin/NodePiece**: 144 stars (↑1)
+- **bmorphism/ocaml-mcp-sdk**: 61 stars (↑1) — updated 2026-05-08
+- **bmorphism/anti-bullshit-mcp-server**: 22 stars — updated 2026-07-12 (very fresh)
+- **bmorphism/Gay.jl**: 187 open issues — updated 2026-07-14
+- **AustinCStone/TextGAN**: 92 stars
+- **plurigrid/asi**: 31 stars (↑15!) — updated 2026-07-17
+- **plurigrid/gorj**: 1244 open issues — this very repo, updated 2026-07-07
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-07-18)
+
+### Aptos Mainnet Wallet Balances — 28 Worlds
+
+Queried: `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` on Aptos mainnet (ledger version ~6341405432).
+
+**Result:** All 28 Hamming-swarm addresses returned `resource_not_found`. No APT CoinStore is registered for any address. Balance = **0.0 APT** for all worlds.
+
+These addresses are not yet activated on Aptos mainnet (no coin store resource created).
+
+| World | Address | Balance APT |
+|-------|---------|-------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...2d5d | 0.0 |
+| A | 0x8699...9d7a | 0.0 |
+| B | 0x3f89...b13 | 0.0 |
+| C–Z | (see aptos_snapshots table) | 0.0 each |
+
+### Multisig Contract Health (5/5 Healthy)
+
+All 5 multisig pairs probed via `0x1::multisig_account::num_signatures_required`. All returned **2 sigs required**.
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|--------------|--------|
+| A-B | 0x0da4...7003 | 2 | ✓ healthy |
+| A-G | 0xf56c...0096 | 2 | ✓ healthy |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ healthy |
+| S-T | 0x3b1c...7883 | 2 | ✓ healthy |
+| V-W | 0x40fa...eb6d | 2 | ✓ healthy |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: UNAVAILABLE** — All paths (`/`, `/api/markets`, `/api/v1/markets`) return Vercel authentication required. No market data extractable at this time. `mnx_snapshots` table remains empty.
