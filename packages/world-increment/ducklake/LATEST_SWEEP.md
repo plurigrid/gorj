@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-19
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-19
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment ID:** 13  **GF(3):** PLUS (#b8bb26, trit=+1)
 
 ---
 
@@ -12,13 +13,60 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 13 (cumulative) |
+| Total Repo Snapshots | 944 (cumulative) |
+| Sources Covered | 3 orgs + 8 users (prior runs) |
+| Aptos Addresses Probed | 28 (alice/bob + A–Z) |
+| Multisig Contracts Probed | 5 (all healthy) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## Hamming Swarm Snapshot (2026-07-19)
+
+### Aptos Mainnet Wallet Balances
+Queried `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` at ledger v6,346,622,288 (epoch 16588).
+
+All 28 addresses returned `resource_not_found` — no APT CoinStore present on mainnet.
+
+| Label | Address | APT Balance |
+|-------|---------|-------------|
+| alice | 0xc793...c7b | 0.00000000 |
+| bob   | 0x0a3c...2d5d | 0.00000000 |
+| A–Z   | (26 addresses) | 0.00000000 each |
+
+### Multisig Contract Health
+All 5 contracts probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f4...87003 | 2 | ✅ HEALTHY |
+| A-G | 0xf56c4a...0096  | 2 | ✅ HEALTHY |
+| Y-Z | 0xd3ffe1...b883  | 2 | ✅ HEALTHY |
+| S-T | 0x3b1c3a...7883  | 2 | ✅ HEALTHY |
+| V-W | 0x40fad7...eb6d  | 2 | ✅ HEALTHY |
+
+All 5 multisigs require 2-of-2 signatures. No degradation detected.
+
+### MNX Markets
+`https://testnet.mnx.fi` — **UNAVAILABLE** (connection timeout on all probed paths).
+
+---
+
+## GitHub Social Graph (2026-07-19)
+
+**Status:** External GitHub API blocked — session proxy restricts API access to `plurigrid/gorj` only.  
+Sources kubeflow, TeglonLabs, bmorphism, zubyul, and social graph nodes were inaccessible this run.
+
+### plurigrid/gorj — Recent Activity (via MCP)
+| SHA | Date | Message |
+|-----|------|---------|
+| 5b28fe0 | 2026-05-08 | chore: ignore duckdb binary in repo root |
+| ebf263f | 2026-04-14 | world-increment ducklake: sync world.duckdb sweep state |
+| 631518b | 2026-04-12 | world-increment sweep 2026-04-12: insert id=12 ERGODIC |
+
+---
+
+## GF(3) Color Chain — All 13 Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +82,10 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 13 | hamming-swarm | aptos_snapshot | +1 | `#b8bb26` | **PLUS** ← current |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → … → ERGODIC (12) → PLUS (13)`  
+Next: id=14 → MINUS (#cc241d)
 
 ---
 
