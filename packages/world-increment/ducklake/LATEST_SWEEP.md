@@ -1,10 +1,10 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-19
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
-- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Date:** 2026-07-19
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **Database:** `packages/world-increment/ducklake/world-increments.db` (SQLite)
+- **Previous DB:** `world-increments.duckdb` (prior run 2026-04-12)
 
 ---
 
@@ -12,30 +12,56 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 137 |
+| Total Repo Snapshots | 137 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts | 5 (all healthy, 2-of-N) |
+| Total Stars Across Snapshot | 30,505 |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 2 — Hamming Swarm Snapshot
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+### Aptos Wallet Balances (mainnet, 2026-07-19)
+All 28 wallets queried via `fullnode.mainnet.aptoslabs.com/v1/accounts/{addr}/resource/CoinStore`.
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+**Result:** All 28 wallets show **0.0 APT** — API confirms `resource_not_found` for `CoinStore<AptosCoin>`, meaning accounts have never received APT (CoinStore not initialized).
+
+### Multisig Contract Probes — 5/5 HEALTHY
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | `0x0da4f428...4987003` | 2 | ✅ |
+| A-G | `0xf56c4a1c...bc0096` | 2 | ✅ |
+| Y-Z | `0xd3ffe181...75b883` | 2 | ✅ |
+| S-T | `0x3b1c3ae9...ed7883` | 2 | ✅ |
+| V-W | `0x40fad7b4...80eb6d` | 2 | ✅ |
+
+All multisig contracts on Aptos mainnet are active and require 2-of-N signatures.
+
+### MNX Markets (testnet.mnx.fi)
+**Status: Unavailable** — Vercel authentication wall, SPA requires login credentials. No market data extracted.
+
+---
+
+## GF(3) Color Chain — All 137 Increments (summary)
+
+137 increments assigned via `id%3`: ERGODIC(#d3869b) / PLUS(#b8bb26) / MINUS(#cc241d), cycling 45 complete GF(3) triplets + 2 extra.
+
+| Source | Repos | Dominant Color (first) |
+|--------|-------|------------------------|
+| plurigrid | 50 | ERGODIC (id=1) |
+| bmorphism | 50 | PLUS (id=51) |
+| kubeflow | 13 | MINUS (id=101) |
+| zubyul | 7 | ERGODIC (id=114) |
+| TeglonLabs | 5 | PLUS (id=121) |
+| wasita | 3 | ERGODIC (id=126) |
+| migalkin | 3 | MINUS (id=129) |
+| M1shaaa | 2 | PLUS (id=132) |
+| AustinCStone | 2 | MINUS (id=134) |
+| kristinezheng | 1 | ERGODIC (id=136) |
+| DJedamski | 1 | PLUS (id=137) |
 
 ---
 
