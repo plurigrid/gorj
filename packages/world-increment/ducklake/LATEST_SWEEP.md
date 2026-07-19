@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-19
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-19 15:07 UTC
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment id:** 13 — GF(3) trit=1, PLUS (#b8bb26)
 
 ---
 
@@ -12,9 +13,41 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 955 |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | unavailable (Vercel auth) |
+| Sources Covered (cumulative) | 3 orgs + 8 users (prior) + gorj + 10 policy-blocked |
+
+### GitHub API Constraint (2026-07-19)
+Cross-org/cross-user GitHub REST API calls returned HTTP 403:  
+_"This GitHub API path is not available: sessions are bound to their configured repositories."_  
+Affected sources: `kubeflow`, `TeglonLabs`, `bmorphism`, `zubyul`, `migalkin`, `DJedamski`, `wasita`, `kristinezheng`, `M1shaaa`, `AustinCStone` — all recorded as `_policy_blocked` in `repo_snapshots`.  
+In-scope: **plurigrid/gorj** (Clojure, last pushed 2026-05-08, 72 days ago).
+
+---
+
+## Hamming Swarm — Aptos Mainnet (2026-07-19)
+
+**Ledger:** epoch=16594, block=910,484,557, version=6,354,285,069
+
+All 28 wallet addresses (alice, bob, A–Z) returned **0.0 APT** — `CoinStore<AptosCoin>` resource not found (404). These are valid hex addresses that have never received APT; their coin stores are uninitialized.
+
+### Multisig Probes — All Healthy
+
+| Pair | Sigs Required | Status |
+|------|--------------|--------|
+| A-B (0x0da4…7003) | 2 | healthy |
+| A-G (0xf56c…0096) | 2 | healthy |
+| Y-Z (0xd3ff…b883) | 2 | healthy |
+| S-T (0x3b1c…7883) | 2 | healthy |
+| V-W (0x40fa…eb6d) | 2 | healthy |
+
+### MNX Testnet
+`testnet.mnx.fi` returns Vercel deployment protection page — visitor password required. No market data available.
+
+---
 
 ---
 
@@ -34,8 +67,9 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 13 | plurigrid/gorj | repo_snapshot (hamming) | +1 | `#b8bb26` | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
 
 ---
 
