@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-20
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-20
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Days since last sweep:** ~99 days (last: 2026-04-12, id=12 ERGODIC)
 
 ---
 
@@ -12,13 +13,70 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 25 |
+| Total Repo Snapshots | 945 |
+| Sources Covered | plurigrid/gorj (session-scoped) |
+| Aptos Addresses Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy) |
+| MNX Markets | Unavailable (401/SSL) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## This Sweep: id=13 PLUS (#b8bb26)
+
+### GitHub — plurigrid/gorj
+
+| Field | Value |
+|---|---|
+| Language | Clojure |
+| Last push | 2026-05-08 |
+| Description | MCP server + hooks that give AI coding agents a Clojure REPL |
+| Stars | 0 · Forks | 0 |
+
+Recent commits: last activity 2026-05-08 (`chore: ignore duckdb binary in repo root`).  
+No new commits since the 2026-04-12 sweep was merged.
+
+### Aptos Chain — Hamming Swarm Snapshot
+
+**Chain:** mainnet · Chain ID=1 · Ledger ~6,360,590,325
+
+All 28 addresses show **0 APT** in the legacy CoinStore.
+
+**Notable:** `alice` (0xc793…cc7b) has deployed contracts on-chain:
+- `store_v2::ACSetMeta2` — custom storage module
+- `address_book::Mapping` — address book
+- `multiverse::MultiverseState` — multiverse oracle with escrow 0xda0d…d42f6
+- **`lending_pool::UserPosition`** — **1,869,283,848 deposit shares** in pool `0x3a60…aae`
+
+`alice` holds assets inside the lending protocol rather than a bare APT CoinStore.
+
+### Multisig Probes — All Healthy
+
+| Pair | Address | Sigs Required |
+|---|---|---|
+| A-B | 0x0da4…003 | 2 |
+| A-G | 0xf56c…096 | 2 |
+| Y-Z | 0xd3ff…883 | 2 |
+| S-T | 0x3b1c…883 | 2 |
+| V-W | 0x40fa…b6d | 2 |
+
+### MNX Markets (testnet.mnx.fi)
+
+Unavailable — SSL handshake timeout on `/api/markets`; 401 Unauthorized on all other paths.
+
+---
+
+## Cumulative Summary Counts
+
+| Metric | Value |
+|--------|-------|
+| Total World Increments | 12 → 25 |
+| Total Repo Snapshots | 471 → 945 |
+| Sources Covered | 3 orgs + 8 users (historical) |
+
+---
+
+## GF(3) Color Chain — All Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -33,9 +91,10 @@
 | 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 12 | bmorphism (org) | sweep_complete | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **world-increment + hamming-swarm** | **sweep_complete** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → … → ERGODIC → PLUS ← this sweep`
 
 ---
 
