@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-20
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-20
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **World increment:** #13 (GF3 trit=+1, PLUS, #b8bb26)
 
 ---
 
@@ -12,13 +13,85 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 945 |
+| Aptos Addresses Probed | 27/28 (alice timeout) |
+| Multisig Contracts | 5/5 healthy |
+| MNX Markets | Unavailable (Vercel auth) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph
+
+**Scope note:** GitHub API access in this session is scoped to `plurigrid/gorj` only.
+Org-level endpoints (`/orgs/{org}/repos`) were blocked by the proxy's repository-scope policy.
+The following data reflects what was accessible.
+
+### plurigrid/gorj (snapshot 2026-07-20)
+- Language: Clojure
+- Description: MCP server + hooks that give AI coding agents a Clojure REPL
+- Latest commit: `chore: ignore duckdb binary in repo root` (2026-05-08)
+- Active branches: 20+ `world-increment/sweep-*` branches
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Balances (2026-07-20)
+
+| World | Address (short) | Balance (APT) |
+|---|---|---|
+| alice | 0xc793...cc7b | N/A (timeout) |
+| bob | 0x0a3c...512d | 12.657007 |
+| A | 0x8699...9d7a | 0.051767 |
+| B | 0x3f89...b13 | 0.036256 |
+| C | 0x38b9...35e | 0.010185 |
+| D | 0xf776...dd1 | 0.011629 |
+| E | 0xdc1d...d36 | 0.009372 |
+| F | 0x18a1...f71 | 1.960516 |
+| G | 0x69a3...f32 | 0.000681 |
+| H | 0xce67...00f | 0.001681 |
+| I | 0x070f...fc9 | 0.000681 |
+| J | 0x4d96...f54 | 1.895093 |
+| K | 0xa732...dc4 | 0.161961 |
+| L | 0x7c2e...ba9 | 1.927269 |
+| M | 0x6fed...e9 | 0.112285 |
+| N | 0xe7dd...b2c | 0.106121 |
+| O | 0x7325...89d | 0.210136 |
+| P | 0x6218...948 | 0.140136 |
+| Q | 0xac40...a9 | 0.103240 |
+| R | 0x7ce6...e10 | 0.090217 |
+| S | 0xb875...386 | 0.091788 |
+| T | 0x3578...588 | 0.073713 |
+| U | 0x7586...956 | 0.055773 |
+| V | 0xb59d...2c3 | 0.048833 |
+| W | 0x5f32...7b0 | 0.040705 |
+| X | 0xa95c...47d | 0.042577 |
+| Y | 0xd8e3...4c4 | 0.044449 |
+| Z | 0x7af0...97c | 0.024268 |
+
+**Total (27 probed):** 19.908339 APT  
+**Top holder:** bob — 12.657007 APT (63.6% of swarm)  
+**Missing:** alice (RPC timeout)
+
+### Multisig Contract Probes (Aptos mainnet)
+
+| Pair | Address (short) | Sigs Required | Healthy |
+|---|---|---|---|
+| A-B | 0x0da4...003 | 2 | ✓ |
+| A-G | 0xf56c...096 | 2 | ✓ |
+| Y-Z | 0xd3ff...883 | 2 | ✓ |
+| S-T | 0x3b1c...883 | 2 | ✓ |
+| V-W | 0x40fa...eb6 | 2 | ✓ |
+
+All 5 contracts respond with 2-of-N threshold. Healthy.
+
+### MNX Markets (testnet.mnx.fi)
+Status: **Unavailable** — Vercel deployment protection (password required). No bypass token available.
+
+---
+
+## GF(3) Color Chain — Increments 1–24
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +107,9 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 13 | world-increment-sweep | sweep_complete (gorj + aptos) | +1 | `#b8bb26` | **PLUS** ← this run |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain through #13: `PLUS → MINUS → ERGODIC → ... → PLUS → MINUS → ERGODIC → PLUS`
 
 ---
 
