@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-07-21
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-21
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 34 (cumulative) |
+| Total Repo Snapshots | 1292 (cumulative) |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-2) |
+| MNX Markets | UNAVAILABLE (Vercel auth) |
 
 ---
 
@@ -130,13 +133,41 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (2026-07-21 sweep delta)
+- **kubeflow/kubeflow**: 15,789 stars (+224 since 2026-04-12) — ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,168 stars (+49) — ML pipelines (pushed 2026-07-21)
+- **kubeflow/spark-operator**: 3,142 stars (+31) — Spark operator (pushed 2026-07-21)
+- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings (stable)
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml MCP SDK (stable)
+- **AustinCStone/TextGAN**: 92 stars — text generation with GANs (stable)
+- **plurigrid/asi**: 31 stars (+15 since April!) — topological chemputer (pushed 2026-07-10)
+- **plurigrid/gorj**: This repo — 1302 open issues, pushed 2026-07-21 (active)
+- **plurigrid/eirobri**: EiRoBri replay world (pushed 2026-07-21)
+- **wasita/wasita.github.io**: pushed 2026-07-21 — zubyul social graph node active today
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet, 2026-07-21)
+All 28 wallets queried. **All balances: 0.0 APT** (consistent with unfunded addresses or non-APT holdings).
+
+| World | Address | Balance |
+|-------|---------|---------|
+| alice | 0xc793acdec12b4a63717b001e21bbb7a8564d5e9690f80d41f556c2d0d624cc7b | 0.0 APT |
+| bob | 0x0a3c00c58fdf9020b27854a3229042efa70cf782d7d2a9de0c13d00e05512d5d | 0.0 APT |
+| A–Z | (26 addresses) | 0.0 APT each |
+
+### Multisig Contract Probes (Aptos Mainnet)
+All 5 contracts responded successfully. All require **2-of-2 signatures**. Status: ✓ all healthy.
+
+| Pair | Contract Address | Sigs Required |
+|------|-----------------|--------------|
+| A-B | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 | 2 |
+| A-G | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 | 2 |
+| Y-Z | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 | 2 |
+| S-T | 0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883 | 2 |
+| V-W | 0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d | 2 |
+
+### MNX Markets (testnet.mnx.fi)
+**Status: UNAVAILABLE** — Site is behind Vercel deployment protection. Requires a Vercel bypass token or Trusted Sources OIDC configuration. No market data captured; mnx_snapshots table remains empty.
