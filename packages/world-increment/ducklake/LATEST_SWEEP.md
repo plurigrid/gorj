@@ -1,6 +1,122 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-21
 
-## Sweep Metadata
+**Date:** 2026-07-21  
+**Run type:** world-increment-sweep + hamming-swarm-snapshot  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Summary
+
+| Source | Type | Repos Snapshotted |
+|--------|------|-------------------|
+| plurigrid | org | 30 |
+| kubeflow | org | 13 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 10 |
+| zubyul | user | 6 |
+| migalkin | social graph | 4 |
+| wasita | social graph | 2 |
+| AustinCStone | social graph | 2 |
+| DJedamski | social graph | 1 |
+| kristinezheng | social graph | 1 |
+| M1shaaa | social graph | 1 |
+| **Total** | | **75** |
+
+### GF(3) Color Chain Distribution
+
+| Trit | Color | Name | Count |
+|------|-------|------|-------|
+| 0 | `#d3869b` | ERGODIC | 25 |
+| 1 | `#b8bb26` | PLUS | 25 |
+| 2 | `#cc241d` | MINUS | 25 |
+
+Perfectly balanced across 75 increments (id%3 cycling).
+
+### Top Repos by Stars
+
+| Repo | Stars | Language |
+|------|-------|----------|
+| kubeflow/kubeflow | 15,786 | — |
+| kubeflow/pipelines | 4,169 | Python |
+| kubeflow/spark-operator | 3,140 | Python |
+| kubeflow/trainer | 2,152 | Go |
+| kubeflow/katib | 1,692 | Python |
+| kubeflow/examples | 1,460 | Jsonnet |
+| kubeflow/community-distribution | 1,029 | YAML |
+| kubeflow/arena | 815 | Go |
+| bmorphism/ocaml-mcp-sdk | 61 | OCaml |
+| plurigrid/asi | 31 | HTML |
+
+### Most Recently Pushed
+
+| Repo | Pushed At |
+|------|-----------|
+| plurigrid/gorj | 2026-07-21T01:12:44Z |
+| kubeflow/katib | 2026-07-20T22:47:05Z |
+| kubeflow/kubeflow | 2026-07-20T22:08:12Z |
+| wasita/wasita.github.io | 2026-07-20T18:18:51Z |
+| bmorphism/Gay.jl | 2026-07-20T09:41:37Z |
+
+### Notable Activity
+
+- **plurigrid/gorj** (pushed today) — forj + Rama topology nREPL routing + GF(3) gay trit coloring — 1,286 open issues
+- **bmorphism/Gay.jl** (187 open issues, pushed today) — Wide-gamut color sampling with splittable determinism
+- **migalkin/NodePiece** (144★) — Compositional and Parameter-Efficient Representations for Large Knowledge Graphs (ICLR'22)
+- **bmorphism/ocaml-mcp-sdk** (61★) — OCaml SDK for MCP using Jane Street oxcaml_effect
+- **kubeflow/mcp-apache-spark-history-server** (183★, new 2025-06-26) — MCP Server for Apache Spark
+- Active ecosystem in: Gay.jl/GF(3) colors, OCaml/OxCaml MCP, Zig toolchain (nanoclj-zig, zig-syrup), kubeflow SDK
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (A-Z + alice/bob)
+
+**Result:** All 28 wallets queried. No `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` resource found.
+Accounts exist on-chain (confirmed sequence numbers) but use Fungible Asset standard — zero APT via legacy CoinStore API.
+
+| World | Address (prefix) | Balance APT |
+|-------|-----------------|-------------|
+| alice | 0xc793... | null (no CoinStore) |
+| bob | 0x0a3c... | null |
+| A–Z | 0x8699...–0x7af0... | null (26 wallets) |
+
+### Multisig Contract Probes
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|---------------|---------|
+| A-B | 0x0da4... | 2 | ✅ |
+| A-G | 0xf56c... | 2 | ✅ |
+| Y-Z | 0xd3ff... | 2 | ✅ |
+| S-T | 0x3b1c... | 2 | ✅ |
+| V-W | 0x40fa... | 2 | ✅ |
+
+**5/5 healthy** — all require 2-of-N signatures.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status:** UNAVAILABLE — Vercel authentication required (HTTP 401 on all API paths).
+
+---
+
+## DuckDB Schema Populated
+
+- `world_increments` — 75 rows (GF3-colored repo push events)
+- `repo_snapshots` — 75 rows (stars, forks, languages, descriptions)
+- `aptos_snapshots` — 28 rows (all balance=NULL, no CoinStore)
+- `multisig_probes` — 5 rows (all healthy, sigs_required=2)
+- `mnx_snapshots` — 1 row (unavailable placeholder)
+
+---
+
+*Previous sweep content archived below.*
+
+## Sweep Metadata (2026-04-12)
 - **Date:** 2026-04-12
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
