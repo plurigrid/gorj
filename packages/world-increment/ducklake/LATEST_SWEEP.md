@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-22
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-22
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Branch:** `world-increment/sweep-2026-07-22-1508`
 
 ---
 
@@ -12,13 +13,77 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments (cumulative) | 349 |
+| Total Repo Snapshots (cumulative) | 1,270 |
+| Repos inserted this run | 326 |
+| Sources Covered | 3 orgs + 8 users (11 social graph) |
+| Aptos addresses probed | 28 (all 0 APT) |
+| Multisig contracts probed | 5 (all healthy, 2-of-N) |
+| MNX markets | SPA only — no API data |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## Hamming Swarm — Aptos Snapshot (2026-07-22)
+
+### Wallet Balances
+All 28 addresses probed via `fullnode.mainnet.aptoslabs.com/v1/accounts/{addr}/resource/0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.  
+**Result: 0 APT on all accounts** — no CoinStore resource registered (accounts exist on-chain but have not deposited APT).
+
+| World | Address | APT |
+|-------|---------|-----|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...2d5d | 0.0 |
+| A–Z (26 wallets) | various | 0.0 each |
+
+### Multisig Contract Probes
+All 5 multisig contracts **healthy** — each requires 2-of-N signatures.
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|--------------|--------|
+| A-B | 0x0da4...3003 | 2 | ✓ healthy |
+| A-G | 0xf56c...0096 | 2 | ✓ healthy |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ healthy |
+| S-T | 0x3b1c...7883 | 2 | ✓ healthy |
+| V-W | 0x40fa...eb6d | 2 | ✓ healthy |
+
+### MNX Markets (testnet.mnx.fi)
+**Unavailable** — site is a Next.js SPA; `/api/markets` and `/api/v1/markets` paths return the same HTML shell with no structured market data. `mnx_snapshots` table has 0 rows.
+
+---
+
+## GitHub Social Graph Sweep (2026-07-22)
+
+### Repos by Source
+
+| Source | Type | Repos |
+|--------|------|-------|
+| plurigrid | org | 100 |
+| kubeflow | org | 49 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 100 |
+| zubyul | user | 49 |
+| migalkin | social | 19 |
+| DJedamski | social | 6 |
+| wasita | social | 12 |
+| kristinezheng | social | 5 |
+| M1shaaa | social | 8 |
+| AustinCStone | social | 41 |
+| **TOTAL** | | **394** |
+
+### Notable this run
+
+- **plurigrid/gorj**: 1323 open issues, pushed 2026-07-22 — most active plurigrid repo
+- **plurigrid/eirobri**: EiRoBri replay world, pushed 2026-07-21
+- **kubeflow/pipelines**: 4169 stars, pushed 2026-07-22 (up from 4119 in April)
+- **kubeflow/spark-operator**: 3142 stars (up from 3111)
+- **kubeflow/trainer**: 2152 stars (up from 2080)
+- **TeglonLabs/jank-crane**: new since last sweep — crane-jank converged-IR hub with GF3 convergence maps (C++, 2026-06-08)
+- **wasita/wasita.github.io**: pushed 2026-07-21 — active
+- **AustinCStone/byteruckus**: new repo 2026-07-15
+
+---
+
+## GF(3) Color Chain — All 12 Source-level Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
