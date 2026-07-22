@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-22
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-22T00:09:38Z
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.4
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Gap since last sweep:** ~101 days (2026-04-12 → 2026-07-22)
 
 ---
 
@@ -12,13 +13,53 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 14 |
+| Total Repo Snapshots | 944 (from prior sweeps; GitHub API restricted this run) |
+| Aptos Addresses Snapshotted | 28 |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-2) |
+| MNX Markets | 0 (testnet SPA unavailable) |
+
+### Job 2: Hamming Swarm Snapshot (NEW — 2026-07-22)
+
+**Aptos Mainnet** — Ledger v6,392,061,691 · Epoch 16,623 · Block 916,073,313
+
+All 28 swarm addresses (alice, bob, A–Z) returned `resource_not_found` for `CoinStore<AptosCoin>`.  
+**Total APT across swarm: 0.00000000** — accounts unfunded or using FA balance model.
+
+#### Multisig Contract Probes
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|---------------|---------|
+| A-B  | 0x0da4f428a0... | 2 | ✓ |
+| A-G  | 0xf56c4a1c09... | 2 | ✓ |
+| Y-Z  | 0xd3ffe1812b... | 2 | ✓ |
+| S-T  | 0x3b1c3ae905... | 2 | ✓ |
+| V-W  | 0x40fad7b423... | 2 | ✓ |
+
+**All 5 multisig contracts healthy — 2-of-2 threshold confirmed.**
+
+#### MNX Markets
+Status: **Unavailable** — `testnet.mnx.fi` returned no parseable REST data (SPA).
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GitHub Social Graph Sweep (2026-07-22)
+
+**Note:** GitHub API access restricted to `plurigrid/gorj` this run (proxy blocks unauthenticated org/user endpoints). Prior sweep data for plurigrid, kubeflow, TeglonLabs, bmorphism, zubyul + social graph is retained in `repo_snapshots` (944 rows from April 2026).
+
+### plurigrid/gorj — Recent Commits
+
+| SHA | Date | Message |
+|-----|------|---------|
+| 5b28fe0 | 2026-05-08 | chore: ignore duckdb binary in repo root |
+| ebf263f | 2026-04-14 | world-increment ducklake: sync world.duckdb sweep state |
+| b434a43 | 2026-04-14 | Merge sweep state into master |
+| e76792f | 2026-04-14 | world-increments.duckdb: sync latest sweep state |
+| 631518b | 2026-04-12 | world-increment sweep 2026-04-12: insert id=12 ERGODIC |
+
+---
+
+## GF(3) Color Chain — All 14 Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +75,11 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **plurigrid (org)** | **sweep_complete** | **+1** | `#b8bb26` | **PLUS** |
+| **14** | **aptos (blockchain)** | **hamming_snapshot** | **-1** | `#cc241d` | **MINUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS`  
+Next: id=15 → ERGODIC
 
 ---
 
