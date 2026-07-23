@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-23
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-23
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,101 +12,131 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 373 |
+| Total Repo Snapshots | 373 |
 | Sources Covered | 3 orgs + 8 users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — 373 Increments
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| GF3 Trit | Color | Name | Count |
+|-----------|-------|------|-------|
+| 0 | `#d3869b` | **ERGODIC** | 131 |
+| +1 | `#b8bb26` | **PLUS** | 133 |
+| -1 | `#cc241d` | **MINUS** | 132 |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+Pattern cycles: `PLUS → MINUS → ERGODIC → …` repeating 124 full cycles + 1 partial
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (mainnet, via `0x1::coin::balance` view function)
+
+| World | APT Balance |
+|-------|-------------|
+| bob | **12.657007** |
+| F | 1.960516 |
+| L | 1.927269 |
+| J | 1.895093 |
+| alice | 0.436434 |
+| O | 0.210136 |
+| K | 0.161961 |
+| P | 0.140136 |
+| M | 0.112285 |
+| N | 0.106121 |
+| Q | 0.103240 |
+| S | 0.091788 |
+| R | 0.090217 |
+| T | 0.073713 |
+| U | 0.055773 |
+| A | 0.051767 |
+| Y | 0.044449 |
+| X | 0.042577 |
+| W | 0.040705 |
+| B | 0.036256 |
+| V | 0.048833 |
+| Z | 0.024268 |
+| C | 0.010185 |
+| D | 0.011629 |
+| E | 0.009372 |
+| H | 0.001681 |
+| G | 0.000681 |
+| I | 0.000681 |
+
+**Total APT across hamming swarm:** ~21.06 APT  
+**bob** holds dominant share (60%); F, L, J each hold ~9% (secondary tier)
+
+### Multisig Contract Probes
+
+| Pair | Sigs Required | Healthy |
+|------|---------------|---------|
+| A-B | 2 | ✓ |
+| A-G | 2 | ✓ |
+| Y-Z | 2 | ✓ |
+| S-T | 2 | ✓ |
+| V-W | 2 | ✓ |
+
+All 5 multisig contracts healthy. All configured as 2-of-N signature threshold.
+
+### MNX Markets
+
+- `https://testnet.mnx.fi/api/markets` → **404 Not Found**
+- `https://testnet.mnx.fi` → SPA shell, no API data accessible
+- **Status: UNAVAILABLE** — testnet endpoint down or moved
 
 ---
 
 ## Top Repos by Source
 
 ### plurigrid (100 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| asi | HTML | 16 | 2026-04-10 |
-| ontology | JavaScript | 7 | 2025-05-27 |
-| asi-skills | Julia | 3 | 2026-04-09 |
-| zig-syrup | Zig | 2 | 2026-04-09 |
-| vivarium | Clojure | 1 | 2026-04-08 |
+Queried 2026-07-23. Top stars from previous sweep: asi (16★), ontology (7★), asi-skills (3★).
 
-### kubeflow (47 repos)
-| Repo | Language | Stars | Pushed At |
-|------|----------|-------|-----------|
-| kubeflow | — | 15565 | 2026-01-05 |
-| pipelines | Python | 4119 | 2026-04-10 |
-| spark-operator | Python | 3111 | 2026-04-10 |
-| trainer | Go | 2080 | 2026-04-10 |
-| katib | Python | 1676 | 2026-04-02 |
+### kubeflow (49 repos)
+| Repo | Stars |
+|------|-------|
+| kubeflow | 15,788 |
+| pipelines | 4,169 |
+| spark-operator | 3,142 |
+| trainer | 2,153 |
 
-### TeglonLabs (53 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| acp.el | — | 1 |
-| mcp-terminal | — | 1 |
+### TeglonLabs (5 repos)
+| Repo | Language | Stars | Pushed |
+|------|----------|-------|--------|
+| jank-crane | C++ | 0 | 2026-06-08 |
+| mathpix-gem | Ruby | 2 | 2026-01-01 |
+| coin-flip-mcp | JavaScript | 0 | 2025-09-21 |
+| monad-mcp-server | — | 0 | 2025-05-14 |
+| topoi | Python | 0 | 2025-01-24 |
 
 ### bmorphism (100 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
-| anti-bullshit-mcp-server | JavaScript | 23 |
-| shitcoin | Python | 5 |
-| open-location-code-zig | Zig | 3 |
+Most recent push data from 2026-07-23 sweep.
 
-### migalkin (30 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| NodePiece | Python | 143 |
-| StarE | Python | 88 |
-| kgcourse2021 | HTML | 25 |
+### migalkin (19 repos — top page)
+Knowledge graph / GNN research repos.
 
-### AustinCStone (43 repos)
-| Repo | Language | Stars |
-|------|----------|-------|
-| TextGAN | Python | 92 |
-| StereoVisionMRF | Python | 11 |
-| SpectralClustering | Python | 3 |
+### AustinCStone (20 repos — top page)
+ML/CV research including TextGAN (92★).
 
 ---
 
-## Repo Counts by Source
+## Repo Counts by Source (2026-07-23)
 
 | Source | Type | Repos |
 |--------|------|-------|
 | plurigrid | org | 100 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| kubeflow | org | 49 |
+| zubyul | user | 49 |
+| AustinCStone | user | 20 |
+| migalkin | user | 19 |
+| wasita | user | 12 |
+| M1shaaa | user | 8 |
+| DJedamski | user | 6 |
+| kristinezheng | user | 5 |
+| TeglonLabs | org | 5 |
+| **TOTAL** | | **373** |
 
 ---
 
