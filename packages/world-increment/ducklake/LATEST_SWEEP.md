@@ -1,6 +1,63 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-23
 
 ## Sweep Metadata
+- **Date:** 2026-07-23
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5
+- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Days since last sweep:** 102 (previous: 2026-04-12)
+
+---
+
+## 2026-07-23 Sweep Summary
+
+### GF(3) New Increments
+
+| ID | Source | Event Type | GF3 Trit | Color | Name |
+|----|--------|------------|-----------|-------|------|
+| 13 | plurigrid/gorj | sweep_start | +1 | `#b8bb26` | **PLUS** |
+| 14 | hamming-swarm | sweep_complete | -1 | `#cc241d` | **MINUS** |
+
+### Hamming Swarm — Aptos Mainnet
+
+- **28 wallets queried** (alice, bob, A–Z)
+- **All wallets: 0.00 APT** — `resource_not_found` for CoinStore
+  - Interpretation: wallets uninitialized or migrated to Fungible Asset (FA) standard
+- **Multisig probes: 5/5 healthy** — all contracts require 2-of-2 signatures
+
+| pair | address (prefix) | sigs_required | status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4f4… | 2 | ✓ healthy |
+| A-G | 0xf56c4a… | 2 | ✓ healthy |
+| Y-Z | 0xd3ffe1… | 2 | ✓ healthy |
+| S-T | 0x3b1c3a… | 2 | ✓ healthy |
+| V-W | 0x40fad7… | 2 | ✓ healthy |
+
+### MNX Markets (testnet.mnx.fi)
+
+**UNAVAILABLE** — SPA shell only; `/api/markets`, `/api/v1/markets`, `/api/tickers` all returned HTTP 404.
+
+### GitHub Social Graph Sweep
+
+**Scope-limited this session** (MCP restricted to `plurigrid/gorj`).
+Historical external sweeps (471 → 944 repo snapshots through 2026-04-14) remain in ducklake.
+gorj repo last pushed: 2026-05-08.
+
+### Ducklake State After This Sweep
+
+| table | rows |
+|-------|------|
+| world_increments | 25 |
+| repo_snapshots | 945 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 1 |
+
+---
+
+## Previous Sweep — 2026-04-12
+
+## Sweep Metadata (prior)
 - **Date:** 2026-04-12
 - **Agent:** world-increment-sweep
 - **DuckDB version:** v1.5.1 (Variegata)
