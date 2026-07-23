@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-07-23T15:10:30.525908Z",
+  "github": {
+    "targets_recorded": 11,
+    "note": "GH MCP scoped to plurigrid/gorj; social graph targets recorded as metadata only"
+  },
+  "aptos": {
+    "total_wallets": 28,
+    "wallets_found": 0,
+    "wallets_empty_or_zero": 0,
+    "wallets_missing": 28,
+    "total_apt_observed": 0,
+    "top5": [],
+    "balances": {
+      "alice": null,
+      "bob": null,
+      "A": null,
+      "B": null,
+      "C": null,
+      "D": null,
+      "E": null,
+      "F": null,
+      "G": null,
+      "H": null,
+      "I": null,
+      "J": null,
+      "K": null,
+      "L": null,
+      "M": null,
+      "N": null,
+      "O": null,
+      "P": null,
+      "Q": null,
+      "R": null,
+      "S": null,
+      "T": null,
+      "U": null,
+      "V": null,
+      "W": null,
+      "X": null,
+      "Y": null,
+      "Z": null
+    }
+  },
+  "multisig": {
+    "total_probed": 5,
+    "healthy": 5,
+    "results": {
+      "A-B": {
+        "sigs_required": 2,
+        "healthy": true,
+        "address": "0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003"
+      },
+      "A-G": {
+        "sigs_required": 2,
+        "healthy": true,
+        "address": "0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096"
+      },
+      "Y-Z": {
+        "sigs_required": 2,
+        "healthy": true,
+        "address": "0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883"
+      },
+      "S-T": {
+        "sigs_required": 2,
+        "healthy": true,
+        "address": "0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883"
+      },
+      "V-W": {
+        "sigs_required": 2,
+        "healthy": true,
+        "address": "0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d"
+      }
+    }
+  },
+  "mnx": {
+    "markets_found": 0,
+    "status": "unavailable"
+  },
+  "increments": {
+    "github_sweep": {
+      "id": 12,
+      "gf3": [
+        0,
+        "#d3869b",
+        "ERGODIC"
+      ]
+    },
+    "aptos_snapshot": {
+      "id": 13,
+      "gf3": [
+        1,
+        "#b8bb26",
+        "PLUS"
+      ]
+    }
+  }
+}
