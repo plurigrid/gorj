@@ -1,8 +1,85 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-24
+
+**Timestamp:** 2026-07-24 (automated sweep)
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Snapshotted
+
+| Source | Type | Repos Captured | Top Repo (Stars) |
+|--------|------|----------------|-----------------|
+| plurigrid | org | 16 | plurigrid/asi (31★) |
+| kubeflow | org | 15 | kubeflow/kubeflow (15789★) |
+| TeglonLabs | org | 5 | TeglonLabs/mathpix-gem (2★) |
+| bmorphism | user | 10 | bmorphism/ocaml-mcp-sdk (61★) |
+| zubyul | user | 6 | zubyul/WGCNA (2★) |
+| migalkin | user (social graph) | 4 | migalkin/NodePiece (144★) |
+| DJedamski | user (social graph) | 2 | DJedamski/Getting-and-Cleaning-Data (1★) |
+| wasita | user (social graph) | 4 | wasita/magic-garden (2★) |
+| kristinezheng | user (social graph) | 2 | kristinezheng/Green-Machine (0★) |
+| M1shaaa | user (social graph) | 2 | M1shaaa/lab-bookshelf- (0★) |
+| AustinCStone | user (social graph) | 4 | AustinCStone/TextGAN (92★) |
+
+**Total this sweep:** 93 world_increments written
+
+### GF(3) Color Chain Summary
+- **ERGODIC** (trit=0, #d3869b): IDs mod 3 = 0 — 31 repos
+- **PLUS** (trit=1, #b8bb26): IDs mod 3 = 1 — 31 repos
+- **MINUS** (trit=-1, #cc241d): IDs mod 3 = 2 — 31 repos
+
+### Notable Activity (2026-07-24)
+- `plurigrid/gorj` (this repo): pushed today, 1357 open issues
+- `bmorphism/Gay.jl`: pushed today, 187 open issues — active GF(3) color dev
+- `kubeflow/pipelines`: pushed today, 445 issues — top ML platform activity
+- `kubeflow/trainer`: pushed today — Distributed AI Training on Kubernetes
+- `TeglonLabs/jank-crane`: 2026-06-08 — crane-jank converged-IR hub with GF(3) maps
+- `zubyul/from-possible-worlds`: 2026-07-18 — recent activity
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet)
+
+Queried 28 addresses (alice, bob, A–Z) via Aptos fullnode mainnet.
+All wallets returned 0 APT — wallets are unfunded or CoinStore resource not initialized on mainnet.
+
+### Multisig Contract Probes
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|------|---------------------|---------------|---------|
+| A-B | 0x0da4...003 | 2 | YES |
+| A-G | 0xf56c...096 | 2 | YES |
+| Y-Z | 0xd3ff...883 | 2 | YES |
+| S-T | 0x3b1c...883 | 2 | YES |
+| V-W | 0x40fa...b6d | 2 | YES |
+
+**Status:** All 5 multisig accounts healthy — 2-of-2 signatures required.
+
+### MNX Markets (testnet.mnx.fi)
+
+`testnet.mnx.fi/api/markets` returned HTTP 404 — MNX testnet API unavailable. Recorded as N/A.
+
+---
+
+## DuckDB State (world-increments.duckdb)
+
+| Table | Rows |
+|-------|------|
+| world_increments | 93 (this run) |
+| repo_snapshots | 1014 (cumulative) |
+| aptos_snapshots | 28 (this run) |
+| multisig_probes | 5 (this run) |
+| mnx_snapshots | 0 (unavailable) |
+
+---
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+- **Date:** 2026-07-24
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
