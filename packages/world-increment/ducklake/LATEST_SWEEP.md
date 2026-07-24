@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-24
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-24
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot (combined run)
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 (12 prior + 12 new) |
+| Total Repo Snapshots | 472 (471 prior + 1 new: gorj) |
+| GitHub Sources Covered | `plurigrid/gorj` only (session scope restricted) |
+| Aptos Wallets Snapshotted | 28 |
+| Total APT Across Swarm | ~20.34 APT |
+| Multisig Contracts Healthy | 5/5 |
+| MNX Markets | Unavailable (Next.js SPA) |
 
 ---
 
@@ -139,4 +143,41 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **Increment 12 (2026-04-12)**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## JOB 2 ADDITION: Hamming Swarm Snapshot (2026-07-24)
+
+### GitHub Social Graph Sweep Status
+Session token is scoped to `plurigrid/gorj` — cross-org/user GitHub API calls were denied. The prior sweep data from 2026-04-12 (12 increments, 471 repo snapshots, 3 orgs + 8 users) remains the latest social graph data.
+
+### Aptos Wallet Balances (APT) — 2026-07-24
+Queried via `0x1::coin::balance` view function (Fungible Asset model). CoinStore resource is deprecated; view function returns correct FA balances.
+
+**Total swarm APT: ~20.34 APT across 28 addresses**
+
+| World | Balance (APT) | Notes |
+|-------|---------------|-------|
+| bob | **12.6570** | Largest holder |
+| F | 1.9605 | |
+| L | 1.9273 | |
+| J | 1.8951 | |
+| alice | 0.4364 | |
+| O | 0.2101 | |
+| K | 0.1620 | |
+| P | 0.1401 | |
+| M, N, Q, S, R, T | 0.07–0.11 | Mid-range cluster |
+| U, A, V, Y, X, W, B, Z | 0.02–0.06 | Lower range |
+| D, C, E, H, I, G | 0.001–0.012 | Dust-level balances |
+
+### Multisig Contract Health
+All 5 probed multisig contracts are healthy and require **2-of-N** signatures:
+- A-B: `0x0da4...003` — 2 sigs ✓
+- A-G: `0xf56c...096` — 2 sigs ✓
+- Y-Z: `0xd3ff...883` — 2 sigs ✓
+- S-T: `0x3b1c...883` — 2 sigs ✓
+- V-W: `0x40fa...b6d` — 2 sigs ✓
+
+### MNX Markets
+`https://testnet.mnx.fi` is a Next.js SPA — all paths including `/api/markets`, `/api/v1/markets`, `/api/tickers` return HTML. No REST API accessible without JavaScript execution. No data inserted into `mnx_snapshots`.
