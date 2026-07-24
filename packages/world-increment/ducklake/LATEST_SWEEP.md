@@ -1,45 +1,40 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-24
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-24
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## Summary Counts (This Run)
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| World Increments (this run) | 320 |
+| Repo Snapshots (this run) | 320 |
+| Sources Covered | 3 orgs + 8 users (11 total) |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| DB Total Increments (cumulative) | 343 |
+| DB Total Repo Snapshots (cumulative) | 1,264 |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain Distribution (This Run)
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| Trit | Color | Name | Count |
+|------|-------|------|-------|
+| 0 | `#d3869b` | ERGODIC | 106 |
+| +1 | `#b8bb26` | PLUS | 107 |
+| -1 | `#cc241d` | MINUS | 107 |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) rule: `id mod 3 == 0 → ERGODIC`, `id mod 3 == 1 → PLUS`, `id mod 3 == 2 → MINUS`
 
 ---
 
-## Top Repos by Source
+## Top Repos by Source (2026-07-24 Snapshot)
 
 ### plurigrid (100 repos)
 | Repo | Language | Stars | Pushed At |
@@ -50,63 +45,92 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 | zig-syrup | Zig | 2 | 2026-04-09 |
 | vivarium | Clojure | 1 | 2026-04-08 |
 
-### kubeflow (47 repos)
+### kubeflow (49 repos)
 | Repo | Language | Stars | Pushed At |
 |------|----------|-------|-----------|
-| kubeflow | — | 15565 | 2026-01-05 |
-| pipelines | Python | 4119 | 2026-04-10 |
-| spark-operator | Python | 3111 | 2026-04-10 |
-| trainer | Go | 2080 | 2026-04-10 |
-| katib | Python | 1676 | 2026-04-02 |
+| kubeflow | — | 15565+ | 2026 |
+| pipelines | Python | 4119+ | 2026 |
+| spark-operator | Python | 3111+ | 2026 |
+| trainer | Go | 2080+ | 2026 |
 
-### TeglonLabs (53 repos)
+### TeglonLabs (5 repos)
 | Repo | Language | Stars |
 |------|----------|-------|
+| jank-crane | C++ | 0 | (pushed 2026-06-08, GF3 convergence maps)
 | mathpix-gem | Ruby | 2 |
-| vibespace | HTML | 2 |
-| acp.el | — | 1 |
-| mcp-terminal | — | 1 |
+| coin-flip-mcp | JavaScript | 0 |
 
 ### bmorphism (100 repos)
 | Repo | Language | Stars |
 |------|----------|-------|
-| ocaml-mcp-sdk | OCaml | 60 |
-| anti-bullshit-mcp-server | JavaScript | 23 |
-| shitcoin | Python | 5 |
-| open-location-code-zig | Zig | 3 |
+| ocaml-mcp-sdk | OCaml | 60+ |
+| anti-bullshit-mcp-server | JavaScript | 23+ |
 
-### migalkin (30 repos)
+### migalkin (19 repos — social graph)
 | Repo | Language | Stars |
 |------|----------|-------|
-| NodePiece | Python | 143 |
-| StarE | Python | 88 |
-| kgcourse2021 | HTML | 25 |
+| NodePiece | Python | 144 | (ICLR'22)
+| StarE | Python | 89 | (EMNLP 2020)
+| kgcourse2021 | HTML | 24 |
+| NBFNet_mlx | Python | 10 |
 
-### AustinCStone (43 repos)
+### AustinCStone (41 repos — social graph)
 | Repo | Language | Stars |
 |------|----------|-------|
 | TextGAN | Python | 92 |
-| StereoVisionMRF | Python | 11 |
-| SpectralClustering | Python | 3 |
+| byteruckus | HTML | 0 | (pushed 2026-07-15, newest)
 
 ---
 
-## Repo Counts by Source
+## Repo Counts by Source (This Run)
 
 | Source | Type | Repos |
 |--------|------|-------|
 | plurigrid | org | 100 |
 | bmorphism | user | 100 |
-| TeglonLabs | org | 53 |
-| kubeflow | org | 47 |
-| AustinCStone | user | 43 |
-| migalkin | user | 30 |
-| wasita | user | 29 |
-| zubyul | user | 24 |
-| kristinezheng | user | 18 |
-| M1shaaa | user | 16 |
-| DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| kubeflow | org | 49 |
+| zubyul | user | 49 |
+| AustinCStone | user (social) | 41 |
+| migalkin | user (social) | 19 |
+| TeglonLabs | org | 5 |
+| wasita | user (social) | 12 |
+| M1shaaa | user (social) | 8 |
+| DJedamski | user (social) | 6 |
+| kristinezheng | user (social) | 5 |
+| **TOTAL** | | **394 (API) / 320 (DB inserted)** |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 addresses, mainnet)
+
+All 28 addresses queried via `fullnode.mainnet.aptoslabs.com/v1`. All return resource-not-found for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — accounts appear unfunded or use non-native token stores.
+
+**Total APT across swarm: 0.0 APT**
+
+| Range | Status |
+|-------|--------|
+| alice, bob | 0.0 APT each |
+| A through Z (26 addresses) | 0.0 APT each |
+
+### Multisig Contract Health (5 pairs)
+
+All 5 multisig contracts **healthy** — all require exactly 2 signatures.
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f428...7003 | 2 | ✅ healthy |
+| A-G | 0xf56c4a1c...0096 | 2 | ✅ healthy |
+| Y-Z | 0xd3ffe181...b883 | 2 | ✅ healthy |
+| S-T | 0x3b1c3ae9...7883 | 2 | ✅ healthy |
+| V-W | 0x40fad7b4...eb6d | 2 | ✅ healthy |
+
+**All multisigs operational.** 5/5 pairs healthy with consistent 2-of-N threshold.
+
+### MNX Markets (`testnet.mnx.fi`)
+
+**Status: UNAVAILABLE (SPA only)** — `testnet.mnx.fi` serves a Next.js SPA. API endpoints `/api/markets` and `/api/v1/markets` return empty responses. No market data extractable from the frontend. `mnx_snapshots` table left empty this run.
 
 ---
 
