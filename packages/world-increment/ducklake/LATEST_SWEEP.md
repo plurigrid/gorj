@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-25
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-25
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **GF(3) this run:** id=13 → trit=0 → ERGODIC (#d3869b)
 
 ---
 
@@ -12,13 +13,64 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 (cumulative) |
+| Total Repo Snapshots | 471 (prior sweeps; GitHub blocked this run) |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 |
+| MNX Snapshots | 0 (SPA — no public API) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep — BLOCKED
+
+GitHub API proxy is scoped to `repos/plurigrid/gorj/*` only.
+Endpoints `/orgs/{org}/repos` and `/users/{user}/repos` return HTTP 403:
+
+> "This GitHub API path is not available: sessions are bound to their configured repositories."
+
+**Affected sources (not collected):** plurigrid, kubeflow, TeglonLabs, bmorphism, zubyul,
+migalkin, DJedamski, wasita, kristinezheng, M1shaaa, AustinCStone.
+
+Prior sweep data (2026-04-12) remains in `repo_snapshots` (471 rows).
+
+**Action required:** Expand session proxy scope to allow org/user listing endpoints,
+or use an unauthenticated public API token.
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (28 wallets)
+
+All 28 addresses returned `resource_not_found` (ledger v6447445197).
+The `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` resource is absent on all wallets —
+none have a registered APT coin store on mainnet at the time of this sweep.
+
+| World | Balance APT |
+|-------|-------------|
+| alice, bob, A–Z (28 total) | no coin store (NULL) |
+
+Recorded in `aptos_snapshots` with `balance_apt = NULL`.
+
+### Multisig Contract Probes — ALL HEALTHY
+
+| Pair | Address (truncated) | Sigs Required | Status |
+|------|---------------------|:---:|:---:|
+| A-B | 0x0da4...7003 | 2 | healthy |
+| A-G | 0xf56c...0096 | 2 | healthy |
+| Y-Z | 0xd3ff...b883 | 2 | healthy |
+| S-T | 0x3b1c...7883 | 2 | healthy |
+| V-W | 0x40fa...eb6d | 2 | healthy |
+
+### MNX Markets (testnet.mnx.fi) — UNAVAILABLE
+
+`/api/markets`, `/api/v1/markets`, `/api/stats`, `/api/orderbook` all return 404.
+Root and `/markets` return Next.js SPA HTML — no server-side JSON endpoints available.
+Requires headless browser / WebSocket connection to extract live market data.
+
+---
+
+## GF(3) Color Chain — Prior Increments (1–12, 2026-04-12)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +86,9 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 13 | world-increment-sweep | hamming-swarm-snapshot | 0 | `#d3869b` | **ERGODIC** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → … → ERGODIC (13)`
 
 ---
 
