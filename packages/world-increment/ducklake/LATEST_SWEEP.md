@@ -1,8 +1,100 @@
-# World-Increment Sweep — 2026-04-12
+# World Increment Sweep + Hamming Swarm Snapshot
 
-## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+**Timestamp:** 2026-07-25 (automated sweep)
+**GF(3) Color Chain:** ERGODIC #d3869b · PLUS #b8bb26 · MINUS #cc241d
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Snapshotted
+
+| Source | Type | Repos Captured | Total Stars |
+|--------|------|----------------|-------------|
+| kubeflow | org | 30 (of 49) | 100,862 |
+| migalkin | user (social) | 5 top | 829 |
+| bmorphism | user | 50 top | 377 |
+| AustinCStone | user (social) | 3 top | 319 |
+| plurigrid | org | 50 top | 138 |
+| zubyul | user | 30 top | 28 |
+| DJedamski | user (social) | 2 | 15 |
+| TeglonLabs | org | 5 | 14 |
+| wasita | user (social) | 4 | 9 |
+| M1shaaa | user (social) | 2 | 0 |
+| kristinezheng | user (social) | 2 | 0 |
+
+**Total this sweep:** 183 repo snapshots → DuckDB (cumulative: 1,127 records)
+
+### Notable Repos (Recent Activity)
+
+- **plurigrid/asi** — `HTML` · ★31 · pushed 2026-07-10 — "everything is topological chemputer!"
+- **wasita/wasita.github.io** — `Svelte` · pushed 2026-07-21 (most recent in social graph)
+- **TeglonLabs/jank-crane** — `C++` · pushed 2026-06-08 — "crane-jank converged-IR hub: loopify pass spec, GF3 convergence maps"
+- **migalkin/NodePiece** — `Python` · ★144 · ICLR'22 knowledge graph embeddings
+- **AustinCStone/TextGAN** — `Python` · ★92 · TF text generation GAN
+
+### GF(3) Distribution (this sweep)
+- **ERGODIC** (trit=0, #d3869b): 68 increments
+- **PLUS** (trit=1, #b8bb26): 69 increments
+- **MINUS** (trit=-1, #cc241d): 69 increments — balanced chain ✓
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (Mainnet)
+
+All 28 addresses (alice, bob, A–Z) queried against Aptos mainnet CoinStore resource.
+
+**Result:** All 28 wallets returned 0 APT balance. Addresses are either unfunded on mainnet or holdings are in staked/delegated form outside the base CoinStore.
+
+| World | Address (prefix) | Balance (APT) |
+|-------|-----------------|---------------|
+| alice | 0xc793ac... | 0.0 |
+| bob | 0x0a3c00... | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+### Multisig Contract Probes
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`.
+
+| Pair | Address (prefix) | Sigs Required | Healthy |
+|------|-----------------|---------------|---------|
+| A-B | 0x0da4f4... | 2 | ✓ |
+| A-G | 0xf56c4a... | 2 | ✓ |
+| Y-Z | 0xd3ffe1... | 2 | ✓ |
+| S-T | 0x3b1c3a... | 2 | ✓ |
+| V-W | 0x40fad7... | 2 | ✓ |
+
+**Status: 5/5 multisig contracts healthy** — all requiring 2-of-N signatures.
+
+### MNX Markets (testnet.mnx.fi)
+
+- `https://testnet.mnx.fi/api/markets` → **404 Not Found**
+- `https://testnet.mnx.fi` → SPA shell only (requires JavaScript; only "MNX" text visible)
+- **Status: Unavailable** — `mnx_snapshots` table empty this sweep.
+
+---
+
+## DuckDB Ducklake State
+
+**Path:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+| Table | Records (cumulative) |
+|-------|---------------------|
+| world_increments | 206 |
+| repo_snapshots | 1,127 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 |
+
+---
+
+## Action Items / Anomalies
+
+1. **Aptos wallets all zero** — Hamming swarm addresses appear unfunded on mainnet. Verify if these are testnet-intended addresses or if APT is held in staked/delegated form.
+2. **MNX testnet unavailable** — SPA requires JS rendering. Consider Playwright-based fetch for future sweeps.
+3. **Multisig all 2-of-N** — Consistent threshold across all 5 pairs. No anomalies detected.
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
