@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-27
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-27
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -132,11 +132,48 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 
 ## Notable Highlights
 - **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **kubeflow/pipelines**: 4,171 stars — most popular ML pipeline for Kubernetes (pushed 2026-07-27)
+- **kubeflow/spark-operator**: 3,142 stars — Kubernetes operator for Apache Spark (pushed 2026-07-25)
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings (still active)
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for MCP using Jane Street's oxcaml_effect
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **plurigrid/asi**: 52 stars (+36 since Apr) — topological chemputer (pushed 2026-07-10)
+- **plurigrid/gorj**: This very repo — 1442 open issues (issues-as-spec pattern)
+- **kubeflow/mcp-server**: 29★ — kubeflow entering MCP ecosystem (new since last sweep)
+- **bmorphism/gay-chat**: New repo (2026-07-14) — gay://chat over Spritely Brassica
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (mainnet, 28 wallets)
+
+All 28 addresses (alice, bob, A–Z) queried via `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.
+
+**Result: 0 APT across all 28 wallets.** CoinStore resource uninitialized — wallets either unfunded or using post-migration native FA standard.
+
+### Multisig Contract Probes (5 pairs)
+
+| Pair | Address (truncated) | Sigs Required | Status |
+|------|---------------------|---------------|--------|
+| A-B | 0x0da4f4…987003 | 2 | ✓ HEALTHY |
+| A-G | 0xf56c4a…c0096 | 2 | ✓ HEALTHY |
+| Y-Z | 0xd3ffe1…b883 | 2 | ✓ HEALTHY |
+| S-T | 0x3b1c3a…7883 | 2 | ✓ HEALTHY |
+| V-W | 0x40fad7…eb6d | 2 | ✓ HEALTHY |
+
+All 5 multisigs are 2-of-2 and responding normally.
+
+### MNX Markets (testnet.mnx.fi)
+
+Next.js SPA at https://testnet.mnx.fi is accessible (HTTP 200), but no `/api/markets` REST endpoint responds with structured data. Market data loads client-side only. **Status: SPA reachable, no parseable market data.**
+
+### DuckDB Table Counts (cumulative)
+
+| Table | Rows |
+|-------|------|
+| world_increments | 73+ |
+| repo_snapshots | 994+ |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 |
