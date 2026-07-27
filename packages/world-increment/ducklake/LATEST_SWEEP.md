@@ -1,20 +1,60 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-27
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-27
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## JOB 2: Hamming Swarm Snapshot (NEW)
+
+### Aptos Wallet Balances (A–Z + alice/bob)
+
+All 28 addresses queried against Aptos mainnet. All returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — accounts do not hold APT in the standard CoinStore (may be inactive, using FA store, or zero balance).
+
+| World | Address (prefix) | Balance (APT) |
+|---|---|---|
+| alice | 0xc793ac... | 0.0 |
+| bob | 0x0a3c00... | 0.0 |
+| A–Z (26) | (various) | 0.0 each |
+
+### Multisig Contract Health
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`:
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|---|---|---|---|
+| A-B | 0x0da4f4... | 2 | healthy |
+| A-G | 0xf56c4a... | 2 | healthy |
+| Y-Z | 0xd3ffe1... | 2 | healthy |
+| S-T | 0x3b1c3a... | 2 | healthy |
+| V-W | 0x40fad7... | 2 | healthy |
+
+**All 5 multisig contracts healthy — 2-of-N threshold confirmed.**
+
+### MNX Markets (testnet.mnx.fi)
+
+Status: **SPA only — no REST API.** Next.js frontend, no structured market data extractable. Recorded as unavailable in `mnx_snapshots`.
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+---
+
+## Summary Counts (This Sweep)
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| New World Increments | 323 |
+| New Repo Snapshots | 323 |
+| Aptos Wallets Checked | 28 |
+| Multisig Contracts Probed | 5 |
+| Sources Covered | 3 orgs + 8 users (social graph) |
+| Cumulative World Increments | 346 |
+| Cumulative Repo Snapshots | 1267 |
 
 ---
 
