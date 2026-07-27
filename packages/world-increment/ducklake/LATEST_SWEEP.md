@@ -1,8 +1,8 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-07-27
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+- **Date:** 2026-07-27
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 1267 |
+| Sources Covered | 3 orgs + 9 users |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts | 5 (all healthy, 2-of-2) |
+| MNX Markets | UNAVAILABLE (404) |
 
 ---
 
@@ -131,12 +134,19 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **kubeflow/kubeflow**: 15,793 stars — flagship ML platform for Kubernetes (pushed 2026-07-10)
+- **kubeflow/pipelines**: 4,171 stars — ML pipeline platform (pushed 2026-07-27)
+- **kubeflow/spark-operator**: 3,142 stars — Kubernetes operator for Apache Spark (pushed 2026-07-25)
+- **kubeflow/trainer**: 2,155 stars — Distributed AI training on Kubernetes (pushed 2026-07-27)
+- **kubeflow/sdk**: 129 stars — Universal Python SDK for AI workloads (pushed 2026-07-27)
+- **kubeflow/mcp-server**: 29 stars — NEW MCP server for Kubeflow dev (pushed 2026-07-27)
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **migalkin/StarE**: 89 stars — hyper-relational knowledge graph learning
+- **TeglonLabs/jank-crane**: NEW C++ repo — GF3 convergence maps, loopify spec (pushed 2026-06-08)
+- **plurigrid/gorj**: This very repo — forj + Clojure REPL routing
+
+## Hamming Swarm (Aptos)
+- **All 28 wallets**: 0.0 APT — CoinStore resource not found (HTTP 404), accounts uninitialized or empty on mainnet
+- **5 multisig pairs**: All healthy, sigs_required=2 (A-B, A-G, Y-Z, S-T, V-W)
+- **MNX testnet.mnx.fi**: Unavailable — API endpoints return 404; SPA does not expose REST market data
