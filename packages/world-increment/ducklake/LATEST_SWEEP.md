@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-28
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-28
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,78 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments (cumulative) | 341 |
+| Total Repo Snapshots (cumulative) | 1262 |
+| New Increments This Sweep | 318 |
+| Sources Covered | 3 orgs + 8 users (social graph) |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 pairs |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+### Sources Scanned (2026-07-28)
+| Source | Type | Repos Captured |
+|--------|------|----------------|
+| plurigrid | org | 100 |
+| kubeflow | org | 49 |
+| TeglonLabs | org | 7 |
+| bmorphism | user | 100 |
+| zubyul | user | 49 |
+| migalkin | social-graph | 19 |
+| DJedamski | social-graph | 6 |
+| wasita | social-graph | 12 |
+| kristinezheng | social-graph | 5 |
+| M1shaaa | social-graph | 8 |
+| AustinCStone | social-graph | 20 |
+| **TOTAL** | | **375 source records → 318 unique this sweep** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+### Notable Repos
+- `TeglonLabs/jank-crane` (C++, pushed 2026-06-08) — GF3 convergence maps + loopify pass spec
+- `migalkin/NodePiece` (Python, 144★) — scalable KG embeddings (ICLR'22), still active
+- `migalkin/StarE` (Python, 89★) — hyper-relational KG (EMNLP 2020)
+- `AustinCStone/TextGAN` (Python, 92★) — TensorFlow text GAN
+- `wasita/wasita.github.io` (Svelte, updated 2026-07-21) — most recently pushed in social graph
+- `bmorphism` — 100 repos captured; heavy MCP/AI tooling focus
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (alice, bob, A–Z)
+All 28 addresses returned **HTTP 404** for `CoinStore<AptosCoin>` on Aptos mainnet. Wallets are **unfunded / no on-chain APT balance** (accounts not registered or never received APT).
+
+| World | Address (prefix) | Balance (APT) |
+|-------|-----------------|---------------|
+| alice | 0xc793ac... | NULL (no CoinStore) |
+| bob | 0x0a3c00... | NULL (no CoinStore) |
+| A–Z (26 wallets) | various | NULL (no CoinStore) |
+
+### Multisig Contract Probes
+Probed `0x1::multisig_account::num_signatures_required` — all 5 contracts responded successfully.
+
+| Pair | Contract | Sigs Required | Status |
+|------|----------|---------------|--------|
+| A-B | 0x0da4f428... | **2** | ✅ healthy |
+| A-G | 0xf56c4a1c... | **2** | ✅ healthy |
+| Y-Z | 0xd3ffe181... | **2** | ✅ healthy |
+| S-T | 0x3b1c3ae9... | **2** | ✅ healthy |
+| V-W | 0x40fad7b4... | **2** | ✅ healthy |
+
+**All 5 multisig contracts: 2-of-2 threshold, all healthy.**
+
+### MNX Markets (testnet.mnx.fi)
+`/api/markets`, `/api/v1/markets`, `/api/tickers` — all **HTTP 404**. MNX testnet is a SPA; no accessible REST API at standard paths. Recorded as UNAVAILABLE.
+
+---
+
+## GF(3) Color Distribution (2026-07-28 sweep, 318 new increments)
+- trit=0 ERGODIC #d3869b: ~106 increments (id%3==0)
+- trit=1 PLUS #b8bb26: ~106 increments (id%3==1)
+- trit=-1 MINUS #cc241d: ~106 increments (id%3==2)
+
+GF(3) assignment: `id mod 3 == 0 → ERGODIC | id mod 3 == 1 → PLUS | id mod 3 == 2 → MINUS`
 
 ---
 
