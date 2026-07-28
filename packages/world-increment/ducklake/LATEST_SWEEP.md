@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-28
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-28T23:13 UTC
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 34 (cumulative) |
+| Total Repo Snapshots | 1,238 (cumulative, append-only) |
+| Sources Covered | 3 orgs + 8 users + 5 social-graph users |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-2) |
+| MNX Markets | SPA — no API data |
 
 ---
 
@@ -131,12 +134,22 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+
+### GitHub
+- **kubeflow/kubeflow**: 15,794 stars — flagship ML platform for Kubernetes (pushed 2026-07-28)
+- **kubeflow/pipelines**: 4,171 stars — most popular ML pipeline for Kubernetes (pushed 2026-07-28)
+- **kubeflow/spark-operator**: 3,142 stars — Kubernetes operator for Apache Spark (pushed 2026-07-26)
+- **kubeflow/trainer**: 2,159 stars — Distributed AI Model Training, 1,000 forks (pushed 2026-07-28)
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings (ICLR'22)
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for MCP using Jane Street's oxcaml_effect (pushed 2026-03-16)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **plurigrid/zig-syrup**: High-performance Zig OCapN Syrup with CapTP (pushed 2026-07-28)
+- **plurigrid/gorj**: This repo — forj + Rama topology nREPL + GF(3) gay trit coloring (1,473 open issues, pushed 2026-07-28)
+- **bmorphism/Gay.jl**: Wide-gamut color sampling with splittable determinism (pushed 2026-07-28)
+
+### Aptos Hamming Swarm
+- All 28 wallets (alice, bob, A–Z): **0 APT** — swarm unfunded on mainnet as of this sweep
+- All 5 multisig contracts: **healthy**, 2-of-2 signatures required (A-B, A-G, Y-Z, S-T, V-W)
+
+### MNX Markets
+- testnet.mnx.fi: **SPA only** — Next.js client-side rendering, no REST API endpoint found
