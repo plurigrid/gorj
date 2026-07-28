@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-28
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-28
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,13 +12,46 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 34 (cumulative) |
+| Total Repo Snapshots | 1307 (cumulative) |
+| Aptos Wallet Snapshots | 28 |
+| Multisig Probes | 5 (all healthy, 2-of-N) |
+| MNX Market Rows | 0 (SPA, no JSON API) |
 | Sources Covered | 3 orgs + 8 users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 2: Hamming Swarm Snapshot (2026-07-28)
+
+### Aptos Wallet Balances (Mainnet)
+
+All 28 addresses returned **0 APT** (`resource_not_found` for `0x1::coin::CoinStore`). These accounts are uninitialized for the legacy CoinStore module — they may hold APT via the newer fungible asset standard or be completely unfunded.
+
+| World | Address | APT Balance |
+|-------|---------|-------------|
+| alice | 0xc793...4cc7b | 0.0 |
+| bob | 0x0a3c...512d5d | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+### Multisig Contract Probes
+
+| Pair | Contract | Sigs Required | Status |
+|------|----------|---------------|--------|
+| A-B | 0x0da4...87003 | **2** | ✅ healthy |
+| A-G | 0xf56c...c0096 | **2** | ✅ healthy |
+| Y-Z | 0xd3ff...5b883 | **2** | ✅ healthy |
+| S-T | 0x3b1c...7883 | **2** | ✅ healthy |
+| V-W | 0x40fa...eb6d | **2** | ✅ healthy |
+
+All 5 multisig contracts respond with 2-of-N threshold. No anomalies detected.
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: SPA only.** Routes `/`, `/api/markets`, `/api/v1/markets` all return the Next.js HTML shell. Market data loads client-side only — no public JSON endpoint available. Recorded 0 rows in `mnx_snapshots`.
+
+---
+
+## GF(3) Color Chain — 2026-07-28 Run (11 Increments)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -33,9 +66,8 @@
 | 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS`
 
 ---
 
