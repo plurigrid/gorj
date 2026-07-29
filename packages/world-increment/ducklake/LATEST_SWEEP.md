@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-29
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-29
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -130,13 +130,57 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (2026-07-29)
+- **kubeflow/kubeflow**: 15,796 stars — flagship ML platform for Kubernetes (updated today)
+- **kubeflow/pipelines**: 4,171 stars — most popular ML pipeline for Kubernetes (pushed today)
+- **kubeflow/spark-operator**: 3,142 stars — Kubernetes operator for Apache Spark (pushed today)
+- **kubeflow/trainer**: 2,162 stars — Distributed AI Model Training & LLM Fine-Tuning (pushed today)
+- **migalkin/StarE**: 89 stars — EMNLP 2020 hyper-relational knowledge graphs
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for MCP using Jane Street's oxcaml_effect
+- **bmorphism/anti-bullshit-mcp-server**: 22 stars — claim validation MCP server
+- **plurigrid/asi**: 55 stars — topological chemputer (pushed today)
+- **plurigrid/gorj**: This repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring (1,497 open issues)
+- **Increment 11**: MINUS — AustinCStone social graph node, closing the GF(3) chain
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances — All 28 Nodes
+
+**Endpoint:** `GET /v1/accounts/{addr}/resource/0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`
+
+All 28 probed wallets (alice, bob, A–Z) returned `resource_not_found` for the CoinStore resource.
+This means these addresses exist on-chain but the APT CoinStore module has not been initialized on them.
+
+| Node | Balance APT | Status |
+|------|-------------|--------|
+| alice, bob, A–Z (all 28) | 0.0 | CoinStore uninitialized |
+
+### Multisig Contract Probes — 5/5 Healthy
+
+All 5 multisig contracts probed with `0x1::multisig_account::num_signatures_required`:
+
+| Pair | sigs_required | Healthy |
+|------|--------------|---------|
+| A-B | 2 | ✅ |
+| A-G | 2 | ✅ |
+| Y-Z | 2 | ✅ |
+| S-T | 2 | ✅ |
+| V-W | 2 | ✅ |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status:** UNAVAILABLE — SPA returns only "MNX" string, no API data. `/api/markets` → 404.
+
+---
+
+## DuckDB Cumulative State
+
+| Table | Total Rows |
+|-------|------------|
+| world_increments | 34+ |
+| repo_snapshots | 985+ |
+| aptos_snapshots | 28 (this run) |
+| multisig_probes | 5 (this run) |
+| mnx_snapshots | 0 |
