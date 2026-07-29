@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-29
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-29
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **Increment ID:** 13 · GF(3): trit=1 · PLUS · `#b8bb26`
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,13 +12,29 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 25 |
+| Total Repo Snapshots | 945 |
+| Aptos Addresses Sampled | 28 |
+| Multisig Contracts Probed | 5 (all healthy) |
+| MNX Markets | unavailable (SPA) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — Latest Increment
+
+| ID | Source | Event Type | GF3 Trit | Color | Name |
+|----|--------|------------|-----------|-------|------|
+| 13 | plurigrid (org) | sweep_complete | +1 | `#b8bb26` | **PLUS** |
+
+GF(3) chain continues: `... ERGODIC(12) → PLUS(13) → ...`
+
+### GitHub API Note
+
+GitHub REST API access is proxy-restricted to `plurigrid/gorj` only in this execution environment. Orgs kubeflow, TeglonLabs and users bmorphism, zubyul, and their social graph returned 403. Historical data for those sources remains in DB from prior sweeps (see GF3 chain IDs 1–12 below).
+
+---
+
+## Historical GF(3) Color Chain (Increments 1–12)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -35,7 +51,7 @@
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS(13)`
 
 ---
 
@@ -95,7 +111,7 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 | Source | Type | Repos |
 |--------|------|-------|
-| plurigrid | org | 100 |
+| plurigrid | org | 101 |
 | bmorphism | user | 100 |
 | TeglonLabs | org | 53 |
 | kubeflow | org | 47 |
@@ -106,7 +122,36 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 | kristinezheng | user | 18 |
 | M1shaaa | user | 16 |
 | DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| **TOTAL** | | **472** |
+
+---
+
+## Hamming Swarm — Aptos Wallet Snapshot (2026-07-29)
+
+| Result | Value |
+|--------|-------|
+| Addresses queried | 28 (alice, bob, A–Z) |
+| APT balance found | 0 (all accounts empty / no CoinStore) |
+| API | fullnode.mainnet.aptoslabs.com |
+| Ledger version | ~650,683,653 |
+
+All 28 addresses returned "Resource not found" for the APT CoinStore — accounts are on-chain but hold no liquid APT.
+
+## Multisig Contract Health (2026-07-29)
+
+| Pair | Address (prefix) | Sigs Required | Status |
+|------|------------------|---------------|--------|
+| A-B | `0x0da4f428...` | 2 | ✅ healthy |
+| A-G | `0xf56c4a1c...` | 2 | ✅ healthy |
+| Y-Z | `0xd3ffe181...` | 2 | ✅ healthy |
+| S-T | `0x3b1c3ae9...` | 2 | ✅ healthy |
+| V-W | `0x40fad7b4...` | 2 | ✅ healthy |
+
+All 5 multisig contracts respond correctly via `0x1::multisig_account::num_signatures_required`.
+
+## MNX Markets (testnet.mnx.fi)
+
+Status: **Unavailable** — endpoint serves a Next.js SPA; no accessible REST/JSON API found at common paths (`/api/markets`, `/api/tickers`).
 
 ---
 
