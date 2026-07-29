@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-29
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-29
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 245 (+222 this run) |
+| Total Repo Snapshots | 1,166 (+222 this run) |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Snapshotted | 28 |
+| Multisig Contracts Probed | 5 (all healthy) |
+| Total Swarm APT | ~20.27 APT |
 
 ---
 
@@ -139,4 +142,59 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **TeglonLabs/jank-crane**: New since last run — crane-jank converged-IR hub with GF3 convergence maps (C++, pushed 2026-06-08)
+
+---
+
+## Hamming Swarm: Aptos Mainnet Balances (2026-07-29)
+
+Queried via `0x1::coin::balance` view function. Ledger epoch ~16,712.
+
+| World | Balance (APT) |
+|-------|--------------|
+| bob   | 12.65700700 |
+| F     | 1.96051600  |
+| L     | 1.92726900  |
+| J     | 1.89509300  |
+| alice | 0.43643352  |
+| O     | 0.21013600  |
+| K     | 0.16196100  |
+| P     | 0.14013600  |
+| M     | 0.11228500  |
+| N     | 0.10612100  |
+| Q     | 0.10324000  |
+| S     | 0.09178800  |
+| R     | 0.09021700  |
+| T     | 0.07371300  |
+| U     | 0.05577300  |
+| A     | 0.05176700  |
+| V     | 0.04883299  |
+| Y     | 0.04444900  |
+| X     | 0.04257700  |
+| W     | 0.04070500  |
+| B     | 0.03625600  |
+| Z     | 0.02426800  |
+| D     | 0.01162900  |
+| C     | 0.01018500  |
+| E     | 0.00937200  |
+| H     | 0.00168100  |
+| I     | 0.00068100  |
+| G     | 0.00068100  |
+
+**Total swarm: ~20.27 APT across 28 wallets**
+
+### Multisig Contract Probes
+
+All 5 pairs: `num_signatures_required = 2`, all healthy.
+
+| Pair | Address |
+|------|---------|
+| A-B  | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 |
+| A-G  | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 |
+| Y-Z  | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 |
+| S-T  | 0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883 |
+| V-W  | 0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d |
+
+### MNX Markets (testnet.mnx.fi)
+
+Returns Next.js SPA — no accessible REST API. No data inserted into `mnx_snapshots`.
