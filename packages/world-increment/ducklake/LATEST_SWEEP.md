@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-29
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-29
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 35 |
+| Total Repo Snapshots | 1005 |
+| Aptos Wallets Tracked | 28 |
+| Multisig Probes | 5 (all healthy) |
+| Sources Covered | 3 orgs + 8 users + social graph |
 
 ---
 
@@ -125,18 +127,23 @@ multisig_probes(timestamp, pair, address, sigs_required, healthy)
 mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 ```
 
+## Notable Highlights
+- **kubeflow/kubeflow**: 15,795 stars — flagship ML platform for Kubernetes (+230 since last sweep)
+- **kubeflow/pipelines**: 4,170 stars — most popular ML pipeline (pushed 2026-07-29)
+- **kubeflow/spark-operator**: 3,142 stars — Kubernetes operator for Apache Spark
+- **bmorphism/Gay.jl**: 188 open issues — active GF(3) wide-gamut color sampling library
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings (ICLR'22)
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for Model Context Protocol
+- **plurigrid/gorj**: 1,486 open issues — this repo is very active
+- **plurigrid/asi**: 53 stars — topological chemputer (top plurigrid by stars)
+- **Increment 35**: MINUS (#cc241d) — sweep_complete; GF(3) chain balanced at 11 ERGODIC / 12 PLUS / 12 MINUS
+
+## Hamming Swarm (Aptos) Highlights
+- **All 28 wallets (alice, bob, A–Z):** 0.0 APT — no `CoinStore<AptosCoin>` resource found
+- **5/5 multisig contracts healthy:** A-B, A-G, Y-Z, S-T, V-W all return `sigs_required=2`
+- **MNX testnet.mnx.fi:** SPA/WebSocket-only; no REST market API reachable via HTTP
+
 ## GF(3) Assignment Rule
 - `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
-
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
