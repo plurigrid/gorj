@@ -1,24 +1,68 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-29
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-29
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## JOB 2: Hamming Swarm Snapshot (NEW — 2026-07-29)
 
-| Metric | Value |
-|--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+### Aptos Wallet Balances
+All 28 wallets queried against `fullnode.mainnet.aptoslabs.com`.
+
+| World | Balance (APT) | Status |
+|-------|---------------|--------|
+| alice | 0.0 | queried |
+| bob   | 0.0 | queried |
+| A–Z   | 0.0 each | queried (26 wallets) |
+
+**Total APT across all 28 wallets: 0.0 APT**  
+GF(3): id=25, trit=1, #b8bb26 **PLUS**
+
+### Multisig Contract Probes
+
+| Pair | Sigs Required | Healthy |
+|------|---------------|---------|
+| A-B  | 2 | ✓ |
+| A-G  | 2 | ✓ |
+| Y-Z  | 2 | ✓ |
+| S-T  | 2 | ✓ |
+| V-W  | 2 | ✓ |
+
+All 5 multisig accounts healthy (2-of-N).  
+GF(3): id=26, trit=-1, #cc241d **MINUS**
+
+### MNX Markets (testnet.mnx.fi)
+**UNAVAILABLE** — SPA returns no API data. `/api/markets` → HTTP 404.
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1 Status (GitHub Social Graph Sweep — 2026-07-29)
+
+---
+
+## Summary Counts (cumulative as of 2026-07-29)
+
+| Metric | Value |
+|--------|-------|
+| Total World Increments | 26 (cumulative) |
+| Total Repo Snapshots | 471 (from 2026-04-12 run) |
+| Aptos Snapshots | 28 (2026-07-29 run) |
+| Multisig Probes | 5 (2026-07-29 run, all healthy) |
+| Sources Covered | 3 orgs + 8 users (2026-04-12) + hamming swarm (2026-07-29) |
+
+> Note (2026-07-29): GitHub API org/user listing blocked by proxy — scope restricted to `plurigrid/gorj` only. Previous sweep data from 2026-04-12 intact above.
+
+---
+
+## GitHub Sweep (2026-04-12, historical)
+
+---
+
+## GF(3) Color Chain — All 26 Increments (cumulative)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
