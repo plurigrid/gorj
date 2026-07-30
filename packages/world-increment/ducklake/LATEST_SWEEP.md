@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-30
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-30
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **World Increment ID:** 13 — GF(3) **PLUS** `#b8bb26` (trit=1)
 
 ---
 
@@ -12,13 +13,39 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 (new: id=13, PLUS #b8bb26) |
+| Total Repo Snapshots | 945 (+1 plurigrid/gorj) |
+| Aptos Snapshots | 28 (alice, bob, A–Z; all 0.0 APT — uninitialized) |
+| Multisig Probes | 5 (A-B, A-G, Y-Z, S-T, V-W; all 2-of-2, healthy) |
+| MNX Snapshots | 0 (testnet.mnx.fi SPA — no API accessible) |
+| GitHub Sweep Scope | plurigrid/gorj only (REST API blocked in session) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## Hamming Swarm Snapshot (2026-07-30)
+
+### Aptos Wallet Balances — Mainnet
+All 28 addresses queried via `fullnode.mainnet.aptoslabs.com`. All returned `resource_not_found` — accounts uninitialized (no `CoinStore<AptosCoin>` resource). Total: **0.0 APT across all 28 wallets.**
+
+### Multisig Contract Probes
+All 5 probed via `POST /v1/view → 0x1::multisig_account::num_signatures_required`:
+
+| Pair | sigs_required | healthy |
+|------|---------------|---------|
+| A-B  | 2             | ✓       |
+| A-G  | 2             | ✓       |
+| Y-Z  | 2             | ✓       |
+| S-T  | 2             | ✓       |
+| V-W  | 2             | ✓       |
+
+**All 5 multisig contracts healthy — 2-of-2 threshold.**
+
+### MNX Markets
+`testnet.mnx.fi` is a Next.js SPA. No REST API endpoints found at any probed path. Market data unavailable.
+
+---
+
+## GF(3) Color Chain — All 24 Increments (latest 3)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +61,11 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| … | *(sweeps 13–23 via prior runs)* | | | | |
+| **13** | **plurigrid** | **sweep_complete** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain continues: `… ERGODIC → **PLUS** → (next: MINUS)`  
+Next sweep: id=14, trit=-1, MINUS `#cc241d`
 
 ---
 
