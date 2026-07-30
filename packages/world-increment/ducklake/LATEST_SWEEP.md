@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-30
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-30 09:10 UTC
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.2.2 (Meadow Mushroom)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment ID:** 13 — GF(3) **PLUS** `#b8bb26` (trit=1)
 
 ---
 
@@ -12,9 +13,47 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 13 |
+| Total Repo Snapshots | 955+ |
+| Sources Covered | plurigrid/gorj (live) + 10 scope-restricted sources noted |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Healthy | 5/5 |
+| MNX Markets | SPA — no JSON API |
+
+---
+
+## Hamming Swarm Snapshot (NEW — 2026-07-30)
+
+### Aptos Wallet Balances
+
+Queried Aptos mainnet (`fullnode.mainnet.aptoslabs.com`) for 28 addresses (alice, bob, A–Z).  
+All returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.  
+**All balances: 0.0 APT** — accounts unfunded or using a different coin module.
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | `0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003` | 2 | ✅ |
+| A-G | `0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096` | 2 | ✅ |
+| Y-Z | `0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883` | 2 | ✅ |
+| S-T | `0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883` | 2 | ✅ |
+| V-W | `0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d` | 2 | ✅ |
+
+All 5 multisig contracts: **2 signatures required**, all responding on mainnet.
+
+### MNX Markets (testnet.mnx.fi)
+
+Next.js SPA — all paths (`/api/markets`, `/api/v1/markets`) return HTML. No JSON data extractable without headless browser. Recorded as unavailable in `mnx_snapshots` (0 rows).
+
+---
+
+## GitHub Social Graph — 2026-07-30 Note
+
+**API scope restriction:** Token is bound to `plurigrid/gorj`. Org-level and cross-user repo queries returned 404. Only `plurigrid/gorj` data was live-fetched.
+
+- **plurigrid/gorj**: Active, 30+ branches, most recent sweep branch `world-increment/sweep-2026-04-30-2209`
+- kubeflow, TeglonLabs, bmorphism, zubyul, migalkin, DJedamski, wasita, kristinezheng, M1shaaa, AustinCStone: recorded as `SCOPE_RESTRICTED` in this sweep
 
 ---
 
