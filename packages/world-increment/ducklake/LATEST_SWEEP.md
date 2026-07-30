@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-30
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-30
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Aptos Ledger Version:** ~6,520,993,942 (mainnet)
 
 ---
 
@@ -12,9 +13,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 34 (cumulative) |
+| Total Repo Snapshots | 945 (cumulative) |
+| Sources Covered | 3 orgs + 8 users (prior run) + scope_limited entries this run |
+| Aptos Addresses Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, 2-of-N) |
+| MNX Markets | Unavailable (SPA, no REST API) |
 
 ---
 
@@ -130,7 +134,7 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
+## Notable Highlights (prior run — 2026-04-12)
 - **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
 - **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
 - **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
@@ -140,3 +144,43 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## Hamming Swarm Snapshot — 2026-07-30
+
+### Aptos Wallet Balances
+
+All 28 addresses (alice, bob, A–Z) probed on Aptos mainnet at ledger version ~6.52B.  
+**Result: All return `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`**
+
+This is expected for accounts that migrated to the Aptos Fungible Asset (FA) standard.  
+**alice** (`0xc793...cc7b`) is confirmed active: sequence_number=72, has `multiverse::MultiverseState`, `address_book::Mapping`, `store_v2::ACSetMeta2`, `lending_pool::UserPosition`, `code::PackageRegistry`.
+
+| World | Address (truncated) | APT (legacy CoinStore) | Notes |
+|-------|-------------------|----------------------|-------|
+| alice | 0xc793...cc7b | 0.0 | Active deployer, seq=72, multiverse state |
+| bob | 0x0a3c...2d5d | 0.0 | resource_not_found |
+| A | 0x8699...9d7a | 0.0 | resource_not_found |
+| B | 0x3f89...b13 | 0.0 | resource_not_found |
+| C | 0x38b9...35e | 0.0 | resource_not_found |
+| D–Z (22) | … | 0.0 each | resource_not_found |
+
+**Total APT in legacy CoinStore across all 28 addresses:** 0.0 APT
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4...7003 | 2 | ✓ |
+| A-G | 0xf56c...0096 | 2 | ✓ |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ |
+| S-T | 0x3b1c...7883 | 2 | ✓ |
+| V-W | 0x40fa...eb6d | 2 | ✓ |
+
+**Multisig health: 5/5 (100%) — all require exactly 2 signatures**
+
+### MNX Markets (testnet.mnx.fi)
+
+Paths probed: `/api/markets`, `/api/v1/markets` — both return Next.js SPA HTML (~46KB).  
+No extractable JSON market data. **Status: Unavailable (SPA, no public REST API)**
