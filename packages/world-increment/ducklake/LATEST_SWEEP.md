@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-30
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-30T00:07 UTC
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,13 +12,15 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 25 (2 new: ids 13–14) |
+| Total Repo Snapshots | 945 (1 new: plurigrid/gorj) |
+| Aptos Wallet Snapshots | 28 (alice, bob, A–Z) |
+| Multisig Probes | 5 (A-B, A-G, Y-Z, S-T, V-W) |
+| MNX Market Snapshots | 0 (SPA, no accessible API) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — This Run (IDs 13–14)
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +36,40 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **plurigrid (org)** | **repo_sweep** | **+1** | **`#b8bb26`** | **PLUS** |
+| **14** | **aptos-mainnet** | **hamming_snapshot** | **-1** | **`#cc241d`** | **MINUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain continues: `…ERGODIC → PLUS → MINUS` (5th cycle, position 2/3)
+
+---
+
+## Job 2: Hamming Swarm Snapshot (NEW)
+
+### Aptos Wallet Balances (Mainnet, ledger ~6,520,232,578)
+
+All 28 addresses (alice, bob, A–Z) probed. **All return `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`** — no APT coinstore initialized on any address. Balance = 0.00 APT for all.
+
+| World | Address | APT |
+|---|---|---|
+| alice | 0xc793...cc7b | 0.00 |
+| bob | 0x0a3c...2d5d | 0.00 |
+| A–Z | (26 addresses) | 0.00 each |
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Healthy |
+|---|---|---|---|
+| A-B | 0x0da4...7003 | **2** | ✓ |
+| A-G | 0xf56c...0096 | **2** | ✓ |
+| Y-Z | 0xd3ff...b883 | **2** | ✓ |
+| S-T | 0x3b1c...7883 | **2** | ✓ |
+| V-W | 0x40fa...eb6d | **2** | ✓ |
+
+**5/5 multisig contracts healthy. All require 2-of-N signatures.**
+
+### MNX Markets (testnet.mnx.fi)
+
+`/api/markets` → HTTP 404. Homepage is a JavaScript SPA — no market data accessible. Status: **unavailable**.
 
 ---
 
