@@ -1,3 +1,123 @@
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-30
+
+> _Previous sweep (2026-04-12) archived below. New sweep data starts here._
+
+---
+
+## Sweep Metadata (2026-07-30)
+- **Date:** 2026-07-30
+- **Increment ID:** 13
+- **GF(3) trit:** 1 → **PLUS** (#b8bb26)
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
+- **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Summary Counts
+
+| Metric | Value |
+|--------|-------|
+| Total World Increments | 24 |
+| Total Repo Snapshots | 1,307 |
+| New Repos This Sweep | 363 |
+| Sources Covered | 3 orgs + 8 users |
+
+### Sources
+
+| Source | Type | Repos |
+|---|---|---|
+| plurigrid | org | 100 |
+| kubeflow | org | 49 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 100 (106 total) |
+| zubyul | user | 49 |
+| migalkin | user (social) | 19 |
+| DJedamski | user (social) | 6 |
+| wasita | user (social) | 12 |
+| kristinezheng | user (social) | 5 |
+| M1shaaa | user (social) | 8 |
+| AustinCStone | user (social) | 41 |
+| **Total** | | **363 repos this sweep** |
+
+### Top Repos by Stars (this sweep)
+
+| Repo | Language | Stars | Last Push |
+|---|---|---|---|
+| kubeflow/kubeflow | — | 15,798 | 2026-07-10 |
+| kubeflow/pipelines | Python | 4,171 | 2026-07-29 |
+| kubeflow/spark-operator | Python | 3,142 | 2026-07-29 |
+| kubeflow/trainer | Go | 2,163 | 2026-07-30 |
+| kubeflow/katib | Python | 1,694 | 2026-07-26 |
+| kubeflow/community-distribution | YAML | 1,029 | 2026-07-29 |
+| kubeflow/arena | Go | 815 | 2026-07-29 |
+| kubeflow/kale | Python | 698 | 2026-07-27 |
+| migalkin/StarE | Python | 89 | 2023-12-01 |
+| plurigrid/asi | HTML | 56 | 2026-07-10 |
+
+### Notable Plurigrid / bmorphism Activity (recent pushes)
+
+| Repo | Language | Pushed |
+|---|---|---|
+| plurigrid/gorj | Clojure | 2026-07-30 |
+| bmorphism/Gay.jl | Julia | 2026-07-30 |
+| plurigrid/zig-syrup | Zig | 2026-07-28 |
+| plurigrid/eirobri | Clojure | 2026-07-21 |
+| plurigrid/asi | HTML | 2026-07-10 |
+| plurigrid/place | TeX | 2026-07-14 |
+| M1shaaa/M1shaaa | — | 2026-07-30 |
+| wasita/wasita.github.io | Svelte | 2026-07-21 |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances
+
+All 28 addresses (alice, bob, A–Z) returned **0.00000000 APT** on Aptos mainnet. No CoinStore resource found for any address — wallets appear unfunded on mainnet.
+
+| World | Address | Balance (APT) |
+|---|---|---|
+| alice | 0xc793acdec12b...7b | 0.0 |
+| bob | 0x0a3c00c58fdf9...5d | 0.0 |
+| A–Z (26) | various | 0.0 each |
+
+### Multisig Contract Health
+
+All 5 multisig contracts probed via `0x1::multisig_account::num_signatures_required`. All healthy.
+
+| Pair | Address (truncated) | Sigs Required | Status |
+|---|---|---|---|
+| A-B | 0x0da4f428...03 | 2 | ✅ healthy |
+| A-G | 0xf56c4a1c...96 | 2 | ✅ healthy |
+| Y-Z | 0xd3ffe181...83 | 2 | ✅ healthy |
+| S-T | 0x3b1c3ae9...83 | 2 | ✅ healthy |
+| V-W | 0x40fad7b4...6d | 2 | ✅ healthy |
+
+All contracts are 2-of-2 multisig and responding normally.
+
+### MNX Markets
+
+`https://testnet.mnx.fi/api/markets` returned **HTTP 404** — testnet endpoint unavailable. No market data captured this sweep.
+
+---
+
+## GF(3) Color Chain (increments 1–24)
+
+Increment 13 → **trit=1, PLUS, color=#b8bb26**
+
+| trit | name | color | condition |
+|---|---|---|---|
+| 0 | ERGODIC | #d3869b | id % 3 == 0 |
+| 1 | PLUS | #b8bb26 | id % 3 == 1 |
+| -1 | MINUS | #cc241d | id % 3 == 2 |
+
+GF(3) chain segment: `...→ ERGODIC(12) → PLUS(13) → MINUS(14) →...`
+
+---
+
 # World-Increment Sweep — 2026-04-12
 
 ## Sweep Metadata
