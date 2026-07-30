@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-30
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-30
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment ID:** 13 — GF(3) PLUS (#b8bb26, trit=1)
 
 ---
 
@@ -12,9 +13,15 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 13 |
+| Total Repo Snapshots | 945 |
+| Sources Covered | 3 orgs + 8 users (prior runs) + gorj (this run) |
+| Aptos Wallets Snapshotted | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (all healthy, sigs_required=2) |
+| MNX Markets | unavailable (SPA, no REST API) |
+
+### GitHub API Scope Note
+This run's GitHub access was restricted to `plurigrid/gorj` only (proxy policy). Cross-org queries to plurigrid, kubeflow, TeglonLabs and user queries to bmorphism/zubyul/social-graph were blocked. Cumulative repo data from prior runs (944 snapshots across 11 sources) remains intact in the DB.
 
 ---
 
@@ -34,8 +41,10 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **world-increment-sweep+hamming-swarm** | **sweep_complete** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
+Next expected: id=14, trit=-1 (MINUS, #cc241d)
 
 ---
 
@@ -138,5 +147,25 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
+- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **Increment 13**: PLUS — this run; introduces Aptos+multisig hamming swarm tables
+
+## Hamming Swarm Summary (2026-07-30)
+
+### Aptos Wallet Balances
+All 28 wallets (alice, bob, A–Z) returned **0.0 APT** on mainnet.
+
+### Multisig Probes
+| pair | address | sigs_required | healthy |
+|------|---------|---------------|---------|
+| A-B | 0x0da4f428...987003 | 2 | ✓ |
+| A-G | 0xf56c4a1c...c0096 | 2 | ✓ |
+| Y-Z | 0xd3ffe181...5b883 | 2 | ✓ |
+| S-T | 0x3b1c3ae9...d7883 | 2 | ✓ |
+| V-W | 0x40fad7b4...0eb6d | 2 | ✓ |
+
+All 5 multisig contracts operational — 2-of-N signature threshold confirmed.
+
+### MNX Markets (testnet.mnx.fi)
+Endpoint returns a Next.js SPA shell; no server-side REST API discovered at `/api/markets` or `/api/v1/markets`. Market data unavailable this run.
