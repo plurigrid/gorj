@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-30
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-30
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Increment ID:** 13 — GF(3) PLUS (#b8bb26, trit=1)
 
 ---
 
@@ -12,30 +13,58 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Latest Increment ID | 13 |
+| Total Repo Snapshots | 945 |
+| Sources Covered (cumulative) | 3 orgs + 8 users + 1 (this run) |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — Latest Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
+| 13 | plurigrid/gorj | sweep_complete | +1 | `#b8bb26` | **PLUS** |
+| 12 | bmorphism (org) | sweep_complete | 0 | `#d3869b` | **ERGODIC** |
+| 11 | AustinCStone (user) | repo_sweep | -1 | `#cc241d` | **MINUS** |
+| 10 | M1shaaa (user) | repo_sweep | +1 | `#b8bb26` | **PLUS** |
 | 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain (full): `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
+
+---
+
+## Hamming Swarm Snapshot (2026-07-30)
+
+### Aptos Wallet Balances (Mainnet, Ledger ~6525918040)
+
+All 28 addresses probed. All returned 0 APT (accounts empty or CoinStore not initialized).
+
+| World | APT Balance |
+|-------|-------------|
+| alice | 0.0 |
+| bob | 0.0 |
+| A–Z | 0.0 each |
+
+**Total APT across swarm: 0.0 APT**
+
+### Multisig Contract Probes
+
+| Pair | Sigs Required | Healthy |
+|------|---------------|---------|
+| A-B | 2 | ✓ |
+| A-G | 2 | ✓ |
+| Y-Z | 2 | ✓ |
+| S-T | 2 | ✓ |
+| V-W | 2 | ✓ |
+
+**5/5 multisig contracts healthy (all 2-of-2 threshold).**
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: SPA — no JSON API exposed.** All API paths return the Next.js HTML shell. Market data unavailable without headless browser execution.
 
 ---
 
@@ -91,7 +120,7 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 
 ---
 
-## Repo Counts by Source
+## Repo Counts by Source (cumulative)
 
 | Source | Type | Repos |
 |--------|------|-------|
@@ -106,7 +135,8 @@ GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS
 | kristinezheng | user | 18 |
 | M1shaaa | user | 16 |
 | DJedamski | user | 11 |
-| **TOTAL** | | **471** |
+| gorj (this run) | org | 1 |
+| **TOTAL** | | **472** |
 
 ---
 
@@ -138,5 +168,6 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
+- **plurigrid/gorj**: This very repo — last pushed 2026-05-08 (MCP server + hooks for Clojure REPL)
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **Increment 13**: PLUS — 2026-07-30 sweep, all 5 multisig contracts healthy (2-of-2), 28 Aptos wallets at 0 APT, MNX SPA unavailable
