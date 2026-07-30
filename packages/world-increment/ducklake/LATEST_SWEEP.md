@@ -1,9 +1,10 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-30
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-30
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **GF(3) Increment:** #13 · PLUS · #b8bb26 (trit=1)
+- **Snapshot hash:** `6581cf166ebd61c5`
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +13,65 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 24 |
+| Total Repo Snapshots | 945 |
+| Aptos Addresses Probed | 28 |
+| Multisig Contracts Probed | 5 (all healthy) |
+| MNX Markets | unavailable (SPA only) |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep
+
+**Status: Scope-restricted** — session token bound to `plurigrid/gorj` only.
+Cross-org/user queries for `plurigrid`, `kubeflow`, `TeglonLabs`, `bmorphism`,
+`zubyul`, and social graph users (`migalkin`, `DJedamski`, `wasita`,
+`kristinezheng`, `M1shaaa`, `AustinCStone`) were blocked:
+
+> "This GitHub API path is not available: sessions are bound to their configured
+> repositories. Use repository-scoped endpoints (repos/{owner}/{repo}/...)"
+
+**Accessible repo:** `plurigrid/gorj` — 20 recent commits retrieved via MCP.
+Last push: 2026-05-08 (chore: ignore duckdb binary in repo root).
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (mainnet, ledger ~6535307127)
+
+All 28 addresses returned `resource_not_found` for APT coin store —
+no APT holdings across the entire swarm.
+
+**Total APT: 0.0**
+
+### Multisig Contract Probes — ALL HEALTHY
+
+| Pair | Address | Sigs Required |
+|------|---------|---------------|
+| A-B  | 0x0da4...003 | 2 |
+| A-G  | 0xf56c...096 | 2 |
+| Y-Z  | 0xd3ff...883 | 2 |
+| S-T  | 0x3b1c...883 | 2 |
+| V-W  | 0x40fa...b6d | 2 |
+
+### MNX Markets — Unavailable
+
+`testnet.mnx.fi` serves a Next.js SPA; no JSON API accessible at
+`/api/markets` or `/api/v1/markets`.
+
+---
+
+## GF(3) Color Chain — Latest 4 Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **plurigrid/gorj** | **hamming_snapshot** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain (full): `PLUS → MINUS → ERGODIC` × 4 cycles + **PLUS** (id=13)
 
 ---
 
@@ -130,13 +166,10 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (2026-07-30)
+- **Increment 13**: PLUS (#b8bb26) — opens 5th GF(3) cycle; first hamming swarm snapshot
+- **Multisig swarm**: 5 contracts probed (A-B, A-G, Y-Z, S-T, V-W), all requiring 2-of-N sigs, all healthy
+- **Aptos swarm**: 28 addresses (alice, bob, A–Z) — all APT coin stores unfunded at ledger ~6.5B
+- **MNX**: testnet.mnx.fi SPA-only, no API data extractable
+- **GitHub**: session scoped to plurigrid/gorj only; cross-org sweep deferred to next authorized session
+- **gorj** last commit: 2026-05-08 chore: ignore duckdb binary in repo root
