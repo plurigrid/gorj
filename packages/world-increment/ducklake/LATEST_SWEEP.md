@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-31
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-31
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 11 |
+| Total Repo Snapshots | 647 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Addresses Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| MNX Markets | unavailable (SPA) |
 
 ---
 
@@ -131,12 +134,46 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
+- **kubeflow/kubeflow**: 15,798 stars — flagship ML platform for Kubernetes (active 2026-07-10)
+- **kubeflow/spark-operator**: 3,142 stars — pushed TODAY 2026-07-31T01:06:47Z
+- **kubeflow/trainer**: 2,165 stars — pushed TODAY 2026-07-31T03:10:01Z
+- **M1shaaa/M1shaaa**: profile README pushed TODAY 2026-07-31T02:28:21Z
 - **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for MCP using Jane Street's oxcaml_effect
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **TeglonLabs/jank-crane**: GF3 convergence maps + loopify pass spec (C++, 2026-06-08)
+- **wasita/wasita.github.io**: Svelte personal site, last pushed 2026-07-21
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances
+
+All 28 Hamming-swarm addresses probed against `fullnode.mainnet.aptoslabs.com`. All returned **0.0 APT** — Aptos mainnet reports "Resource not found" for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` on every address. This means no coin stores have been initialized (wallets exist in address space but have never received APT on-chain).
+
+| World | Address | Balance (APT) |
+|-------|---------|---------------|
+| alice | 0xc793acdec12b4a63717b001e21bbb7a8564d5e9690f80d41f556c2d0d624cc7b | 0.0 |
+| bob | 0x0a3c00c58fdf9020b27854a3229042efa70cf782d7d2a9de0c13d00e05512d5d | 0.0 |
+| A | 0x8699edc0960dd5b916074f1e9bd25d86fb416a8decfa46f78ab0af6eaebe9d7a | 0.0 |
+| B | 0x3f892ebe6e45164e63416ad10e7c87ce81e1acf2264c32dcfe21105a4577cb13 | 0.0 |
+| C–Z | (24 addresses) | 0.0 each |
+
+### Multisig Contract Probes
+
+All 5 multisig accounts are **healthy** (`sigs_required=2`):
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|--------------|--------|
+| A-B | 0x0da4f428a0c007da0f7629c3ec6a08a661ee20847556e6bf6ce880def4987003 | 2 | healthy |
+| A-G | 0xf56c4a1c0906214f3f859ccd8b498ab673979df61d7e35b2d98c5bee3fbc0096 | 2 | healthy |
+| Y-Z | 0xd3ffe1812b2df4062281c7ddd502bec5867fdc6d47175e316df742638e75b883 | 2 | healthy |
+| S-T | 0x3b1c3ae905d44c3a49f0dedd918a4c2d8aae6ae5e8339fd3570060b23ded7883 | 2 | healthy |
+| V-W | 0x40fad7b423a843650fddcad36b7de6609eead0cf1d12cb4d81b0f9082c80eb6d | 2 | healthy |
+
+All pairs operate as 2-of-2 multisig. No anomalies detected.
+
+### MNX Markets (testnet.mnx.fi)
+
+`testnet.mnx.fi` serves a Next.js SPA. The `/api/markets` path returned raw HTML (client-rendered SPA shell) rather than JSON — no market data is accessible without browser-side JavaScript execution. Status: **unavailable via direct HTTP probe**.
