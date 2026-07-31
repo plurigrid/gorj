@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-31
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-31
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **GF(3) Increment:** id=13 · trit=+1 · **PLUS** · `#b8bb26`
 
 ---
 
@@ -12,13 +13,91 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 25 (id=13 this run) |
+| Total Repo Snapshots | 945 (id=474 this run) |
+| Aptos Wallets Snapshotted | 28 / 28 |
+| Multisig Contracts Probed | 5 / 5 healthy |
+| Total Swarm APT | 20.344773 APT |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## JOB 1: GitHub Social Graph Sweep
+
+> **Scope note:** GitHub API was proxy-restricted to `plurigrid/gorj` only this run.
+> Org-level and cross-user queries (`kubeflow`, `TeglonLabs`, `bmorphism`, `zubyul`, social graph)
+> were blocked. Only the scoped repository was snapshotted (id=474).
+
+### Repo Snapshot: plurigrid/gorj
+| Field | Value |
+|---|---|
+| Full name | `plurigrid/gorj` |
+| Language | Clojure |
+| Last pushed | 2026-05-08T14:04:34Z |
+| Description | MCP server + hooks that give AI coding agents a Clojure REPL |
+
+### Recent Commits
+| SHA | Date | Message |
+|---|---|---|
+| `5b28fe0` | 2026-05-08 | chore: ignore duckdb binary in repo root |
+| `ebf263f` | 2026-04-14 | world-increment ducklake: sync world.duckdb sweep state |
+| `631518b` | 2026-04-12 | world-increment sweep 2026-04-12: insert id=12 ERGODIC |
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Wallet Balances
+*Method: `0x1::coin::balance` view function · Snapshot: 2026-07-31*
+
+| World | Balance (APT) |
+|---|---|
+| alice | 0.43643352 |
+| **bob** | **12.657007** ← largest |
+| A | 0.051767 |
+| B | 0.036256 |
+| C | 0.010185 |
+| D | 0.011629 |
+| E | 0.009372 |
+| F | 1.960516 |
+| G | 0.000681 |
+| H | 0.001681 |
+| I | 0.000681 |
+| J | 1.895093 |
+| K | 0.161961 |
+| L | 1.927269 |
+| M | 0.112285 |
+| N | 0.106121 |
+| O | 0.210136 |
+| P | 0.140136 |
+| Q | 0.103240 |
+| R | 0.090217 |
+| S | 0.091788 |
+| T | 0.073713 |
+| U | 0.055773 |
+| V | 0.048833 |
+| W | 0.040705 |
+| X | 0.042577 |
+| Y | 0.044449 |
+| Z | 0.024268 |
+| **TOTAL** | **20.344773 APT** |
+
+### Multisig Contract Probes
+*`0x1::multisig_account::num_signatures_required` · all 2-of-N*
+
+| Pair | Sigs Required | Healthy |
+|---|---|---|
+| A-B | 2 | ✅ |
+| A-G | 2 | ✅ |
+| Y-Z | 2 | ✅ |
+| S-T | 2 | ✅ |
+| V-W | 2 | ✅ |
+
+### MNX Markets (testnet.mnx.fi)
+**Unavailable** — SPA returned only ticker "MNX"; `/api/markets` and `/api/v1/markets` → HTTP 404.
+
+---
+
+## GF(3) Color Chain
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -33,9 +112,11 @@
 | 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| 12 | bmorphism (sweep) | sweep_complete | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **gorj (this run)** | **sweep_complete** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → … → ERGODIC → PLUS`  
+Next: id=14 → trit=-1 → **MINUS** `#cc241d`
 
 ---
 
