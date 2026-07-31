@@ -1,10 +1,51 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-07-31
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-31
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-07-31)
+
+### Aptos Mainnet Wallet Balances
+**API Status:** Reachable (ledger block ~939,533,950, epoch 16742)  
+All 28 Hamming-swarm addresses returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` — accounts are empty or hold non-APT assets.
+
+| World | Address | Balance (APT) |
+|-------|---------|---------------|
+| alice | 0xc793...cc7b | not found |
+| bob | 0x0a3c...512d | not found |
+| A–Z (26 wallets) | various | not found |
+
+### Multisig Contract Probes — All Healthy ✓
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4...7003 | 2 | ✓ healthy |
+| A-G | 0xf56c...0096 | 2 | ✓ healthy |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ healthy |
+| S-T | 0x3b1c...7883 | 2 | ✓ healthy |
+| V-W | 0x40fa...eb6d | 2 | ✓ healthy |
+
+### MNX Markets (testnet.mnx.fi)
+Next.js SPA — no public REST API at `/api/markets`. Market data unavailable.
+
+---
+
+## JOB 1: GitHub Social Graph Sweep (2026-07-31)
+
+### New Repos Indexed This Run: 78 | Cumulative DB Total: 1022
+
+#### Most Active (pushed today 2026-07-31)
+- `plurigrid/gorj` — Clojure, 1544 open issues — **THIS REPO** (pushed 22:17 UTC)
+- `kubeflow/notebooks` — K8s ML workloads (pushed 21:37 UTC)
+- `kubeflow/hub` — Model Registry Go (pushed 21:11 UTC)
+- `kubeflow/pipelines` — ML Pipelines Python 4172★ (pushed 18:02 UTC)
+- `bmorphism/Gay.jl` — Julia GF(3)/SPI colors, 188 issues (pushed 02:40 UTC)
+
+---
 
 ---
 
