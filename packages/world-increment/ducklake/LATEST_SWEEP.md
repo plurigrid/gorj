@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-07-31
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-07-31
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **GF(3) Increment:** id=13 · trit=1 · **PLUS** · `#b8bb26`
 
 ---
 
@@ -12,13 +13,64 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 13 |
+| Total Repo Snapshots | 945 |
+| Sources Covered | plurigrid/gorj (proxy scoped; external orgs/users blocked) |
+| Aptos Wallets Queried | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 |
+| Total APT Balance | 0.00 APT |
+| All Multisigs Healthy | ✓ (5/5, sigs_required=2) |
+
+### ⚠ GitHub Proxy Scope Restriction
+This run's GitHub proxy is scoped exclusively to `plurigrid/gorj`. All calls to
+`/orgs/{org}/repos` and `/users/{user}/repos` for external orgs (plurigrid org endpoint,
+kubeflow, TeglonLabs) and users (bmorphism, zubyul, migalkin, DJedamski, wasita,
+kristinezheng, M1shaaa, AustinCStone) were blocked with:
+> "This GitHub API path is not available: sessions are bound to their configured repositories."
+
+The repo snapshot from previous sweeps (471 → 944 rows) is preserved from prior runs.
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+---
+
+## Hamming Swarm Snapshot (2026-07-31)
+
+### Aptos Wallet Balances (Mainnet)
+
+All 28 wallets queried via `fullnode.mainnet.aptoslabs.com`. All returned **0.00 APT**.
+
+| World | Address (truncated) | Balance (APT) |
+|---|---|---|
+| alice | `0xc793...cc7b` | 0.0 |
+| bob | `0x0a3c...12d5` | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+**Total APT across swarm:** 0.00 APT (all wallets at zero)
+
+### Multisig Contract Probes
+
+All 5 multisig contracts responded healthy with `num_signatures_required = 2`.
+
+| Pair | Address (truncated) | Sigs Required | Healthy |
+|---|---|---|---|
+| A-B | `0x0da4...003` | 2 | ✓ |
+| A-G | `0xf56c...096` | 2 | ✓ |
+| Y-Z | `0xd3ff...883` | 2 | ✓ |
+| S-T | `0x3b1c...883` | 2 | ✓ |
+| V-W | `0x40fa...b6d` | 2 | ✓ |
+
+**All 5 multisigs operational.**
+
+### MNX Markets
+
+`https://testnet.mnx.fi` serves a JavaScript SPA (~59 KB HTML). No REST API endpoints
+found at `/api/markets`, `/api/v1/markets`, `/api/v2/markets`, `/markets`,
+`/api/tickers`, `/api/v1/tickers`. **Status: unavailable via REST.**
+
+---
+
+## GF(3) Color Chain — All 13 Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -34,8 +86,11 @@
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
 | 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| **13** | **world-increment-sweep** | **scheduled_sweep** | **+1** | **`#b8bb26`** | **PLUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS`
+
+Next: id=14 → trit=-1 · **MINUS** · `#cc241d`
 
 ---
 
