@@ -1,8 +1,112 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-07-31
+
+**Timestamp:** 2026-07-31  
+**Run type:** Scheduled automated sweep (world-increment-sweep + hamming-swarm-snapshot)  
+**DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Queried
+
+| Source | Type | Repos Found |
+|--------|------|-------------|
+| plurigrid | org | 100 |
+| kubeflow | org | 49 |
+| TeglonLabs | org | 5 |
+| bmorphism | user | 100 |
+| zubyul | user | 49 |
+| migalkin (social) | user | 19 |
+| DJedamski (social) | user | 6 |
+| wasita (social) | user | 12 |
+| kristinezheng (social) | user | 5 |
+| M1shaaa (social) | user | 8 |
+| AustinCStone (social) | user | 30 |
+| **TOTAL** | | **383** |
+
+### Top Repos by Stars
+
+| Repo | Stars | Language | Last Push |
+|------|-------|----------|-----------|
+| kubeflow/kubeflow | 15,798 | - | 2026-07-10 |
+| kubeflow/pipelines | 4,171 | Python | 2026-07-29 |
+| kubeflow/spark-operator | 3,142 | Python | 2026-07-31 |
+| kubeflow/trainer | 2,165 | Go | 2026-07-31 |
+| kubeflow/katib | 1,695 | Python | 2026-07-26 |
+| plurigrid/asi | 56 | HTML | 2026-07-10 |
+| TeglonLabs/mathpix-gem | 2 | Ruby | 2026-01-01 |
+| bmorphism/Gay.jl | 2 | Julia | 2026-07-31 (today) |
+
+### Most Recently Active (today)
+
+- **plurigrid/gorj** — Clojure — pushed 2026-07-31
+- **bmorphism/Gay.jl** — Julia — pushed 2026-07-31
+- **kubeflow/spark-operator** — Python — pushed 2026-07-31
+- **kubeflow/trainer** — Go — pushed 2026-07-31
+- **M1shaaa/M1shaaa** — profile — pushed 2026-07-31
+
+### GF(3) Color Chain Distribution
+
+- **trit=0 ERGODIC** (#d3869b): IDs where id%3==0 — 128 repos
+- **trit=1 PLUS** (#b8bb26): IDs where id%3==1 — 128 repos
+- **trit=-1 MINUS** (#cc241d): IDs where id%3==2 — 127 repos
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (Aptos Mainnet)
+
+### Wallet Balances
+
+All 28 addresses queried (alice, bob, A–Z). All returned **0 APT** — CoinStore resource not found on Aptos mainnet (accounts not funded or CoinStore not initialized).
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793...cc7b | 0.0 |
+| bob | 0x0a3c...2d5d | 0.0 |
+| A–Z | (26 addresses) | 0.0 each |
+
+### Multisig Contract Probes
+
+All 5 multisig contracts are **healthy** — all require 2-of-2 threshold.
+
+| Pair | Address (truncated) | Sigs Required | Status |
+|------|---------------------|---------------|--------|
+| A-B | 0x0da4...7003 | 2 | healthy |
+| A-G | 0xf56c...0096 | 2 | healthy |
+| Y-Z | 0xd3ff...b883 | 2 | healthy |
+| S-T | 0x3b1c...7883 | 2 | healthy |
+| V-W | 0x40fa...eb6d | 2 | healthy |
+
+### MNX Markets (testnet.mnx.fi)
+
+**Status: Unavailable via direct API.** The site is a Next.js SPA returning HTML for all API paths (`/api/markets`, `/api/v1/markets`). No structured market data extractable without browser JS execution.
+
+---
+
+## DuckDB Table Summary
+
+| Table | Rows |
+|-------|------|
+| world_increments | 383+ |
+| repo_snapshots | 383+ |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 (unavailable) |
+
+---
+
+## Notable Signals
+
+1. **plurigrid/gorj pushed today** (2026-07-31) — active development
+2. **bmorphism** has 100 public repos; Gay.jl pushed today
+3. **All 5 Hamming multisig contracts healthy** at 2-of-2
+4. **Aptos mainnet wallets unfunded** — all 28 CoinStore resources absent
+5. **kubeflow/spark-operator** most-starred active repo (3,142 stars) in sweep graph
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
+- **Date:** 2026-07-31
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
 - **DuckDB version:** v1.5.1 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
