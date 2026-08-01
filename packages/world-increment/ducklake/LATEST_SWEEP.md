@@ -1,4 +1,14 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-01
+
+## This Run (2026-08-01T14:06–14:20 UTC)
+
+### Job 1 GitHub: plurigrid(50) + bmorphism(20) + zubyul(9) repos ingested  
+### Job 2 Aptos: 28 wallets probed (all 0 APT / resource_not_found), 5 multisigs healthy (2-of-N each)  
+### MNX: testnet.mnx.fi SPA — no REST API accessible
+
+---
+
+# World-Increment Sweep — 2026-04-12 (historical)
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
