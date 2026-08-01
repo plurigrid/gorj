@@ -1,10 +1,68 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-01
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-01
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** latest CLI
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## 2026-08-01 Run Summary (New Increments)
+
+### JOB 1: GitHub Social Graph Sweep
+
+**329 new repo snapshots** added (increments 13–341):
+
+| Source | Type | Repos Captured |
+|--------|------|---------------|
+| plurigrid | org | 100 (103 total) |
+| kubeflow | org | 49 |
+| bmorphism | user | 100 (106 total) |
+| zubyul | user | 49 |
+| TeglonLabs | org | 5 |
+| migalkin | social graph | 7 |
+| wasita | social graph | 6 |
+| AustinCStone | social graph | 4 |
+| DJedamski | social graph | 3 |
+| kristinezheng | social graph | 3 |
+| M1shaaa | social graph | 3 |
+| **Total new** | | **329** |
+
+**Newly notable repos (this batch):**
+- `migalkin/NodePiece` — 144 ⭐ Knowledge Graph embeddings (ICLR'22)
+- `migalkin/StarE` — 89 ⭐ Hyper-relational KG (EMNLP 2020)
+- `AustinCStone/TextGAN` — 92 ⭐ TensorFlow text GAN
+- `TeglonLabs/jank-crane` — C++ GF3 convergence + loopify pass spec (pushed 2026-06-08)
+- `wasita/wasita.github.io` — most recently active (pushed 2026-07-21)
+
+**Cumulative DuckDB state after this run:**
+| Table | Total Rows |
+|-------|-----------|
+| world_increments | 352 |
+| repo_snapshots | 1273 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 |
+
+### JOB 2: Hamming Swarm Snapshot
+
+**Aptos Wallet Balances (Mainnet):**  
+All 28 addresses (alice, bob, A–Z) returned `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`.  
+Accounts are unfunded or use FA-based (non-legacy) balance storage. Recorded as **0.0 APT** for all.
+
+**Multisig Contract Probes (5/5 healthy):**
+| Pair | Sigs Required | Status |
+|------|--------------|--------|
+| A-B | 2 | ✅ |
+| A-G | 2 | ✅ |
+| Y-Z | 2 | ✅ |
+| S-T | 2 | ✅ |
+| V-W | 2 | ✅ |
+
+**MNX Markets:** SPA-gated (Next.js, no public API). No data captured.
+
+---
 
 ---
 
