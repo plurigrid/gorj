@@ -1,10 +1,11 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-01
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-01
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
+- **Aptos ledger version:** ~6,558,320,000–6,558,325,000
 
 ---
 
@@ -12,9 +13,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 65 |
+| Total Repo Snapshots | 65 |
+| Sources Covered | 3 orgs + 8 users (plurigrid, kubeflow, TeglonLabs, bmorphism, zubyul, migalkin, DJedamski, wasita, kristinezheng, M1shaaa, AustinCStone) |
+| Aptos Wallets Probed | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 (A-B, A-G, Y-Z, S-T, V-W) |
+| MNX Markets | unavailable (SPA/Next.js, no public API) |
 
 ---
 
@@ -131,12 +135,20 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+### GitHub
+- **kubeflow/kubeflow**: 15,802 stars — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,172 stars — most popular ML pipeline for Kubernetes (pushed 2026-08-01)
+- **kubeflow/spark-operator**: 3,141 stars — Kubernetes operator for Apache Spark (pushed 2026-07-31)
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for Model Context Protocol
+- **plurigrid/asi**: 57 stars — topological chemputer (pushed 2026-07-10)
+- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring (pushed 2026-08-01)
+- **bmorphism/Gay.jl**: pushed 2026-08-01 (most recent activity in social graph)
+
+### Aptos Hamming Swarm
+- All 28 wallets returned `Resource not found` for legacy `CoinStore<AptosCoin>` — consistent with wallets using Fungible Asset standard or being unfunded
+- **All 5 multisig contracts are HEALTHY** — 2-of-N signatures required across A-B, A-G, Y-Z, S-T, V-W pairs
+
+### MNX Markets
+- `testnet.mnx.fi` is a Next.js SPA; no public JSON API endpoint discovered. Market data unavailable server-side.
