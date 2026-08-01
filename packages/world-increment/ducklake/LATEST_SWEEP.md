@@ -1,4 +1,36 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-01
+
+## This Run (2026-08-01T14:06–14:30 UTC)
+
+### Job 1 GitHub: ALL 11 sources swept — 3 orgs (plurigrid/kubeflow/TeglonLabs) + 8 users + 7 events ingested  
+### Job 2 Aptos: 28 wallets probed (all 0 APT / resource_not_found), 5 multisigs healthy (2-of-N each)  
+### MNX: testnet.mnx.fi SPA — no REST API accessible
+
+**DB state:** 41 world_increments (18 new), 1,071 repo_snapshots (127 new), 28 aptos_snapshots, 5 multisig_probes
+
+### GF(3) Color Chain — This Run's 18 New Increments
+| id | Source | Type | GF(3) |
+|----|--------|------|-------|
+| 1 | plurigrid | org/repo_sweep | PLUS `#b8bb26` |
+| 2 | bmorphism | user/repo_sweep | MINUS `#cc241d` |
+| 3 | zubyul | user/repo_sweep | ERGODIC `#d3869b` |
+| 4 | kubeflow | org/repo_sweep | PLUS `#b8bb26` |
+| 5 | TeglonLabs | org/repo_sweep | MINUS `#cc241d` |
+| 6 | migalkin | user/repo_sweep | ERGODIC `#d3869b` |
+| 7 | DJedamski | user/repo_sweep | PLUS `#b8bb26` |
+| 8 | wasita | user/repo_sweep | MINUS `#cc241d` |
+| 9 | kristinezheng | user/repo_sweep | ERGODIC `#d3869b` |
+| 10 | M1shaaa | user/repo_sweep | PLUS `#b8bb26` |
+| 11 | AustinCStone | user/repo_sweep | MINUS `#cc241d` |
+| 12–18 | bmorphism+zubyul events | PullRequestEvent/PushEvent | ERGODIC→PLUS→MINUS→... |
+
+### Recent Events (bmorphism + zubyul)
+- `bmorphism` → PR to `plurigrid/asi` (2026-06-28), Push to `plurigrid/asi` (2026-06-25), Push to `bmorphism/bci-preview` (2026-06-19), PR to `bmorphism/Gay.jl` (2026-06-15)
+- `zubyul` → 3× PR to `plurigrid/place` (2026-06-27, 06-25, 06-04)
+
+---
+
+# World-Increment Sweep — 2026-04-12 (historical)
 
 ## Sweep Metadata
 - **Date:** 2026-04-12
