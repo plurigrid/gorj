@@ -1,20 +1,25 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-02
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-02
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## Summary Counts (This Run)
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| New World Increments | 320 |
+| New Repo Snapshots | 320 |
+| Cumulative World Increments | 343 |
+| Cumulative Repo Snapshots | 1,264 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
+| MNX Market Tickers | 0 (SPA, no REST API) |
 
 ---
 
@@ -130,13 +135,14 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights (2026-08-02 Run)
+- **kubeflow/kubeflow**: 15,803 stars (+238 since April) — flagship ML platform for Kubernetes
+- **kubeflow/pipelines**: 4,173 stars — pushed 2026-08-01 (active development)
+- **kubeflow/katib**: 1,694 stars — pushed 2026-08-01 (active)
+- **migalkin/NodePiece**: 144 stars — ICLR'22 KG embeddings
+- **AustinCStone/TextGAN**: 92 stars — TF text generation with GANs
+- **TeglonLabs/jank-crane**: C++ IR hub — "GF3 convergence maps" in description (meta!)
+- **wasita/wasita.github.io**: Most recently pushed social graph repo (2026-07-21)
+- **Hamming Swarm**: All 28 wallets (alice, bob, A–Z) have 0 APT in legacy CoinStore (likely FA or unfunded)
+- **Multisig**: All 5 probed pairs (A-B, A-G, Y-Z, S-T, V-W) are healthy, require 2 signatures
+- **MNX**: testnet.mnx.fi is a Next.js SPA — no REST API endpoints available
