@@ -1,3 +1,80 @@
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-02
+
+## Sweep Metadata
+- **Date:** 2026-08-02
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB:** `packages/world-increment/ducklake/world-increments.duckdb`
+
+---
+
+## JOB 1: GitHub Social Graph Sweep
+
+### Sources Swept (this run)
+
+| Source | Type | Repos | Stars |
+|--------|------|-------|-------|
+| plurigrid | org | 100 | 190 |
+| kubeflow | org | 49 | 102,176 |
+| TeglonLabs | org | 5 | 14 |
+| bmorphism | user | 100 | 508 |
+| zubyul | user | 49 | 40 |
+| migalkin | user | 19 | 833 |
+| DJedamski | user | 6 | 17 |
+| wasita | user | 12 | 11 |
+| kristinezheng | user | 5 | 0 |
+| M1shaaa | user | 8 | 0 |
+| AustinCStone | user | 41 | 324 |
+| **TOTAL** | | **394** | |
+
+### Notable Activity (most recently pushed as of 2026-08-02)
+- **plurigrid/gorj** — pushed 2026-08-02 (Clojure, 1574 open issues) — "forj + Rama topology nREPL routing + GF(3)"
+- **bmorphism/Gay.jl** — pushed 2026-08-02 (Julia)
+- **M1shaaa/M1shaaa** — pushed 2026-08-02 (profile repo)
+- **plurigrid/place** — pushed 2026-08-01 (TeX)
+- **kubeflow/pipelines** — pushed 2026-08-01 ⭐ 4173
+- **plurigrid/asi** — ⭐ 58, "everything is topological chemputer!" (pushed 2026-07-10)
+- **TeglonLabs/jank-crane** — pushed 2026-06-08 (C++, "crane-jank converged-IR hub")
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Mainnet Balances (28 addresses probed)
+Probed at ledger version ~6,571,068,797. All 28 addresses (alice, bob, A–Z) returned `resource_not_found` for `0x1::coin::CoinStore<AptosCoin>` — no APT coin stores registered. Balances recorded as 0.0 APT.
+
+**Total APT across swarm: 0.0**
+
+### Multisig Contract Probes
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4...7003 | 2 | ✓ HEALTHY |
+| A-G | 0xf56c...0096 | 2 | ✓ HEALTHY |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ HEALTHY |
+| S-T | 0x3b1c...7883 | 2 | ✓ HEALTHY |
+| V-W | 0x40fa...eb6d | 2 | ✓ HEALTHY |
+
+**All 5 multisig contracts healthy (2-of-2 threshold).**
+
+### MNX Markets (testnet.mnx.fi)
+SPA returns HTTP 200 with no structured data. `/api/markets` returns 404. No market rows recorded.
+
+---
+
+## DB State After This Sweep
+
+| Table | Rows |
+|-------|------|
+| world_increments | 34 (cumulative log) |
+| repo_snapshots | 1338 (cumulative log) |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 0 |
+
+---
+
+<!-- Previous sweep (2026-04-12) preserved below -->
+
 # World-Increment Sweep — 2026-04-12
 
 ## Sweep Metadata
