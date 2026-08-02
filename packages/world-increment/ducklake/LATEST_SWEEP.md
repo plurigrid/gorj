@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-02
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-02
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,12 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (cumulative) | 338 |
+| Total Repo Snapshots (cumulative) | 1,259 |
+| New Repos This Run | 315 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Probed | 28 |
+| Multisig Contracts Probed | 5 |
 
 ---
 
@@ -130,13 +133,17 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
+## Notable Highlights — 2026-08-02 Run
+- **kubeflow/kubeflow**: 15,803 stars — flagship ML platform for Kubernetes (updated +238 from April run)
+- **kubeflow/pipelines**: 4,173 stars — most popular ML pipeline for Kubernetes
+- **kubeflow/spark-operator**: 3,142 stars — Kubernetes operator for Apache Spark
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings (ICLR'22)
 - **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **bmorphism/ocaml-mcp-sdk**: 61 stars — OCaml SDK for Model Context Protocol (Jane Street oxcaml_effect)
+- **plurigrid/gorj**: 1 star — this very repo (1,581 open issues!)
+- **TeglonLabs/jank-crane**: 0 stars, C++ — crane-jank converged-IR hub with GF3 convergence maps (NEW)
+
+## Hamming Swarm (Aptos Mainnet)
+- **All 28 wallets at 0.0 APT** — accounts exist on-chain but CoinStore balance is empty
+- **All 5 multisig contracts healthy** — A-B, A-G, Y-Z, S-T, V-W all require 2-of-2 signatures
+- **MNX testnet.mnx.fi**: SPA (Next.js), no REST API accessible — market data not captured
