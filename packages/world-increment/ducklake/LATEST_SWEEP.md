@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-04
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-04T17:13 UTC
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,14 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments (cumulative) | 34 |
+| New Increments This Run | 11 |
+| Total Repo Snapshots (cumulative) | 1,197 |
+| New Repo Snapshots This Run | 253 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Wallets Queried | 28 (alice + A–Z) |
+| Multisig Contracts Probed | 5 |
+| GF(3) Chain Balance | 4 ERGODIC · 4 PLUS · 3 MINUS |
 
 ---
 
@@ -131,12 +136,32 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
 ## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+- **kubeflow/kubeflow**: 15,805 stars — flagship ML platform for Kubernetes (up 240 since Apr sweep)
+- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes
+- **migalkin/NodePiece**: 144 stars — scalable knowledge graph embeddings
+- **bmorphism**: 50 repos captured (106 total, search-limited)
+- **plurigrid/asi**: 58 stars (up from 16 in Apr) — significant growth
+- **TeglonLabs/jank-crane**: new repo since Apr — crane-jank converged-IR hub with GF3 convergence maps
+- **All 5 Hamming multisigs**: healthy, 2-of-N threshold
+
+## Hamming Swarm Status (2026-08-04)
+- **28 wallets queried**: alice, bob, A–Z
+- **Total APT**: 0.0 (all accounts missing CoinStore — using FA/FungibleAsset model or unfunded)
+- **Ledger version**: 6,611,185,328
+
+## Multisig Health (2026-08-04)
+| Pair | Sigs Required | Status |
+|------|--------------|--------|
+| A-B | 2 | ✅ |
+| A-G | 2 | ✅ |
+| Y-Z | 2 | ✅ |
+| S-T | 2 | ✅ |
+| V-W | 2 | ✅ |
+
+## MNX Markets
+`testnet.mnx.fi` is a Next.js SPA — no public REST API accessible without browser rendering. Recorded as unavailable in `mnx_snapshots`.
+
+## GF(3) Assignment Rule
+- `id mod 3 == 0` → trit=0, color=#d3869b, name=ERGODIC
+- `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
+- `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
