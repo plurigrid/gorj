@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-04
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-04
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,11 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 34 (11 new this sweep) |
+| Total Repo Snapshots | 1,267 (323 new this sweep) |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Addresses Snapshotted | 28 (alice, bob, A–Z) |
+| Multisig Contracts Probed | 5 |
 
 ---
 
@@ -140,3 +142,53 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
 - **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
 - **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (2026-08-04)
+
+### Aptos Wallet Balances — 28 addresses (alice, bob, A–Z)
+
+All 28 addresses queried via `https://fullnode.mainnet.aptoslabs.com/v1`.  
+API response: `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` on all addresses.  
+**Status:** 0.0 APT across all swarm wallets — addresses exist on-chain but have no funded CoinStore resource.
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793ac... | 0.0 |
+| bob | 0x0a3c00... | 0.0 |
+| A–Z | 0x8699ed...–0x7af0ef... | 0.0 each |
+
+### Multisig Contract Probes — 5 pairs
+
+All 5 probed via `0x1::multisig_account::num_signatures_required` on Aptos mainnet.
+
+| Pair | Address | Sigs Required | Status |
+|------|---------|---------------|--------|
+| A-B | 0x0da4f428... | 2 | HEALTHY |
+| A-G | 0xf56c4a1c... | 2 | HEALTHY |
+| Y-Z | 0xd3ffe181... | 2 | HEALTHY |
+| S-T | 0x3b1c3ae9... | 2 | HEALTHY |
+| V-W | 0x40fad7b4... | 2 | HEALTHY |
+
+**All 5 multisig contracts active and healthy — 2-of-N threshold confirmed.**
+
+### MNX Markets (testnet.mnx.fi)
+
+`https://testnet.mnx.fi/api/markets` and `https://testnet.mnx.fi` both return a Next.js SPA.  
+No REST/JSON data API is publicly accessible without JavaScript execution.  
+**Status:** UNAVAILABLE — SPA only, no public market data endpoint found.
+
+---
+
+## DuckDB Table State (post-sweep)
+
+```
+world_increments  : 34 rows total (11 from this sweep, IDs 1–11)
+repo_snapshots    : 1,267 rows total (323 from this sweep)
+aptos_snapshots   : 28 rows (28 new this sweep)
+multisig_probes   : 5 rows (5 new this sweep)
+mnx_snapshots     : 0 rows (SPA unavailable)
+```
+
+*Appended by world-increment-sweep + hamming-swarm-snapshot, 2026-08-04*
