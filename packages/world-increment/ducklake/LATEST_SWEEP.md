@@ -1,20 +1,61 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Snapshot — 2026-08-04
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-04
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## JOB 2: Hamming Swarm Snapshot (NEW)
+
+### Aptos Wallet Balances — 28 Addresses
+All 28 addresses queried against Aptos mainnet (`fullnode.mainnet.aptoslabs.com`).  
+**Result:** `resource_not_found` for `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>` on all addresses.  
+Account `alice` (0xc793...cc7b) confirmed active on mainnet (sequence_number=72) but uses Aptos fungible asset store model (post-1.8 migration) rather than legacy CoinStore. Balances recorded as NULL.
+
+| World | Address | Balance APT |
+|-------|---------|-------------|
+| alice | 0xc793...cc7b | NULL |
+| bob | 0x0a3c...512d | NULL |
+| A–Z (26) | 0x8699...–0x7af0... | NULL (all) |
+
+### Multisig Contract Probes — 5 Pairs
+All 5 multisig contracts **healthy** — `num_signatures_required` returns 2.
+
+| Pair | Address | Sigs Required | Healthy |
+|------|---------|--------------|---------|
+| A-B | 0x0da4...7003 | 2 | ✓ |
+| A-G | 0xf56c...0096 | 2 | ✓ |
+| Y-Z | 0xd3ff...b883 | 2 | ✓ |
+| S-T | 0x3b1c...7883 | 2 | ✓ |
+| V-W | 0x40fa...eb6d | 2 | ✓ |
+
+### MNX Markets (testnet.mnx.fi)
+**Status: UNAVAILABLE** — Next.js SPA, all paths (`/api/markets`, `/api/v1/markets`, `/api/v2/markets`) return HTML. No REST endpoints exposed server-side.
+
+### DuckDB Tables (Hamming)
+- `aptos_snapshots`: 28 rows (all NULL balance, CoinStore resource_not_found)
+- `multisig_probes`: 5 rows (all healthy, sigs_required=2)
+- `mnx_snapshots`: 0 rows
+
+---
+
+## JOB 1: GitHub Social Graph Sweep (2026-08-04)
+
+---
+
+## Summary Counts (2026-08-04 run)
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| Total World Increments | 418 (395 new this run) |
+| Total Repo Snapshots | 1,339 (395 new this run) |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos addresses probed | 28 (all NULL — CoinStore resource_not_found) |
+| Multisig contracts probed | 5 (all healthy, 2-of-N) |
+| MNX markets | Unavailable (SPA) |
 
 ---
 
