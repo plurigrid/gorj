@@ -1,24 +1,37 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-05
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-05
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
 
-## Summary Counts
+## Summary Counts — This Run (2026-08-05)
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
+| New World Increments | 11 |
+| New Repo Snapshots | 318 |
 | Sources Covered | 3 orgs + 8 users |
+| Aptos Addresses Probed | 28 |
+| Multisig Contracts Healthy | 5/5 |
+| MNX Markets | unavailable (SPA) |
+
+**Cumulative DuckDB state:**
+
+| Table | Rows |
+|-------|------|
+| world_increments | 34 |
+| repo_snapshots | 1262 |
+| aptos_snapshots | 28 |
+| multisig_probes | 5 |
+| mnx_snapshots | 1 |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — This Run's 11 Increments
 
 | ID | Source | Event Type | GF3 Trit | Color | Name |
 |----|--------|------------|-----------|-------|------|
@@ -33,9 +46,8 @@
 | 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
 | 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
 | 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS`
 
 ---
 
@@ -130,13 +142,40 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights — This Run
+- **kubeflow** (49 repos, ~67k stars) — top: kubeflow/kubeflow, pipelines, spark-operator
+- **migalkin/NodePiece**: 144 stars — ICLR'22 KG embeddings (updated 2026-05-07)
+- **migalkin/StarE**: 89 stars — EMNLP'20 hyper-relational KGs (updated 2026-04-16)
+- **TeglonLabs/jank-crane**: new C++ repo (GF3 convergence maps, pushed 2026-06-08)
+- **wasita/xoxowasita-analysis**: very fresh (pushed 2026-08-04, yesterday)
+- **AustinCStone/byteruckus**: fresh HTML repo (pushed 2026-07-15)
+
+---
+
+## JOB 2: Hamming Swarm Snapshot
+
+### Aptos Wallet Balances (alice/bob + A–Z, 28 addresses)
+
+**Result: All 28 addresses returned HTTP 404 — no on-chain state on Aptos mainnet.**
+
+Addresses probed against `fullnode.mainnet.aptoslabs.com`. HTTP 404 indicates the account has no resource at the CoinStore path (uninitialized or non-existent on mainnet). Balances recorded as NULL in `aptos_snapshots`.
+
+### Multisig Contract Probes
+
+All 5 multisig contracts healthy on Aptos mainnet:
+
+| Pair | Contract Address | Sigs Required | Status |
+|------|-----------------|---------------|--------|
+| A-B | 0x0da4f428...87003 | 2 | ✅ healthy |
+| A-G | 0xf56c4a1c...0096 | 2 | ✅ healthy |
+| Y-Z | 0xd3ffe181...b883 | 2 | ✅ healthy |
+| S-T | 0x3b1c3ae9...7883 | 2 | ✅ healthy |
+| V-W | 0x40fad7b4...eb6d | 2 | ✅ healthy |
+
+Probed via `0x1::multisig_account::num_signatures_required` view function.
+
+### MNX Markets (testnet.mnx.fi)
+
+- `GET /api/markets` → HTTP 404
+- `GET /` → React SPA shell — only "MNX" text extractable, no JSON data
+- **Status: unavailable** — recorded with NULL price/change in `mnx_snapshots`
