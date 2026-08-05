@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep — 2026-08-05
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-05
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,45 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 37 (cumulative) |
+| Total Repo Snapshots | 471 (from 2026-04-12 sweep; GitHub blocked this run) |
+| Sources Covered (this run) | 14 sources attempted |
+| Aptos Accounts Probed | 28 |
+| Aptos Multisig Contracts | 5 (all healthy) |
+| MNX Markets | Unavailable (SPA, no REST API)
+
+## GitHub Social Graph Sweep — Status: Blocked
+
+The environment proxy restricts GitHub API access to repository-scoped endpoints only (`plurigrid/gorj`). Calls to `/orgs/{org}/repos` and `/users/{user}/repos` were rejected. Prior run (2026-04-12) data remains valid in `repo_snapshots` (471 repos).
+
+**Attempted sources blocked:**
+- Orgs: `plurigrid`, `kubeflow`, `TeglonLabs`
+- Users: `bmorphism`, `zubyul`, `migalkin`, `DJedamski`, `wasita`, `kristinezheng`, `M1shaaa`, `AustinCStone`
+
+## Hamming Swarm Snapshot (NEW 2026-08-05)
+
+### Aptos Wallet Balances
+
+All 28 accounts (alice, bob, A–Z) exist on Aptos mainnet but hold **0 APT** (no `CoinStore<AptosCoin>` resource). These are protocol/contract deployer accounts, not liquid wallets. Example resources on `alice` (0xc793...):
+- `0x1::code::PackageRegistry` — contract deployer
+- `0xc793...::multiverse::MultiverseState`
+- `0xd49e...::lending_pool::UserPosition`
+
+### Multisig Contract Probes — All Healthy ✅
+
+| Pair | Address | Sigs Required |
+|------|---------|---------------|
+| A-B | 0x0da4f428...4987003 | 2 |
+| A-G | 0xf56c4a1c...bc0096 | 2 |
+| Y-Z | 0xd3ffe181...75b883 | 2 |
+| S-T | 0x3b1c3ae9...ed7883 | 2 |
+| V-W | 0x40fad7b4...80eb6d | 2 |
+
+All contracts require 2-of-N signatures. No degraded contracts detected.
+
+### MNX Testnet Markets
+
+`testnet.mnx.fi` is a Next.js SPA. All REST API paths return HTML. Market data unavailable without headless browser. Recorded as unavailable in `mnx_snapshots`.
 
 ---
 
