@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-05
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-05
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.3.0
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,9 +12,13 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments | 36 (cumulative) |
+| Total Repo Snapshots | 967 (cumulative) |
+| Sources Covered | 3 orgs + 8 users + Aptos chain |
+| Aptos Wallets Snapshotted | 28 |
+| Multisig Probes | 5/5 healthy (2-of-N each) |
+| MNX Markets | SPA unavailable |
+| Total Swarm APT | ~22.49 APT |
 
 ---
 
@@ -130,13 +134,17 @@ mnx_snapshots(timestamp, ticker, name, category, price, change_pct)
 - `id mod 3 == 1` → trit=1, color=#b8bb26, name=PLUS
 - `id mod 3 == 2` → trit=-1, color=#cc241d, name=MINUS
 
-## Notable Highlights
-- **kubeflow/kubeflow**: 15,565 stars — flagship ML platform for Kubernetes
-- **kubeflow/pipelines**: 4,119 stars — most popular ML pipeline for Kubernetes (pushed 2026-04-10)
-- **kubeflow/spark-operator**: 3,111 stars — Kubernetes operator for Apache Spark (pushed 2026-04-10)
-- **migalkin/NodePiece**: 143 stars — scalable knowledge graph embeddings
-- **bmorphism/ocaml-mcp-sdk**: 60 stars — OCaml SDK for Model Context Protocol using Jane Street's oxcaml_effect
-- **AustinCStone/TextGAN**: 92 stars — text generation with GANs
-- **plurigrid/asi**: 16 stars — topological chemputer (pushed 2026-04-10)
-- **plurigrid/gorj**: This very repo — forj + Rama topology nREPL routing + GF(3) gay trit coloring
-- **Increment 12**: ERGODIC — sweep_complete closing the 4th full GF(3) cycle
+## Notable Highlights — 2026-08-05
+- **kubeflow/kubeflow**: 15,805 stars — flagship ML platform for Kubernetes (active 2026-08-04)
+- **kubeflow/pipelines**: 4,177 stars — most popular ML pipeline (active 2026-08-05)
+- **plurigrid/asi**: 59 stars — topological chemputer (active 2026-08-05, up from 16 in Apr sweep)
+- **bmorphism/anti-bullshit-mcp-server**: 23 stars — active 2026-08-02
+- **migalkin/NodePiece**: 144 stars — ICLR'22 KG embeddings (stable)
+- **AustinCStone/TextGAN**: 92 stars — GAN text generation (stable)
+- **wasita/xoxowasita-analysis**: Created 2026-08-04 (freshest repo in sweep)
+- **Aptos: bob holds 56% of swarm APT** (12.66 / 22.49 total)
+- **Aptos: F, L, J cluster** holds ~5.78 APT combined (F=1.96, L=1.93, J=1.90)
+- **Dust wallets**: G, I (0.000681 APT each) — likely gas-reserve only
+- **All 5 multisig contracts** require 2-of-N and are live on Aptos mainnet
+- **MNX testnet**: SPA-only, no REST API — noted unavailable
+- **GF(3) chain**: 13 new increments added this run (ids 24-36 cumulative)
