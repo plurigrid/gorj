@@ -1,9 +1,9 @@
-# World-Increment Sweep — 2026-04-12
+# World-Increment Sweep + Hamming Swarm Snapshot — 2026-08-05
 
 ## Sweep Metadata
-- **Date:** 2026-04-12
-- **Agent:** world-increment-sweep
-- **DuckDB version:** v1.5.1 (Variegata)
+- **Date:** 2026-08-05
+- **Agent:** world-increment-sweep + hamming-swarm-snapshot
+- **DuckDB version:** v1.5.5 (Variegata)
 - **Database:** `packages/world-increment/ducklake/world-increments.duckdb`
 
 ---
@@ -12,30 +12,65 @@
 
 | Metric | Value |
 |--------|-------|
-| Total World Increments | 12 |
-| Total Repo Snapshots | 471 |
-| Sources Covered | 3 orgs + 8 users |
+| Total World Increments (cumulative) | 34 |
+| Total Repo Snapshots (cumulative) | 1010 |
+| Aptos Wallet Snapshots | 28 |
+| Multisig Probes | 5 |
+| Sources Covered This Run | 3 orgs + 8 users |
 
 ---
 
-## GF(3) Color Chain — All 12 Increments
+## GF(3) Color Chain — This Run (Increments 24–34)
 
-| ID | Source | Event Type | GF3 Trit | Color | Name |
-|----|--------|------------|-----------|-------|------|
-| 1  | plurigrid (org) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 2  | kubeflow (org) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 3  | TeglonLabs (org) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 4  | bmorphism (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 5  | zubyul (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 6  | migalkin (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 7  | DJedamski (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 8  | wasita (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 9  | kristinezheng (user) | repo_snapshot | 0 | `#d3869b` | **ERGODIC** |
-| 10 | M1shaaa (user) | repo_snapshot | +1 | `#b8bb26` | **PLUS** |
-| 11 | AustinCStone (user) | repo_snapshot | -1 | `#cc241d` | **MINUS** |
-| 12 | bmorphism (org) | sweep_complete (gorj) | 0 | `#d3869b` | **ERGODIC** |
+| ID | Source | Type | GF3 Trit | Color | Name |
+|----|--------|------|-----------|-------|------|
+| 24 | plurigrid | org | +1 | `#b8bb26` | **PLUS** |
+| 25 | kubeflow | org | -1 | `#cc241d` | **MINUS** |
+| 26 | TeglonLabs | org | 0 | `#d3869b` | **ERGODIC** |
+| 27 | bmorphism | user | +1 | `#b8bb26` | **PLUS** |
+| 28 | zubyul | user | -1 | `#cc241d` | **MINUS** |
+| 29 | migalkin | user/social | 0 | `#d3869b` | **ERGODIC** |
+| 30 | DJedamski | user/social | +1 | `#b8bb26` | **PLUS** |
+| 31 | wasita | user/social | -1 | `#cc241d` | **MINUS** |
+| 32 | kristinezheng | user/social | 0 | `#d3869b` | **ERGODIC** |
+| 33 | M1shaaa | user/social | +1 | `#b8bb26` | **PLUS** |
+| 34 | AustinCStone | user/social | -1 | `#cc241d` | **MINUS** |
 
-GF(3) chain: `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC`
+GF(3) chain (cycle 8–11): `PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS → ERGODIC → PLUS → MINUS`
+
+---
+
+## JOB 2: Hamming Swarm Snapshot (Aptos Mainnet)
+
+### Wallet Balances (alice, bob, A–Z)
+
+All 28 Hamming-swarm addresses queried via Aptos mainnet fullnode at `fullnode.mainnet.aptoslabs.com/v1`.
+
+**Result: All wallets returned 0 APT** — accounts may be unfunded, unregistered for APT CoinStore, or not yet activated on mainnet.
+
+| World | Address (truncated) | Balance (APT) |
+|-------|---------------------|---------------|
+| alice | 0xc793...cc7b | 0.00 |
+| bob   | 0x0a3c...2d5d | 0.00 |
+| A–Z   | (all 26 addresses) | 0.00 each |
+
+### Multisig Contract Probes
+
+All 5 multisig contracts are **healthy** — all require exactly 2-of-N signatures.
+
+| Pair | Address (truncated) | Sigs Required | Status |
+|------|---------------------|---------------|--------|
+| A-B | 0x0da4...7003 | 2 | ✅ healthy |
+| A-G | 0xf56c...0096 | 2 | ✅ healthy |
+| Y-Z | 0xd3ff...b883 | 2 | ✅ healthy |
+| S-T | 0x3b1c...7883 | 2 | ✅ healthy |
+| V-W | 0x40fa...eb6d | 2 | ✅ healthy |
+
+### MNX Testnet Markets
+
+`https://testnet.mnx.fi` is a Next.js SPA — no REST API endpoints available at `/api/markets` or `/api/v1/markets`. Market data unavailable via curl; requires client-side JS rendering.
+
+---
 
 ---
 
